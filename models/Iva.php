@@ -22,15 +22,14 @@ class Iva extends Conectar
         //TODO: 14/03/24 añado try catch para la deteccion de errores
         try {
         //TODO: 14/03/24 modificamos sql para que inserta mas datos y no solo el nombre del cliente y su estado
-        $sql = "INSERT INTO `tm_iva` (`valorIva`, `descrIva`, `fechAlta_iva`, `estIva`) VALUES ('$valorIva','$descrIva','$fechAlta_iva', 1)";
+        $sql = "INSERT INTO `tm_iva` (`valorIva`, `descrIva`, `fechAlta_iva`, `estIva`) VALUES (?, ?, ?, 1)";
 
         $sql = $conectar->prepare($sql);
 
-        $sql->execute();
+        $sql->execute([$valorIva, $descrIva, $fechAlta_iva]);
 
         return true; // Éxito en la inserción
 
-        return $resultado = $sql->fetchAll();
         }catch (PDOException $e){
             return "Error en la inserción: " . $e->getMessage();
         }

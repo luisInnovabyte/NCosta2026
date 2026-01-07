@@ -36,7 +36,7 @@ switch ($op) {
 
             $sub_array = array();
             $sub_array[] = $row["idIva"];
-            $sub_array[] = $row["iva_tarifa"] . " %";
+            $sub_array[] = $row["valorIva"] . " %";
             $sub_array[] = $row["descrIva"];
 
 
@@ -70,6 +70,8 @@ switch ($op) {
 
     case "insertarIva":
 
+        error_reporting(E_ALL);
+        ini_set('display_errors', 1);
 
         $valorIva = $_POST["valorIva"];
         $descrIva = $_POST["descrIva"];
@@ -86,8 +88,13 @@ switch ($op) {
         } else {
 
             // Si todas las validaciones pasan, insertar el cliente
-            $iva->insertarIva($valorIva, $descrIva, $fechAlta_iva);
-            echo true;
+            $resultado = $iva->insertarIva($valorIva, $descrIva, $fechAlta_iva);
+            
+            if ($resultado === true) {
+                echo true;
+            } else {
+                echo $resultado; // Muestra el error de la base de datos
+            }
         }
         break;
 
