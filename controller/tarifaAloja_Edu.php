@@ -161,7 +161,9 @@ switch ($_GET["op"]) {
                     $sub_array[] = '';
                 }
                 $sub_array[] = '<p class="text-right badge bg-orange tx-14-force">' . $row["descuento_tarifa"] .  ' %</p>';
-                $sub_array[] = '<p class="text-right badge bg-orange tx-14-force">' . $row["iva_tarifa"] .  ' %</p>';
+                // Usar valorIva si iva_tarifa está vacío
+                $ivaValue = !empty($row["iva_tarifa"]) ? $row["iva_tarifa"] : (!empty($row["valorIva"]) ? $row["valorIva"] : "0");
+                $sub_array[] = '<p class="text-right badge bg-orange tx-14-force">' . $ivaValue .  ' %</p>';
                 $sub_array[] = '<p class="text-right badge bg-orange tx-14-force">' . $row["precio_tarifa"] .  ' €</p>';
                 
     

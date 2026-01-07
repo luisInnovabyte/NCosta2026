@@ -67,6 +67,11 @@ var matriculacionTable = $("#matriculacionTableNew").DataTable({
         cache: false,
         serverSide: true,
         processData: true,
+        data: function(d) {
+            // Asegurar que siempre usamos el idLlegada correcto
+            d.idLlegada = $('#idLlegadaReal').val() || idLlegada;
+            return d;
+        },
         beforeSend: function () {
             // Código opcional antes de enviar
         },

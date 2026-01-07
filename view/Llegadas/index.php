@@ -210,7 +210,7 @@
             background-color: #F2F4E3; /* Amarillo pastel muy suave */
         }
         .card-body.datos-generales3 {
-            background-color: #EDE3FD; /* Lila clarito elegante */
+            background-color: #E1F5FE; /* Azul cielo claro distintivo y profesional */
         }
         .card-body.datos-generales4 {
             background-color: #FDE3F2; /* Rosa pálido delicado */
@@ -641,20 +641,21 @@
                                 
                                     <div class="tab-content cardLlegadas d-none" id="myTabContent">
 
-                                     <!-- ====================================================== -->
-                                     <!--                      DOCENCIA LLEGADA                  -->
-                                     <!-- ====================================================== -->
+                                    
 
                                     <div class="tab-pane fade show active" id="docencia" role="tabpanel">
+                                         <!-- ====================================================== -->
+                                         <!--                      DOCENCIA LLEGADA                  -->
+                                         <!-- ====================================================== -->
                                             <div class="card mt-3 card-hover">
                                                 <div class="card-body datos-generales2">
                                                     <h5 class="card-title d-flex justify-content-between align-items-center">
                                                         <span>
                                                             Docencia <label id="textEditar"></label><label id="tiempoDocencia"></label>
                                                         </span>
-                                                        <button class="btn btn-sm btn-info tx-white ms-2" title="Forzar Estados" onclick="forzarEstadosMatricula()" type="button">
+                                                        <!-- <button class="btn btn-sm btn-info tx-white ms-2" title="Forzar Estados" onclick="forzarEstadosMatricula()" type="button">
                                                             <i class="bi bi-arrow-repeat"></i> Forzar Estados
-                                                        </button>
+                                                        </button> -->
                                                     </h5>
 
                                                     <input type="hidden" id="idMatriculaEditando">
@@ -667,38 +668,35 @@
 
                                                       <div id="zonaFormMatricula" class="row">
 
-                                                        <div class="col-md-6 mg-t-10-force">
-                                                            <label for="inicioDocencia" class="form-label">Fecha de Inicio</label>
-                                                            <input type="date"   class="form-control fechaSinHoraHoypick form-control-sm" id="inicioDocencia">
-                                                            
-                                                        </div>
-                                                        <div class="col-md-6 mg-t-10-force">
-                                                            <label for="finalDocencia" class="form-label">Fecha de Finalización</label>
-                                                            <input type="date" class="form-control fechaSinHoraHoypick form-control-sm"  id="finalDocencia" >
-                                                        </div>
-                                                        <div class="col-md-3 mg-t-10-force">
+                                                        <div class="col-md-2 mg-t-10-force">
                                                             <label for="codDocencia" class="form-label">Tarifa de Docencia</label>
-                                                            <div class="input-group" id="groupTarifaDocenciaInputs">
-
+                                                            <div class="input-group input-group-sm" id="groupTarifaDocenciaInputs">
                                                                 <input type="text" class="form-control form-control-sm" id="codDocencia" disabled><!-- //*! Select con busqueda *// -->
                                                                 <div class="suggestions-list"></div>
-                                                                    <button class="btn btn-outline-secondary bd-secondary searchTarifa" id="btnSearchTarifaDocencia" type="button" onClick="abrirModalTarifas('Docencia');" disabled>
-                                                                        <i class="fa-solid fa-search"></i> <!-- Icono de lupa usando Bootstrap Icons --> <input type="hidden" class="buscarTarifa">
-                                                                    </button>
-                                                                </div>
-
+                                                                <button class="btn btn-outline-secondary bd-secondary searchTarifa" id="btnSearchTarifaDocencia" type="button" onClick="abrirModalTarifas('Docencia');" disabled>
+                                                                    <i class="fa-solid fa-search"></i> <!-- Icono de lupa usando Bootstrap Icons --> <input type="hidden" class="buscarTarifa">
+                                                                </button>
+                                                            </div>
                                                         </div>
-                                                        <div class="col-md-3 mg-t-10-force">
+                                                        <div class="col-md-2 mg-t-10-force">
                                                             <label for="importeDocencia" class="form-label">Importe</label>
                                                             <input type="text" class="form-control form-control-sm" id="importeDocencia" disabled>
                                                         </div>
-                                                        <div class="col-md-3 mg-t-10-force">
+                                                        <div class="col-md-2 mg-t-10-force">
                                                             <label for="ivaDocencia" class="form-label">IVA</label>
                                                             <input type="text" class="form-control form-control-sm" id="ivaDocencia" disabled>
                                                         </div>
-                                                        <div class="col-md-3 mg-t-10-force">
+                                                        <div class="col-md-2 mg-t-10-force">
                                                             <label for="descDocencia" class="form-label">Descuento</label>
                                                             <input type="text" class="form-control form-control-sm" id="descDocencia" disabled>
+                                                        </div>
+                                                        <div class="col-md-2 mg-t-10-force">
+                                                            <label for="inicioDocencia" class="form-label">Fecha de Inicio</label>
+                                                            <input type="date" class="form-control fechaSinHoraHoypick form-control-sm" id="inicioDocencia">
+                                                        </div>
+                                                        <div class="col-md-2 mg-t-10-force">
+                                                            <label for="finalDocencia" class="form-label">Fecha de Finalización</label>
+                                                            <input type="date" class="form-control fechaSinHoraHoypick form-control-sm" id="finalDocencia">
                                                         </div>
                                                     
                                                         <div class="col-md-12 mg-t-10-force" id="obsMatricula">
@@ -763,45 +761,45 @@
                                                         </button>
                                                     </h5>
                                                     <div class="row">
-                                                    <div class="col-md-4 mg-t-10-force">
-                                                        <label for="entradaAlojamiento" class="form-label">Fecha de Entrada</label>
-                                                        <input type="date"  class="form-control fechaSinHoraHoypick form-control-sm" id="entradaAlojamiento">
-                                                    </div>
-                                                    <div class="col-md-4 mg-t-10-force">
-                                                        <label for="salidaAlojamiento" class="form-label">Fecha de Salida</label>
-                                                        <input type="date"  class="form-control fechaSinHoraHoypick form-control-sm"  id="salidaAlojamiento">
-                                                    </div>
-                                                    <div class="col-md-4 mg-t-10-force">
-                                                        <label for="horaAlojamiento" class="form-label">Hora de salida</label>
-                                                        <input type="time" class="form-control form-control-sm" id="horaAlojamiento" value="11:00">
-                                                    </div>
                                                       <!-- Contenedor para el mensaje, oculto por defecto -->
                                                       <div class="mensajeFacturas" style="display:none; background-color: #fdf6f0; border: 2px dashed #d4a373; padding: 20px; border-radius: 12px; font-family: Georgia, serif; color: #5a3e36; max-width: 600px; margin: 30px auto; text-align: center;"></div>  
                                                     <div class="mensajeGrupo" style="display:none; background-color: #fdf6f0; border: 2px dashed #d47e73ff; padding: 20px; border-radius: 12px; font-family: Georgia, serif; color: #5a3e36; max-width: 600px; margin: 30px auto; text-align: center;"></div>
 
                                                       <div id="zonaFormAlojamiento" class="row">
-                                                        <div class="col-md-3 mg-t-10-force">
+                                                        <input type="hidden" id="idAlojamientoEditando">
+                                                        <input type="hidden" id="descripcionTarifaAloja">
+                                                        
+                                                        <div class="col-md-2 mg-t-10-force">
                                                             <label for="codAlojamiento" class="form-label">Tarifa de Alojamiento</label>
-                                                            <div class="input-group">
-                                                            <input type="hidden" id="idAlojamientoEditando">
-                                                            <input type="hidden" id="descripcionTarifaAloja">
+                                                            <div class="input-group input-group-sm">
                                                                 <input type="text" class="form-control form-control-sm" id="codAlojamiento"><!-- //*! Select con busqueda *// -->
                                                                 <div class="suggestions-list"></div>
                                                                 <button class="btn btn-outline-secondary bd-secondary searchTarifa"  id="btnSearchTarifaAlojamiento"  type="button" onClick="abrirModalTarifas('Alojamiento');">
                                                                     <i class="fa-solid fa-search"></i> <!-- Icono de lupa usando Bootstrap Icons --> <input type="hidden" class="buscarTarifa">
                                                                 </button>
                                                             </div>
-
                                                         </div>
-                                                        <div class="col-md-3 mg-t-10-force">
+                                                        <div class="col-md-2 mg-t-10-force">
+                                                            <label for="entradaAlojamiento" class="form-label">Fecha de Entrada</label>
+                                                            <input type="date" class="form-control fechaSinHoraHoypick form-control-sm" id="entradaAlojamiento">
+                                                        </div>
+                                                        <div class="col-md-2 mg-t-10-force">
+                                                            <label for="salidaAlojamiento" class="form-label">Fecha de Salida</label>
+                                                            <input type="date" class="form-control fechaSinHoraHoypick form-control-sm" id="salidaAlojamiento">
+                                                        </div>
+                                                        <div class="col-md-1 mg-t-10-force">
+                                                            <label for="horaAlojamiento" class="form-label">Hora salida</label>
+                                                            <input type="time" class="form-control form-control-sm" id="horaAlojamiento" value="11:00">
+                                                        </div>
+                                                        <div class="col-md-2 mg-t-10-force">
                                                             <label for="importeAlojamiento" class="form-label">Importe</label>
                                                             <input type="text" class="form-control form-control-sm" id="importeAlojamiento" disabled>
                                                         </div>
-                                                        <div class="col-md-3 mg-t-10-force">
+                                                        <div class="col-md-1 mg-t-10-force">
                                                             <label for="ivaAlojamiento" class="form-label">IVA</label>
                                                             <input type="text" class="form-control form-control-sm" id="ivaAlojamiento" disabled>
                                                         </div>
-                                                        <div class="col-md-3 mg-t-10-force">
+                                                        <div class="col-md-2 mg-t-10-force">
                                                             <label for="descuentoAlojamiento" class="form-label">Descuento</label>
                                                             <input type="text" class="form-control form-control-sm" id="descuentoAlojamiento" disabled>
                                                         </div>
@@ -817,7 +815,7 @@
                                                         </div>
                                                         </div> <!-- cierre de zonaFormAlojamientvvv -->
 
-                                                        <div class="col-md-12 mg-t-10-force">
+                                                        <div class="col-md-12 mg-t-10-force" style="margin-top: 30px;">
 
                                                             <div class="table-responsive order-mobile-first">
                                                                 <?php
