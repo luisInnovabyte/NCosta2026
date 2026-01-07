@@ -136,7 +136,7 @@ class MntPreincriptores extends Conectar
     {
         $conectar = parent::conexion();
         parent::set_names();
-        $sql = "SELECT * FROM `tm_agentes_edu` WHERE estAgente = 1";
+        $sql = "SELECT * FROM `tm_agentes_edu`";
         $sql = $conectar->prepare($sql);
         $sql->execute();
         return $resultado = $sql->fetchAll();

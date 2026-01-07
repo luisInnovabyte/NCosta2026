@@ -126,7 +126,12 @@
 
             <!-- Header profesional -->
             <div class="page-header-custom">
-                <h2><i class='bx bx-cog me-2'></i>Configuración de Interesados</h2>
+                <div class="d-flex align-items-center gap-3">
+                    <h2 class="mb-0"><i class='bx bx-cog me-2'></i>Configuración de Interesados</h2>
+                    <button type="button" class="btn btn-sm btn-info" data-bs-toggle="modal" data-bs-target="#ayuda-modal" title="Ver información de ayuda">
+                        <i class="bx bx-help-circle"></i>
+                    </button>
+                </div>
                 <p>Gestiona agentes, departamentos, conocimientos y más opciones del sistema</p>
             </div>
 
@@ -523,6 +528,71 @@
 
 
     </main>
+
+    <!-- Modal de Ayuda -->
+    <div id="ayuda-modal" class="modal fade" tabindex="-1" data-bs-backdrop="static">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content border-0 shadow">
+                <div class="modal-header bg-info bg-gradient text-white py-3">
+                    <h5 class="modal-title d-flex align-items-center gap-2">
+                        <i class="bx bx-help-circle"></i> Información de Ayuda
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close" title="Cerrar"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <div class="alert alert-info border-0 mb-4">
+                        <i class="bx bx-info-circle me-2"></i>
+                        <strong>¿Dónde se utilizan estos datos?</strong><br>
+                        Esta tabla muestra las principales áreas de la aplicación donde se utilizan los datos configurados en cada sección.
+                    </div>
+                    
+                    <div class="table-responsive">
+                        <table class="table table-hover table-bordered">
+                            <thead class="table-light">
+                                <tr>
+                                    <th class="fw-semibold text-secondary"><i class="bx bx-category me-1"></i>Tabla</th>
+                                    <th class="fw-semibold text-secondary"><i class="bx bx-map me-1"></i>Se usa principalmente en</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="fw-semibold"><i class="bx bx-user-pin text-primary me-1"></i>Agentes</td>
+                                    <td>Llegadas, Interesados</td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-semibold"><i class="bx bxs-user-badge text-warning me-1"></i>Bildungsurlaub</td>
+                                    <td>Prescriptores, Interesados</td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-semibold"><i class="bx bxs-building-house text-success me-1"></i>Departamentos</td>
+                                    <td>Facturación, Contratos, Proformas, Tarifas, Evaluación</td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-semibold"><i class="bx bx-book-bookmark text-info me-1"></i>Conocimientos</td>
+                                    <td>Perfil usuario, Prescriptores, Interesados</td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-semibold"><i class="bx bx-id-card text-danger me-1"></i>Tipo Documento</td>
+                                    <td>Interesados (combo de selección)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="alert alert-light border mt-4">
+                        <i class="bx bx-bulb me-2 text-warning"></i>
+                        <strong>Nota:</strong> Los cambios realizados en estas configuraciones afectarán a todos los módulos donde se utilizan.
+                    </div>
+                </div>
+                <div class="modal-footer bg-light border-top-0 py-3">
+                    <button type="button" class="btn btn-outline-secondary px-4" data-bs-dismiss="modal">
+                        <i class="bx bx-x me-1"></i>Cerrar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <?php include("../../config/templates/mainFooter.php"); ?> <!--end main content-->
 
 
