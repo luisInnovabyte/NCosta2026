@@ -366,7 +366,10 @@
                                 <div class="tab-pane fade" id="dangerConocimientos" role="tabpanel">
                                     <!-- CONTENT -->
 
-
+                                    <div class="alert alert-light border-0 mb-3" style="background-color: #f8f9fa; color: #6c757d;">
+                                        <i class="bx bx-info-circle me-2"></i>
+                                        <small>Aquí se reflejará la tabla de cómo los interesados conocieron a Costa de Valencia</small>
+                                    </div>
 
                                     <div class="col-12 d-flex justify-content-end mb-3">
                                         <button class="btn btn-add-record waves-effect" data-bs-toggle="modal" data-bs-target="#agregar-conocimientos-modal">

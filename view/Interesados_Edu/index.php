@@ -19,6 +19,53 @@
     ?>
     <!--end head-->
     <style>
+        /* Estilos profesionales para la página */
+        .page-header-custom {
+            background: linear-gradient(135deg, #1AA3E8 0%, #0d6efd 100%);
+            border-radius: 12px;
+            padding: 1.5rem 2rem;
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+        .page-header-custom h2 {
+            margin: 0;
+            font-weight: 600;
+            font-size: 1.5rem;
+        }
+        .page-header-custom p {
+            margin: 0.5rem 0 0 0;
+            opacity: 0.9;
+            font-size: 0.9rem;
+        }
+        .nav-tabs-custom .nav-link {
+            border: none;
+            color: #6c757d;
+            padding: 0.75rem 1.25rem;
+            font-weight: 500;
+            border-radius: 8px 8px 0 0;
+            transition: all 0.2s ease;
+        }
+        .nav-tabs-custom .nav-link:hover {
+            color: #1AA3E8;
+            background-color: rgba(26, 163, 232, 0.1);
+        }
+        .nav-tabs-custom .nav-link.active {
+            color: #fff;
+            background: linear-gradient(135deg, #1AA3E8 0%, #0d6efd 100%);
+        }
+        .btn-add-record {
+            background: linear-gradient(135deg, #1AA3E8 0%, #0d6efd 100%);
+            border: none;
+            padding: 0.5rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+        .btn-add-record:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(26, 163, 232, 0.4);
+        }
+
         .customizer {
             background-color: transparent;
             box-shadow: none;
@@ -440,19 +487,16 @@
             </div>
         </div>
         <div class="row">
-            <!-- <div class="col-12 pageTitle mt-3">
-                <div class="row">
-                    <div class="col-1 wd-auto-force">
-                        <i class="fa-solid fa-triangle-exclamation tx-50-force"></i>
-                    </div>
-                    <div class="col-10 d-flex align-items-center">
-                        <div class="row">
-                            <h4 class="col-12 tx-18">AVISOS GERENCIA</h4>
-                            <p class="mb-0 col-12 tx-16"></p>
-                        </div>
-                    </div>
+            <!-- Header profesional -->
+            <div class="page-header-custom">
+                <div class="d-flex align-items-center gap-3">
+                    <h2 class="mb-0"><i class='bx bx-user-check me-2'></i>Gestión de Interesados</h2>
+                    <button type="button" class="btn btn-sm btn-info" data-bs-toggle="modal" data-bs-target="#ayuda-modal" title="Ver información de ayuda">
+                        <i class="bx bx-help-circle"></i>
+                    </button>
                 </div>
-            </div> -->
+                <p>Administra y consulta la información de personas interesadas en los programas educativos</p>
+            </div>
 
             <div class="card">
                 <div class="card-body p-4">
@@ -494,7 +538,7 @@
                 </div>
             </div>
             
-            <div class="col-12 card mg-t-20-force d-none" id="cardForm">
+            <div class="col-12 card mt-3 d-none" id="cardForm">
                 <input type="hidden" id="prescriptorID" value="">
                 <div class="card-body">
 
@@ -821,11 +865,14 @@
                                             </div>
                                     
                                             <div class="col-md-6">
-                                                <label for="input13" class="form-label">¿Es probable que los conocimientos sean correctos?</label>
+                                                <label for="input13" class="form-label">¿Es probable que "como nos ha conocido" sea correcto?</label>
                                               
                                                 <div class="position-relative input-icon">
-                                                    <input type="text" class="form-control" id="probablemente" >
-                                                    <span class="position-absolute top-50 translate-middle-y"><i class="bi bi-clipboard2-check"></i></span>
+                                                    <select class="form-select" id="probablemente">
+                                                        <option value="1" selected>Sí</option>
+                                                        <option value="0">No</option>
+                                                    </select>
+                                                    <!-- <span class="position-absolute top-50 translate-middle-y"></span> -->
                                                 </div>
                                             </div>
                                             <div class="col-md-6 <?php echo $campoGrupo; ?>">
@@ -1107,11 +1154,6 @@
     <!-- ============================================================== -->
 
     <aside class="customizer botonFlotante2">
-        <a href="javascript:void(0)" id="infoButton" data-bs-toggle="modal" data-bs-target="#modalInfo" class="service-panel-toggle colorBoton3 tx-20" style="opacity: 0.75">
-            <i class="fa-solid fa-circle-info"></i>
-        </a>
-    </aside>
-    <aside class="customizer botonFlotante3">
         <a href="javascript:void(0)" id="newClient" class="service-panel-toggle colorBoton5 tx-20" style="opacity: 0.75">
             <i class="fa-solid fa-circle-plus"></i>
         </a>
@@ -1122,19 +1164,19 @@
         </a>
     </aside>
     <aside class="customizer botonFlotante4-1  d-none" >
-        <a href="javascript:void(0)" id="btnPreforma" title="IR A LLEGADAS" class="service-panel-toggle colorBoton2 tx-20" style="opacity: 0.75">
+        <a href="javascript:void(0)" id="btnPreforma" title="Ir a llegadas" class="service-panel-toggle colorBoton2 tx-20" style="opacity: 0.75">
         <i class="fa-solid fa-plane-arrival"></i>
         </a>
     </aside>
   
 
     <aside class="customizer botonFlotante5-1 d-none ">
-        <a href="javascript:void(0)" id="aceptClient" class="service-panel-toggle colorBoton5 tx-20" style="opacity: 0.75">
+        <a href="javascript:void(0)" id="aceptClient" title="Aceptar" class="service-panel-toggle colorBoton5 tx-20" style="opacity: 0.75">
             <i class="fa-solid fa-circle-check"></i>
         </a>
     </aside>
     <aside class="customizer botonFlotante5-1 d-none ">
-        <a href="javascript:void(0)" id="updateClient" class="service-panel-toggle colorBoton5 tx-20" style="opacity: 0.75">
+        <a href="javascript:void(0)" id="updateClient" title="Actualizar" class="service-panel-toggle colorBoton5 tx-20" style="opacity: 0.75">
             <i class="fa-solid fa-circle-check"></i>
         </a>
     </aside>
@@ -1162,6 +1204,63 @@
     <?php include_once 'modalInfo.php' ?>
     <?php include_once 'modalGestion.php' ?>
 
+    <!-- Modal de Ayuda -->
+    <div id="ayuda-modal" class="modal fade" tabindex="-1" data-bs-backdrop="static">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content border-0 shadow">
+                <div class="modal-header bg-info bg-gradient text-white py-3">
+                    <h5 class="modal-title d-flex align-items-center gap-2">
+                        <i class="bx bx-help-circle"></i> Información de Ayuda
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close" title="Cerrar"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <div class="alert alert-info border-0 mb-4">
+                        <i class="bx bx-info-circle me-2"></i>
+                        <strong>Guía de uso - Gestión de Interesados</strong>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <h6 class="fw-semibold mb-3"><i class="bx bx-mouse text-primary me-2"></i>Acciones principales:</h6>
+                        <ul class="list-unstyled ms-3">
+                            <li class="mb-2">
+                                <i class="bx bx-chevron-right text-success me-1"></i>
+                                <strong>Haga click en cualquier registro para editar</strong>
+                            </li>
+                            <li class="mb-2">
+                                <i class="bx bx-chevron-right text-success me-1"></i>
+                                <strong>Use el botón lateral</strong> <span class="badge bg-secondary"><i class="bx bx-plus"></i></span> para añadir un nuevo interesado
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="mb-4">
+                        <h6 class="fw-semibold mb-3"><i class="bx bx-id-card text-warning me-2"></i>Identificación única:</h6>
+                        <div class="alert alert-warning border-0">
+                            <i class="bx bx-error me-2"></i>
+                            Los interesados se diferencian por <strong>Identificador</strong> (DNI, NIF, NIE,...).<br>
+                            <strong>No pueden haber 2 interesados con el mismo Identificador</strong>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h6 class="fw-semibold mb-3"><i class="bx bx-text text-info me-2"></i>Límites de caracteres:</h6>
+                        <p class="text-muted mb-2">Hay apartados limitados por cantidad de caracteres para evitar entradas excesivas. Ejemplos:</p>
+                        <ul class="list-unstyled ms-3">
+                            <li class="mb-1"><i class="bx bx-check-circle text-success me-1"></i><strong>Nombre:</strong> Máximo de caracteres</li>
+                            <li class="mb-1"><i class="bx bx-check-circle text-success me-1"></i><strong>Apellidos:</strong> Máximo de caracteres</li>
+                            <li class="mb-1"><i class="bx bx-check-circle text-success me-1"></i>Y otros campos del formulario</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="modal-footer bg-light">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                        <i class="bx bx-x me-1"></i>Cerrar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <?php include("../../config/templates/searchModal.php"); ?>
 

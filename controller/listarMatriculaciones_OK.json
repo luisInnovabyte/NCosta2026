@@ -1,19 +1,6 @@
 {
     "sEcho": 1,
-    "iTotalRecords": 1,
-    "iTotalDisplayRecords": 1,
-    "aaData": [
-        [
-            "I1",
-            "",
-            "",
-            "180,00\u20ac",
-            "16 %",
-            "0 %",
-            "<p class=\"tx-success tx-bold\">10-12-2025<\/p>",
-            "<p class=\"tx-danger  tx-bold\">12-12-2025<\/p>",
-            "<label class='badge bg-info tx-14-force'>Finalizada<\/label>",
-            "<button class='btn btn-info wave-effect' title='Editar Matricula' disabled onClick='editarMatriculaNew(51)'><i class='fa fa-edit'><\/i><\/button><button class='btn btn-danger waves-effect mg-l-10' title='Eliminar Matricula' disabled onClick='eliminarMatriculaNew(51)'><i class='fa fa-xmark'><\/i><\/button>"
-        ]
-    ]
+    "iTotalRecords": 0,
+    "iTotalDisplayRecords": 0,
+    "aaData": []
 }
