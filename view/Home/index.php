@@ -83,6 +83,13 @@
 
   <!--start main content-->
   <main class="page-content">
+    
+    <!-- Título de la empresa -->
+    <div class="d-flex justify-content-center align-items-center flex-column" style="min-height: 60vh;">
+      <h1 style="color: #1AA3E8; font-weight: 700; font-size: 4.5rem; margin-bottom: 0; font-family: 'Arial', sans-serif;">Costa de Valencia</h1>
+      <p style="color: #1AA3E8; font-weight: 400; font-size: 1.5rem; letter-spacing: 3px; margin-top: 5px;">ESCUELA DE ESPAÑOL</p>
+    </div>
+
     <input type="hidden" id="rolUsuInput" value="<?php echo $_SESSION['usu_rol']; ?>">
     <input type="hidden" id="depaSelect" value="<?php echo $_SESSION['llegada_idDepartamento']; ?>">
       <?php  if($_SESSION['usu_rol'] == 3 ){ ?>
