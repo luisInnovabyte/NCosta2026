@@ -1,4 +1,7 @@
 <?php
+// Habilitar reporte de errores para debugging
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
 require_once("../config/conexion.php");
 require_once("../config/funciones.php");
@@ -47,7 +50,7 @@ switch ($_GET["op"]) {
             $sub_array[] = '<p class="">' . $row["cuenta2_tarifa"] . '</p>';
             $sub_array[] = '<p class="">' . $row["cuenta3_tarifa"] . '</p>';
             $sub_array[] = '<p class="">' . $row["tipo_tarifa"] . '</p>';
-            $sub_array[] = '<span class="badge bg-info tx-14-force">' . $row["iva_tarifa"] . ' %' . '</span>';
+            $sub_array[] = '<span class="badge bg-info tx-14-force">' . $row["descrIva"] . ' %' . '</span>';
             if ($row["estTarifa"] == 1) {
                 $sub_array[] = '<p class="badge bg-success tx-14-force tx-bold text-center">Activo</p>';
             } elseif ($row["estTarifa"] == 0) {
@@ -405,6 +408,7 @@ switch ($_GET["op"]) {
             break;
         case "cambiarEstado":
             $idElemento = $_POST["idElemento"];
-            $tarifasAloja->cambiarEstado($idElemento);
+            $nuevoEstado = $tarifasAloja->cambiarEstado($idElemento);
+            echo json_encode(["nuevoEstado" => $nuevoEstado]);
             break;
 }

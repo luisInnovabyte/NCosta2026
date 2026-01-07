@@ -91,7 +91,8 @@ U.Versión: 1.0 28/05/2024
 <script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js"></script>
 
 <!-- TOASTR -->
-<script src="../../public/js/toastr.min.js"></script>
+<script src="../../public/assets/js/toastr/build/toastr.min.js"></script>
+<link rel="stylesheet" href="../../public/assets/js/toastr/build/toastr.min.css">
 
 <!-- + - bootstrap -->
 
@@ -108,7 +109,8 @@ U.Versión: 1.0 28/05/2024
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
 
-<script src="../../public/assets/js/toastr/toastr.js"></script>
+<!-- Ya no cargar toastr.js de nuevo porque ya está cargado arriba -->
+<!-- <script src="../../public/assets/js/toastr/toastr.js"></script> -->
 <script src="../../public/assets/js/lobibox/lobibox.min.js"></script>
 
 <!-- TORTILLA -->

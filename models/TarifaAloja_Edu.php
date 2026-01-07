@@ -6,7 +6,7 @@ class TarifaAloja extends Conectar
     {
         $conectar = parent::conexion();
         parent::set_names();
-        $sql = "SELECT * FROM `view_tarifa_iva` WHERE `estTarifa` = 1 ORDER BY `idTarifa` ASC";
+        $sql = "SELECT * FROM `view_tarifa_iva` ORDER BY `idTarifa` ASC";
         $sql = $conectar->prepare($sql);
         $sql->execute();
         return $resultado = $sql->fetchAll();
@@ -406,6 +406,12 @@ class TarifaAloja extends Conectar
 
         $sql = $conectar->prepare($sql);
         $sql->execute();
-        return $resultado = $sql->fetchAll();
+        
+        // Obtener el nuevo estado
+        $sql2 = "SELECT `estTarifa` FROM `tm_tarifa` WHERE `idTarifa` = $idElemento";
+        $sql2 = $conectar->prepare($sql2);
+        $sql2->execute();
+        $resultado = $sql2->fetch(PDO::FETCH_ASSOC);
+        return $resultado['estTarifa'];
     }
 }

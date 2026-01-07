@@ -444,7 +444,12 @@ function cambiarEstado(idElemento) {
     { idElemento: idElemento }, //! NO TOCAR
     function (data) {
       //? EDITAR ESTADO
-      toastr.success("Tarifa eliminada exitosamente."); //TODO: MODIFICAR MENSAJE DE SUCCESS
+      const respuesta = JSON.parse(data);
+      if (respuesta.nuevoEstado == 1) {
+        toastr.success("Tarifa activada exitosamente.");
+      } else {
+        toastr.info("Tarifa desactivada exitosamente.");
+      }
       $("#" + idDatatables + "")
         .DataTable()
         .ajax.reload(null, false); //! NO TOCAR

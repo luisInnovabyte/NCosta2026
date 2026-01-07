@@ -1,49 +1,48 @@
-<div id="insertar-tarifaAloja-modal" class="modal fade">
-    <div class="modal-dialog modal-xl">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Agregar Tarifa</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" title="Cerrar"></button>
+<div id="insertar-tarifaAloja-modal" class="modal fade" data-bs-backdrop="static">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+        <div class="modal-content border-0 shadow">
+            <div class="modal-header bg-primary bg-gradient text-white py-3">
+                <h5 class="modal-title d-flex align-items-center gap-2">
+                    <i class="bi bi-plus-circle"></i> Nueva Tarifa
+                </h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close" title="Cerrar"></button>
             </div>
-            <div class="modal-body">
-
-                <div class="card">
-                    <div class="card-body p-4">
-                        <div class="row">
-                            <h5 class="mb-4 ">Nuevo Tarifa</h5>
+            <div class="modal-body p-4">
+                <form id="insertar-tarifaAloja-form" method="POST">
+                    <div class="row g-4">
+                        <div class="col-12 col-lg-6">
+                            <label for="DescrTarifaAloja" class="form-label fw-semibold text-secondary">
+                                <i class="bi bi-tag me-1"></i> Nombre <span class="text-danger">*</span>
+                            </label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-light border-end-0"><i class="bi bi-tag text-primary"></i></span>
+                                <input type="text" class="form-control border-start-0 ps-0" id="DescrTarifaAloja" name="DescrTarifaAloja" placeholder="Nombre de la tarifa" data-type="3" data-min="3" data-max="100" data-new-input="1" data-descripcion="1" data-required="1">
+                            </div>
                         </div>
-                        <form id="insertar-tarifaAloja-form" method="POST">
-                            <div class="row g-3">
-                                <div class="col-12 col-lg-6">
-                                    <label for="nombreTipo" class="form-label">Nombre</label>
-
-                                    <div class="position-relative input-icon">
-                                        <span class="position-absolute top-50 translate-middle-y"><i class="bi bi-caret-right"></i></span>
-                                        <input type="text" class="form-control" id="DescrTarifaAloja" name="DescrTarifaAloja" placeholder="Nombre" data-type="3" data-min="3" data-max="100" data-new-input="1" data-descripcion="1" data-required="0">
-
-                                    </div>
-                                </div>
-                                <div class="col-12 col-lg-6">
-                                    <label for="nombreTipo" class="form-label">Codigo</label>
-
-                                    <div class="position-relative input-icon">
-                                        <span class="position-absolute top-50 translate-middle-y"><i class="bi bi-caret-right"></i></span>
-                                        <input type="text" class="form-control" id="codTarifaAloja" name="codTarifaAloja" placeholder="Codigo" data-type="3" data-min="3" data-max="10" data-new-input="1" data-descripcion="1" data-required="0">
-
-                                    </div>
-                                </div>
-                                <div class="col-12 col-lg-6">
-                                    <label for="nombreTipo" class="form-label">Cantidad</label>
-                                    <div class="position-relative input-icon">
-                                        <span class="position-absolute top-50 translate-middle-y"><i class="bi bi-caret-right"></i></span>
-                                        <input type="number" class="form-control" id="unidadTarifasAloja" name="unidadTarifasAloja" placeholder="Cantidad" min="0" value="1" data-type="5" data-min="1" data-max="3" data-new-input="1" data-descripcion="1" data-required="0">
-
-                                    </div>
-                                </div>
-                                <div class="col-12 col-lg-6">
-                                    <label for="nombreTipo" class="form-label">Unidad de Medida</label>
-                                    <div class="position-relative input-icon">
-                                        <span class="position-absolute top-50 translate-middle-y"><i class="bi bi-caret-right"></i></span>
+                        <div class="col-12 col-lg-6">
+                            <label for="codTarifaAloja" class="form-label fw-semibold text-secondary">
+                                <i class="bi bi-upc-scan me-1"></i> Código
+                            </label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-light border-end-0"><i class="bi bi-upc-scan text-primary"></i></span>
+                                <input type="text" class="form-control border-start-0 ps-0" id="codTarifaAloja" name="codTarifaAloja" placeholder="Código de la tarifa" data-type="3" data-min="3" data-max="10" data-new-input="1" data-descripcion="1" data-required="0">
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-6">
+                            <label for="unidadTarifasAloja" class="form-label fw-semibold text-secondary">
+                                <i class="bi bi-123 me-1"></i> Cantidad
+                            </label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-light border-end-0"><i class="bi bi-123 text-primary"></i></span>
+                                <input type="number" class="form-control border-start-0 ps-0" id="unidadTarifasAloja" name="unidadTarifasAloja" placeholder="Cantidad" min="0" value="1" data-type="5" data-min="1" data-max="3" data-new-input="1" data-descripcion="1" data-required="0">
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-6">
+                            <label for="unidadMedidaTarifaPlural" class="form-label fw-semibold text-secondary">
+                                <i class="bi bi-rulers me-1"></i> Unidad de Medida
+                            </label>
+                            <div class="input-group">
+                                
 
                                         <select class="select2 js-example-responsive" data-placeholder="SELECCIONA UNA UNIDAD DE MEDIDA" style="width: 100%;  height: 65px !important;" id="unidadMedidaTarifaPlural" name="unidadMedidaTarifaPlural">
                                             <option value="0" selected>SIN UNIDAD DE MEDIDA</option>
@@ -75,100 +74,98 @@
                                             <option value="11">Viaje</option>
                                             <option value="12">Oferta Especial</option>
                                         </select>
-                                    </div>
-                                </div>
-
-                                <div class="col-12 col-lg-6">
-                                    <label for="nombreTipo" class="form-label">Importe</label>
-                                    <div class="position-relative input-icon">
-                                        <span class="position-absolute top-50 translate-middle-y"><i class="bi bi-caret-right"></i></span>
-
-                                        <input type="number" class="form-control" id="importeTarifasAloja" name="importeTarifasAloja" placeholder="Nombre" data-type="5" data-min="1" data-max="10" data-new-input="1" data-descripcion="1" data-required="0">
-
-                                    </div>
-                                </div>
-                                <div class="col-12 col-lg-6">
-                                    <label for="nombreTipo" class="form-label">Descuento</label>
-                                    <div class="position-relative input-icon">
-                                        <span class="position-absolute top-50 translate-middle-y"><i class="bi bi-caret-right"></i></span>
-
-                                        <input type="number" class="form-control" id="descuentoTarifas" name="descuentoTarifas" placeholder="Nombre" value="0" min="-100" max="100" data-type="5" data-min="1" data-max="4" data-new-input="1" data-descripcion="1" data-required="0">
-
-                                    </div>
-                                </div>
-                                <div class="col-12 col-lg-4">
-                                    <label for="nombreTipo" class="form-label">Cuenta contable 1</label>
-                                    <div class="position-relative input-icon">
-                                        <span class="position-absolute top-50 translate-middle-y"><i class="bi bi-caret-right"></i></span>
-
-                                        <input type="text" class="form-control" id="cta1TarifasAloja" name="cta1TarifasAloja" placeholder="Nombre" data-type="3" data-min="1" data-max="50" data-new-input="1" data-descripcion="1" data-required="0">
-
-                                    </div>
-                                </div>
-                                <div class="col-12 col-lg-4">
-                                    <label for="nombreTipo" class="form-label">Cuenta contable 2</label>
-                                    <div class="position-relative input-icon">
-                                        <span class="position-absolute top-50 translate-middle-y"><i class="bi bi-caret-right"></i></span>
-
-                                        <input type="text" class="form-control" id="cta2TarifasAloja" name="cta2TarifasAloja" placeholder="Nombre" data-type="3" data-min="1" data-max="50" data-new-input="1" data-descripcion="1" data-required="0">
-
-                                    </div>
-                                </div>
-                                <div class="col-12 col-lg-4">
-                                    <label for="nombreTipo" class="form-label">Cuenta contable 3</label>
-                                    <div class="position-relative input-icon">
-                                        <span class="position-absolute top-50 translate-middle-y"><i class="bi bi-caret-right"></i></span>
-
-                                        <input type="text" class="form-control" id="cta3TarifasAloja" name="cta3TarifasAloja" placeholder="Nombre" data-type="3" data-min="1" data-max="50" data-new-input="1" data-descripcion="1" data-required="0">
-
-                                    </div>
-                                </div>
-                                <div class="col-12 col-lg-4">
-                                    <label for="nombreTipo" class="form-label">IVA</label>
-
-                                    <select class="select2 js-example-responsive" data-placeholder="SELECCIONA UN IVA" style="width: 100%;  height: 65px !important;" id="selectIva" name="selectIva">
-
-                                    </select>
-                                </div>
-                                <div class="col-12 col-lg-4">
-                                    <label for="nombreTipo" class="form-label">Departamento</label>
-                                    <div class="position-relative input-icon">
-                                        <span class="position-absolute top-50 translate-middle-y"><i class="bi bi-caret-right"></i></span>
-
-                                        <select class="select2 js-example-responsive" data-placeholder="SELECCIONA UN DEPARTAMENTO" style="width: 100%;  height: 65px !important;" id="departamentoTarifa" name="departamentoTarifa">
-
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-12 col-lg-4">
-                                    <label for="nombreTipo" class="form-label">Tipo</label>
-                                    <div class="position-relative input-icon">
-                                        <span class="position-absolute top-50 translate-middle-y"><i class="bi bi-caret-right"></i></span>
-
-                                        <select class="select2 js-example-responsive" data-placeholder="SELECCIONA UN DEPARTAMENTO" style="width: 100%;  height: 65px !important;" id="tipoTarifa" name="tipoTarifa">
-                                            <option value="Alojamiento">Alojamiento</option>
-                                            <option value="Docencia">Docencia</option>
-                                            <option value="Otros">Otros</option>
-
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-12 col-lg-12">
-                                    <label for="nombreTipo" class="form-label">Descripción</label>
-                                    <div class="position-relative input-icon">
-                                        <span class="position-absolute top-50 translate-middle-y"><i class="bi bi-caret-right"></i></span>
-                                        <textarea class="autoArea form-control" id="textTarifasAloja" name="textTarifasAloja" data-type="3" data-min="0" data-max="600" data-new-input="1" data-descripcion="1" data-required="0"></textarea>
-                                    </div>
-                                </div>
-
                             </div>
-                        </form>
+                        </div>
+
+                        <div class="col-12 col-lg-6">
+                            <label for="importeTarifasAloja" class="form-label fw-semibold text-secondary">
+                                <i class="bi bi-currency-euro me-1"></i> Importe <span class="text-danger">*</span>
+                            </label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-light border-end-0"><i class="bi bi-currency-euro text-primary"></i></span>
+                                <input type="number" class="form-control border-start-0 ps-0" id="importeTarifasAloja" name="importeTarifasAloja" placeholder="Importe" data-type="5" data-min="1" data-max="10" data-new-input="1" data-descripcion="1" data-required="1">
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-6">
+                            <label for="descuentoTarifas" class="form-label fw-semibold text-secondary">
+                                <i class="bi bi-percent me-1"></i> Descuento
+                            </label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-light border-end-0"><i class="bi bi-percent text-primary"></i></span>
+                                <input type="number" class="form-control border-start-0 ps-0" id="descuentoTarifas" name="descuentoTarifas" placeholder="Descuento (%)" value="0" min="-100" max="100" data-type="5" data-min="1" data-max="4" data-new-input="1" data-descripcion="1" data-required="0">
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-4">
+                            <label for="cta1TarifasAloja" class="form-label fw-semibold text-secondary">
+                                <i class="bi bi-calculator me-1"></i> Cuenta Contable 1
+                            </label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-light border-end-0"><i class="bi bi-calculator text-primary"></i></span>
+                                <input type="text" class="form-control border-start-0 ps-0" id="cta1TarifasAloja" name="cta1TarifasAloja" placeholder="Cuenta contable 1" data-type="3" data-min="1" data-max="50" data-new-input="1" data-descripcion="1" data-required="0">
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-4">
+                            <label for="cta2TarifasAloja" class="form-label fw-semibold text-secondary">
+                                <i class="bi bi-calculator me-1"></i> Cuenta Contable 2
+                            </label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-light border-end-0"><i class="bi bi-calculator text-primary"></i></span>
+                                <input type="text" class="form-control border-start-0 ps-0" id="cta2TarifasAloja" name="cta2TarifasAloja" placeholder="Cuenta contable 2" data-type="3" data-min="1" data-max="50" data-new-input="1" data-descripcion="1" data-required="0">
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-4">
+                            <label for="cta3TarifasAloja" class="form-label fw-semibold text-secondary">
+                                <i class="bi bi-calculator me-1"></i> Cuenta Contable 3
+                            </label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-light border-end-0"><i class="bi bi-calculator text-primary"></i></span>
+                                <input type="text" class="form-control border-start-0 ps-0" id="cta3TarifasAloja" name="cta3TarifasAloja" placeholder="Cuenta contable 3" data-type="3" data-min="1" data-max="50" data-new-input="1" data-descripcion="1" data-required="0">
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-4">
+                            <label for="selectIva" class="form-label fw-semibold text-secondary">
+                                <i class="bi bi-percent me-1"></i> IVA <span class="text-danger">*</span>
+                            </label>
+                            <select class="select2 js-example-responsive" data-placeholder="SELECCIONA UN IVA" style="width: 100%; height: 65px !important;" id="selectIva" name="selectIva">
+                            </select>
+                        </div>
+                        <div class="col-12 col-lg-4">
+                            <label for="departamentoTarifa" class="form-label fw-semibold text-secondary">
+                                <i class="bi bi-building me-1"></i> Departamento <span class="text-danger">*</span>
+                            </label>
+                            <select class="select2 js-example-responsive" data-placeholder="SELECCIONA UN DEPARTAMENTO" style="width: 100%; height: 65px !important;" id="departamentoTarifa" name="departamentoTarifa">
+                            </select>
+                        </div>
+                        <div class="col-12 col-lg-4">
+                            <label for="tipoTarifa" class="form-label fw-semibold text-secondary">
+                                <i class="bi bi-tags me-1"></i> Tipo <span class="text-danger">*</span>
+                            </label>
+                            <select class="select2 js-example-responsive" data-placeholder="SELECCIONA UN TIPO" style="width: 100%; height: 65px !important;" id="tipoTarifa" name="tipoTarifa">
+                                <option value="Alojamiento">Alojamiento</option>
+                                <option value="Docencia">Docencia</option>
+                                <option value="Otros">Otros</option>
+                            </select>
+                        </div>
+                        <div class="col-12">
+                            <label for="textTarifasAloja" class="form-label fw-semibold text-secondary">
+                                <i class="bi bi-chat-text me-1"></i> Descripción
+                            </label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-light border-end-0 align-items-start pt-2"><i class="bi bi-chat-text text-primary"></i></span>
+                                <textarea class="autoArea form-control border-start-0 ps-0" id="textTarifasAloja" name="textTarifasAloja" placeholder="Descripción de la tarifa" rows="3" data-type="3" data-min="0" data-max="600" data-new-input="1" data-descripcion="1" data-required="0"></textarea>
+                            </div>
+                        </div>
+
                     </div>
-                </div>
+                </form>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-bs-dismiss="modal" title="Cerrar">Cerrar</button>
-                <button type="button" class="btn btn-primary" title="Guardar Cambios" onClick="agregarElemento()">Aceptar</button>
+            <div class="modal-footer bg-light border-top-0 py-3">
+                <button type="button" class="btn btn-outline-secondary px-4" data-bs-dismiss="modal" title="Cerrar">
+                    <i class="bi bi-x-lg me-1"></i> Cancelar
+                </button>
+                <button type="button" class="btn btn-primary px-4" title="Guardar" onClick="agregarElemento()">
+                    <i class="bi bi-check-lg me-1"></i> Guardar
+                </button>
             </div>
         </div>
     </div>

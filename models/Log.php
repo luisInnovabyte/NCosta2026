@@ -30,20 +30,40 @@ class Log
 
     public function grabarLinea()
     {
-        $nombreFic = $this->nombreFichero();
-
-        $archivo = fopen($nombreFic, 'a+');
-        fwrite($archivo, $this->priPos);
-        fwrite($archivo, '; Archivo: ');
-        fwrite($archivo, $this->segPos);
-        fwrite($archivo, '; Acción: ');
-        fwrite($archivo, $this->terPos);
-        fwrite($archivo, '; Fecha: ');
-        fwrite($archivo, $this->fechaActual);
-        fwrite($archivo, '; Hora: ');
-        fwrite($archivo, $this->horaActual);
-        // baja una linea 
-        fwrite($archivo, "\n");
-        fclose($archivo);
+        try {
+            $nombreFic = $this->nombreFichero();
+            
+            // Verificar si el directorio existe, si no, intentar crearlo
+            $directorio = dirname($nombreFic);
+            if (!is_dir($directorio)) {
+                @mkdir($directorio, 0777, true);
+            }
+            
+            // Intentar abrir el archivo
+            $archivo = @fopen($nombreFic, 'a+');
+            
+            // Si no se puede abrir, salir silenciosamente
+            if ($archivo === false) {
+                return false;
+            }
+            
+            fwrite($archivo, $this->priPos);
+            fwrite($archivo, '; Archivo: ');
+            fwrite($archivo, $this->segPos);
+            fwrite($archivo, '; Acción: ');
+            fwrite($archivo, $this->terPos);
+            fwrite($archivo, '; Fecha: ');
+            fwrite($archivo, $this->fechaActual);
+            fwrite($archivo, '; Hora: ');
+            fwrite($archivo, $this->horaActual);
+            // baja una linea 
+            fwrite($archivo, "\n");
+            fclose($archivo);
+            
+            return true;
+        } catch (Exception $e) {
+            // Si hay error, no hacer nada (log silencioso)
+            return false;
+        }
     }
 }
