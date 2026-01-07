@@ -641,7 +641,11 @@
                                 
                                     <div class="tab-content cardLlegadas d-none" id="myTabContent">
 
-                                        <div class="tab-pane fade show active" id="docencia" role="tabpanel">
+                                     <!-- ====================================================== -->
+                                     <!--                      DOCENCIA LLEGADA                  -->
+                                     <!-- ====================================================== -->
+
+                                    <div class="tab-pane fade show active" id="docencia" role="tabpanel">
                                             <div class="card mt-3 card-hover">
                                                 <div class="card-body datos-generales2">
                                                     <h5 class="card-title d-flex justify-content-between align-items-center">
@@ -743,6 +747,10 @@
                                             </div>
                                         </div>
 
+                                     <!-- ====================================================== -->
+                                     <!--                 ALOJAMIENTO LLEGADA                    -->
+                                     <!-- ====================================================== -->
+
                                         <div class="tab-pane fade" id="alojamiento" role="tabpanel">
                                             <div class="card mt-3 card-hover">
                                                 <div class="card-body datos-generales3">
@@ -843,6 +851,11 @@
                                                 </div>
                                             </div>
                                         </div>
+
+
+                                     <!-- ====================================================== -->
+                                     <!--                      TRANSFER LLEGADA                  -->
+                                     <!-- ====================================================== -->
 
                                         <div class="tab-pane fade" id="transfer" role="tabpanel">
 
@@ -1002,6 +1015,10 @@
                                             </div>
                                         </div>
 
+                                     <!-- ====================================================== -->
+                                     <!--                       PAGOS LLEGADA                    -->
+                                     <!-- ====================================================== -->
+
                                         <div class="tab-pane fade" id="otros" role="tabpanel">
                                             <div class="card mt-3 card-hover">
                                                 <div class="card-body datos-generales7">
@@ -1060,6 +1077,10 @@
                                             </div>
                                         </div>
 
+                                     <!-- ====================================================== -->
+                                     <!--                      NIVEL LLEGADA                     -->
+                                     <!-- ====================================================== -->
+
                                         <div class="tab-pane fade " id="nivel" role="tabpanel">
                                             <div class="card mt-3 card-hover">
                                                 <div class="card-body datos-generales5">
@@ -1090,6 +1111,9 @@
                                             </div>
                                         </div>
 
+                                     <!-- ====================================================== -->
+                                     <!--                      VISADOS LLEGADA                   -->
+                                     <!-- ====================================================== -->
 
                                         <div class="tab-pane fade" id="visados" role="tabpanel">
                                             <div class="card mt-3 card-hover">
@@ -1143,6 +1167,9 @@
                                             </div>
                                         </div>
 
+                                     <!-- ====================================================== -->
+                                     <!--                      SUPLIDOS LLEGADA                  -->
+                                     <!-- ====================================================== -->
 
                                         <div class="tab-pane fade" id="suplidos" role="tabpanel">
                                             <div class="card mt-3 card-hover">
