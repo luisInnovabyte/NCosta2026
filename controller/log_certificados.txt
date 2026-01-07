@@ -1,0 +1,33 @@
+---------- NUEVA EJECUCIÓN ----------
+Entrando al case recogerCertificadosPerfil
+Error: ID prescriptor o token no encontrado en sesión
+---------- NUEVA EJECUCIÓN ----------
+Entrando al case recogerCertificadosPerfil
+Error: ID prescriptor o token no encontrado en sesión
+---------- NUEVA EJECUCIÓN ----------
+Entrando al case recogerCertificadosPerfil
+Error: ID prescriptor o token no encontrado en sesión
+---------- NUEVA EJECUCIÓN ----------
+Entrando al case recogerCertificadosPerfil
+Error: ID prescriptor o token no encontrado en sesión
+---------- NUEVA EJECUCIÓN ----------
+Entrando al case recogerCertificadosPerfil
+Error: ID prescriptor o token no encontrado en sesión
+---------- NUEVA EJECUCIÓN ----------
+Entrando al case recogerCertificadosPerfil
+Error: ID prescriptor o token no encontrado en sesión
+---------- NUEVA EJECUCIÓN ----------
+Entrando al case recogerCertificadosPerfil
+Error: ID prescriptor o token no encontrado en sesión
+---------- NUEVA EJECUCIÓN ----------
+Entrando al case recogerCertificadosPerfil
+Error: ID prescriptor o token no encontrado en sesión
+---------- NUEVA EJECUCIÓN ----------
+Entrando al case recogerCertificadosPerfil
+Error: ID prescriptor o token no encontrado en sesión
+---------- NUEVA EJECUCIÓN ----------
+Entrando al case recogerCertificadosPerfil
+Error: ID prescriptor o token no encontrado en sesión
+---------- NUEVA EJECUCIÓN ----------
+Entrando al case recogerCertificadosPerfil
+Error: ID prescriptor o token no encontrado en sesión

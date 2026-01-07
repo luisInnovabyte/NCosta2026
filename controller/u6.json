@@ -1,0 +1,1 @@
+"UPDATE `factura_contenido` SET numFactura = 22 WHERE idLlegadaFactura = 51  AND numFactura IS NULL;"

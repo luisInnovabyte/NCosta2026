@@ -1,0 +1,208 @@
+<<<<<<< HEAD
+2 - Software Admin Software;cliente.php;Mostrar clientes;05-03-2024;13:19:52
+2 - Software Admin Software;cliente.php;Mostrar clientes;05-03-2024;13:20:15
+2 - Software Admin Software;cliente.php;Mostrar clientes;05-03-2024;13:20:19
+2 - Software Admin Software;cliente.php;Mostrar clientes;05-03-2024;13:20:25
+2 - Software Admin Software;cliente.php;Mostrar clientes;05-03-2024;13:20:30
+2 - Software Admin Software;cliente.php;Mostrar clientes;05-03-2024;13:23:18
+2 - Software Admin Software;cliente.php;Mostrar clientes;05-03-2024;13:23:30
+2 - Software Admin Software;cliente.php;Mostrar clientes;05-03-2024;13:23:34
+2 - Software Admin Software;cliente.php;Mostrar clientes;05-03-2024;13:35:57
+2 - Software Admin Software;cliente.php;Mostrar clientes;05-03-2024;13:36:28
+2 - Software Admin Software;cliente.php;Mostrar clientes;05-03-2024;13:36:51
+2 - Software Admin Software;usuario.php;Mostrar usuarios;05-03-2024;13:43:07
+2 - Software Admin Software;gesdoc.php;Mostrar todos los documentos;05-03-2024;13:43:20
+2 - Software Admin Software;gesdoc.php;Mostrar todos los documentos;05-03-2024;13:43:20
+2 - Software Admin Software;gesdoc.php;Mostrar todos los documentos;05-03-2024;13:43:20
+2 - Software Admin Software;gesdoc.php;Mostrar todos los documentos;05-03-2024;13:43:30
+2 - Software Admin Software;gesdoc.php;Mostrar todos los documentos;05-03-2024;13:43:30
+2 - Software Admin Software;gesdoc.php;Mostrar todos los documentos;05-03-2024;13:43:30
+2 - Software Admin Software;usuario.php;Mostrar usuarios;05-03-2024;13:44:02
+2 - Software Admin Software;usuario.php;Mostrar usuarios;05-03-2024;13:49:25
+2 - Software Admin Software;cliente.php;Mostrar clientes;05-03-2024;15:32:20
+2 - Software Admin Software;cliente.php;Mostrar clientes;05-03-2024;15:35:25
+2 - Software Admin Software;cliente.php;Mostrar clientes;05-03-2024;15:37:11
+2 - Software Admin Software;cliente.php;Mostrar clientes;05-03-2024;15:37:54
+2 - Software Admin Software;cliente.php;Mostrar clientes;05-03-2024;15:38:23
+2 - Software Admin Software;cliente.php;Mostrar clientes;05-03-2024;15:38:59
+2 - Software Admin Software;cliente.php;Mostrar clientes;05-03-2024;15:44:53
+2 - Software Admin Software;cliente.php;Mostrar clientes;05-03-2024;15:44:55
+2 - Software Admin Software;cliente.php;Mostrar clientes;05-03-2024;15:45:22
+2 - Software Admin Software;cliente.php;Mostrar clientes;05-03-2024;15:45:24
+2 - Software Admin Software;cliente.php;Mostrar clientes;05-03-2024;15:45:26
+2 - Software Admin Software;cliente.php;Mostrar clientes;05-03-2024;15:45:50
+2 - Software Admin Software;cliente.php;Mostrar clientes;05-03-2024;15:45:53
+2 - Software Admin Software;cliente.php;Mostrar clientes;05-03-2024;15:45:54
+2 - Software Admin Software;cliente.php;Mostrar clientes;05-03-2024;15:58:20
+2 - Software Admin Software;cliente.php;Mostrar clientes;05-03-2024;16:01:08
+2 - Software Admin Software;cliente.php;Mostrar clientes;05-03-2024;16:01:30
+2 - Software Admin Software;cliente.php;Mostrar clientes;05-03-2024;16:05:32
+2 - Software Admin Software;cliente.php;Mostrar clientes;05-03-2024;16:09:05
+2 - Software Admin Software;cliente.php;Mostrar clientes;05-03-2024;16:09:22
+2 - Software Admin Software;cliente.php;Mostrar clientes;05-03-2024;16:17:00
+2 - Software Admin Software;cliente.php;Mostrar clientes;05-03-2024;16:56:30
+2 - Software Admin Software;tickets.php;Mostrar Tickets;05-03-2024;17:41:12
+=======
+1 - Joser;usuario.php;Mostrar usuarios;05-03-2024;08:06:28
+1 - Joser;cliente.php;Mostrar clientes;05-03-2024;08:06:31
+1 - Joser;tickets.php;Mostrar Tickets;05-03-2024;08:06:45
+1 - Joser;empresa.php;Listar datos de empresa;05-03-2024;08:06:50
+1 - Joser;usuario.php;Mostrar usuarios;05-03-2024;08:06:56
+1 - Joser;gesdoc.php;Mostrar todos los documentos;05-03-2024;08:06:56
+1 - Joser;gesdoc.php;Mostrar todos los documentos;05-03-2024;08:06:56
+1 - Joser;gesdoc.php;Mostrar todos los documentos;05-03-2024;08:06:57
+1 - Joser;usuario.php;Mostrar usuarios;05-03-2024;08:16:55
+1 - Joser;cliente.php;Mostrar clientes;05-03-2024;08:17:10
+1 - Joser;usuario.php;Mostrar usuarios;05-03-2024;08:20:43
+1 - Joser;usuario.php;Mostrar usuarios;05-03-2024;08:21:52
+1 - Joser;cliente.php;Mostrar clientes;05-03-2024;08:30:12
+1 - Joser;cliente.php;Mostrar clientes;05-03-2024;08:30:42
+1 - Joser;cliente.php;Mostrar clientes;05-03-2024;08:30:46
+1 - Joser;cliente.php;Mostrar clientes;05-03-2024;08:31:07
+1 - Joser;usuario.php;Mostrar usuarios;05-03-2024;08:31:13
+1 - Joser;cliente.php;Mostrar clientes;05-03-2024;08:32:00
+1 - Joser;cliente.php;Mostrar clientes;05-03-2024;08:32:04
+1 - Joser;cliente.php;Mostrar clientes;05-03-2024;08:32:08
+1 - Joser;cliente.php;Mostrar clientes;05-03-2024;08:32:31
+1 - Joser;cliente.php;Mostrar clientes;05-03-2024;08:35:00
+1 - Joser;cliente.php;Mostrar clientes;05-03-2024;08:35:16
+1 - Joser;usuario.php;Se recoge usuario con id: 2;05-03-2024;08:39:00
+1 - Joser;tickets.php;Mostrar Tickets;05-03-2024;08:51:35
+1 - Joser;tickets.php;Mostrar Tickets;05-03-2024;08:52:52
+1 - Joser;usuario.php;Mostrar usuarios;05-03-2024;08:52:56
+1 - Joser;gesdoc.php;Mostrar todos los documentos;05-03-2024;08:53:08
+1 - Joser;gesdoc.php;Mostrar todos los documentos;05-03-2024;08:53:08
+1 - Joser;gesdoc.php;Mostrar todos los documentos;05-03-2024;08:53:08
+1 - Joser;tickets.php;Mostrar Tickets;05-03-2024;08:53:10
+1 - Joser;empresa.php;Listar datos de empresa;05-03-2024;08:53:44
+1 - Joser;cliente.php;Mostrar clientes;05-03-2024;08:53:55
+1 - Joser;cliente.php;Mostrar clientes;05-03-2024;08:56:11
+1 - Joser;cliente.php;Mostrar clientes;05-03-2024;09:27:18
+1 - Joser;cliente.php;Mostrar clientes;05-03-2024;09:27:29
+1 - Joser;cliente.php;Mostrar clientes;05-03-2024;09:36:49
+1 - Joser;usuario.php;Mostrar usuarios;05-03-2024;09:39:12
+1 - Joser;cliente.php;Mostrar clientes;05-03-2024;09:39:14
+1 - Joser;usuario.php;Mostrar usuarios;05-03-2024;09:40:12
+1 - Joser;tickets.php;Mostrar Tickets;05-03-2024;09:41:21
+1 - Joser;cliente.php;Mostrar clientes;05-03-2024;09:41:32
+1 - Joser;cliente.php;Mostrar clientes;05-03-2024;09:41:42
+1 - Joser;cliente.php;Mostrar clientes;05-03-2024;09:42:28
+1 - Joser;usuario.php;Mostrar usuarios;05-03-2024;09:43:11
+1 - Joser;cliente.php;Mostrar clientes;05-03-2024;09:44:49
+1 - Joser;cliente.php;Mostrar clientes;05-03-2024;09:45:18
+1 - Joser;cliente.php;Mostrar clientes;05-03-2024;09:49:15
+1 - Joser;cliente.php;Mostrar clientes;05-03-2024;09:49:37
+1 - Joser;cliente.php;Mostrar clientes;05-03-2024;09:50:30
+1 - Joser;cliente.php;Mostrar clientes;05-03-2024;09:50:34
+1 - Joser;cliente.php;Mostrar clientes;05-03-2024;09:51:15
+1 - Joser;cliente.php;Mostrar clientes;05-03-2024;09:51:59
+1 - Joser;cliente.php;Mostrar clientes;05-03-2024;09:52:43
+1 - Joser;usuario.php;Mostrar usuarios;05-03-2024;09:53:34
+1 - Joser;usuario.php;Mostrar usuarios;05-03-2024;09:53:41
+1 - Joser;cliente.php;Mostrar clientes;05-03-2024;09:54:03
+1 - Joser;cliente.php;Mostrar clientes;05-03-2024;09:54:25
+1 - Joser;usuario.php;Mostrar usuarios;05-03-2024;09:58:49
+1 - Joser;cliente.php;Mostrar clientes;05-03-2024;10:04:41
+1 - Joser;cliente.php;Mostrar clientes;05-03-2024;10:07:58
+1 - Joser;usuario.php;Mostrar usuarios;05-03-2024;10:08:48
+1 - Joser;usuario.php;Se recoge usuario con id: 1;05-03-2024;10:08:49
+1 - Joser;usuario.php;Se recoge usuario con id: 1;05-03-2024;10:09:50
+1 - Joser;usuario.php;Se edita el usuario con id: 1;05-03-2024;10:09:54
+1 - Joser;usuario.php;Mostrar usuarios;05-03-2024;10:09:54
+1 - Joser;usuario.php;Mostrar usuarios;05-03-2024;10:20:09
+1 - Joser;cliente.php;Mostrar clientes;05-03-2024;10:20:17
+ - ;usuario.php;Se hace login;05-03-2024;10:20:35
+1 - Joser;cliente.php;Mostrar clientes;05-03-2024;10:20:38
+1 - Joser;cliente.php;Mostrar clientes;05-03-2024;10:20:55
+0 - Super;cliente.php;Mostrar clientes;05-03-2024;10:21:18
+1 - Joser;usuario.php;Mostrar usuarios;05-03-2024;10:22:56
+1 - Joser;usuario.php;Se desactiva el usuario con id: 2;05-03-2024;10:23:00
+1 - Joser;usuario.php;Mostrar usuarios;05-03-2024;10:23:00
+1 - Joser;usuario.php;Se activa el usuario con id: 2;05-03-2024;10:23:07
+1 - Joser;usuario.php;Mostrar usuarios;05-03-2024;10:23:07
+1 - Joser;usuario.php;Se desactiva el usuario con id: 2;05-03-2024;10:23:11
+1 - Joser;usuario.php;Mostrar usuarios;05-03-2024;10:23:11
+1 - Joser;usuario.php;Se activa el usuario con id: 2;05-03-2024;10:23:16
+1 - Joser;usuario.php;Mostrar usuarios;05-03-2024;10:23:16
+1 - Joser;usuario.php;Se desactiva el usuario con id: 2;05-03-2024;10:23:25
+1 - Joser;usuario.php;Mostrar usuarios;05-03-2024;10:23:25
+1 - Joser;cliente.php;Mostrar clientes;05-03-2024;10:23:31
+1 - Joser;cliente.php;Mostrar clientes;05-03-2024;10:23:48
+1 - Joser;cliente.php;Mostrar clientes;05-03-2024;10:24:37
+1 - Joser;usuario.php;Mostrar usuarios;05-03-2024;10:24:40
+1 - Joser;cliente.php;Mostrar clientes;05-03-2024;10:24:49
+1 - Joser;cliente.php;Mostrar clientes;05-03-2024;11:54:04
+1 - Joser;cliente.php;Mostrar clientes;05-03-2024;12:07:56
+1 - Joser;cliente.php;Mostrar clientes;05-03-2024;12:10:28
+1 - Joser;cliente.php;Mostrar clientes;05-03-2024;12:10:55
+1 - Joser;cliente.php;Mostrar clientes;05-03-2024;12:11:06
+1 - Joser;cliente.php;Mostrar clientes;05-03-2024;12:12:40
+1 - Joser;cliente.php;Mostrar clientes;05-03-2024;12:13:05
+1 - Joser;cliente.php;Mostrar clientes;05-03-2024;12:13:41
+1 - Joser;cliente.php;Mostrar clientes;05-03-2024;12:14:30
+1 - Joser;cliente.php;Mostrar clientes;05-03-2024;12:14:59
+1 - Joser;cliente.php;Mostrar clientes;05-03-2024;12:15:08
+1 - Joser;cliente.php;Mostrar clientes;05-03-2024;12:16:12
+1 - Joser;cliente.php;Mostrar clientes;05-03-2024;12:17:04
+1 - Joser;cliente.php;Mostrar clientes;05-03-2024;12:18:51
+1 - Joser;cliente.php;Mostrar clientes;05-03-2024;12:23:00
+1 - Joser;cliente.php;Mostrar clientes;05-03-2024;12:24:26
+1 - Joser;cliente.php;Mostrar clientes;05-03-2024;12:34:38
+1 - Joser;cliente.php;Mostrar clientes;05-03-2024;12:34:52
+1 - Joser;cliente.php;Mostrar clientes;05-03-2024;12:35:05
+1 - Joser;cliente.php;Mostrar clientes;05-03-2024;12:35:15
+1 - Joser;cliente.php;Mostrar clientes;05-03-2024;12:35:23
+1 - Joser;usuario.php;Mostrar usuarios;05-03-2024;12:35:26
+1 - Joser;cliente.php;Mostrar clientes;05-03-2024;12:35:33
+1 - Joser;cliente.php;Mostrar clientes;05-03-2024;12:36:20
+1 - Joser;cliente.php;Mostrar clientes;05-03-2024;12:38:07
+1 - Joser;cliente.php;Mostrar clientes;05-03-2024;12:38:45
+1 - Joser;cliente.php;Mostrar clientes;05-03-2024;12:39:57
+1 - Joser;cliente.php;Mostrar clientes;05-03-2024;12:41:28
+1 - Joser;cliente.php;Mostrar clientes;05-03-2024;12:43:32
+1 - Joser;cliente.php;Mostrar clientes;05-03-2024;12:44:49
+1 - Joser;cliente.php;Mostrar clientes;05-03-2024;12:45:00
+1 - Joser;cliente.php;Mostrar clientes;05-03-2024;12:45:06
+1 - Joser;cliente.php;Mostrar clientes;05-03-2024;12:45:13
+1 - Joser;cliente.php;Mostrar clientes;05-03-2024;12:46:01
+1 - Joser;cliente.php;Mostrar clientes;05-03-2024;12:46:39
+1 - Joser;cliente.php;Mostrar clientes;05-03-2024;12:49:36
+1 - Joser;cliente.php;Mostrar clientes;05-03-2024;12:49:48
+1 - Joser;cliente.php;Mostrar clientes;05-03-2024;12:50:26
+1 - Joser;cliente.php;Mostrar clientes;05-03-2024;12:50:43
+1 - Joser;cliente.php;Mostrar clientes;05-03-2024;12:51:43
+1 - Joser;cliente.php;Mostrar clientes;05-03-2024;12:52:00
+1 - Joser;cliente.php;Mostrar clientes;05-03-2024;12:52:09
+1 - Joser;cliente.php;Mostrar clientes;05-03-2024;12:52:17
+1 - Joser;cliente.php;Mostrar clientes;05-03-2024;12:52:26
+1 - Joser;cliente.php;Mostrar clientes;05-03-2024;12:54:09
+1 - Joser;tickets.php;Mostrar Tickets;05-03-2024;12:56:58
+1 - Joser;cliente.php;Mostrar clientes;05-03-2024;12:57:57
+1 - Joser;usuario.php;Mostrar usuarios;05-03-2024;12:59:51
+1 - Joser;cliente.php;Mostrar clientes;05-03-2024;13:00:52
+1 - Joser;cliente.php;Mostrar clientes;05-03-2024;13:06:44
+1 - Joser;cliente.php;Mostrar clientes;05-03-2024;13:07:55
+1 - Joser;cliente.php;Mostrar clientes;05-03-2024;13:08:41
+1 - Joser;cliente.php;Mostrar clientes;05-03-2024;13:08:54
+1 - Joser;cliente.php;Mostrar clientes;05-03-2024;13:11:19
+1 - Joser;cliente.php;Mostrar clientes;05-03-2024;13:13:24
+1 - Joser;cliente.php;Mostrar clientes;05-03-2024;13:13:38
+1 - Joser;cliente.php;Mostrar clientes;05-03-2024;13:13:55
+1 - Joser;cliente.php;Mostrar clientes;05-03-2024;13:14:14
+1 - Joser;cliente.php;Mostrar clientes;05-03-2024;13:18:03
+1 - Joser;cliente.php;Mostrar clientes;05-03-2024;13:24:05
+1 - Joser;cliente.php;Mostrar clientes;05-03-2024;13:25:10
+1 - Joser;cliente.php;Mostrar clientes;05-03-2024;13:25:34
+1 - Joser;cliente.php;Mostrar clientes;05-03-2024;13:25:42
+1 - Joser;cliente.php;Mostrar clientes;05-03-2024;13:25:44
+1 - Joser;cliente.php;Mostrar clientes;05-03-2024;13:25:52
+1 - Joser;cliente.php;Mostrar clientes;05-03-2024;13:26:00
+1 - Joser;cliente.php;Mostrar clientes;05-03-2024;13:26:30
+1 - Joser;cliente.php;Mostrar clientes;05-03-2024;13:28:30
+1 - Joser;cliente.php;Mostrar clientes;05-03-2024;13:29:22
+1 - Joser;cliente.php;Mostrar clientes;05-03-2024;13:32:08
+1 - Joser;cliente.php;Mostrar clientes;05-03-2024;13:44:35
+1 - Joser;cliente.php;Mostrar clientes;05-03-2024;13:48:49
+1 - Joser;cliente.php;Mostrar clientes;05-03-2024;13:49:30
+1 - Joser;cliente.php;Mostrar clientes;05-03-2024;13:53:30
+>>>>>>> 76ef6ba14bd931c3cb3cec21860e039a1bf7da7c

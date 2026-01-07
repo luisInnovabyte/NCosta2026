@@ -1,0 +1,119 @@
+ID: 1 - Nombre: Software - IP: 192.168.31.3; Archivo: usuario.php; Acción: Se hace login; Fecha: 24-09-2025; Hora: 12:09:52
+ID: 1 - Nombre: Software - IP: 192.168.31.3; Archivo: usuario.php; Acción: Se hace login; Fecha: 24-09-2025; Hora: 13:37:37
+ID: 1 - Nombre: Software - IP: 192.168.31.3; Archivo: usuario.php; Acción: Se hace login; Fecha: 24-09-2025; Hora: 14:16:58
+1 - Software; Archivo: pagos.php; Acción: Recoger los medios de pago; Fecha: 24-09-2025; Hora: 14:17:10
+1 - Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 24-09-2025; Hora: 14:17:10
+1 - Software; Archivo: pagos.php; Acción: Recoger los medios de pago; Fecha: 24-09-2025; Hora: 14:17:17
+1 - Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 24-09-2025; Hora: 14:17:17
+1 - Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 24-09-2025; Hora: 14:22:02
+ID: 1 - Nombre: Software - IP: 85.51.12.82; Archivo: usuario.php; Acción: Se hace login; Fecha: 24-09-2025; Hora: 19:54:11
+1 - Software; Archivo: medios.php; Acción: Lista los medios de pago; Fecha: 24-09-2025; Hora: 19:54:17
+1 - Software; Archivo: pagos.php; Acción: Recoger los medios de pago por id; Fecha: 24-09-2025; Hora: 19:54:25
+1 - Software; Archivo: pagos.php; Acción: editar pago; Fecha: 24-09-2025; Hora: 19:54:32
+1 - Software; Archivo: medios.php; Acción: Lista los medios de pago; Fecha: 24-09-2025; Hora: 19:54:32
+1 - Software; Archivo: medios.php; Acción: Lista los medios de pago; Fecha: 24-09-2025; Hora: 19:54:38
+1 - Software; Archivo: pagos.php; Acción: insertar pago; Fecha: 24-09-2025; Hora: 19:55:04
+1 - Software; Archivo: medios.php; Acción: Lista los medios de pago; Fecha: 24-09-2025; Hora: 19:55:04
+1 - Software; Archivo: pagos.php; Acción: insertar pago; Fecha: 24-09-2025; Hora: 19:55:30
+1 - Software; Archivo: medios.php; Acción: Lista los medios de pago; Fecha: 24-09-2025; Hora: 19:55:30
+1 - Software; Archivo: pagos.php; Acción: Recoger los medios de pago por id; Fecha: 24-09-2025; Hora: 19:55:38
+1 - Software; Archivo: medios.php; Acción: Lista los medios de pago; Fecha: 24-09-2025; Hora: 19:56:00
+1 - Software; Archivo: pagos.php; Acción: Recoger los medios de pago por id; Fecha: 24-09-2025; Hora: 19:56:04
+1 - Software; Archivo: pagos.php; Acción: editar pago; Fecha: 24-09-2025; Hora: 19:56:09
+1 - Software; Archivo: medios.php; Acción: Lista los medios de pago; Fecha: 24-09-2025; Hora: 19:56:09
+1 - Software; Archivo: pagos.php; Acción: insertar pago; Fecha: 24-09-2025; Hora: 19:56:28
+1 - Software; Archivo: medios.php; Acción: Lista los medios de pago; Fecha: 24-09-2025; Hora: 19:56:28
+1 - Software; Archivo: niveles.php; Acción: Lista los niveles; Fecha: 24-09-2025; Hora: 19:56:46
+1 - Software; Archivo: tipoCurso_Edu.php; Acción: Lista los tipos de curso; Fecha: 24-09-2025; Hora: 19:57:01
+1 - Software; Archivo: idiomas.php; Acción: Lista los idiomas; Fecha: 24-09-2025; Hora: 19:57:10
+1 - Software; Archivo: idiomas.php; Acción: Lista los idiomas; Fecha: 24-09-2025; Hora: 19:57:23
+1 - Software; Archivo: idiomas.php; Acción: Se edita el idioma 9; Fecha: 24-09-2025; Hora: 19:57:32
+1 - Software; Archivo: idiomas.php; Acción: Lista los idiomas; Fecha: 24-09-2025; Hora: 19:57:32
+1 - Software; Archivo: idiomas.php; Acción: Se inserta un nuevo idioma ; Fecha: 24-09-2025; Hora: 19:58:06
+1 - Software; Archivo: idiomas.php; Acción: Lista los idiomas; Fecha: 24-09-2025; Hora: 19:58:07
+1 - Software; Archivo: tipoCurso_Edu.php; Acción: Lista los tipos de curso; Fecha: 24-09-2025; Hora: 19:59:01
+1 - Software; Archivo: tiposAloja_Edu.php; Acción: Lista los tipos de alojamiento ; Fecha: 24-09-2025; Hora: 19:59:13
+1 - Software; Archivo: tiposAloja_Edu.php; Acción: Se edita el tipo de alojamiento 1; Fecha: 24-09-2025; Hora: 20:00:46
+1 - Software; Archivo: tiposAloja_Edu.php; Acción: Lista los tipos de alojamiento ; Fecha: 24-09-2025; Hora: 20:00:46
+1 - Software; Archivo: alojamientos.php; Acción: Lista los alojamientos; Fecha: 24-09-2025; Hora: 20:00:54
+1 - Software; Archivo: alojamientos.php; Acción: Lista los alojamientos; Fecha: 24-09-2025; Hora: 20:00:54
+1 - Software; Archivo: alojamientos.php; Acción: Lista los alojamientos; Fecha: 24-09-2025; Hora: 20:00:55
+1 - Software; Archivo: alojamientos.php; Acción: Lista los alojamientos; Fecha: 24-09-2025; Hora: 20:00:55
+1 - Software; Archivo: alojamientos.php; Acción: Lista los alojamientos; Fecha: 24-09-2025; Hora: 20:25:11
+1 - Software; Archivo: alojamientos.php; Acción: Lista los alojamientos; Fecha: 24-09-2025; Hora: 20:25:11
+1 - Software; Archivo: alojamientos.php; Acción: Lista los alojamientos; Fecha: 24-09-2025; Hora: 20:25:11
+1 - Software; Archivo: alojamientos.php; Acción: Lista los alojamientos; Fecha: 24-09-2025; Hora: 20:25:11
+1 - Software; Archivo: tiposAloja_Edu.php; Acción: Lista los tipos de alojamiento ; Fecha: 24-09-2025; Hora: 20:28:13
+1 - Software; Archivo: alojamientos.php; Acción: Lista los alojamientos; Fecha: 24-09-2025; Hora: 20:28:15
+1 - Software; Archivo: alojamientos.php; Acción: Lista los alojamientos; Fecha: 24-09-2025; Hora: 20:28:15
+1 - Software; Archivo: alojamientos.php; Acción: Lista los alojamientos; Fecha: 24-09-2025; Hora: 20:28:16
+1 - Software; Archivo: alojamientos.php; Acción: Lista los alojamientos; Fecha: 24-09-2025; Hora: 20:28:16
+1 - Software; Archivo: alojamientos.php; Acción: Lista los alojamientos; Fecha: 24-09-2025; Hora: 20:28:21
+1 - Software; Archivo: alojamientos.php; Acción: Lista los alojamientos; Fecha: 24-09-2025; Hora: 20:28:21
+1 - Software; Archivo: alojamientos.php; Acción: Lista los alojamientos; Fecha: 24-09-2025; Hora: 20:28:21
+1 - Software; Archivo: alojamientos.php; Acción: Lista los alojamientos; Fecha: 24-09-2025; Hora: 20:28:21
+1 - Software; Archivo: alojamientos.php; Acción: Lista los alojamientos; Fecha: 24-09-2025; Hora: 20:28:57
+1 - Software; Archivo: alojamientos.php; Acción: Lista los alojamientos; Fecha: 24-09-2025; Hora: 20:28:57
+1 - Software; Archivo: alojamientos.php; Acción: Lista los alojamientos; Fecha: 24-09-2025; Hora: 20:28:58
+1 - Software; Archivo: alojamientos.php; Acción: Lista los alojamientos; Fecha: 24-09-2025; Hora: 20:28:58
+1 - Software; Archivo: alojamientos.php; Acción: Activa el alojamiento 2; Fecha: 24-09-2025; Hora: 20:29:39
+1 - Software; Archivo: alojamientos.php; Acción: Lista los alojamientos; Fecha: 24-09-2025; Hora: 20:29:39
+1 - Software; Archivo: alojamientos.php; Acción: Lista los alojamientos; Fecha: 24-09-2025; Hora: 20:29:39
+1 - Software; Archivo: alojamientos.php; Acción: Lista los alojamientos; Fecha: 24-09-2025; Hora: 20:36:27
+1 - Software; Archivo: alojamientos.php; Acción: Lista los alojamientos; Fecha: 24-09-2025; Hora: 20:36:27
+1 - Software; Archivo: tiposAloja_Edu.php; Acción: Lista los tipos de alojamiento ; Fecha: 24-09-2025; Hora: 20:36:27
+1 - Software; Archivo: tipoCurso_Edu.php; Acción: Lista los tipos de curso; Fecha: 24-09-2025; Hora: 20:36:27
+1 - Software; Archivo: tiposAloja_Edu.php; Acción: Lista los tipos de alojamiento ; Fecha: 24-09-2025; Hora: 20:36:29
+1 - Software; Archivo: alojamientos.php; Acción: Lista los alojamientos; Fecha: 24-09-2025; Hora: 20:36:39
+1 - Software; Archivo: alojamientos.php; Acción: Lista los alojamientos; Fecha: 24-09-2025; Hora: 20:36:39
+1 - Software; Archivo: alojamientos.php; Acción: Lista los alojamientos; Fecha: 24-09-2025; Hora: 20:36:39
+1 - Software; Archivo: alojamientos.php; Acción: Lista los alojamientos; Fecha: 24-09-2025; Hora: 20:36:39
+1 - Software; Archivo: alojamientos.php; Acción: Lista los alojamientos; Fecha: 24-09-2025; Hora: 20:39:06
+1 - Software; Archivo: alojamientos.php; Acción: Lista los alojamientos; Fecha: 24-09-2025; Hora: 20:39:06
+1 - Software; Archivo: alojamientos.php; Acción: Lista los alojamientos; Fecha: 24-09-2025; Hora: 20:39:06
+1 - Software; Archivo: alojamientos.php; Acción: Lista los alojamientos; Fecha: 24-09-2025; Hora: 20:39:06
+1 - Software; Archivo: alojamientos.php; Acción: Lista los alojamientos; Fecha: 24-09-2025; Hora: 20:39:42
+1 - Software; Archivo: alojamientos.php; Acción: Lista los alojamientos; Fecha: 24-09-2025; Hora: 20:39:42
+1 - Software; Archivo: alojamientos.php; Acción: Lista los alojamientos; Fecha: 24-09-2025; Hora: 20:39:42
+1 - Software; Archivo: alojamientos.php; Acción: Lista los alojamientos; Fecha: 24-09-2025; Hora: 20:39:42
+1 - Software; Archivo: alojamientos.php; Acción: Lista los alojamientos; Fecha: 24-09-2025; Hora: 20:46:15
+1 - Software; Archivo: alojamientos.php; Acción: Lista los alojamientos; Fecha: 24-09-2025; Hora: 20:46:15
+1 - Software; Archivo: alojamientos.php; Acción: Lista los alojamientos; Fecha: 24-09-2025; Hora: 20:46:16
+1 - Software; Archivo: alojamientos.php; Acción: Lista los alojamientos; Fecha: 24-09-2025; Hora: 20:46:16
+1 - Software; Archivo: alojamientos.php; Acción: Lista los alojamientos; Fecha: 24-09-2025; Hora: 20:46:20
+1 - Software; Archivo: alojamientos.php; Acción: Lista los alojamientos; Fecha: 24-09-2025; Hora: 20:46:20
+1 - Software; Archivo: alojamientos.php; Acción: Lista los alojamientos; Fecha: 24-09-2025; Hora: 20:46:21
+1 - Software; Archivo: alojamientos.php; Acción: Lista los alojamientos; Fecha: 24-09-2025; Hora: 20:46:21
+1 - Software; Archivo: tiposAloja_Edu.php; Acción: Lista los tipos de alojamiento ; Fecha: 24-09-2025; Hora: 20:46:26
+1 - Software; Archivo: alojamientos.php; Acción: Lista los alojamientos; Fecha: 24-09-2025; Hora: 20:46:53
+1 - Software; Archivo: alojamientos.php; Acción: Lista los alojamientos; Fecha: 24-09-2025; Hora: 20:46:53
+1 - Software; Archivo: alojamientos.php; Acción: Lista los alojamientos; Fecha: 24-09-2025; Hora: 20:46:53
+1 - Software; Archivo: alojamientos.php; Acción: Lista los alojamientos; Fecha: 24-09-2025; Hora: 20:46:53
+1 - Software; Archivo: alojamientos.php; Acción: Lista los alojamientos; Fecha: 24-09-2025; Hora: 20:47:59
+1 - Software; Archivo: alojamientos.php; Acción: Lista los alojamientos; Fecha: 24-09-2025; Hora: 20:47:59
+1 - Software; Archivo: alojamientos.php; Acción: Lista los alojamientos; Fecha: 24-09-2025; Hora: 20:47:59
+1 - Software; Archivo: alojamientos.php; Acción: Lista los alojamientos; Fecha: 24-09-2025; Hora: 20:47:59
+1 - Software; Archivo: tiposAloja_Edu.php; Acción: Lista los tipos de alojamiento ; Fecha: 24-09-2025; Hora: 20:48:00
+1 - Software; Archivo: alojamientos.php; Acción: Lista los alojamientos; Fecha: 24-09-2025; Hora: 20:48:02
+1 - Software; Archivo: alojamientos.php; Acción: Lista los alojamientos; Fecha: 24-09-2025; Hora: 20:48:02
+1 - Software; Archivo: alojamientos.php; Acción: Lista los alojamientos; Fecha: 24-09-2025; Hora: 20:48:02
+1 - Software; Archivo: alojamientos.php; Acción: Lista los alojamientos; Fecha: 24-09-2025; Hora: 20:48:02
+1 - Software; Archivo: alojamientos.php; Acción: Lista los alojamientos; Fecha: 24-09-2025; Hora: 20:48:43
+1 - Software; Archivo: alojamientos.php; Acción: Lista los alojamientos; Fecha: 24-09-2025; Hora: 20:48:43
+1 - Software; Archivo: alojamientos.php; Acción: Lista los alojamientos; Fecha: 24-09-2025; Hora: 20:48:43
+1 - Software; Archivo: alojamientos.php; Acción: Lista los alojamientos; Fecha: 24-09-2025; Hora: 20:48:43
+1 - Software; Archivo: alojamientos.php; Acción: Lista los alojamientos; Fecha: 24-09-2025; Hora: 20:50:00
+1 - Software; Archivo: alojamientos.php; Acción: Lista los alojamientos; Fecha: 24-09-2025; Hora: 20:50:00
+1 - Software; Archivo: alojamientos.php; Acción: Lista los alojamientos; Fecha: 24-09-2025; Hora: 20:50:00
+1 - Software; Archivo: alojamientos.php; Acción: Lista los alojamientos; Fecha: 24-09-2025; Hora: 20:50:00
+1 - Software; Archivo: alojamientos.php; Acción: Activa el alojamiento 3; Fecha: 24-09-2025; Hora: 20:50:20
+1 - Software; Archivo: alojamientos.php; Acción: Lista los alojamientos; Fecha: 24-09-2025; Hora: 20:50:20
+1 - Software; Archivo: alojamientos.php; Acción: Lista los alojamientos; Fecha: 24-09-2025; Hora: 20:50:20
+1 - Software; Archivo: alojamientos.php; Acción: Lista los alojamientos; Fecha: 24-09-2025; Hora: 20:50:29
+1 - Software; Archivo: alojamientos.php; Acción: Lista los alojamientos; Fecha: 24-09-2025; Hora: 20:50:29
+1 - Software; Archivo: alojamientos.php; Acción: Lista los alojamientos; Fecha: 24-09-2025; Hora: 20:50:29
+1 - Software; Archivo: alojamientos.php; Acción: Lista los alojamientos; Fecha: 24-09-2025; Hora: 20:50:29
+1 - Software; Archivo: alojamientos.php; Acción: Lista los alojamientos; Fecha: 24-09-2025; Hora: 20:50:43
+1 - Software; Archivo: alojamientos.php; Acción: Lista los alojamientos; Fecha: 24-09-2025; Hora: 20:50:43
+1 - Software; Archivo: alojamientos.php; Acción: Lista los alojamientos; Fecha: 24-09-2025; Hora: 20:50:44
+1 - Software; Archivo: alojamientos.php; Acción: Lista los alojamientos; Fecha: 24-09-2025; Hora: 20:50:44

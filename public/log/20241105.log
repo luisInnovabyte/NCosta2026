@@ -1,0 +1,22 @@
+
+1 - Nombre: Software; Archivo: transportes.php; Acción: Consultar las ordenes; Fecha: 05-11-2024; Hora: 09:03:24
+3 - Nombre: Maria; Archivo: usuarios.php; Acción: Añadir nuevo usuario 15; Fecha: 05-11-2024; Hora: 09:08:51
+2 - Nombre: Carlos; Archivo: transportes.php; Acción: Consultar las ordenes; Fecha: 05-11-2024; Hora: 09:15:36
+5 - Nombre: Luis; Archivo: transportes.php; Acción: Consultar las ordenes; Fecha: 05-11-2024; Hora: 09:22:14
+5 - Nombre: Luis; Archivo: ordenes.php; Acción: Consultar la orden 337439; Fecha: 05-11-2024; Hora: 09:22:50
+4 - Nombre: Admin; Archivo: subirOrdenes.php; Acción: Importa Ordenes; Fecha: 05-11-2024; Hora: 09:38:07
+4 - Nombre: Admin; Archivo: transportes.php; Acción: Consultar las ordenes; Fecha: 05-11-2024; Hora: 09:40:19
+6 - Nombre: Julia; Archivo: clientes.php; Acción: Modificar datos cliente 21; Fecha: 05-11-2024; Hora: 09:56:45
+2 - Nombre: Carlos; Archivo: ordenes.php; Acción: Consultar orden 337482; Fecha: 05-11-2024; Hora: 10:09:57
+5 - Nombre: Luis; Archivo: ordenes.php; Acción: Entrega Orden 337439; Fecha: 05-11-2024; Hora: 10:31:12
+6 - Nombre: Julia; Archivo: ordenes.php; Acción: Cerrar orden 337439; Fecha: 05-11-2024; Hora: 10:34:10
+4 - Nombre: Admin; Archivo: usuarios.php; Acción: Desactivar usuario 15; Fecha: 05-11-2024; Hora: 10:48:10
+6 - Nombre: Julia; Archivo: ordenes.php; Acción: Confirmar entrega de orden 337439; Fecha: 05-11-2024; Hora: 11:02:17
+ID: 1 - Nombre: Software - IP: 127.0.0.1; Archivo: transportes.php; Acción: Mostrar Ordenes; Fecha: 05-11-2024; Hora: 13:34:20
+
+ID: 1 - Nombre: Software - IP: 127.0.0.1; Archivo: logout.php; Acción: Sesión cerrada; Fecha: 05-11-2024; Hora: 12:23:55
+ID:  - Nombre:  - IP: 127.0.0.1; Archivo: usuario.php; Acción: Se hace login; Fecha: 05-11-2024; Hora: 12:24:02
+ID: 1 - Nombre: Software - IP: 127.0.0.1; Archivo: logout.php; Acción: Sesión cerrada; Fecha: 05-11-2024; Hora: 12:24:51
+ID:  - Nombre:  - IP: 127.0.0.1; Archivo: usuario.php; Acción: Se hace login; Fecha: 05-11-2024; Hora: 12:24:56
+0 - Super; Archivo: pagos.php; Acción: Recoger los medios de pago; Fecha: 05-11-2024; Hora: 12:48:25
+0 - Super; Archivo: pagos.php; Acción: Recoger los medios de pago; Fecha: 05-11-2024; Hora: 12:48:31

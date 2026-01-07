@@ -1,0 +1,1 @@
+"SELECT * FROM tm_horarioGrupo WHERE idCurso_horario = 'ESIGA11(1)202505261' AND (diaInicio_horario < '2025-06-10' OR (diaInicio_horario = '2025-06-10' AND horaInicio_horario < '07:00:00')) ORDER BY diaInicio_horario DESC, horaInicio_horario DESC LIMIT 1;"

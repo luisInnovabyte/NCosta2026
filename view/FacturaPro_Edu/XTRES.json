@@ -1,0 +1,1 @@
+"SELECT SUM(importePagoAnticipado) AS totalImporte\r\n        FROM tm_pagoanticipadollegadas_edu\r\n        WHERE idLlegada_pagoAnticipado = 48;\r\n        "

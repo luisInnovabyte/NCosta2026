@@ -1,0 +1,7 @@
+*.psd
+*.zip
+*.rar
+*.psd
+/public/_documentos
+/public/_gesdoc
+/log/*.log

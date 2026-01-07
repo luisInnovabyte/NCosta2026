@@ -1,0 +1,70 @@
+ID: 19 - Nombre: Marta - IP: 192.168.31.89; Archivo: usuario.php; Acción: Se hace login Alumno; Fecha: 09-01-2025; Hora: 08:04:46
+ID: 19 - Nombre: Marta - IP: 192.168.31.89; Archivo: logout.php; Acción: Sesión cerrada; Fecha: 09-01-2025; Hora: 08:05:43
+ID: 1 - Nombre: Software - IP: 192.168.31.89; Archivo: usuario.php; Acción: Se hace login; Fecha: 09-01-2025; Hora: 08:22:04
+1 - Software; Archivo: medidasAloja.php; Acción: Lista las medidas de alojamiento; Fecha: 09-01-2025; Hora: 08:27:23
+1 - Software; Archivo: asistencia.php; Acción: Lista las asistencias; Fecha: 09-01-2025; Hora: 08:30:26
+1 - Software; Archivo: asistencia.php; Acción: Lista las asistencias; Fecha: 09-01-2025; Hora: 08:30:36
+1 - Software; Archivo: asistencia.php; Acción: Lista las asistencias; Fecha: 09-01-2025; Hora: 08:42:37
+1 - Software; Archivo: asistencia.php; Acción: Lista las asistencias; Fecha: 09-01-2025; Hora: 08:43:05
+1 - Software; Archivo: asistencia.php; Acción: Lista las asistencias; Fecha: 09-01-2025; Hora: 08:47:14
+1 - Software; Archivo: asistencia.php; Acción: Lista las asistencias; Fecha: 09-01-2025; Hora: 08:57:56
+1 - Software; Archivo: asistencia.php; Acción: Lista las asistencias; Fecha: 09-01-2025; Hora: 08:57:59
+1 - Software; Archivo: asistencia.php; Acción: Lista las asistencias; Fecha: 09-01-2025; Hora: 08:58:20
+ID:  - Nombre:  - IP: 192.168.31.89; Archivo: logout.php; Acción: Sesión cerrada; Fecha: 09-01-2025; Hora: 10:13:32
+ID: 1 - Nombre: Software - IP: 192.168.31.89; Archivo: usuario.php; Acción: Se hace login; Fecha: 09-01-2025; Hora: 10:13:40
+1 - Software; Archivo: asistencia.php; Acción: Lista las asistencias; Fecha: 09-01-2025; Hora: 10:13:43
+1 - Software; Archivo: asistencia.php; Acción: Lista las asistencias; Fecha: 09-01-2025; Hora: 10:16:10
+1 - Software; Archivo: asistencia.php; Acción: Lista las asistencias; Fecha: 09-01-2025; Hora: 10:16:27
+ID: 1 - Nombre: Software - IP: 192.168.31.89; Archivo: logout.php; Acción: Sesión cerrada; Fecha: 09-01-2025; Hora: 10:48:42
+ID: 1 - Nombre: Software - IP: 192.168.31.89; Archivo: usuario.php; Acción: Se hace login; Fecha: 09-01-2025; Hora: 11:09:37
+1 - Software; Archivo: tipoCurso_Edu.php; Acción: Lista los tipos de curso; Fecha: 09-01-2025; Hora: 11:10:07
+1 - Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 09-01-2025; Hora: 11:10:53
+1 - Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 09-01-2025; Hora: 11:11:08
+1 - Software; Archivo: tipoCurso_Edu.php; Acción: Lista los tipos de curso; Fecha: 09-01-2025; Hora: 11:11:09
+1 - Software; Archivo: pagos.php; Acción: Recoger los medios de pago; Fecha: 09-01-2025; Hora: 11:27:34
+1 - Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 09-01-2025; Hora: 11:27:34
+1 - Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 09-01-2025; Hora: 11:28:09
+1 - Software; Archivo: pagos.php; Acción: Recoger los medios de pago; Fecha: 09-01-2025; Hora: 11:28:42
+1 - Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 09-01-2025; Hora: 11:28:42
+1 - Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 09-01-2025; Hora: 11:31:56
+1 - Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 09-01-2025; Hora: 11:32:02
+1 - Software; Archivo: medios.php; Acción: Lista los medios de pago; Fecha: 09-01-2025; Hora: 11:46:32
+1 - Software; Archivo: medios.php; Acción: Lista los medios de pago; Fecha: 09-01-2025; Hora: 11:46:58
+1 - Software; Archivo: medios.php; Acción: Lista los medios de pago; Fecha: 09-01-2025; Hora: 11:47:44
+1 - Software; Archivo: medios.php; Acción: Lista los medios de pago; Fecha: 09-01-2025; Hora: 11:50:04
+1 - Software; Archivo: medios.php; Acción: Lista los medios de pago; Fecha: 09-01-2025; Hora: 11:50:20
+1 - Software; Archivo: actividades.php; Acción: Lista las actividades de los adminitradores; Fecha: 09-01-2025; Hora: 11:50:27
+1 - Software; Archivo: actividades.php; Acción: Lista las actividades de los adminitradores; Fecha: 09-01-2025; Hora: 11:53:10
+1 - Software; Archivo: actividades.php; Acción: Lista los alumnos apuntados en la actividad 10; Fecha: 09-01-2025; Hora: 11:54:57
+1 - Software; Archivo: actividades.php; Acción: Alumno 1 fue apuntado por Software a la actividad 10; Fecha: 09-01-2025; Hora: 11:55:10
+1 - Software; Archivo: actividades.php; Acción: Lista los alumnos apuntados en la actividad 10; Fecha: 09-01-2025; Hora: 11:55:10
+1 - Software; Archivo: actividades.php; Acción: Lista las actividades de los adminitradores; Fecha: 09-01-2025; Hora: 11:59:14
+1 - Software; Archivo: personal_Edu.php; Acción: Lista los personales; Fecha: 09-01-2025; Hora: 12:00:26
+1 - Software; Archivo: personal_Edu.php; Acción: Lista los personales; Fecha: 09-01-2025; Hora: 12:05:08
+1 - Software; Archivo: asistencia.php; Acción: Lista las asistencias; Fecha: 09-01-2025; Hora: 12:06:34
+1 - Software; Archivo: asistencia.php; Acción: Lista las asistencias; Fecha: 09-01-2025; Hora: 12:07:00
+1 - Software; Archivo: asistencia.php; Acción: Lista las asistencias; Fecha: 09-01-2025; Hora: 12:07:20
+1 - Software; Archivo: tipoCurso_Edu.php; Acción: Lista los tipos de curso; Fecha: 09-01-2025; Hora: 12:07:46
+ID: 1 - Nombre: Software - IP: 192.168.31.89; Archivo: logout.php; Acción: Sesión cerrada; Fecha: 09-01-2025; Hora: 12:09:29
+ID: 19 - Nombre: Marta - IP: 192.168.31.89; Archivo: usuario.php; Acción: Se hace login Alumno; Fecha: 09-01-2025; Hora: 12:09:42
+19 - Marta; Archivo: actividades.php; Acción: Lista las actividades de los alumnos; Fecha: 09-01-2025; Hora: 12:13:54
+19 - Marta; Archivo: actividades.php; Acción: El usuario 19 se desapunta de la actividad 9; Fecha: 09-01-2025; Hora: 12:14:38
+19 - Marta; Archivo: actividades.php; Acción: Lista las actividades de los alumnos; Fecha: 09-01-2025; Hora: 12:14:38
+ID: 19 - Nombre: Marta - IP: 192.168.31.89; Archivo: logout.php; Acción: Sesión cerrada; Fecha: 09-01-2025; Hora: 12:14:51
+ID: 20 - Nombre: José - IP: 192.168.31.89; Archivo: usuario.php; Acción: Se hace login; Fecha: 09-01-2025; Hora: 12:15:07
+20 - José; Archivo: actividades.php; Acción: Lista las actividades de los adminitradores; Fecha: 09-01-2025; Hora: 12:15:36
+20 - José; Archivo: actividades.php; Acción: Lista los alumnos apuntados en la actividad 10; Fecha: 09-01-2025; Hora: 12:16:14
+20 - José; Archivo: actividades.php; Acción: Lista las actividades de los adminitradores; Fecha: 09-01-2025; Hora: 12:16:18
+20 - José; Archivo: actividades.php; Acción: Lista los alumnos apuntados en la actividad 10; Fecha: 09-01-2025; Hora: 12:16:30
+20 - José; Archivo: actividades.php; Acción: El alumno 18 ha asistido; Fecha: 09-01-2025; Hora: 12:16:44
+20 - José; Archivo: actividades.php; Acción: Lista los alumnos apuntados en la actividad 10; Fecha: 09-01-2025; Hora: 12:16:44
+20 - José; Archivo: actividades.php; Acción: El alumno 18 no ha asistido; Fecha: 09-01-2025; Hora: 12:16:57
+20 - José; Archivo: actividades.php; Acción: Lista los alumnos apuntados en la actividad 10; Fecha: 09-01-2025; Hora: 12:16:57
+20 - José; Archivo: actividades.php; Acción: Lista las actividades de los adminitradores; Fecha: 09-01-2025; Hora: 12:16:58
+20 - José; Archivo: actividades.php; Acción: Lista los alumnos apuntados en la actividad 10; Fecha: 09-01-2025; Hora: 12:17:03
+20 - José; Archivo: actividades.php; Acción: El alumno 18 ha asistido; Fecha: 09-01-2025; Hora: 12:17:24
+20 - José; Archivo: actividades.php; Acción: Lista los alumnos apuntados en la actividad 10; Fecha: 09-01-2025; Hora: 12:17:24
+20 - José; Archivo: actividades.php; Acción: Lista las actividades de los adminitradores; Fecha: 09-01-2025; Hora: 12:18:02
+20 - José; Archivo: actividades.php; Acción: Lista los alumnos apuntados en la actividad 9; Fecha: 09-01-2025; Hora: 12:18:28
+20 - José; Archivo: actividades.php; Acción: Lista las actividades de los adminitradores; Fecha: 09-01-2025; Hora: 12:18:33
+ID: 1 - Nombre: Software - IP: 192.168.31.89; Archivo: usuario.php; Acción: Se hace login; Fecha: 09-01-2025; Hora: 15:18:13

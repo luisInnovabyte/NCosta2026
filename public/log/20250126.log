@@ -1,0 +1,126 @@
+ID: 1 - Nombre: Software - IP: 192.168.31.130; Archivo: usuario.php; Acción: Se hace login; Fecha: 26-01-2025; Hora: 14:11:36
+1 - Software; Archivo: tipoCurso_Edu.php; Acción: Lista los tipos de curso; Fecha: 26-01-2025; Hora: 14:11:50
+1 - Software; Archivo: tipoCurso_Edu.php; Acción: Lista los tipos de curso; Fecha: 26-01-2025; Hora: 14:14:58
+1 - Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 26-01-2025; Hora: 14:15:12
+1 - Software; Archivo: tiposAloja_Edu.php; Acción: Lista los tipos de alojamiento ; Fecha: 26-01-2025; Hora: 14:15:49
+1 - Software; Archivo: series.php; Acción: Lista las Series; Fecha: 26-01-2025; Hora: 14:15:57
+1 - Software; Archivo: grupos.php; Acción: Lista los grupos; Fecha: 26-01-2025; Hora: 14:17:55
+1 - Software; Archivo: idiomas.php; Acción: Lista los idiomas; Fecha: 26-01-2025; Hora: 14:18:04
+1 - Software; Archivo: idiomas.php; Acción: Lista los idiomas; Fecha: 26-01-2025; Hora: 14:18:54
+1 - Software; Archivo: idiomas.php; Acción: Lista los idiomas; Fecha: 26-01-2025; Hora: 14:19:26
+ - Software; Archivo: asistencia.php; Acción: Lista las asistencias; Fecha: 26-01-2025; Hora: 14:19:42
+1 - Software; Archivo: personal_Edu.php; Acción: Lista los personales; Fecha: 26-01-2025; Hora: 14:19:47
+1 - Software; Archivo: actividades.php; Acción: Lista las actividades de los adminitradores; Fecha: 26-01-2025; Hora: 14:20:03
+1 - Software; Archivo: tipoCurso_Edu.php; Acción: Lista los tipos de curso; Fecha: 26-01-2025; Hora: 14:20:12
+1 - Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 26-01-2025; Hora: 14:20:15
+1 - Software; Archivo: tiposAloja_Edu.php; Acción: Lista los tipos de alojamiento ; Fecha: 26-01-2025; Hora: 14:20:20
+1 - Software; Archivo: tiposContrato_Edu.php; Acción: Lista los tipos de contrato; Fecha: 26-01-2025; Hora: 14:20:25
+1 - Software; Archivo: tipoCurso_Edu.php; Acción: Lista los tipos de curso; Fecha: 26-01-2025; Hora: 14:20:27
+1 - Software; Archivo: tipoCurso_Edu.php; Acción: Lista los tipos de curso; Fecha: 26-01-2025; Hora: 14:21:22
+1 - Software; Archivo: medios.php; Acción: Lista los medios de pago; Fecha: 26-01-2025; Hora: 14:21:38
+1 - Software; Archivo: medios.php; Acción: Lista los medios de pago; Fecha: 26-01-2025; Hora: 14:22:03
+ID: 1 - Nombre: Software - IP: 192.168.31.89; Archivo: usuario.php; Acción: Se hace login; Fecha: 26-01-2025; Hora: 17:16:08
+1 - Software; Archivo: tipoCurso_Edu.php; Acción: Lista los tipos de curso; Fecha: 26-01-2025; Hora: 17:27:52
+ID: 1 - Nombre: Software - IP: 192.168.31.89; Archivo: usuario.php; Acción: Se cambia la contraseña de: zatyq1md4aa4b527a70225157e7626; Fecha: 26-01-2025; Hora: 17:48:54
+ID: 9 - Nombre: Jose Manuel - IP: 192.168.31.89; Archivo: usuario.php; Acción: Se hace login Alumno; Fecha: 26-01-2025; Hora: 17:51:53
+ID: 1 - Nombre: Software - IP: 192.168.31.89; Archivo: usuario.php; Acción: Se hace login; Fecha: 26-01-2025; Hora: 18:04:07
+1 - Software; Archivo: pagos.php; Acción: Recoger los medios de pago; Fecha: 26-01-2025; Hora: 18:08:01
+1 - Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 26-01-2025; Hora: 18:08:01
+1 - Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 26-01-2025; Hora: 18:08:43
+1 - Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 26-01-2025; Hora: 18:09:56
+1 - Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 26-01-2025; Hora: 18:10:08
+1 - Software; Archivo: pagos.php; Acción: Recoger los medios de pago; Fecha: 26-01-2025; Hora: 18:10:31
+1 - Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 26-01-2025; Hora: 18:10:31
+9 - Jose Manuel; Archivo: actividades.php; Acción: Lista las actividades de los alumnos; Fecha: 26-01-2025; Hora: 18:10:36
+1 - Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 26-01-2025; Hora: 18:13:53
+1 - Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 26-01-2025; Hora: 18:17:03
+1 - Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 26-01-2025; Hora: 18:19:42
+1 - Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 26-01-2025; Hora: 18:20:01
+9 - Jose Manuel; Archivo: actividades.php; Acción: Lista las actividades de los alumnos; Fecha: 26-01-2025; Hora: 18:24:48
+9 - Jose Manuel; Archivo: actividades.php; Acción: Lista las actividades de los alumnos; Fecha: 26-01-2025; Hora: 18:25:04
+1 - Software; Archivo: actividades.php; Acción: Lista las actividades de los adminitradores; Fecha: 26-01-2025; Hora: 18:25:21
+1 - Software; Archivo: pagos.php; Acción: Recoger los medios de pago; Fecha: 26-01-2025; Hora: 18:30:55
+1 - Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 26-01-2025; Hora: 18:30:55
+1 - Software; Archivo: pagos.php; Acción: Recoger los medios de pago; Fecha: 26-01-2025; Hora: 18:41:27
+1 - Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 26-01-2025; Hora: 18:41:27
+1 - Software; Archivo: pagos.php; Acción: Recoger los medios de pago; Fecha: 26-01-2025; Hora: 18:43:04
+1 - Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 26-01-2025; Hora: 18:43:04
+1 - Software; Archivo: pagos.php; Acción: Recoger los medios de pago; Fecha: 26-01-2025; Hora: 18:43:56
+1 - Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 26-01-2025; Hora: 18:43:56
+1 - Software; Archivo: pagos.php; Acción: Recoger los medios de pago; Fecha: 26-01-2025; Hora: 18:43:58
+1 - Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 26-01-2025; Hora: 18:43:58
+1 - Software; Archivo: pagos.php; Acción: Recoger los medios de pago; Fecha: 26-01-2025; Hora: 18:45:39
+1 - Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 26-01-2025; Hora: 18:45:39
+1 - Software; Archivo: pagos.php; Acción: Recoger los medios de pago; Fecha: 26-01-2025; Hora: 18:45:45
+1 - Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 26-01-2025; Hora: 18:45:45
+1 - Software; Archivo: pagos.php; Acción: Recoger los medios de pago; Fecha: 26-01-2025; Hora: 18:47:43
+1 - Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 26-01-2025; Hora: 18:47:43
+1 - Software; Archivo: pagos.php; Acción: Recoger los medios de pago; Fecha: 26-01-2025; Hora: 18:47:59
+1 - Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 26-01-2025; Hora: 18:47:59
+1 - Software; Archivo: pagos.php; Acción: Recoger los medios de pago; Fecha: 26-01-2025; Hora: 18:48:08
+1 - Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 26-01-2025; Hora: 18:48:08
+1 - Software; Archivo: pagos.php; Acción: Recoger los medios de pago; Fecha: 26-01-2025; Hora: 18:49:00
+1 - Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 26-01-2025; Hora: 18:49:00
+1 - Software; Archivo: pagos.php; Acción: Recoger los medios de pago; Fecha: 26-01-2025; Hora: 18:49:05
+1 - Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 26-01-2025; Hora: 18:49:05
+1 - Software; Archivo: pagos.php; Acción: Recoger los medios de pago; Fecha: 26-01-2025; Hora: 18:49:36
+1 - Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 26-01-2025; Hora: 18:49:36
+9 - Jose Manuel; Archivo: actividades.php; Acción: Lista las actividades de los alumnos; Fecha: 26-01-2025; Hora: 19:14:03
+ID: 1 - Nombre: Software - IP: 192.168.31.89; Archivo: usuario.php; Acción: Se hace login; Fecha: 26-01-2025; Hora: 19:47:23
+1 - Software; Archivo: actividades.php; Acción: Lista las actividades de los adminitradores; Fecha: 26-01-2025; Hora: 19:48:17
+1 - Software; Archivo: pagos.php; Acción: Recoger los medios de pago; Fecha: 26-01-2025; Hora: 19:49:55
+1 - Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 26-01-2025; Hora: 19:49:55
+1 - Software; Archivo: pagos.php; Acción: Recoger los medios de pago; Fecha: 26-01-2025; Hora: 19:50:07
+1 - Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 26-01-2025; Hora: 19:50:07
+1 - Software; Archivo: pagos.php; Acción: Recoger los medios de pago; Fecha: 26-01-2025; Hora: 19:51:59
+1 - Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 26-01-2025; Hora: 19:52:00
+1 - Software; Archivo: pagos.php; Acción: Recoger los medios de pago; Fecha: 26-01-2025; Hora: 19:52:09
+1 - Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 26-01-2025; Hora: 19:52:09
+1 - Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 26-01-2025; Hora: 20:00:45
+1 - Software; Archivo: pagos.php; Acción: Recoger los medios de pago; Fecha: 26-01-2025; Hora: 20:01:38
+1 - Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 26-01-2025; Hora: 20:01:38
+1 - Software; Archivo: pagos.php; Acción: Recoger los medios de pago; Fecha: 26-01-2025; Hora: 20:02:02
+1 - Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 26-01-2025; Hora: 20:02:03
+1 - Software; Archivo: pagos.php; Acción: Recoger los medios de pago; Fecha: 26-01-2025; Hora: 20:02:14
+1 - Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 26-01-2025; Hora: 20:02:14
+1 - Software; Archivo: pagos.php; Acción: Recoger los medios de pago; Fecha: 26-01-2025; Hora: 20:02:29
+1 - Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 26-01-2025; Hora: 20:02:29
+1 - Software; Archivo: pagos.php; Acción: Recoger los medios de pago; Fecha: 26-01-2025; Hora: 20:03:09
+1 - Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 26-01-2025; Hora: 20:03:09
+1 - Software; Archivo: pagos.php; Acción: Recoger los medios de pago; Fecha: 26-01-2025; Hora: 20:03:55
+1 - Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 26-01-2025; Hora: 20:03:56
+1 - Software; Archivo: pagos.php; Acción: Recoger los medios de pago; Fecha: 26-01-2025; Hora: 20:11:27
+1 - Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 26-01-2025; Hora: 20:11:27
+1 - Software; Archivo: pagos.php; Acción: Recoger los medios de pago; Fecha: 26-01-2025; Hora: 20:11:41
+1 - Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 26-01-2025; Hora: 20:11:41
+1 - Software; Archivo: actividades.php; Acción: Lista las actividades de los adminitradores; Fecha: 26-01-2025; Hora: 20:21:09
+1 - Software; Archivo: actividades.php; Acción: Lista los alumnos apuntados en la actividad 1; Fecha: 26-01-2025; Hora: 20:21:12
+1 - Software; Archivo: actividades.php; Acción: Alumno 9 fue apuntado por Software a la actividad 1; Fecha: 26-01-2025; Hora: 20:21:22
+1 - Software; Archivo: actividades.php; Acción: Lista los alumnos apuntados en la actividad 1; Fecha: 26-01-2025; Hora: 20:21:22
+1 - Software; Archivo: actividades.php; Acción: El alumno 17 fue eliminad@ de la actividad; Fecha: 26-01-2025; Hora: 20:22:34
+1 - Software; Archivo: actividades.php; Acción: Lista los alumnos apuntados en la actividad 1; Fecha: 26-01-2025; Hora: 20:22:34
+1 - Software; Archivo: actividades.php; Acción: Lista los alumnos apuntados en la actividad 1; Fecha: 26-01-2025; Hora: 20:22:37
+1 - Software; Archivo: actividades.php; Acción: Lista los alumnos apuntados en la actividad 1; Fecha: 26-01-2025; Hora: 20:22:43
+1 - Software; Archivo: actividades.php; Acción: Lista los alumnos apuntados en la actividad 1; Fecha: 26-01-2025; Hora: 20:22:45
+1 - Software; Archivo: pagos.php; Acción: Recoger los medios de pago; Fecha: 26-01-2025; Hora: 20:23:51
+1 - Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 26-01-2025; Hora: 20:23:51
+1 - Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 26-01-2025; Hora: 20:24:10
+1 - Software; Archivo: pagos.php; Acción: Recoger los medios de pago; Fecha: 26-01-2025; Hora: 20:26:00
+1 - Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 26-01-2025; Hora: 20:26:00
+1 - Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 26-01-2025; Hora: 20:26:08
+1 - Software; Archivo: pagos.php; Acción: Recoger los medios de pago; Fecha: 26-01-2025; Hora: 20:36:50
+1 - Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 26-01-2025; Hora: 20:36:50
+1 - Software; Archivo: pagos.php; Acción: Recoger los medios de pago; Fecha: 26-01-2025; Hora: 20:37:06
+1 - Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 26-01-2025; Hora: 20:37:06
+1 - Software; Archivo: actividades.php; Acción: Lista las actividades de los adminitradores; Fecha: 26-01-2025; Hora: 20:37:22
+1 - Software; Archivo: actividades.php; Acción: Lista las actividades de los adminitradores; Fecha: 26-01-2025; Hora: 20:53:20
+1 - Software; Archivo: actividades.php; Acción: Lista las actividades de los adminitradores; Fecha: 26-01-2025; Hora: 21:00:43
+1 - Software; Archivo: actividades.php; Acción: Lista las actividades de los adminitradores; Fecha: 26-01-2025; Hora: 21:10:36
+1 - Software; Archivo: actividades.php; Acción: Lista las actividades de los adminitradores; Fecha: 26-01-2025; Hora: 21:14:02
+1 - Software; Archivo: pagos.php; Acción: Recoger los medios de pago; Fecha: 26-01-2025; Hora: 21:14:05
+1 - Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 26-01-2025; Hora: 21:14:05
+1 - Software; Archivo: pagos.php; Acción: Recoger los medios de pago; Fecha: 26-01-2025; Hora: 21:14:09
+1 - Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 26-01-2025; Hora: 21:14:09
+1 - Software; Archivo: pagos.php; Acción: Recoger los medios de pago; Fecha: 26-01-2025; Hora: 21:14:17
+1 - Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 26-01-2025; Hora: 21:14:17
+1 - Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 26-01-2025; Hora: 21:14:20

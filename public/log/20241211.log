@@ -1,0 +1,51 @@
+ID: 2 - Nombre: Marcos - IP: 127.0.0.1; Archivo: usuario.php; Acción: Se hace login Alumno; Fecha: 11-12-2024; Hora: 09:31:23
+2 - Marcos; Archivo: actividades.php; Acción: Lista las actividades de los alumnos; Fecha: 11-12-2024; Hora: 09:31:25
+ID: 2 - Nombre: Marcos - IP: 127.0.0.1; Archivo: logout.php; Acción: Sesión cerrada; Fecha: 11-12-2024; Hora: 09:31:44
+ID: 1 - Nombre: Software - IP: 127.0.0.1; Archivo: usuario.php; Acción: Se hace login; Fecha: 11-12-2024; Hora: 09:35:35
+1 - Software; Archivo: testnivel.php; Acción: Lista los test de Nivel; Fecha: 11-12-2024; Hora: 09:35:41
+1 - Software; Archivo: actividades.php; Acción: Lista las actividades de los adminitradores; Fecha: 11-12-2024; Hora: 09:35:41
+1 - Software; Archivo: actividades.php; Acción: Lista los alumnos apuntados en la actividad 9; Fecha: 11-12-2024; Hora: 09:35:47
+1 - Software; Archivo: actividades.php; Acción: Lista las actividades de los adminitradores; Fecha: 11-12-2024; Hora: 09:36:09
+ID: 2 - Nombre: Marcos - IP: 127.0.0.1; Archivo: usuario.php; Acción: Se hace login Alumno; Fecha: 11-12-2024; Hora: 09:40:24
+2 - Marcos; Archivo: actividades.php; Acción: Lista las actividades de los alumnos; Fecha: 11-12-2024; Hora: 09:40:26
+2 - Marcos; Archivo: actividades.php; Acción: Lista las actividades de los alumnos; Fecha: 11-12-2024; Hora: 09:40:36
+2 - Marcos; Archivo: actividades.php; Acción: Lista las actividades de los alumnos; Fecha: 11-12-2024; Hora: 09:40:38
+1 - Software; Archivo: actividades.php; Acción: Lista los alumnos apuntados en la actividad 9; Fecha: 11-12-2024; Hora: 09:40:45
+2 - Marcos; Archivo: actividades.php; Acción: Lista las actividades de los alumnos; Fecha: 11-12-2024; Hora: 09:47:30
+2 - Marcos; Archivo: actividades.php; Acción: Lista las actividades de los alumnos; Fecha: 11-12-2024; Hora: 09:48:14
+2 - Marcos; Archivo: actividades.php; Acción: El usuario 2 se desapunta de la actividad 9; Fecha: 11-12-2024; Hora: 09:48:16
+2 - Marcos; Archivo: actividades.php; Acción: Lista las actividades de los alumnos; Fecha: 11-12-2024; Hora: 09:48:16
+2 - Marcos; Archivo: actividades.php; Acción: Lista las actividades de los alumnos; Fecha: 11-12-2024; Hora: 09:48:18
+1 - Software; Archivo: actividades.php; Acción: Lista los alumnos apuntados en la actividad 9; Fecha: 11-12-2024; Hora: 09:48:24
+2 - Marcos; Archivo: actividades.php; Acción: El usuario 2 se apunta a la actividad 9; Fecha: 11-12-2024; Hora: 09:48:27
+2 - Marcos; Archivo: actividades.php; Acción: Lista las actividades de los alumnos; Fecha: 11-12-2024; Hora: 09:48:27
+1 - Software; Archivo: actividades.php; Acción: Lista los alumnos apuntados en la actividad 9; Fecha: 11-12-2024; Hora: 09:48:30
+ID:  - Nombre:  - IP: 127.0.0.1; Archivo: usuario.php; Acción: Se hace login; Fecha: 11-12-2024; Hora: 13:30:46
+ID: 1 - Nombre: Software - IP: 127.0.0.1; Archivo: usuario.php; Acción: Se hace login; Fecha: 11-12-2024; Hora: 13:30:51
+ID:  - Nombre:  - IP: 127.0.0.1; Archivo: usuario.php; Acción: Se cambia la contraseña de: kltxn1ovab6fa7a2c7c912f117b5fe; Fecha: 11-12-2024; Hora: 14:44:42
+ID: 2 - Nombre: Jose - IP: 127.0.0.1; Archivo: usuario.php; Acción: Se hace login Alumno; Fecha: 11-12-2024; Hora: 14:44:51
+2 - Jose; Archivo: actividades.php; Acción: Lista las actividades de los alumnos; Fecha: 11-12-2024; Hora: 14:44:53
+ID: 2 - Nombre: Jose - IP: 127.0.0.1; Archivo: logout.php; Acción: Sesión cerrada; Fecha: 11-12-2024; Hora: 14:44:58
+ID:  - Nombre:  - IP: 127.0.0.1; Archivo: usuario.php; Acción: Se cambia la contraseña de: kltxn1o1sa91ed27d72611baa3274; Fecha: 11-12-2024; Hora: 14:45:17
+ID: 3 - Nombre: Cris - IP: 127.0.0.1; Archivo: usuario.php; Acción: Se hace login Alumno; Fecha: 11-12-2024; Hora: 14:45:34
+3 - Cris; Archivo: actividades.php; Acción: Lista las actividades de los alumnos; Fecha: 11-12-2024; Hora: 14:45:36
+3 - Cris; Archivo: actividades.php; Acción: El usuario 3 se apunta a la actividad 9; Fecha: 11-12-2024; Hora: 14:45:39
+3 - Cris; Archivo: actividades.php; Acción: Lista las actividades de los alumnos; Fecha: 11-12-2024; Hora: 14:45:39
+ID: 3 - Nombre: Cris - IP: 127.0.0.1; Archivo: logout.php; Acción: Sesión cerrada; Fecha: 11-12-2024; Hora: 14:45:42
+ID: 2 - Nombre: Jose - IP: 127.0.0.1; Archivo: usuario.php; Acción: Se hace login Alumno; Fecha: 11-12-2024; Hora: 14:45:53
+2 - Jose; Archivo: actividades.php; Acción: Lista las actividades de los alumnos; Fecha: 11-12-2024; Hora: 14:45:54
+2 - Jose; Archivo: actividades.php; Acción: El usuario 2 se apunta a la actividad 9; Fecha: 11-12-2024; Hora: 14:45:58
+2 - Jose; Archivo: actividades.php; Acción: Lista las actividades de los alumnos; Fecha: 11-12-2024; Hora: 14:45:58
+1 - Software; Archivo: actividades.php; Acción: Lista las actividades de los adminitradores; Fecha: 11-12-2024; Hora: 14:46:05
+1 - Software; Archivo: actividades.php; Acción: Lista los alumnos apuntados en la actividad 9; Fecha: 11-12-2024; Hora: 14:46:08
+1 - Software; Archivo: actividades.php; Acción: El alumno 12 ha asistido; Fecha: 11-12-2024; Hora: 14:47:01
+1 - Software; Archivo: actividades.php; Acción: Lista los alumnos apuntados en la actividad 9; Fecha: 11-12-2024; Hora: 14:47:01
+2 - Jose; Archivo: actividades.php; Acción: Lista las actividades de los alumnos; Fecha: 11-12-2024; Hora: 14:47:02
+1 - Software; Archivo: actividades.php; Acción: El alumno 13 ha asistido; Fecha: 11-12-2024; Hora: 14:47:15
+1 - Software; Archivo: actividades.php; Acción: Lista los alumnos apuntados en la actividad 9; Fecha: 11-12-2024; Hora: 14:47:15
+2 - Jose; Archivo: actividades.php; Acción: El usuario 2 se desapunta de la actividad 9; Fecha: 11-12-2024; Hora: 14:47:18
+2 - Jose; Archivo: actividades.php; Acción: Lista las actividades de los alumnos; Fecha: 11-12-2024; Hora: 14:47:18
+1 - Software; Archivo: actividades.php; Acción: Lista los alumnos apuntados en la actividad 9; Fecha: 11-12-2024; Hora: 14:47:24
+2 - Jose; Archivo: actividades.php; Acción: El usuario 2 se apunta a la actividad 9; Fecha: 11-12-2024; Hora: 14:47:31
+2 - Jose; Archivo: actividades.php; Acción: Lista las actividades de los alumnos; Fecha: 11-12-2024; Hora: 14:47:31
+1 - Software; Archivo: actividades.php; Acción: Lista los alumnos apuntados en la actividad 9; Fecha: 11-12-2024; Hora: 14:47:33

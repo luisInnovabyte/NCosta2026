@@ -1,0 +1,163 @@
+ID: 1 - Nombre: Software - IP: 192.168.31.3; Archivo: usuario.php; Acción: Se hace login; Fecha: 05-09-2025; Hora: 10:42:59
+1 - Software; Archivo: actividades.php; Acción: Lista las actividades de los adminitradores; Fecha: 05-09-2025; Hora: 10:49:09
+1 - Software; Archivo: actividades.php; Acción: La actividad 2fue activada; Fecha: 05-09-2025; Hora: 10:49:23
+1 - Software; Archivo: actividades.php; Acción: Lista las actividades de los adminitradores; Fecha: 05-09-2025; Hora: 10:49:25
+1 - Software; Archivo: actividades.php; Acción: Lista los alumnos apuntados en la actividad 2; Fecha: 05-09-2025; Hora: 10:49:27
+1 - Software; Archivo: actividades.php; Acción: Alumno 24 fue apuntado por Software a la actividad 2; Fecha: 05-09-2025; Hora: 10:49:48
+1 - Software; Archivo: actividades.php; Acción: Lista los alumnos apuntados en la actividad 2; Fecha: 05-09-2025; Hora: 10:49:48
+ID:  - Nombre:  - IP: 192.168.31.3; Archivo: usuario.php; Acción: Se cambia la contraseña de: zhtyl1s1b88f882ea9a25a5bbc009; Fecha: 05-09-2025; Hora: 10:51:21
+ID: 24 - Nombre: luis - IP: 192.168.31.3; Archivo: usuario.php; Acción: Se hace login Alumno; Fecha: 05-09-2025; Hora: 10:51:31
+24 - luis; Archivo: actividades.php; Acción: Lista las actividades del usuario; Fecha: 05-09-2025; Hora: 10:51:35
+24 - luis; Archivo: actividades.php; Acción: Lista las actividades del usuario; Fecha: 05-09-2025; Hora: 11:18:46
+24 - luis; Archivo: actividades.php; Acción: Lista las actividades del usuario; Fecha: 05-09-2025; Hora: 11:19:43
+24 - luis; Archivo: actividades.php; Acción: Lista las actividades del usuario; Fecha: 05-09-2025; Hora: 11:19:58
+24 - luis; Archivo: actividades.php; Acción: Lista las actividades del usuario; Fecha: 05-09-2025; Hora: 11:24:09
+1 - Software; Archivo: actividades.php; Acción: El alumno 1 fue eliminad@ de la actividad; Fecha: 05-09-2025; Hora: 11:26:34
+1 - Software; Archivo: actividades.php; Acción: Lista los alumnos apuntados en la actividad 2; Fecha: 05-09-2025; Hora: 11:26:34
+24 - luis; Archivo: actividades.php; Acción: Lista las actividades del usuario; Fecha: 05-09-2025; Hora: 11:26:37
+1 - Software; Archivo: actividades.php; Acción: Lista los alumnos apuntados en la actividad 2; Fecha: 05-09-2025; Hora: 11:26:52
+1 - Software; Archivo: actividades.php; Acción: Alumno 24 fue apuntado por Software a la actividad 2; Fecha: 05-09-2025; Hora: 11:26:58
+1 - Software; Archivo: actividades.php; Acción: Lista los alumnos apuntados en la actividad 2; Fecha: 05-09-2025; Hora: 11:26:58
+24 - luis; Archivo: actividades.php; Acción: Lista las actividades del usuario; Fecha: 05-09-2025; Hora: 11:29:30
+1 - Software; Archivo: medios.php; Acción: Lista las facturas en facturación; Fecha: 05-09-2025; Hora: 11:44:09
+1 - Software; Archivo: medios.php; Acción: Lista las facturas en facturación; Fecha: 05-09-2025; Hora: 11:44:09
+1 - Software; Archivo: medios.php; Acción: Lista las facturas en facturación; Fecha: 05-09-2025; Hora: 11:44:09
+1 - Software; Archivo: medios.php; Acción: Lista las facturas en facturación; Fecha: 05-09-2025; Hora: 11:44:09
+1 - Software; Archivo: medios.php; Acción: Lista las facturas en facturación; Fecha: 05-09-2025; Hora: 11:50:54
+ID: 24 - Nombre: luis - IP: 192.168.31.3; Archivo: usuario.php; Acción: Se hace login Alumno; Fecha: 05-09-2025; Hora: 12:44:22
+24 - luis; Archivo: actividades.php; Acción: Lista las actividades del usuario; Fecha: 05-09-2025; Hora: 12:44:25
+24 - luis; Archivo: actividades.php; Acción: Lista las actividades del usuario; Fecha: 05-09-2025; Hora: 12:45:49
+24 - luis; Archivo: actividades.php; Acción: Lista las actividades del usuario; Fecha: 05-09-2025; Hora: 12:46:47
+24 - luis; Archivo: actividades.php; Acción: Lista las actividades del usuario; Fecha: 05-09-2025; Hora: 13:01:59
+1 - Software; Archivo: medios.php; Acción: Lista las facturas en facturación; Fecha: 05-09-2025; Hora: 13:20:50
+1 - Software; Archivo: medios.php; Acción: Lista las facturas en facturación; Fecha: 05-09-2025; Hora: 13:20:50
+1 - Software; Archivo: medios.php; Acción: Lista las facturas en facturación; Fecha: 05-09-2025; Hora: 13:20:50
+1 - Software; Archivo: medios.php; Acción: Lista las facturas en facturación; Fecha: 05-09-2025; Hora: 13:20:50
+24 - luis; Archivo: actividades.php; Acción: Lista las actividades del usuario; Fecha: 05-09-2025; Hora: 13:35:47
+1 - Software; Archivo: pagos.php; Acción: Recoger los medios de pago; Fecha: 05-09-2025; Hora: 13:54:03
+1 - Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 05-09-2025; Hora: 13:54:03
+1 - Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 05-09-2025; Hora: 13:54:11
+1 - Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 05-09-2025; Hora: 13:54:20
+1 - Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 05-09-2025; Hora: 13:55:10
+1 - Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 05-09-2025; Hora: 13:56:52
+1 - Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 05-09-2025; Hora: 13:57:03
+1 - Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 05-09-2025; Hora: 14:02:56
+1 - Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 05-09-2025; Hora: 14:03:08
+1 - Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 05-09-2025; Hora: 14:03:22
+1 - Software; Archivo: medios.php; Acción: Lista las facturas en facturación; Fecha: 05-09-2025; Hora: 14:03:42
+1 - Software; Archivo: medios.php; Acción: Lista las facturas en facturación; Fecha: 05-09-2025; Hora: 14:03:42
+1 - Software; Archivo: medios.php; Acción: Lista las facturas en facturación; Fecha: 05-09-2025; Hora: 14:03:42
+1 - Software; Archivo: medios.php; Acción: Lista las facturas en facturación; Fecha: 05-09-2025; Hora: 14:03:42
+24 - luis; Archivo: actividades.php; Acción: Lista las actividades del usuario; Fecha: 05-09-2025; Hora: 14:03:51
+24 - luis; Archivo: actividades.php; Acción: Lista las actividades del usuario; Fecha: 05-09-2025; Hora: 14:03:53
+24 - luis; Archivo: actividades.php; Acción: Lista las actividades del usuario; Fecha: 05-09-2025; Hora: 14:03:55
+1 - Software; Archivo: tipoCurso_Edu.php; Acción: Lista los tipos de curso; Fecha: 05-09-2025; Hora: 14:35:48
+1 - Software; Archivo: medios.php; Acción: Lista las facturas en facturación; Fecha: 05-09-2025; Hora: 14:37:25
+1 - Software; Archivo: medios.php; Acción: Lista las facturas en facturación; Fecha: 05-09-2025; Hora: 14:37:25
+1 - Software; Archivo: medios.php; Acción: Lista las facturas en facturación; Fecha: 05-09-2025; Hora: 14:37:25
+1 - Software; Archivo: medios.php; Acción: Lista las facturas en facturación; Fecha: 05-09-2025; Hora: 14:37:25
+1 - Software; Archivo: medios.php; Acción: Lista las facturas en facturación; Fecha: 05-09-2025; Hora: 14:38:04
+1 - Software; Archivo: medios.php; Acción: Lista las facturas en facturación; Fecha: 05-09-2025; Hora: 14:38:04
+1 - Software; Archivo: medios.php; Acción: Lista las facturas en facturación; Fecha: 05-09-2025; Hora: 14:38:04
+1 - Software; Archivo: medios.php; Acción: Lista las facturas en facturación; Fecha: 05-09-2025; Hora: 14:38:04
+1 - Software; Archivo: pagos.php; Acción: Recoger los medios de pago; Fecha: 05-09-2025; Hora: 14:40:00
+1 - Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 05-09-2025; Hora: 14:40:00
+1 - Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 05-09-2025; Hora: 14:40:03
+1 - Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 05-09-2025; Hora: 14:40:13
+1 - Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 05-09-2025; Hora: 14:52:28
+24 - luis; Archivo: actividades.php; Acción: Lista las actividades del usuario; Fecha: 05-09-2025; Hora: 14:52:32
+1 - Software; Archivo: medios.php; Acción: Lista las facturas en facturación; Fecha: 05-09-2025; Hora: 15:04:58
+1 - Software; Archivo: medios.php; Acción: Lista las facturas en facturación; Fecha: 05-09-2025; Hora: 15:04:58
+1 - Software; Archivo: medios.php; Acción: Lista las facturas en facturación; Fecha: 05-09-2025; Hora: 15:04:58
+1 - Software; Archivo: medios.php; Acción: Lista las facturas en facturación; Fecha: 05-09-2025; Hora: 15:05:34
+1 - Software; Archivo: medios.php; Acción: Lista las facturas en facturación; Fecha: 05-09-2025; Hora: 15:05:34
+1 - Software; Archivo: medios.php; Acción: Lista las facturas en facturación; Fecha: 05-09-2025; Hora: 15:05:34
+1 - Software; Archivo: medios.php; Acción: Lista las facturas en facturación; Fecha: 05-09-2025; Hora: 15:05:34
+1 - Software; Archivo: medios.php; Acción: Lista las facturas en facturación; Fecha: 05-09-2025; Hora: 15:06:08
+1 - Software; Archivo: medios.php; Acción: Lista las facturas en facturación; Fecha: 05-09-2025; Hora: 15:06:08
+1 - Software; Archivo: medios.php; Acción: Lista las facturas en facturación; Fecha: 05-09-2025; Hora: 15:06:08
+1 - Software; Archivo: medios.php; Acción: Lista las facturas en facturación; Fecha: 05-09-2025; Hora: 15:06:08
+1 - Software; Archivo: medios.php; Acción: Lista las facturas en facturación; Fecha: 05-09-2025; Hora: 15:06:24
+1 - Software; Archivo: medios.php; Acción: Lista las facturas en facturación; Fecha: 05-09-2025; Hora: 15:06:24
+1 - Software; Archivo: medios.php; Acción: Lista las facturas en facturación; Fecha: 05-09-2025; Hora: 15:06:24
+1 - Software; Archivo: medios.php; Acción: Lista las facturas en facturación; Fecha: 05-09-2025; Hora: 15:06:24
+1 - Software; Archivo: medios.php; Acción: Lista las facturas en facturación; Fecha: 05-09-2025; Hora: 15:10:45
+1 - Software; Archivo: medios.php; Acción: Lista las facturas en facturación; Fecha: 05-09-2025; Hora: 15:10:46
+1 - Software; Archivo: medios.php; Acción: Lista las facturas en facturación; Fecha: 05-09-2025; Hora: 15:10:46
+1 - Software; Archivo: medios.php; Acción: Lista las facturas en facturación; Fecha: 05-09-2025; Hora: 15:10:46
+1 - Software; Archivo: medios.php; Acción: Lista las facturas en facturación; Fecha: 05-09-2025; Hora: 15:13:22
+1 - Software; Archivo: medios.php; Acción: Lista las facturas en facturación; Fecha: 05-09-2025; Hora: 15:13:22
+1 - Software; Archivo: medios.php; Acción: Lista las facturas en facturación; Fecha: 05-09-2025; Hora: 15:13:22
+1 - Software; Archivo: medios.php; Acción: Lista las facturas en facturación; Fecha: 05-09-2025; Hora: 15:13:22
+1 - Software; Archivo: medios.php; Acción: Lista las facturas en facturación; Fecha: 05-09-2025; Hora: 15:13:31
+1 - Software; Archivo: medios.php; Acción: Lista las facturas en facturación; Fecha: 05-09-2025; Hora: 15:13:31
+1 - Software; Archivo: medios.php; Acción: Lista las facturas en facturación; Fecha: 05-09-2025; Hora: 15:13:31
+1 - Software; Archivo: medios.php; Acción: Lista las facturas en facturación; Fecha: 05-09-2025; Hora: 15:13:31
+1 - Software; Archivo: medios.php; Acción: Lista las facturas en facturación; Fecha: 05-09-2025; Hora: 15:16:07
+1 - Software; Archivo: medios.php; Acción: Lista las facturas en facturación; Fecha: 05-09-2025; Hora: 15:16:07
+1 - Software; Archivo: medios.php; Acción: Lista las facturas en facturación; Fecha: 05-09-2025; Hora: 15:16:07
+1 - Software; Archivo: medios.php; Acción: Lista las facturas en facturación; Fecha: 05-09-2025; Hora: 15:16:07
+1 - Software; Archivo: medios.php; Acción: Lista las facturas en facturación; Fecha: 05-09-2025; Hora: 15:16:40
+1 - Software; Archivo: medios.php; Acción: Lista las facturas en facturación; Fecha: 05-09-2025; Hora: 15:16:40
+1 - Software; Archivo: medios.php; Acción: Lista las facturas en facturación; Fecha: 05-09-2025; Hora: 15:16:40
+1 - Software; Archivo: medios.php; Acción: Lista las facturas en facturación; Fecha: 05-09-2025; Hora: 15:16:40
+1 - Software; Archivo: medios.php; Acción: Lista las facturas en facturación; Fecha: 05-09-2025; Hora: 15:20:25
+1 - Software; Archivo: medios.php; Acción: Lista las facturas en facturación; Fecha: 05-09-2025; Hora: 15:20:25
+1 - Software; Archivo: medios.php; Acción: Lista las facturas en facturación; Fecha: 05-09-2025; Hora: 15:20:25
+1 - Software; Archivo: medios.php; Acción: Lista las facturas en facturación; Fecha: 05-09-2025; Hora: 15:20:25
+1 - Software; Archivo: medios.php; Acción: Lista las facturas en facturación; Fecha: 05-09-2025; Hora: 15:22:11
+1 - Software; Archivo: medios.php; Acción: Lista las facturas en facturación; Fecha: 05-09-2025; Hora: 15:22:11
+1 - Software; Archivo: medios.php; Acción: Lista las facturas en facturación; Fecha: 05-09-2025; Hora: 15:22:11
+1 - Software; Archivo: medios.php; Acción: Lista las facturas en facturación; Fecha: 05-09-2025; Hora: 15:22:11
+1 - Software; Archivo: medios.php; Acción: Lista las facturas en facturación; Fecha: 05-09-2025; Hora: 15:22:37
+1 - Software; Archivo: medios.php; Acción: Lista las facturas en facturación; Fecha: 05-09-2025; Hora: 15:22:37
+1 - Software; Archivo: medios.php; Acción: Lista las facturas en facturación; Fecha: 05-09-2025; Hora: 15:22:37
+1 - Software; Archivo: medios.php; Acción: Lista las facturas en facturación; Fecha: 05-09-2025; Hora: 15:22:37
+1 - Software; Archivo: medios.php; Acción: Lista las facturas en facturación; Fecha: 05-09-2025; Hora: 15:22:42
+1 - Software; Archivo: medios.php; Acción: Lista las facturas en facturación; Fecha: 05-09-2025; Hora: 15:22:42
+1 - Software; Archivo: medios.php; Acción: Lista las facturas en facturación; Fecha: 05-09-2025; Hora: 15:22:42
+1 - Software; Archivo: medios.php; Acción: Lista las facturas en facturación; Fecha: 05-09-2025; Hora: 15:22:42
+1 - Software; Archivo: medios.php; Acción: Lista las facturas en facturación; Fecha: 05-09-2025; Hora: 15:22:53
+1 - Software; Archivo: medios.php; Acción: Lista las facturas en facturación; Fecha: 05-09-2025; Hora: 15:22:53
+1 - Software; Archivo: medios.php; Acción: Lista las facturas en facturación; Fecha: 05-09-2025; Hora: 15:22:53
+1 - Software; Archivo: medios.php; Acción: Lista las facturas en facturación; Fecha: 05-09-2025; Hora: 15:22:53
+ID:  - Nombre:  - IP: 192.168.31.3; Archivo: usuario.php; Acción: Se cambia la contraseña de: zhtyl1s1b88f882ea9a25a5bbc009; Fecha: 05-09-2025; Hora: 15:35:43
+ID: 24 - Nombre: luis - IP: 192.168.31.3; Archivo: usuario.php; Acción: Se hace login Alumno; Fecha: 05-09-2025; Hora: 15:35:56
+24 - luis; Archivo: actividades.php; Acción: Lista las actividades de los alumnos; Fecha: 05-09-2025; Hora: 15:36:07
+24 - luis; Archivo: actividades.php; Acción: Lista las actividades del usuario; Fecha: 05-09-2025; Hora: 15:36:10
+1 - Software; Archivo: actividades.php; Acción: Lista las actividades del usuario; Fecha: 05-09-2025; Hora: 15:42:58
+1 - Software; Archivo: pagos.php; Acción: Recoger los medios de pago; Fecha: 05-09-2025; Hora: 15:56:11
+1 - Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 05-09-2025; Hora: 15:56:11
+1 - Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 05-09-2025; Hora: 15:56:13
+1 - Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 05-09-2025; Hora: 15:59:52
+1 - Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 05-09-2025; Hora: 15:59:58
+1 - Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 05-09-2025; Hora: 16:00:13
+1 - Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 05-09-2025; Hora: 16:00:14
+1 - Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 05-09-2025; Hora: 16:00:46
+1 - Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 05-09-2025; Hora: 16:09:03
+1 - Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 05-09-2025; Hora: 16:11:26
+1 - Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 05-09-2025; Hora: 16:14:32
+1 - Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 05-09-2025; Hora: 16:42:36
+1 - Software; Archivo: pagos.php; Acción: Recoger los medios de pago; Fecha: 05-09-2025; Hora: 16:42:48
+1 - Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 05-09-2025; Hora: 16:42:48
+1 - Software; Archivo: pagos.php; Acción: Recoger los medios de pago; Fecha: 05-09-2025; Hora: 16:42:53
+1 - Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 05-09-2025; Hora: 16:42:53
+1 - Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 05-09-2025; Hora: 16:42:58
+1 - Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 05-09-2025; Hora: 16:44:34
+1 - Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 05-09-2025; Hora: 16:45:37
+1 - Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 05-09-2025; Hora: 16:48:47
+1 - Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 05-09-2025; Hora: 16:52:36
+1 - Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 05-09-2025; Hora: 16:53:38
+1 - Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 05-09-2025; Hora: 16:54:20
+1 - Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 05-09-2025; Hora: 16:54:28
+1 - Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 05-09-2025; Hora: 17:03:57
+1 - Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 05-09-2025; Hora: 17:11:54
+1 - Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 05-09-2025; Hora: 17:12:51
+1 - Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 05-09-2025; Hora: 17:12:54
+1 - Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 05-09-2025; Hora: 17:13:04
+1 - Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 05-09-2025; Hora: 17:16:00
+1 - Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 05-09-2025; Hora: 17:16:06
+1 - Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 05-09-2025; Hora: 17:17:29
+1 - Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 05-09-2025; Hora: 17:17:32
+1 - Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 05-09-2025; Hora: 17:18:10
+1 - Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 05-09-2025; Hora: 17:18:12

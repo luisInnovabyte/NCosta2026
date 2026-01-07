@@ -1,0 +1,43 @@
+{
+    "General": {
+        "tituloSitio": "Costa Valencia - Educación",
+        "logotipo": "logo_pequeno.png" ,
+        "otors": "leadertransport.png" 
+
+    },
+    "database": {
+      "host": "localhost",
+      "port": 3306,
+      "dbname": "newcosta",
+      "username": "newcosta",
+      "password": "Newproject2022@"
+    },
+    "ftpConfig": {
+      "ipFTP": "84.127.234.85",
+      "userFTP": "ftpEfeuno",
+      "passFTP": "fTp2o24efeUn0",
+      "portFTP": 21
+    },
+    "MntPrescriptores_Edu": {
+
+      "divContacto": 1,
+      "divUbicacion": 1,
+      "divObservacion": 1,
+      "divEstudiante": 1,
+      "divMatriculacion": 1,
+
+      "camposAlternativosContacto": 1,
+      "camposAlternativosUbicacion":1,
+      "campoGrupo": 1,
+      "campoBildungsurlaub": 1,
+      "campoAuPair": 1,
+
+      "botonFactura": 1
+
+    }
+  
+   
+}
+
+
+

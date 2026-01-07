@@ -1,0 +1,119 @@
+ID: 1 - Nombre: Software - IP: 192.168.31.89; Archivo: usuario.php; Acción: Se hace login; Fecha: 07-01-2025; Hora: 08:16:57
+ID: 1 - Nombre: Software - IP: 192.168.31.89; Archivo: logout.php; Acción: Sesión cerrada; Fecha: 07-01-2025; Hora: 08:17:38
+ID:  - Nombre:  - IP: 192.168.31.89; Archivo: usuario.php; Acción: Se hace login; Fecha: 07-01-2025; Hora: 08:23:45
+ID: 12 - Nombre: Luica - IP: 192.168.31.89; Archivo: usuario.php; Acción: Se hace login; Fecha: 07-01-2025; Hora: 08:23:50
+ID: 12 - Nombre: Luica - IP: 192.168.31.89; Archivo: logout.php; Acción: Sesión cerrada; Fecha: 07-01-2025; Hora: 08:45:05
+ID: 1 - Nombre: Software - IP: 192.168.31.89; Archivo: usuario.php; Acción: Se hace login; Fecha: 07-01-2025; Hora: 08:45:13
+1 - Software; Archivo: personal_Edu.php; Acción: Lista los personales; Fecha: 07-01-2025; Hora: 08:45:25
+1 - Software; Archivo: personal_Edu.php; Acción: Se inserta un nuevo personal; Fecha: 07-01-2025; Hora: 08:46:13
+1 - Software; Archivo: personal_Edu.php; Acción: Lista los personales; Fecha: 07-01-2025; Hora: 08:46:13
+1 - Software; Archivo: usuario.php; Acción: Envia correo credencialesjose@efeuno.es; Fecha: 07-01-2025; Hora: 08:46:15
+ID: 1 - Nombre: Software - IP: 192.168.31.89; Archivo: usuario.php; Acción: Se cambia la contraseña de: gatyh1tk7e1a204879a59877211c08; Fecha: 07-01-2025; Hora: 08:58:15
+1 - Software; Archivo: personal_Edu.php; Acción: Lista los personales; Fecha: 07-01-2025; Hora: 09:01:49
+1 - Software; Archivo: personal_Edu.php; Acción: Se inserta un nuevo personal; Fecha: 07-01-2025; Hora: 09:02:12
+1 - Software; Archivo: personal_Edu.php; Acción: Lista los personales; Fecha: 07-01-2025; Hora: 09:02:12
+1 - Software; Archivo: personal_Edu.php; Acción: Lista los personales; Fecha: 07-01-2025; Hora: 09:05:41
+1 - Software; Archivo: personal_Edu.php; Acción: Se inserta un nuevo personal; Fecha: 07-01-2025; Hora: 09:05:52
+1 - Software; Archivo: personal_Edu.php; Acción: Lista los personales; Fecha: 07-01-2025; Hora: 09:05:52
+1 - Software; Archivo: personal_Edu.php; Acción: Se inserta un nuevo personal; Fecha: 07-01-2025; Hora: 09:27:07
+1 - Software; Archivo: personal_Edu.php; Acción: Se inserta un nuevo personal; Fecha: 07-01-2025; Hora: 09:27:07
+1 - Software; Archivo: personal_Edu.php; Acción: Lista los personales; Fecha: 07-01-2025; Hora: 09:27:07
+1 - Software; Archivo: personal_Edu.php; Acción: Lista los personales; Fecha: 07-01-2025; Hora: 09:44:49
+1 - Software; Archivo: personal_Edu.php; Acción: Lista los personales; Fecha: 07-01-2025; Hora: 09:49:47
+1 - Software; Archivo: personal_Edu.php; Acción: Lista los personales; Fecha: 07-01-2025; Hora: 09:49:51
+1 - Software; Archivo: personal_Edu.php; Acción: Se inserta un nuevo personal; Fecha: 07-01-2025; Hora: 09:50:17
+1 - Software; Archivo: personal_Edu.php; Acción: Lista los personales; Fecha: 07-01-2025; Hora: 09:50:17
+ID:  - Nombre:  - IP: 192.168.31.89; Archivo: usuario.php; Acción: Se cambia la contraseña de: gatyi1xp488d8dab2cbbde5c60973a; Fecha: 07-01-2025; Hora: 09:59:25
+ID: 18 - Nombre: José - IP: 192.168.31.89; Archivo: usuario.php; Acción: Se hace login; Fecha: 07-01-2025; Hora: 09:59:54
+ID: 18 - Nombre: José - IP: 192.168.31.89; Archivo: logout.php; Acción: Sesión cerrada; Fecha: 07-01-2025; Hora: 10:29:23
+ID:  - Nombre:  - IP: 192.168.31.89; Archivo: usuario.php; Acción: Se hace login; Fecha: 07-01-2025; Hora: 10:49:57
+ID: 18 - Nombre: José - IP: 192.168.31.89; Archivo: usuario.php; Acción: Se hace login; Fecha: 07-01-2025; Hora: 10:50:05
+ID: 18 - Nombre: José - IP: 192.168.31.89; Archivo: logout.php; Acción: Sesión cerrada; Fecha: 07-01-2025; Hora: 11:13:06
+ID: 18 - Nombre: José - IP: 192.168.31.89; Archivo: usuario.php; Acción: Se hace login; Fecha: 07-01-2025; Hora: 11:13:14
+ID: 18 - Nombre: José - IP: 192.168.31.89; Archivo: logout.php; Acción: Sesión cerrada; Fecha: 07-01-2025; Hora: 12:21:58
+ID: 18 - Nombre: José - IP: 192.168.31.89; Archivo: usuario.php; Acción: Se hace login; Fecha: 07-01-2025; Hora: 12:33:56
+18 - José; Archivo: actividades.php; Acción: Lista las actividades de los alumnos; Fecha: 07-01-2025; Hora: 13:35:42
+18 - José; Archivo: actividades.php; Acción: Lista las actividades de los alumnos; Fecha: 07-01-2025; Hora: 13:35:47
+18 - José; Archivo: actividades.php; Acción: Lista las actividades de los adminitradores; Fecha: 07-01-2025; Hora: 13:35:50
+18 - José; Archivo: actividades.php; Acción: Lista las actividades de los adminitradores; Fecha: 07-01-2025; Hora: 13:36:21
+18 - José; Archivo: actividades.php; Acción: Lista las actividades de los adminitradores; Fecha: 07-01-2025; Hora: 13:36:23
+18 - José; Archivo: actividades.php; Acción: Lista las actividades de los adminitradores; Fecha: 07-01-2025; Hora: 13:36:32
+18 - José; Archivo: actividades.php; Acción: Lista las actividades de los adminitradores; Fecha: 07-01-2025; Hora: 13:36:42
+18 - José; Archivo: actividades.php; Acción: Lista los alumnos apuntados en la actividad 2; Fecha: 07-01-2025; Hora: 13:36:54
+18 - José; Archivo: actividades.php; Acción: Lista las actividades de los adminitradores; Fecha: 07-01-2025; Hora: 13:36:56
+18 - José; Archivo: actividades.php; Acción: Lista las actividades de los adminitradores; Fecha: 07-01-2025; Hora: 13:44:33
+18 - José; Archivo: actividades.php; Acción: Lista las actividades de los adminitradores; Fecha: 07-01-2025; Hora: 13:46:38
+18 - José; Archivo: actividades.php; Acción: Lista las actividades de los adminitradores; Fecha: 07-01-2025; Hora: 13:46:41
+18 - José; Archivo: actividades.php; Acción: Lista los alumnos apuntados en la actividad 2; Fecha: 07-01-2025; Hora: 13:49:15
+18 - José; Archivo: actividades.php; Acción: Lista las actividades de los adminitradores; Fecha: 07-01-2025; Hora: 14:02:38
+18 - José; Archivo: actividades.php; Acción: Lista los alumnos apuntados en la actividad 2; Fecha: 07-01-2025; Hora: 14:02:40
+18 - José; Archivo: actividades.php; Acción: Lista las actividades de los adminitradores; Fecha: 07-01-2025; Hora: 14:02:42
+18 - José; Archivo: actividades.php; Acción: Lista las actividades de los adminitradores; Fecha: 07-01-2025; Hora: 14:28:15
+18 - José; Archivo: actividades.php; Acción: Lista las actividades de los adminitradores; Fecha: 07-01-2025; Hora: 14:28:58
+18 - José; Archivo: actividades.php; Acción: Lista las actividades de los adminitradores; Fecha: 07-01-2025; Hora: 14:29:06
+18 - José; Archivo: actividades.php; Acción: Lista las actividades de los adminitradores; Fecha: 07-01-2025; Hora: 14:29:07
+18 - José; Archivo: actividades.php; Acción: Lista las actividades de los adminitradores; Fecha: 07-01-2025; Hora: 14:29:09
+ID: 18 - Nombre: José - IP: 192.168.31.89; Archivo: logout.php; Acción: Sesión cerrada; Fecha: 07-01-2025; Hora: 14:29:24
+ID: 1 - Nombre: Software - IP: 192.168.31.89; Archivo: usuario.php; Acción: Se hace login; Fecha: 07-01-2025; Hora: 14:29:44
+1 - Software; Archivo: actividades.php; Acción: Lista las actividades de los adminitradores; Fecha: 07-01-2025; Hora: 14:29:48
+1 - Software; Archivo: personal_Edu.php; Acción: Lista los personales; Fecha: 07-01-2025; Hora: 14:37:58
+1 - Software; Archivo: personal_Edu.php; Acción: Lista los personales; Fecha: 07-01-2025; Hora: 14:38:01
+1 - Software; Archivo: personal_Edu.php; Acción: Lista los personales; Fecha: 07-01-2025; Hora: 14:38:06
+1 - Software; Archivo: personal_Edu.php; Acción: Lista los personales; Fecha: 07-01-2025; Hora: 14:38:06
+1 - Software; Archivo: actividades.php; Acción: Lista las actividades de los adminitradores; Fecha: 07-01-2025; Hora: 14:38:12
+1 - Software; Archivo: actividades.php; Acción: Inserta Actividades; Fecha: 07-01-2025; Hora: 14:58:28
+1 - Software; Archivo: actividades.php; Acción: Lista las actividades de los adminitradores; Fecha: 07-01-2025; Hora: 14:59:10
+ID: 1 - Nombre: Software - IP: 192.168.31.89; Archivo: logout.php; Acción: Sesión cerrada; Fecha: 07-01-2025; Hora: 15:00:44
+ID:  - Nombre:  - IP: 192.168.31.89; Archivo: usuario.php; Acción: Se hace login; Fecha: 07-01-2025; Hora: 15:00:53
+ID: 18 - Nombre: José - IP: 192.168.31.89; Archivo: usuario.php; Acción: Se hace login; Fecha: 07-01-2025; Hora: 15:01:11
+18 - José; Archivo: actividades.php; Acción: Lista las actividades de los adminitradores; Fecha: 07-01-2025; Hora: 15:01:11
+18 - José; Archivo: actividades.php; Acción: Lista las actividades de los adminitradores; Fecha: 07-01-2025; Hora: 15:02:27
+18 - José; Archivo: actividades.php; Acción: Lista las actividades de los adminitradores; Fecha: 07-01-2025; Hora: 15:02:27
+18 - José; Archivo: actividades.php; Acción: Lista las actividades de los adminitradores; Fecha: 07-01-2025; Hora: 15:02:34
+18 - José; Archivo: actividades.php; Acción: Lista las actividades de los adminitradores; Fecha: 07-01-2025; Hora: 15:02:35
+18 - José; Archivo: actividades.php; Acción: Lista las actividades de los adminitradores; Fecha: 07-01-2025; Hora: 15:14:24
+18 - José; Archivo: actividades.php; Acción: Lista las actividades de los adminitradores; Fecha: 07-01-2025; Hora: 15:14:26
+18 - José; Archivo: actividades.php; Acción: Lista las actividades de los adminitradores; Fecha: 07-01-2025; Hora: 15:14:27
+18 - José; Archivo: actividades.php; Acción: Lista las actividades de los adminitradores; Fecha: 07-01-2025; Hora: 15:14:28
+18 - José; Archivo: actividades.php; Acción: Lista las actividades de los adminitradores; Fecha: 07-01-2025; Hora: 15:14:29
+18 - José; Archivo: actividades.php; Acción: Lista las actividades de los adminitradores; Fecha: 07-01-2025; Hora: 15:14:30
+18 - José; Archivo: actividades.php; Acción: Lista las actividades de los adminitradores; Fecha: 07-01-2025; Hora: 15:14:31
+18 - José; Archivo: actividades.php; Acción: Lista las actividades de los adminitradores; Fecha: 07-01-2025; Hora: 15:14:32
+18 - José; Archivo: actividades.php; Acción: Lista las actividades de los adminitradores; Fecha: 07-01-2025; Hora: 15:14:33
+18 - José; Archivo: actividades.php; Acción: Lista las actividades de los adminitradores; Fecha: 07-01-2025; Hora: 15:15:28
+18 - José; Archivo: actividades.php; Acción: Lista las actividades de los adminitradores; Fecha: 07-01-2025; Hora: 15:15:30
+18 - José; Archivo: actividades.php; Acción: Lista las actividades de los adminitradores; Fecha: 07-01-2025; Hora: 15:16:17
+18 - José; Archivo: actividades.php; Acción: Lista las actividades de los adminitradores; Fecha: 07-01-2025; Hora: 15:16:24
+18 - José; Archivo: actividades.php; Acción: Lista las actividades de los adminitradores; Fecha: 07-01-2025; Hora: 15:22:37
+18 - José; Archivo: actividades.php; Acción: Lista las actividades de los adminitradores; Fecha: 07-01-2025; Hora: 15:22:42
+18 - José; Archivo: actividades.php; Acción: Lista las actividades de los adminitradores; Fecha: 07-01-2025; Hora: 15:22:58
+18 - José; Archivo: actividades.php; Acción: Lista las actividades de los adminitradores; Fecha: 07-01-2025; Hora: 15:24:59
+18 - José; Archivo: actividades.php; Acción: Lista las actividades de los adminitradores; Fecha: 07-01-2025; Hora: 15:38:02
+ID: 18 - Nombre: José - IP: 192.168.31.89; Archivo: logout.php; Acción: Sesión cerrada; Fecha: 07-01-2025; Hora: 15:38:48
+ID: 7 - Nombre: Luis Carlos - IP: 192.168.31.89; Archivo: usuario.php; Acción: Se hace login Alumno; Fecha: 07-01-2025; Hora: 15:39:03
+ID:  - Nombre:  - IP: 192.168.31.89; Archivo: usuario.php; Acción: Se hace login; Fecha: 07-01-2025; Hora: 15:40:44
+ID: 1 - Nombre: Software - IP: 192.168.31.89; Archivo: usuario.php; Acción: Se hace login; Fecha: 07-01-2025; Hora: 15:40:47
+1 - Software; Archivo: pagos.php; Acción: Recoger los medios de pago; Fecha: 07-01-2025; Hora: 15:40:58
+1 - Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 07-01-2025; Hora: 15:40:58
+7 - Luis Carlos; Archivo: actividades.php; Acción: Lista las actividades de los alumnos; Fecha: 07-01-2025; Hora: 15:47:37
+7 - Luis Carlos; Archivo: actividades.php; Acción: Lista las actividades de los alumnos; Fecha: 07-01-2025; Hora: 15:50:08
+7 - Luis Carlos; Archivo: actividades.php; Acción: Lista las actividades de los alumnos; Fecha: 07-01-2025; Hora: 15:50:42
+7 - Luis Carlos; Archivo: actividades.php; Acción: Lista las actividades de los alumnos; Fecha: 07-01-2025; Hora: 15:51:18
+ID: 7 - Nombre: Luis Carlos - IP: 192.168.31.89; Archivo: logout.php; Acción: Sesión cerrada; Fecha: 07-01-2025; Hora: 15:53:42
+ID: 18 - Nombre: José - IP: 192.168.31.89; Archivo: usuario.php; Acción: Se hace login; Fecha: 07-01-2025; Hora: 15:53:49
+18 - José; Archivo: actividades.php; Acción: Lista las actividades de los adminitradores; Fecha: 07-01-2025; Hora: 15:53:50
+18 - José; Archivo: actividades.php; Acción: Lista las actividades de los adminitradores; Fecha: 07-01-2025; Hora: 15:56:41
+18 - José; Archivo: actividades.php; Acción: Lista las actividades de los adminitradores; Fecha: 07-01-2025; Hora: 15:56:52
+18 - José; Archivo: actividades.php; Acción: Lista las actividades de los adminitradores; Fecha: 07-01-2025; Hora: 15:57:28
+18 - José; Archivo: actividades.php; Acción: Lista las actividades de los adminitradores; Fecha: 07-01-2025; Hora: 15:58:30
+18 - José; Archivo: actividades.php; Acción: Lista las actividades de los adminitradores; Fecha: 07-01-2025; Hora: 15:58:37
+18 - José; Archivo: actividades.php; Acción: Lista las actividades de los adminitradores; Fecha: 07-01-2025; Hora: 15:59:36
+18 - José; Archivo: actividades.php; Acción: Lista las actividades de los adminitradores; Fecha: 07-01-2025; Hora: 15:59:40
+18 - José; Archivo: actividades.php; Acción: Lista las actividades de los adminitradores; Fecha: 07-01-2025; Hora: 15:59:42
+18 - José; Archivo: actividades.php; Acción: Lista las actividades de los adminitradores; Fecha: 07-01-2025; Hora: 15:59:43
+18 - José; Archivo: actividades.php; Acción: Lista las actividades de los adminitradores; Fecha: 07-01-2025; Hora: 15:59:51
+18 - José; Archivo: actividades.php; Acción: Lista las actividades de los adminitradores; Fecha: 07-01-2025; Hora: 16:05:52
+18 - José; Archivo: actividades.php; Acción: Lista las actividades de los adminitradores; Fecha: 07-01-2025; Hora: 16:08:48
+18 - José; Archivo: actividades.php; Acción: Lista las actividades de los adminitradores; Fecha: 07-01-2025; Hora: 16:09:39
+18 - José; Archivo: actividades.php; Acción: Lista las actividades de los adminitradores; Fecha: 07-01-2025; Hora: 16:10:26
+18 - José; Archivo: actividades.php; Acción: Lista las actividades de los adminitradores; Fecha: 07-01-2025; Hora: 16:10:30

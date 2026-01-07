@@ -1,0 +1,91 @@
+ID: 1 - Nombre: Software - IP: 192.168.31.89; Archivo: usuario.php; Acción: Se hace login; Fecha: 07-02-2025; Hora: 08:11:21
+ - Software; Archivo: asistencia.php; Acción: Lista las asistencias; Fecha: 07-02-2025; Hora: 08:52:49
+ - Software; Archivo: asistencia.php; Acción: Lista las asistencias; Fecha: 07-02-2025; Hora: 08:52:50
+1 - Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 07-02-2025; Hora: 09:23:34
+2 - Software Admin Software; Archivo: tipoCurso_Edu.php; Acción: Lista los tipos de curso; Fecha: 07-02-2025; Hora: 10:00:57
+2 - Software Admin Software; Archivo: tipoCurso_Edu.php; Acción: Lista los tipos de curso; Fecha: 07-02-2025; Hora: 10:02:57
+2 - Software Admin Software; Archivo: tipoCurso_Edu.php; Acción: Lista los tipos de curso; Fecha: 07-02-2025; Hora: 10:03:39
+2 - Software Admin Software; Archivo: niveles.php; Acción: Lista los niveles; Fecha: 07-02-2025; Hora: 10:03:41
+2 - Software Admin Software; Archivo: niveles.php; Acción: Lista los niveles; Fecha: 07-02-2025; Hora: 10:23:09
+2 - Software Admin Software; Archivo: niveles.php; Acción: Lista los niveles; Fecha: 07-02-2025; Hora: 10:23:27
+2 - Software Admin Software; Archivo: niveles.php; Acción: Lista los niveles; Fecha: 07-02-2025; Hora: 10:25:24
+2 - Software Admin Software; Archivo: niveles.php; Acción: Se inserta un nuevo nivel; Fecha: 07-02-2025; Hora: 10:25:39
+2 - Software Admin Software; Archivo: niveles.php; Acción: Lista los niveles; Fecha: 07-02-2025; Hora: 10:25:39
+2 - Software Admin Software; Archivo: niveles.php; Acción: Lista los niveles; Fecha: 07-02-2025; Hora: 10:26:26
+2 - Software Admin Software; Archivo: niveles.php; Acción: Se inserta un nuevo nivel; Fecha: 07-02-2025; Hora: 10:26:36
+2 - Software Admin Software; Archivo: niveles.php; Acción: Lista los niveles; Fecha: 07-02-2025; Hora: 10:26:36
+2 - Software Admin Software; Archivo: niveles.php; Acción: Lista los niveles; Fecha: 07-02-2025; Hora: 10:26:40
+2 - Software Admin Software; Archivo: niveles.php; Acción: Se inserta un nuevo nivel; Fecha: 07-02-2025; Hora: 10:26:48
+2 - Software Admin Software; Archivo: niveles.php; Acción: Lista los niveles; Fecha: 07-02-2025; Hora: 10:26:48
+2 - Software Admin Software; Archivo: niveles.php; Acción: Lista los niveles; Fecha: 07-02-2025; Hora: 10:26:58
+2 - Software Admin Software; Archivo: niveles.php; Acción: Lista los niveles; Fecha: 07-02-2025; Hora: 10:27:40
+2 - Software Admin Software; Archivo: niveles.php; Acción: Se inserta un nuevo nivel; Fecha: 07-02-2025; Hora: 10:27:51
+2 - Software Admin Software; Archivo: niveles.php; Acción: Lista los niveles; Fecha: 07-02-2025; Hora: 10:27:51
+2 - Software Admin Software; Archivo: niveles.php; Acción: Lista los niveles; Fecha: 07-02-2025; Hora: 10:28:09
+2 - Software Admin Software; Archivo: niveles.php; Acción: Se inserta un nuevo nivel; Fecha: 07-02-2025; Hora: 10:28:20
+2 - Software Admin Software; Archivo: niveles.php; Acción: Lista los niveles; Fecha: 07-02-2025; Hora: 10:28:42
+2 - Software Admin Software; Archivo: niveles.php; Acción: Lista los niveles; Fecha: 07-02-2025; Hora: 10:28:46
+2 - Software Admin Software; Archivo: niveles.php; Acción: Se inserta un nuevo nivel; Fecha: 07-02-2025; Hora: 10:28:53
+2 - Software Admin Software; Archivo: niveles.php; Acción: Se inserta un nuevo nivel; Fecha: 07-02-2025; Hora: 10:42:44
+2 - Software Admin Software; Archivo: niveles.php; Acción: Lista los niveles; Fecha: 07-02-2025; Hora: 11:45:13
+2 - Software Admin Software; Archivo: niveles.php; Acción: Se inserta un nuevo nivel; Fecha: 07-02-2025; Hora: 11:45:39
+2 - Software Admin Software; Archivo: niveles.php; Acción: Lista los niveles; Fecha: 07-02-2025; Hora: 11:45:39
+2 - Software Admin Software; Archivo: pagos.php; Acción: Recoger los medios de pago; Fecha: 07-02-2025; Hora: 12:24:38
+2 - Software Admin Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 07-02-2025; Hora: 12:24:38
+2 - Software Admin Software; Archivo: pagos.php; Acción: Recoger los medios de pago; Fecha: 07-02-2025; Hora: 12:24:51
+2 - Software Admin Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 07-02-2025; Hora: 12:24:51
+2 - Software Admin Software; Archivo: pagos.php; Acción: Recoger los medios de pago; Fecha: 07-02-2025; Hora: 12:25:08
+2 - Software Admin Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 07-02-2025; Hora: 12:25:08
+2 - Software Admin Software; Archivo: pagos.php; Acción: Recoger los medios de pago; Fecha: 07-02-2025; Hora: 12:25:18
+2 - Software Admin Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 07-02-2025; Hora: 12:25:18
+2 - Software Admin Software; Archivo: pagos.php; Acción: Recoger los medios de pago; Fecha: 07-02-2025; Hora: 12:25:43
+2 - Software Admin Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 07-02-2025; Hora: 12:25:43
+2 - Software Admin Software; Archivo: pagos.php; Acción: Recoger los medios de pago; Fecha: 07-02-2025; Hora: 12:25:56
+2 - Software Admin Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 07-02-2025; Hora: 12:25:56
+2 - Software Admin Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 07-02-2025; Hora: 12:41:23
+2 - Software Admin Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 07-02-2025; Hora: 12:41:38
+2 - Software Admin Software; Archivo: niveles.php; Acción: Lista los niveles; Fecha: 07-02-2025; Hora: 12:41:50
+2 - Software Admin Software; Archivo: niveles.php; Acción: Lista los niveles; Fecha: 07-02-2025; Hora: 12:41:53
+2 - Software Admin Software; Archivo: niveles.php; Acción: Lista los niveles; Fecha: 07-02-2025; Hora: 12:41:54
+2 - Software Admin Software; Archivo: niveles.php; Acción: Lista los niveles; Fecha: 07-02-2025; Hora: 12:42:22
+2 - Software Admin Software; Archivo: niveles.php; Acción: Lista los niveles; Fecha: 07-02-2025; Hora: 12:45:26
+2 - Software Admin Software; Archivo: tipoCurso_Edu.php; Acción: Lista los tipos de curso; Fecha: 07-02-2025; Hora: 12:45:38
+2 - Software Admin Software; Archivo: pagos.php; Acción: Recoger los medios de pago; Fecha: 07-02-2025; Hora: 12:45:55
+2 - Software Admin Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 07-02-2025; Hora: 12:45:55
+2 - Software Admin Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 07-02-2025; Hora: 12:48:01
+2 - Software Admin Software; Archivo: pagos.php; Acción: Recoger los medios de pago; Fecha: 07-02-2025; Hora: 12:51:59
+2 - Software Admin Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 07-02-2025; Hora: 12:51:59
+2 - Software Admin Software; Archivo: pagos.php; Acción: Recoger los medios de pago; Fecha: 07-02-2025; Hora: 12:52:09
+2 - Software Admin Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 07-02-2025; Hora: 12:52:09
+2 - Software Admin Software; Archivo: pagos.php; Acción: Recoger los medios de pago; Fecha: 07-02-2025; Hora: 12:52:25
+2 - Software Admin Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 07-02-2025; Hora: 12:52:25
+2 - Software Admin Software; Archivo: pagos.php; Acción: Recoger los medios de pago; Fecha: 07-02-2025; Hora: 12:52:34
+2 - Software Admin Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 07-02-2025; Hora: 12:52:34
+2 - Software Admin Software; Archivo: pagos.php; Acción: Recoger los medios de pago; Fecha: 07-02-2025; Hora: 12:57:03
+2 - Software Admin Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 07-02-2025; Hora: 12:57:03
+2 - Software Admin Software; Archivo: pagos.php; Acción: Recoger los medios de pago; Fecha: 07-02-2025; Hora: 12:57:14
+2 - Software Admin Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 07-02-2025; Hora: 12:57:14
+2 - Software Admin Software; Archivo: tiposContrato_Edu.php; Acción: Lista los tipos de contrato; Fecha: 07-02-2025; Hora: 13:07:14
+2 - Software Admin Software; Archivo: pagos.php; Acción: Recoger los medios de pago; Fecha: 07-02-2025; Hora: 13:08:24
+2 - Software Admin Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 07-02-2025; Hora: 13:08:24
+2 - Software Admin Software; Archivo: pagos.php; Acción: Recoger los medios de pago; Fecha: 07-02-2025; Hora: 13:09:27
+2 - Software Admin Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 07-02-2025; Hora: 13:09:27
+2 - Software Admin Software; Archivo: niveles.php; Acción: Lista los niveles; Fecha: 07-02-2025; Hora: 13:11:25
+2 - Software Admin Software; Archivo: niveles.php; Acción: Lista los niveles; Fecha: 07-02-2025; Hora: 13:20:17
+2 - Software Admin Software; Archivo: pagos.php; Acción: Recoger los medios de pago; Fecha: 07-02-2025; Hora: 13:28:37
+2 - Software Admin Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 07-02-2025; Hora: 13:28:37
+2 - Software Admin Software; Archivo: pagos.php; Acción: Recoger los medios de pago; Fecha: 07-02-2025; Hora: 13:28:43
+2 - Software Admin Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 07-02-2025; Hora: 13:28:43
+2 - Software Admin Software; Archivo: niveles.php; Acción: Lista los niveles; Fecha: 07-02-2025; Hora: 13:32:10
+2 - Software Admin Software; Archivo: tiposContrato_Edu.php; Acción: Lista los tipos de contrato; Fecha: 07-02-2025; Hora: 13:33:30
+2 - Software Admin Software; Archivo: tiposContrato_Edu.php; Acción: Lista los tipos de contrato; Fecha: 07-02-2025; Hora: 13:33:32
+2 - Software Admin Software; Archivo: tiposContrato_Edu.php; Acción: Lista los tipos de contrato; Fecha: 07-02-2025; Hora: 13:33:48
+2 - Software Admin Software; Archivo: pagos.php; Acción: Recoger los medios de pago; Fecha: 07-02-2025; Hora: 13:58:34
+2 - Software Admin Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 07-02-2025; Hora: 13:58:34
+2 - Software Admin Software; Archivo: pagos.php; Acción: Recoger los medios de pago; Fecha: 07-02-2025; Hora: 13:58:54
+2 - Software Admin Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 07-02-2025; Hora: 13:58:54
+ID: 1 - Nombre: Software - IP: 192.168.31.89; Archivo: usuario.php; Acción: Se hace login; Fecha: 07-02-2025; Hora: 15:50:33
+1 - Software; Archivo: pagos.php; Acción: Recoger los medios de pago; Fecha: 07-02-2025; Hora: 15:50:47
+1 - Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 07-02-2025; Hora: 15:50:47
+1 - Software; Archivo: pagos.php; Acción: Recoger los medios de pago; Fecha: 07-02-2025; Hora: 15:52:25
+1 - Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 07-02-2025; Hora: 15:52:25

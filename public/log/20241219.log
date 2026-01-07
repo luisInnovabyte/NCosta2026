@@ -1,0 +1,77 @@
+ID: 1 - Nombre: Software - IP: 192.168.31.89; Archivo: usuario.php; Acción: Se hace login; Fecha: 19-12-2024; Hora: 08:37:28
+1 - Software; Archivo: pagos.php; Acción: Recoger los medios de pago; Fecha: 19-12-2024; Hora: 08:37:36
+1 - Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 19-12-2024; Hora: 08:37:36
+1 - Software; Archivo: pagos.php; Acción: Recoger los medios de pago; Fecha: 19-12-2024; Hora: 08:38:48
+1 - Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 19-12-2024; Hora: 08:38:48
+1 - Software; Archivo: testnivel.php; Acción: Lista los test de Nivel; Fecha: 19-12-2024; Hora: 08:43:54
+1 - Software; Archivo: pagos.php; Acción: Recoger los medios de pago; Fecha: 19-12-2024; Hora: 09:07:06
+1 - Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 19-12-2024; Hora: 09:07:06
+1 - Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 19-12-2024; Hora: 09:19:24
+1 - Software; Archivo: personal_Edu.php; Acción: Lista los personales; Fecha: 19-12-2024; Hora: 09:19:26
+1 - Software; Archivo: tipoCurso_Edu.php; Acción: Lista los tipos de curso; Fecha: 19-12-2024; Hora: 09:25:14
+1 - Software; Archivo: tipoCurso_Edu.php; Acción: Lista los tipos de curso; Fecha: 19-12-2024; Hora: 09:25:33
+1 - Software; Archivo: tipoCurso_Edu.php; Acción: Lista los tipos de curso; Fecha: 19-12-2024; Hora: 09:35:09
+1 - Software; Archivo: tipoCurso_Edu.php; Acción: Lista los tipos de curso; Fecha: 19-12-2024; Hora: 09:37:37
+1 - Software; Archivo: tipoCurso_Edu.php; Acción: Lista los tipos de curso; Fecha: 19-12-2024; Hora: 09:37:49
+1 - Software; Archivo: tipoCurso_Edu.php; Acción: Lista los tipos de curso; Fecha: 19-12-2024; Hora: 09:38:35
+1 - Software; Archivo: tipoCurso_Edu.php; Acción: Lista los tipos de curso; Fecha: 19-12-2024; Hora: 09:56:02
+1 - Software; Archivo: tipoCurso_Edu.php; Acción: Lista los tipos de curso; Fecha: 19-12-2024; Hora: 10:00:22
+1 - Software; Archivo: tipoCurso_Edu.php; Acción: Lista los tipos de curso; Fecha: 19-12-2024; Hora: 10:00:25
+1 - Software; Archivo: pagos.php; Acción: Recoger los medios de pago; Fecha: 19-12-2024; Hora: 10:12:21
+1 - Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 19-12-2024; Hora: 10:12:21
+1 - Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 19-12-2024; Hora: 10:12:30
+1 - Software; Archivo: pagos.php; Acción: Recoger los medios de pago; Fecha: 19-12-2024; Hora: 10:12:37
+1 - Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 19-12-2024; Hora: 10:12:37
+1 - Software; Archivo: tipoCurso_Edu.php; Acción: Lista los tipos de curso; Fecha: 19-12-2024; Hora: 11:04:03
+ID: 1 - Nombre: Software - IP: 192.168.31.89; Archivo: usuario.php; Acción: Se cambia la contraseña de: sltxjlg7373c6fb5e24b19db9dc75; Fecha: 19-12-2024; Hora: 11:04:52
+ID: 1 - Nombre: Software - IP: 192.168.31.89; Archivo: logout.php; Acción: Sesión cerrada; Fecha: 19-12-2024; Hora: 11:04:57
+ID: 7 - Nombre: LuisCarlos - IP: 192.168.31.89; Archivo: usuario.php; Acción: Se hace login Alumno; Fecha: 19-12-2024; Hora: 11:07:16
+ID: 7 - Nombre: LuisCarlos - IP: 192.168.31.89; Archivo: logout.php; Acción: Sesión cerrada; Fecha: 19-12-2024; Hora: 11:21:39
+ID: 7 - Nombre: LuisCarlos - IP: 192.168.31.89; Archivo: usuario.php; Acción: Se hace login Alumno; Fecha: 19-12-2024; Hora: 11:21:48
+7 - LuisCarlos; Archivo: actividades.php; Acción: Lista las actividades de los alumnos; Fecha: 19-12-2024; Hora: 11:22:40
+ID: 1 - Nombre: Software - IP: 192.168.31.89; Archivo: usuario.php; Acción: Se hace login; Fecha: 19-12-2024; Hora: 11:23:11
+1 - Software; Archivo: actividades.php; Acción: Lista las actividades de los adminitradores; Fecha: 19-12-2024; Hora: 11:23:18
+7 - LuisCarlos; Archivo: actividades.php; Acción: Lista las actividades de los alumnos; Fecha: 19-12-2024; Hora: 11:25:24
+7 - LuisCarlos; Archivo: actividades.php; Acción: Lista las actividades de los alumnos; Fecha: 19-12-2024; Hora: 11:40:17
+7 - LuisCarlos; Archivo: actividades.php; Acción: Lista las actividades de los alumnos; Fecha: 19-12-2024; Hora: 11:44:47
+7 - LuisCarlos; Archivo: actividades.php; Acción: Lista las actividades de los alumnos; Fecha: 19-12-2024; Hora: 11:46:16
+ID: 7 - Nombre: LuisCarlos - IP: 192.168.31.89; Archivo: logout.php; Acción: Sesión cerrada; Fecha: 19-12-2024; Hora: 11:46:19
+ID: 1 - Nombre: Software - IP: 192.168.31.89; Archivo: usuario.php; Acción: Se hace login; Fecha: 19-12-2024; Hora: 11:46:26
+1 - Software; Archivo: medios.php; Acción: Lista los medios de pago; Fecha: 19-12-2024; Hora: 11:46:30
+1 - Software; Archivo: testnivel.php; Acción: Lista los test de Nivel; Fecha: 19-12-2024; Hora: 11:46:31
+1 - Software; Archivo: actividades.php; Acción: Lista las actividades de los adminitradores; Fecha: 19-12-2024; Hora: 11:46:32
+1 - Software; Archivo: tipoCurso_Edu.php; Acción: Lista los tipos de curso; Fecha: 19-12-2024; Hora: 11:46:34
+1 - Software; Archivo: tipoCurso_Edu.php; Acción: Lista los tipos de curso; Fecha: 19-12-2024; Hora: 13:18:48
+1 - Software; Archivo: pagos.php; Acción: Recoger los medios de pago; Fecha: 19-12-2024; Hora: 13:19:51
+1 - Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 19-12-2024; Hora: 13:19:51
+ID: 1 - Nombre: Software - IP: 192.168.31.89; Archivo: logout.php; Acción: Sesión cerrada; Fecha: 19-12-2024; Hora: 13:28:25
+ID: 7 - Nombre: LuisCarlos - IP: 192.168.31.89; Archivo: usuario.php; Acción: Se hace login Alumno; Fecha: 19-12-2024; Hora: 13:28:33
+ID: 7 - Nombre: LuisCarlos - IP: 192.168.31.89; Archivo: logout.php; Acción: Sesión cerrada; Fecha: 19-12-2024; Hora: 13:29:11
+ID: 7 - Nombre: LuisCarlos - IP: 192.168.31.89; Archivo: usuario.php; Acción: Se hace login Alumno; Fecha: 19-12-2024; Hora: 13:29:36
+ID: 7 - Nombre: LuisCarlos - IP: 192.168.31.89; Archivo: logout.php; Acción: Sesión cerrada; Fecha: 19-12-2024; Hora: 13:29:50
+ID: 7 - Nombre: LuisCarlos - IP: 192.168.31.89; Archivo: usuario.php; Acción: Se hace login Alumno; Fecha: 19-12-2024; Hora: 13:30:06
+7 - LuisCarlos; Archivo: actividades.php; Acción: Lista las actividades de los alumnos; Fecha: 19-12-2024; Hora: 13:35:20
+7 - LuisCarlos; Archivo: actividades.php; Acción: Lista las actividades de los alumnos; Fecha: 19-12-2024; Hora: 13:35:29
+7 - LuisCarlos; Archivo: actividades.php; Acción: Lista las actividades de los alumnos; Fecha: 19-12-2024; Hora: 14:11:59
+ID: 7 - Nombre: LuisCarlos - IP: 192.168.31.89; Archivo: logout.php; Acción: Sesión cerrada; Fecha: 19-12-2024; Hora: 14:12:03
+ID: 7 - Nombre: LuisCarlos - IP: 192.168.31.89; Archivo: usuario.php; Acción: Se hace login Alumno; Fecha: 19-12-2024; Hora: 14:12:20
+7 - LuisCarlos; Archivo: actividades.php; Acción: Lista las actividades de los alumnos; Fecha: 19-12-2024; Hora: 14:12:21
+7 - LuisCarlos; Archivo: actividades.php; Acción: Lista las actividades de los alumnos; Fecha: 19-12-2024; Hora: 14:18:25
+7 - LuisCarlos; Archivo: actividades.php; Acción: Lista las actividades de los alumnos; Fecha: 19-12-2024; Hora: 14:34:04
+7 - LuisCarlos; Archivo: actividades.php; Acción: Lista las actividades de los alumnos; Fecha: 19-12-2024; Hora: 14:34:14
+ID: 7 - Nombre: LuisCarlos - IP: 192.168.31.89; Archivo: logout.php; Acción: Sesión cerrada; Fecha: 19-12-2024; Hora: 14:34:30
+ID:  - Nombre:  - IP: 192.168.31.89; Archivo: usuario.php; Acción: Se hace login Alumno; Fecha: 19-12-2024; Hora: 14:34:38
+ID:  - Nombre:  - IP: 192.168.31.89; Archivo: usuario.php; Acción: Se hace login Alumno; Fecha: 19-12-2024; Hora: 14:34:47
+ID:  - Nombre:  - IP: 192.168.31.89; Archivo: usuario.php; Acción: Se hace login Alumno; Fecha: 19-12-2024; Hora: 14:35:02
+ID: 7 - Nombre: LuisCarlos - IP: 192.168.31.89; Archivo: usuario.php; Acción: Se hace login Alumno; Fecha: 19-12-2024; Hora: 14:35:12
+7 - LuisCarlos; Archivo: actividades.php; Acción: Lista las actividades de los alumnos; Fecha: 19-12-2024; Hora: 14:35:14
+7 - LuisCarlos; Archivo: actividades.php; Acción: Lista las actividades de los alumnos; Fecha: 19-12-2024; Hora: 14:35:26
+ID: 1 - Nombre: Software - IP: 192.168.31.89; Archivo: usuario.php; Acción: Se hace login; Fecha: 19-12-2024; Hora: 14:35:50
+7 - LuisCarlos; Archivo: actividades.php; Acción: Lista las actividades de los alumnos; Fecha: 19-12-2024; Hora: 14:40:00
+7 - LuisCarlos; Archivo: actividades.php; Acción: Lista las actividades de los alumnos; Fecha: 19-12-2024; Hora: 14:48:16
+7 - LuisCarlos; Archivo: actividades.php; Acción: Lista las actividades de los alumnos; Fecha: 19-12-2024; Hora: 14:48:29
+7 - LuisCarlos; Archivo: actividades.php; Acción: Lista las actividades de los alumnos; Fecha: 19-12-2024; Hora: 14:49:13
+7 - LuisCarlos; Archivo: actividades.php; Acción: Lista las actividades de los alumnos; Fecha: 19-12-2024; Hora: 14:50:20
+7 - LuisCarlos; Archivo: actividades.php; Acción: Lista las actividades de los alumnos; Fecha: 19-12-2024; Hora: 14:59:12
+ID: 7 - Nombre: Luis Carlos - IP: 192.168.31.89; Archivo: usuario.php; Acción: Se hace login Alumno; Fecha: 19-12-2024; Hora: 15:50:00
+7 - Luis Carlos; Archivo: actividades.php; Acción: Lista las actividades de los alumnos; Fecha: 19-12-2024; Hora: 15:50:01

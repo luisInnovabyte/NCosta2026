@@ -1,0 +1,68 @@
+ID: 0 - Nombre: Super - IP: 127.0.0.1; Archivo: tickets.php; Acción: Mostrar Tickets; Fecha: 04-09-2024; Hora: 09:11:33
+ID: 0 - Nombre: Super - IP: 127.0.0.1; Archivo: transportes.php; Acción: Mostrar Ordenes; Fecha: 04-09-2024; Hora: 09:15:29
+ID: 0 - Nombre: Super - IP: 127.0.0.1; Archivo: transportes.php; Acción: Mostrar Ordenes; Fecha: 04-09-2024; Hora: 09:18:01
+ID: 0 - Nombre: Super - IP: 127.0.0.1; Archivo: empresa.php; Acción: Listar datos de empresa; Fecha: 04-09-2024; Hora: 09:28:39
+ID: 0 - Nombre: Super - IP: 127.0.0.1; Archivo: transportes.php; Acción: Mostrar Ordenes; Fecha: 04-09-2024; Hora: 09:30:10
+ID: 0 - Nombre: Super - IP: 127.0.0.1; Archivo: transportes.php; Acción: Mostrar Ordenes; Fecha: 04-09-2024; Hora: 09:31:01
+ID: 0 - Nombre: Super - IP: 127.0.0.1; Archivo: transportes.php; Acción: Mostrar Ordenes; Fecha: 04-09-2024; Hora: 09:31:06
+ID: 0 - Nombre: Super - IP: 127.0.0.1; Archivo: usuario.php; Acción: Se recoge usuario con id: ; Fecha: 04-09-2024; Hora: 09:56:32
+ID: 0 - Nombre: Super - IP: 127.0.0.1; Archivo: transportes.php; Acción: Mostrar Ordenes; Fecha: 04-09-2024; Hora: 11:00:50
+ID: 0 - Nombre: Super - IP: 127.0.0.1; Archivo: transportes.php; Acción: Mostrar Ordenes; Fecha: 04-09-2024; Hora: 11:00:56
+ID: 0 - Nombre: Super - IP: 127.0.0.1; Archivo: ordenTransporte.php; Acción: ACTUALIZA EL CONTENEDOR A: ONEU9108456; Fecha: 04-09-2024; Hora: 11:05:46
+ID: 0 - Nombre: Super - IP: 127.0.0.1; Archivo: ordenTransporte.php; Acción: ACTUALIZA EL CONTENEDOR A: ; Fecha: 04-09-2024; Hora: 13:15:01
+ID: 0 - Nombre: Super - IP: 127.0.0.1; Archivo: ordenTransporte.php; Acción: ACTUALIZA EL CONTENEDOR A: ; Fecha: 04-09-2024; Hora: 13:15:10
+ID: 0 - Nombre: Super - IP: 127.0.0.1; Archivo: ordenTransporte.php; Acción: ACTUALIZA EL PRECINTO A: ; Fecha: 04-09-2024; Hora: 15:57:17
+ID: 0 - Nombre: Super - IP: 127.0.0.1; Archivo: ordenTransporte.php; Acción: ACTUALIZA EL PRECINTO A: ; Fecha: 04-09-2024; Hora: 15:57:36
+ID: 0 - Nombre: Super - IP: 127.0.0.1; Archivo: ordenTransporte.php; Acción: ACTUALIZA EL PRECINTO A: PRECINTO; Fecha: 04-09-2024; Hora: 15:57:46
+ID: 0 - Nombre: Super - IP: 127.0.0.1; Archivo: ordenTransporte.php; Acción: ACTUALIZA EL PRECINTO A: PRECINTO1; Fecha: 04-09-2024; Hora: 15:57:58
+ID: 0 - Nombre: Super - IP: 127.0.0.1; Archivo: ordenTransporte.php; Acción: ACTUALIZA EL CONTENEDOR A: ; Fecha: 04-09-2024; Hora: 16:00:27
+ID: 0 - Nombre: Super - IP: 127.0.0.1; Archivo: ordenTransporte.php; Acción: ACTUALIZA EL CONTENEDOR A: ; Fecha: 04-09-2024; Hora: 16:00:49
+ID: 0 - Nombre: Super - IP: 127.0.0.1; Archivo: ordenTransporte.php; Acción: ACTUALIZA EL CONTENEDOR A: ; Fecha: 04-09-2024; Hora: 16:03:20
+ID: 0 - Nombre: Super - IP: 127.0.0.1; Archivo: ordenTransporte.php; Acción: ACTUALIZA EL CONTENEDOR A: CONTENEDOR; Fecha: 04-09-2024; Hora: 16:03:34
+ID: 0 - Nombre: Super - IP: 127.0.0.1; Archivo: ordenTransporte.php; Acción: ACTUALIZA EL PRECINTO A: PRECINTO1; Fecha: 04-09-2024; Hora: 16:03:37
+ID: 0 - Nombre: Super - IP: 127.0.0.1; Archivo: logout.php; Acción: Sesión cerrada; Fecha: 04-09-2024; Hora: 16:13:00
+ID:  - Nombre:  - IP: 127.0.0.1; Archivo: usuario.php; Acción: Se hace login; Fecha: 04-09-2024; Hora: 16:15:28
+ID: 1 - Nombre: Joser - IP: 127.0.0.1; Archivo: transportes.php; Acción: Mostrar Ordenes; Fecha: 04-09-2024; Hora: 16:15:32
+ID: 1 - Nombre: Joser - IP: 127.0.0.1; Archivo: transportes.php; Acción: Mostrar Ordenes; Fecha: 04-09-2024; Hora: 16:16:40
+ID: 1 - Nombre: Joser - IP: 127.0.0.1; Archivo: transportes.php; Acción: Mostrar Ordenes; Fecha: 04-09-2024; Hora: 16:17:06
+ID: 1 - Nombre: Joser - IP: 127.0.0.1; Archivo: transportes.php; Acción: Mostrar Ordenes; Fecha: 04-09-2024; Hora: 16:17:11
+ID: 1 - Nombre: Joser - IP: 127.0.0.1; Archivo: transportes.php; Acción: Mostrar Ordenes; Fecha: 04-09-2024; Hora: 16:17:17
+ID: 1 - Nombre: Joser - IP: 127.0.0.1; Archivo: transportes.php; Acción: Mostrar Ordenes; Fecha: 04-09-2024; Hora: 16:18:16
+ID: 1 - Nombre: Joser - IP: 127.0.0.1; Archivo: transportes.php; Acción: Mostrar Ordenes; Fecha: 04-09-2024; Hora: 16:18:20
+ID: 1 - Nombre: Joser - IP: 127.0.0.1; Archivo: transportes.php; Acción: Mostrar Ordenes; Fecha: 04-09-2024; Hora: 16:18:29
+ID: 1 - Nombre: Joser - IP: 127.0.0.1; Archivo: transportes.php; Acción: Mostrar Ordenes; Fecha: 04-09-2024; Hora: 16:24:04
+ID: 1 - Nombre: Joser - IP: 127.0.0.1; Archivo: transportes.php; Acción: Mostrar Ordenes; Fecha: 04-09-2024; Hora: 16:24:16
+ID: 1 - Nombre: Joser - IP: 127.0.0.1; Archivo: transportes.php; Acción: Mostrar Ordenes; Fecha: 04-09-2024; Hora: 16:25:28
+ID: 1 - Nombre: Joser - IP: 127.0.0.1; Archivo: transportes.php; Acción: Mostrar Ordenes; Fecha: 04-09-2024; Hora: 16:26:25
+ID: 1 - Nombre: Joser - IP: 127.0.0.1; Archivo: transportes.php; Acción: Mostrar Ordenes; Fecha: 04-09-2024; Hora: 16:27:18
+ID: 1 - Nombre: Joser - IP: 127.0.0.1; Archivo: tickets.php; Acción: Mostrar Tickets; Fecha: 04-09-2024; Hora: 16:30:54
+ID: 1 - Nombre: Joser - IP: 127.0.0.1; Archivo: transportes.php; Acción: Mostrar Ordenes; Fecha: 04-09-2024; Hora: 16:31:09
+ID: 1 - Nombre: Joser - IP: 127.0.0.1; Archivo: transportes.php; Acción: Mostrar Ordenes; Fecha: 04-09-2024; Hora: 16:31:12
+ID: 1 - Nombre: Joser - IP: 127.0.0.1; Archivo: transportes.php; Acción: Mostrar Ordenes; Fecha: 04-09-2024; Hora: 16:36:46
+ID: 1 - Nombre: Joser - IP: 127.0.0.1; Archivo: transportes.php; Acción: Mostrar Ordenes; Fecha: 04-09-2024; Hora: 16:36:51
+ID: 1 - Nombre: Joser - IP: 127.0.0.1; Archivo: transportes.php; Acción: Mostrar Ordenes; Fecha: 04-09-2024; Hora: 16:37:03
+ID: 1 - Nombre: Joser - IP: 127.0.0.1; Archivo: transportes.php; Acción: Mostrar Ordenes; Fecha: 04-09-2024; Hora: 16:38:05
+ID: 1 - Nombre: Joser - IP: 127.0.0.1; Archivo: transportes.php; Acción: Mostrar Ordenes; Fecha: 04-09-2024; Hora: 16:38:09
+ID: 1 - Nombre: Joser - IP: 127.0.0.1; Archivo: transportes.php; Acción: Mostrar Ordenes; Fecha: 04-09-2024; Hora: 16:39:07
+ID: 1 - Nombre: Joser - IP: 127.0.0.1; Archivo: transportes.php; Acción: Mostrar Ordenes; Fecha: 04-09-2024; Hora: 16:40:07
+ID: 1 - Nombre: Joser - IP: 127.0.0.1; Archivo: transportes.php; Acción: Mostrar Ordenes; Fecha: 04-09-2024; Hora: 16:40:18
+ID: 1 - Nombre: Joser - IP: 127.0.0.1; Archivo: transportes.php; Acción: Mostrar Ordenes; Fecha: 04-09-2024; Hora: 16:40:51
+ID: 1 - Nombre: Joser - IP: 127.0.0.1; Archivo: transportes.php; Acción: Mostrar Ordenes; Fecha: 04-09-2024; Hora: 16:41:57
+ID: 1 - Nombre: Joser - IP: 127.0.0.1; Archivo: transportes.php; Acción: Mostrar Ordenes; Fecha: 04-09-2024; Hora: 16:42:14
+ID: 1 - Nombre: Joser - IP: 127.0.0.1; Archivo: transportes.php; Acción: Mostrar Ordenes; Fecha: 04-09-2024; Hora: 16:42:33
+ID: 1 - Nombre: Joser - IP: 127.0.0.1; Archivo: transportes.php; Acción: Mostrar Ordenes; Fecha: 04-09-2024; Hora: 16:42:43
+ID: 1 - Nombre: Joser - IP: 127.0.0.1; Archivo: transportes.php; Acción: Mostrar Ordenes; Fecha: 04-09-2024; Hora: 16:42:46
+ID: 1 - Nombre: Joser - IP: 127.0.0.1; Archivo: transportes.php; Acción: Mostrar Ordenes; Fecha: 04-09-2024; Hora: 16:43:01
+ID: 1 - Nombre: Joser - IP: 127.0.0.1; Archivo: transportes.php; Acción: Mostrar Ordenes; Fecha: 04-09-2024; Hora: 16:43:45
+ID: 1 - Nombre: Joser - IP: 127.0.0.1; Archivo: transportes.php; Acción: Mostrar Ordenes; Fecha: 04-09-2024; Hora: 16:43:48
+ID: 1 - Nombre: Joser - IP: 127.0.0.1; Archivo: logout.php; Acción: Sesión cerrada; Fecha: 04-09-2024; Hora: 16:44:31
+ID:  - Nombre:  - IP: 127.0.0.1; Archivo: usuario.php; Acción: Se hace login; Fecha: 04-09-2024; Hora: 17:08:44
+ID: 1 - Nombre: Joser - IP: 127.0.0.1; Archivo: tickets.php; Acción: Mostrar Tickets; Fecha: 04-09-2024; Hora: 17:08:49
+ID: 1 - Nombre: Joser - IP: 127.0.0.1; Archivo: transportes.php; Acción: Mostrar Ordenes; Fecha: 04-09-2024; Hora: 17:08:53
+ID: 1 - Nombre: Joser - IP: 127.0.0.1; Archivo: logout.php; Acción: Sesión cerrada; Fecha: 04-09-2024; Hora: 17:10:23
+ID:  - Nombre:  - IP: 127.0.0.1; Archivo: usuario.php; Acción: Se hace login; Fecha: 04-09-2024; Hora: 17:14:06
+ID: 1 - Nombre: Joser - IP: 127.0.0.1; Archivo: logout.php; Acción: Sesión cerrada; Fecha: 04-09-2024; Hora: 17:54:32
+ID:  - Nombre:  - IP: 127.0.0.1; Archivo: usuario.php; Acción: Se hace login; Fecha: 04-09-2024; Hora: 17:54:35
+ID:  - Nombre:  - IP: 127.0.0.1; Archivo: usuario.php; Acción: Se hace login; Fecha: 04-09-2024; Hora: 17:56:13
+ID: 1 - Nombre: Joser - IP: 127.0.0.1; Archivo: logout.php; Acción: Sesión cerrada; Fecha: 04-09-2024; Hora: 18:05:21
+ID:  - Nombre:  - IP: 127.0.0.1; Archivo: usuario.php; Acción: Se hace login; Fecha: 04-09-2024; Hora: 18:05:24

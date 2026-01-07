@@ -1,0 +1,166 @@
+ID: 1 - Nombre: Software - IP: 192.168.31.3; Archivo: usuario.php; Acción: Se hace login; Fecha: 03-07-2025; Hora: 09:00:57
+ID: 1 - Nombre: Software - IP: 192.168.31.3; Archivo: usuario.php; Acción: Se hace login; Fecha: 03-07-2025; Hora: 09:21:02
+ID: 7 - Nombre: José - IP: 192.168.31.3; Archivo: usuario.php; Acción: Se hace login; Fecha: 03-07-2025; Hora: 10:04:23
+7 - José; Archivo: actividades.php; Acción: Lista las actividades de los adminitradores; Fecha: 03-07-2025; Hora: 10:05:08
+ID: 15 - Nombre: Andres - IP: 192.168.31.3; Archivo: usuario.php; Acción: Se hace login Alumno; Fecha: 03-07-2025; Hora: 10:09:14
+ID: 21 - Nombre: Alejandro - IP: 192.168.31.3; Archivo: usuario.php; Acción: Se hace login Alumno; Fecha: 03-07-2025; Hora: 10:09:32
+21 - Alejandro; Archivo: actividades.php; Acción: Lista las actividades de los alumnos; Fecha: 03-07-2025; Hora: 10:09:34
+ID: 1 - Nombre: Software - IP: 192.168.31.3; Archivo: usuario.php; Acción: Se hace login; Fecha: 03-07-2025; Hora: 10:09:45
+1 - Software; Archivo: actividades.php; Acción: Lista las actividades de los adminitradores; Fecha: 03-07-2025; Hora: 10:09:47
+1 - Software; Archivo: actividades.php; Acción: Edita Actividades6 Ejemplo de actividad; Fecha: 03-07-2025; Hora: 10:10:06
+1 - Software; Archivo: actividades.php; Acción: Lista las actividades de los adminitradores; Fecha: 03-07-2025; Hora: 10:10:07
+1 - Software; Archivo: actividades.php; Acción: Inserta Actividades; Fecha: 03-07-2025; Hora: 10:11:00
+1 - Software; Archivo: actividades.php; Acción: Inserta Actividades; Fecha: 03-07-2025; Hora: 10:11:51
+1 - Software; Archivo: actividades.php; Acción: Lista las actividades de los adminitradores; Fecha: 03-07-2025; Hora: 10:11:53
+ID: 21 - Nombre: Alejandro - IP: 192.168.31.3; Archivo: usuario.php; Acción: Se hace login Alumno; Fecha: 03-07-2025; Hora: 10:12:09
+21 - Alejandro; Archivo: actividades.php; Acción: Lista las actividades de los alumnos; Fecha: 03-07-2025; Hora: 10:12:11
+21 - Alejandro; Archivo: actividades.php; Acción: El usuario 21 se apunta a la actividad 14; Fecha: 03-07-2025; Hora: 10:12:14
+21 - Alejandro; Archivo: actividades.php; Acción: Lista las actividades de los alumnos; Fecha: 03-07-2025; Hora: 10:12:14
+21 - Alejandro; Archivo: actividades.php; Acción: El usuario 21 se apunta a la actividad 15; Fecha: 03-07-2025; Hora: 10:12:17
+21 - Alejandro; Archivo: actividades.php; Acción: Lista las actividades de los alumnos; Fecha: 03-07-2025; Hora: 10:12:17
+ID: 1 - Nombre: Software - IP: 192.168.31.3; Archivo: usuario.php; Acción: Se hace login; Fecha: 03-07-2025; Hora: 10:12:35
+1 - Software; Archivo: actividades.php; Acción: Lista las actividades de los adminitradores; Fecha: 03-07-2025; Hora: 10:12:36
+1 - Software; Archivo: actividades.php; Acción: Edita Actividades14 Nueva Actividad 5; Fecha: 03-07-2025; Hora: 10:12:49
+1 - Software; Archivo: actividades.php; Acción: Lista las actividades de los adminitradores; Fecha: 03-07-2025; Hora: 10:12:50
+ID: 7 - Nombre: José - IP: 192.168.31.3; Archivo: usuario.php; Acción: Se hace login; Fecha: 03-07-2025; Hora: 10:12:59
+7 - José; Archivo: actividades.php; Acción: Lista las actividades de los adminitradores; Fecha: 03-07-2025; Hora: 10:13:06
+7 - José; Archivo: actividades.php; Acción: Lista los alumnos apuntados en la actividad 14; Fecha: 03-07-2025; Hora: 10:13:13
+7 - José; Archivo: actividades.php; Acción: El alumno 89 ha asistido; Fecha: 03-07-2025; Hora: 10:13:17
+7 - José; Archivo: actividades.php; Acción: Lista los alumnos apuntados en la actividad 14; Fecha: 03-07-2025; Hora: 10:13:17
+7 - José; Archivo: actividades.php; Acción: Lista las actividades de los adminitradores; Fecha: 03-07-2025; Hora: 10:13:18
+7 - José; Archivo: actividades.php; Acción: Lista los alumnos apuntados en la actividad 15; Fecha: 03-07-2025; Hora: 10:13:21
+7 - José; Archivo: actividades.php; Acción: El alumno 90 ha asistido; Fecha: 03-07-2025; Hora: 10:13:24
+7 - José; Archivo: actividades.php; Acción: Lista los alumnos apuntados en la actividad 15; Fecha: 03-07-2025; Hora: 10:13:24
+7 - José; Archivo: actividades.php; Acción: Lista las actividades de los adminitradores; Fecha: 03-07-2025; Hora: 10:13:25
+ID: 1 - Nombre: Software - IP: 192.168.31.3; Archivo: usuario.php; Acción: Se hace login; Fecha: 03-07-2025; Hora: 10:13:36
+1 - Software; Archivo: pagos.php; Acción: Recoger los medios de pago; Fecha: 03-07-2025; Hora: 10:15:15
+1 - Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 03-07-2025; Hora: 10:15:15
+1 - Software; Archivo: pagos.php; Acción: Recoger los medios de pago; Fecha: 03-07-2025; Hora: 10:20:29
+1 - Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 03-07-2025; Hora: 10:20:30
+1 - Software; Archivo: contenido.php; Acción: Lista los contenidos; Fecha: 03-07-2025; Hora: 10:25:47
+1 - Software; Archivo: contenido.php; Acción: Lista los contenidos; Fecha: 03-07-2025; Hora: 10:25:55
+1 - Software; Archivo: objetivos.php; Acción: Lista los objetivos; Fecha: 03-07-2025; Hora: 10:25:57
+1 - Software; Archivo: objetivos.php; Acción: Lista los objetivos; Fecha: 03-07-2025; Hora: 10:26:08
+1 - Software; Archivo: objetivos.php; Acción: Lista los objetivos; Fecha: 03-07-2025; Hora: 10:26:14
+1 - Software; Archivo: contenido.php; Acción: Lista los contenidos; Fecha: 03-07-2025; Hora: 10:26:18
+1 - Software; Archivo: contenido.php; Acción: Lista los contenidos; Fecha: 03-07-2025; Hora: 10:26:26
+1 - Software; Archivo: objetivos.php; Acción: Lista los objetivos; Fecha: 03-07-2025; Hora: 10:26:28
+1 - Software; Archivo: objetivos.php; Acción: Lista los objetivos; Fecha: 03-07-2025; Hora: 10:26:39
+1 - Software; Archivo: contenido.php; Acción: Lista los contenidos; Fecha: 03-07-2025; Hora: 10:26:43
+1 - Software; Archivo: contenido.php; Acción: Lista los contenidos; Fecha: 03-07-2025; Hora: 10:27:01
+1 - Software; Archivo: contenido.php; Acción: Lista los contenidos; Fecha: 03-07-2025; Hora: 10:27:08
+1 - Software; Archivo: objetivos.php; Acción: Lista los objetivos; Fecha: 03-07-2025; Hora: 10:27:09
+1 - Software; Archivo: objetivos.php; Acción: Lista los objetivos; Fecha: 03-07-2025; Hora: 10:27:15
+1 - Software; Archivo: objetivos.php; Acción: Lista los objetivos; Fecha: 03-07-2025; Hora: 10:27:18
+1 - Software; Archivo: contenido.php; Acción: Lista los contenidos; Fecha: 03-07-2025; Hora: 10:27:22
+1 - Software; Archivo: contenido.php; Acción: Lista los contenidos; Fecha: 03-07-2025; Hora: 10:27:36
+1 - Software; Archivo: contenido.php; Acción: Lista los contenidos; Fecha: 03-07-2025; Hora: 10:27:43
+1 - Software; Archivo: objetivos.php; Acción: Lista los objetivos; Fecha: 03-07-2025; Hora: 10:27:45
+1 - Software; Archivo: objetivos.php; Acción: Lista los objetivos; Fecha: 03-07-2025; Hora: 10:27:56
+1 - Software; Archivo: contenido.php; Acción: Lista los contenidos; Fecha: 03-07-2025; Hora: 10:28:03
+1 - Software; Archivo: contenido.php; Acción: Lista los contenidos; Fecha: 03-07-2025; Hora: 10:28:15
+1 - Software; Archivo: contenido.php; Acción: Lista los contenidos; Fecha: 03-07-2025; Hora: 10:28:29
+1 - Software; Archivo: objetivos.php; Acción: Lista los objetivos; Fecha: 03-07-2025; Hora: 10:28:31
+1 - Software; Archivo: objetivos.php; Acción: Lista los objetivos; Fecha: 03-07-2025; Hora: 10:28:37
+1 - Software; Archivo: objetivos.php; Acción: Lista los objetivos; Fecha: 03-07-2025; Hora: 10:28:41
+1 - Software; Archivo: contenido.php; Acción: Lista los contenidos; Fecha: 03-07-2025; Hora: 10:28:43
+1 - Software; Archivo: contenido.php; Acción: Lista los contenidos; Fecha: 03-07-2025; Hora: 10:28:52
+1 - Software; Archivo: objetivos.php; Acción: Lista los objetivos; Fecha: 03-07-2025; Hora: 10:28:53
+1 - Software; Archivo: objetivos.php; Acción: Lista los objetivos; Fecha: 03-07-2025; Hora: 10:29:05
+1 - Software; Archivo: contenido.php; Acción: Lista los contenidos; Fecha: 03-07-2025; Hora: 10:30:53
+1 - Software; Archivo: contenido.php; Acción: Lista los contenidos; Fecha: 03-07-2025; Hora: 10:31:07
+1 - Software; Archivo: contenido.php; Acción: Lista los contenidos; Fecha: 03-07-2025; Hora: 10:31:15
+1 - Software; Archivo: objetivos.php; Acción: Lista los objetivos; Fecha: 03-07-2025; Hora: 10:31:17
+1 - Software; Archivo: objetivos.php; Acción: Lista los objetivos; Fecha: 03-07-2025; Hora: 10:31:23
+1 - Software; Archivo: contenido.php; Acción: Lista los contenidos; Fecha: 03-07-2025; Hora: 10:31:27
+ID: 7 - Nombre: José - IP: 192.168.31.3; Archivo: usuario.php; Acción: Se hace login; Fecha: 03-07-2025; Hora: 11:08:43
+ID: 1 - Nombre: Software - IP: 192.168.31.3; Archivo: usuario.php; Acción: Se hace login; Fecha: 03-07-2025; Hora: 11:09:11
+1 - Software; Archivo: actividades.php; Acción: Lista las actividades de los adminitradores; Fecha: 03-07-2025; Hora: 11:09:22
+1 - Software; Archivo: actividades.php; Acción: Lista las actividades de los adminitradores; Fecha: 03-07-2025; Hora: 11:09:33
+ID: 21 - Nombre: Alejandro - IP: 192.168.31.3; Archivo: usuario.php; Acción: Se hace login Alumno; Fecha: 03-07-2025; Hora: 11:10:34
+21 - Alejandro; Archivo: actividades.php; Acción: Lista las actividades del usuario; Fecha: 03-07-2025; Hora: 11:10:43
+ID: 1 - Nombre: Software - IP: 192.168.31.3; Archivo: usuario.php; Acción: Se hace login; Fecha: 03-07-2025; Hora: 11:12:30
+1 - Software; Archivo: pagos.php; Acción: Recoger los medios de pago; Fecha: 03-07-2025; Hora: 11:12:42
+1 - Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 03-07-2025; Hora: 11:12:42
+ID: 15 - Nombre: Andres - IP: 192.168.31.3; Archivo: usuario.php; Acción: Se hace login Alumno; Fecha: 03-07-2025; Hora: 11:13:36
+ID: 15 - Nombre: Andres - IP: 192.168.31.3; Archivo: usuario.php; Acción: Se hace login Alumno; Fecha: 03-07-2025; Hora: 11:43:25
+15 - Andres; Archivo: actividades.php; Acción: Lista las actividades de los alumnos; Fecha: 03-07-2025; Hora: 11:43:57
+15 - Andres; Archivo: actividades.php; Acción: Lista las actividades del usuario; Fecha: 03-07-2025; Hora: 11:43:59
+ID: 1 - Nombre: Software - IP: 192.168.31.3; Archivo: usuario.php; Acción: Se hace login; Fecha: 03-07-2025; Hora: 11:44:39
+1 - Software; Archivo: pagos.php; Acción: Recoger los medios de pago; Fecha: 03-07-2025; Hora: 11:44:53
+1 - Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 03-07-2025; Hora: 11:44:53
+1 - Software; Archivo: pagos.php; Acción: Recoger los medios de pago; Fecha: 03-07-2025; Hora: 11:45:16
+1 - Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 03-07-2025; Hora: 11:45:16
+1 - Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 03-07-2025; Hora: 11:45:44
+1 - Software; Archivo: pagos.php; Acción: Recoger los medios de pago; Fecha: 03-07-2025; Hora: 11:46:47
+1 - Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 03-07-2025; Hora: 11:46:47
+ID: 21 - Nombre: Alejandro - IP: 192.168.31.3; Archivo: usuario.php; Acción: Se hace login Alumno; Fecha: 03-07-2025; Hora: 11:48:05
+ID: 21 - Nombre: Alejandro - IP: 192.168.31.3; Archivo: usuario.php; Acción: Se hace login Alumno; Fecha: 03-07-2025; Hora: 11:48:34
+21 - Alejandro; Archivo: actividades.php; Acción: Lista las actividades de los alumnos; Fecha: 03-07-2025; Hora: 11:50:51
+ID: 21 - Nombre: Alejandro - IP: 192.168.31.3; Archivo: usuario.php; Acción: Se hace login Alumno; Fecha: 03-07-2025; Hora: 11:51:10
+21 - Alejandro; Archivo: actividades.php; Acción: Lista las actividades de los alumnos; Fecha: 03-07-2025; Hora: 11:51:20
+21 - Alejandro; Archivo: actividades.php; Acción: Lista las actividades de los alumnos; Fecha: 03-07-2025; Hora: 11:51:43
+ID: 1 - Nombre: Software - IP: 192.168.31.3; Archivo: usuario.php; Acción: Se hace login; Fecha: 03-07-2025; Hora: 11:52:10
+1 - Software; Archivo: actividades.php; Acción: Lista las actividades de los adminitradores; Fecha: 03-07-2025; Hora: 11:52:12
+ID: 7 - Nombre: José - IP: 192.168.31.3; Archivo: usuario.php; Acción: Se hace login; Fecha: 03-07-2025; Hora: 11:53:01
+7 - José; Archivo: actividades.php; Acción: Lista las actividades de los adminitradores; Fecha: 03-07-2025; Hora: 11:58:22
+ID: 21 - Nombre: Alejandro - IP: 192.168.31.3; Archivo: usuario.php; Acción: Se hace login Alumno; Fecha: 03-07-2025; Hora: 11:59:12
+ID: 1 - Nombre: Software - IP: 192.168.31.3; Archivo: usuario.php; Acción: Se hace login; Fecha: 03-07-2025; Hora: 11:59:47
+ID: 7 - Nombre: José - IP: 192.168.31.3; Archivo: usuario.php; Acción: Se hace login; Fecha: 03-07-2025; Hora: 12:00:51
+ID: 21 - Nombre: Alejandro - IP: 192.168.31.3; Archivo: usuario.php; Acción: Se hace login Alumno; Fecha: 03-07-2025; Hora: 12:01:55
+21 - Alejandro; Archivo: actividades.php; Acción: Lista las actividades de los alumnos; Fecha: 03-07-2025; Hora: 12:02:10
+ID: 1 - Nombre: Software - IP: 192.168.31.3; Archivo: usuario.php; Acción: Se hace login; Fecha: 03-07-2025; Hora: 12:02:24
+ID:  - Nombre:  - IP: 192.168.31.3; Archivo: usuario.php; Acción: Se hace login; Fecha: 03-07-2025; Hora: 12:03:11
+ID: 1 - Nombre: Software - IP: 192.168.31.3; Archivo: usuario.php; Acción: Se hace login; Fecha: 03-07-2025; Hora: 12:03:15
+1 - Software; Archivo: actividades.php; Acción: Lista las actividades del usuario; Fecha: 03-07-2025; Hora: 12:03:45
+ID: 1 - Nombre: Software - IP: 192.168.31.3; Archivo: usuario.php; Acción: Se hace login; Fecha: 03-07-2025; Hora: 12:04:29
+ID: 1 - Nombre: Software - IP: 192.168.31.3; Archivo: usuario.php; Acción: Se hace login; Fecha: 03-07-2025; Hora: 12:05:13
+ID: 21 - Nombre: Alejandro - IP: 192.168.31.3; Archivo: usuario.php; Acción: Se hace login Alumno; Fecha: 03-07-2025; Hora: 12:05:23
+ID: 1 - Nombre: Software - IP: 192.168.31.3; Archivo: usuario.php; Acción: Se hace login; Fecha: 03-07-2025; Hora: 12:11:25
+ID: 1 - Nombre: Software - IP: 192.168.31.3; Archivo: usuario.php; Acción: Se hace login; Fecha: 03-07-2025; Hora: 12:11:32
+ID: 1 - Nombre: Software - IP: 192.168.31.3; Archivo: usuario.php; Acción: Se hace login; Fecha: 03-07-2025; Hora: 12:43:18
+ID: 15 - Nombre: Andres - IP: 192.168.31.3; Archivo: usuario.php; Acción: Se hace login Alumno; Fecha: 03-07-2025; Hora: 12:44:43
+ID: 1 - Nombre: Software - IP: 192.168.31.3; Archivo: usuario.php; Acción: Se hace login; Fecha: 03-07-2025; Hora: 13:03:02
+ID: 1 - Nombre: Software - IP: 192.168.31.3; Archivo: usuario.php; Acción: Se hace login; Fecha: 03-07-2025; Hora: 13:10:10
+1 - Software; Archivo: personal_Edu.php; Acción: Lista los personales; Fecha: 03-07-2025; Hora: 13:10:13
+1 - Software; Archivo: personal_Edu.php; Acción: Lista los personales; Fecha: 03-07-2025; Hora: 13:10:16
+ - Software; Archivo: asistencia.php; Acción: Lista las asistencias; Fecha: 03-07-2025; Hora: 13:10:18
+1 - Software; Archivo: personal_Edu.php; Acción: Lista los personales; Fecha: 03-07-2025; Hora: 13:10:19
+1 - Software; Archivo: idiomas.php; Acción: Lista los idiomas; Fecha: 03-07-2025; Hora: 13:10:30
+1 - Software; Archivo: tipoCurso_Edu.php; Acción: Lista los tipos de curso; Fecha: 03-07-2025; Hora: 13:10:32
+1 - Software; Archivo: niveles.php; Acción: Lista los niveles; Fecha: 03-07-2025; Hora: 13:10:32
+1 - Software; Archivo: alojamientos.php; Acción: Lista los alojamientos; Fecha: 03-07-2025; Hora: 13:10:35
+1 - Software; Archivo: alojamientos.php; Acción: Lista los alojamientos; Fecha: 03-07-2025; Hora: 13:10:35
+1 - Software; Archivo: alojamientos.php; Acción: Lista los alojamientos; Fecha: 03-07-2025; Hora: 13:10:35
+1 - Software; Archivo: alojamientos.php; Acción: Lista los alojamientos; Fecha: 03-07-2025; Hora: 13:10:35
+1 - Software; Archivo: alojamientos.php; Acción: Lista las visitas del alojamiento vdtyj11gn1309b336c4d90a3cea2e51; Fecha: 03-07-2025; Hora: 13:10:43
+1 - Software; Archivo: alojamientos.php; Acción: Lista los alojamientos; Fecha: 03-07-2025; Hora: 13:10:44
+1 - Software; Archivo: alojamientos.php; Acción: Lista los alojamientos; Fecha: 03-07-2025; Hora: 13:10:44
+1 - Software; Archivo: alojamientos.php; Acción: Lista los alojamientos; Fecha: 03-07-2025; Hora: 13:10:44
+1 - Software; Archivo: alojamientos.php; Acción: Lista los alojamientos; Fecha: 03-07-2025; Hora: 13:10:44
+1 - Software; Archivo: alojamientos.php; Acción: Lista los alumnos inscritos en el alojamiento 4; Fecha: 03-07-2025; Hora: 13:10:52
+1 - Software; Archivo: pagos.php; Acción: Recoger los medios de pago; Fecha: 03-07-2025; Hora: 13:14:41
+1 - Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 03-07-2025; Hora: 13:14:41
+ID:  - Nombre:  - IP: 192.168.31.3; Archivo: usuario.php; Acción: Se cambia la contraseña de: bgtymv1yee172551132e4092dcf4e0; Fecha: 03-07-2025; Hora: 13:29:36
+ID: 21 - Nombre: Alejandro - IP: 192.168.31.3; Archivo: usuario.php; Acción: Se hace login Alumno; Fecha: 03-07-2025; Hora: 13:29:48
+ID:  - Nombre:  - IP: 192.168.31.3; Archivo: usuario.php; Acción: Se cambia la contraseña de: bgtymv1yee172551132e4092dcf4e0; Fecha: 03-07-2025; Hora: 13:30:24
+ID: 21 - Nombre: Alejandro - IP: 192.168.31.3; Archivo: usuario.php; Acción: Se hace login Alumno; Fecha: 03-07-2025; Hora: 13:30:48
+ID: 1 - Nombre: Software - IP: 192.168.31.3; Archivo: usuario.php; Acción: Se hace login; Fecha: 03-07-2025; Hora: 13:37:33
+1 - Software; Archivo: alojamientos.php; Acción: Lista los alojamientos; Fecha: 03-07-2025; Hora: 13:37:39
+1 - Software; Archivo: alojamientos.php; Acción: Lista los alojamientos; Fecha: 03-07-2025; Hora: 13:37:39
+1 - Software; Archivo: alojamientos.php; Acción: Lista los alojamientos; Fecha: 03-07-2025; Hora: 13:37:39
+1 - Software; Archivo: alojamientos.php; Acción: Lista los alojamientos; Fecha: 03-07-2025; Hora: 13:37:39
+ID: 1 - Nombre: Software - IP: 192.168.31.3; Archivo: usuario.php; Acción: Se hace login; Fecha: 03-07-2025; Hora: 13:51:18
+ID:  - Nombre:  - IP: 192.168.31.3; Archivo: usuario.php; Acción: Se cambia la contraseña de: bgtymv1yee172551132e4092dcf4e0; Fecha: 03-07-2025; Hora: 14:11:47
+ID: 1 - Nombre: Software - IP: 192.168.31.3; Archivo: usuario.php; Acción: Se hace login; Fecha: 03-07-2025; Hora: 14:17:43
+ID: 1 - Nombre: Software - IP: 192.168.31.3; Archivo: usuario.php; Acción: Se cambia la contraseña de: bgtymv1yee172551132e4092dcf4e0; Fecha: 03-07-2025; Hora: 14:19:34
+ID:  - Nombre:  - IP: 192.168.31.3; Archivo: usuario.php; Acción: Se hace login Alumno; Fecha: 03-07-2025; Hora: 14:19:49
+ID: 21 - Nombre: Alejandro - IP: 192.168.31.3; Archivo: usuario.php; Acción: Se hace login Alumno; Fecha: 03-07-2025; Hora: 14:19:54
+21 - Alejandro; Archivo: actividades.php; Acción: Lista las actividades de los alumnos; Fecha: 03-07-2025; Hora: 14:20:04
+ID: 15 - Nombre: Andres - IP: 192.168.31.3; Archivo: usuario.php; Acción: Se hace login Alumno; Fecha: 03-07-2025; Hora: 14:27:18
+15 - Andres; Archivo: actividades.php; Acción: Lista las actividades del usuario; Fecha: 03-07-2025; Hora: 14:27:20
+ID: 1 - Nombre: Software - IP: 192.168.31.3; Archivo: usuario.php; Acción: Se hace login; Fecha: 03-07-2025; Hora: 14:28:10
+ID: 1 - Nombre: Software - IP: 192.168.31.3; Archivo: usuario.php; Acción: Se hace login; Fecha: 03-07-2025; Hora: 14:37:32
+1 - Software; Archivo: pagos.php; Acción: Recoger los medios de pago; Fecha: 03-07-2025; Hora: 14:44:18
+1 - Software; Archivo: tarifaAloja.php; Acción: Lista las tarifas de alojamiento; Fecha: 03-07-2025; Hora: 14:44:18
+1 - Software; Archivo: actividades.php; Acción: Lista las actividades del usuario; Fecha: 03-07-2025; Hora: 14:45:29

@@ -1,0 +1,1 @@
+"SELECT * FROM tareasDiariaClase LEFT JOIN tm_personal ON tareasDiariaClase.idProfesorTareas = tm_personal.`idPersonal` LEFT JOIN tm_horarioGrupo ON tareasDiariaClase.idHorarioTareas = tm_horarioGrupo.idHorario WHERE idHorarioTareas = 8 ;"

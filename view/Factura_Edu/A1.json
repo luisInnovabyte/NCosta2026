@@ -1,0 +1,1 @@
+"SELECT * FROM `factura_pie_real` LEFT JOIN factura_cabecera_real ON factura_pie_real.idCabecera_Pie = factura_cabecera_real.idCabecera WHERE factura_pie_real.numProformaPie = 18"
