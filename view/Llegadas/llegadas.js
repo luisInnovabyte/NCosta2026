@@ -61,26 +61,15 @@ var matriculacionTable = $("#matriculacionTableNew").DataTable({
     },
 
     ajax: {
-        url: `../../controller/llegadas.php?op=listarMatriculaciones&idLlegada=${idLlegada}`, // Añadimos el parámetro
+        url: `../../controller/llegadas.php?op=listarMatriculaciones`,
         type: "get",
         dataType: "json",
         cache: false,
         serverSide: true,
         processData: true,
         data: function(d) {
-            // Asegurar que siempre usamos el idLlegada correcto
             d.idLlegada = $('#idLlegadaReal').val() || idLlegada;
             return d;
-        },
-        beforeSend: function () {
-            // Código opcional antes de enviar
-        },
-        complete: function (data) {
-            console.log("matriculas:");
-            
-                    console.log("Datos recibidos:", data);
-
-            // Código opcional al completar
         },
         error: function (e) {
             console.error("Error en la carga de datos:", e);
@@ -195,14 +184,18 @@ $(document).ready(function () {
                 contentType: false, // Importante para que el navegador determine el tipo de contenido
               success: function(idLlegada) {
                     // TENGO QUE OBTENER LOS VALORES GUARDADOS DE PROFORMA Y FACTURA REAL DE ESTA LLEGADA
+                    
+                    // IMPORTANTE: Establecer idLlegadaReal ANTES de inicializar las tablas
+                    $('#idLlegadaReal').val(idLlegada);
 
                     listarMatriculacionesTabla(idLlegada);
                     listarPagoAnticipadoTabla(idLlegada);
                     listarSuplidosTabla(idLlegada);
                     estadoLlegada();
+                    // forzarEstadosMatricula se llamará automáticamente después de inicializar la tabla
                     forzarEstadosMatricula();
                     listarAlojamientosTabla(idLlegada);
-                    $("#matriculacionTableNew").DataTable().ajax.reload(null, false); //! NO TOCAR
+                    // Eliminado ajax.reload() redundante - la tabla ya se inicializa con datos
 
                   // Manejar la respuesta del servidor
                   toastr.success("Llegada agregada");
@@ -214,7 +207,6 @@ $(document).ready(function () {
                   $(".serviciosDiv").removeClass("d-none");
                   $("#editarBtn").removeClass("d-none");
 
-                  $('#idLlegadaReal').val(idLlegada);
                   //=====================//
                   // APARTADO DE EDICION //
                   //=====================//
@@ -492,16 +484,14 @@ $("#guardarMatricula").on("click", function () {
                 processData: false, // Importante para evitar que jQuery procese los datos
                 contentType: false, // Importante para que el navegador determine el tipo de contenido
                 success: function(response) {
-                    // Manejar la respuesta del servidor
                     toastr.success("Matricula Añadida");
 
                     $("#agregarMatriculaNew").removeClass("d-none");
                     $("#guardarMatricula").addClass("d-none");
                     $("#cancelarMatricula").addClass("d-none");
 
-                    $("#matriculacionTableNew").DataTable().ajax.reload(null, false);
                     forzarEstadosMatricula();
-                    console.log('pastos');
+                    
                     $("#codDocencia").val("");
                     $("#importeDocencia").val("");
                     $("#ivaDocencia").val("");
@@ -1577,10 +1567,9 @@ function eliminarCancelacion(){
 function forzarEstadosMatricula(){
     idLlegada = $('#idLlegadaReal').val();
     $.post("../../controller/llegadas.php?op=actualizarMatriculacion", { idLlegada: idLlegada}).always(function() {
-        $("#matriculacionTableNew").DataTable().ajax.reload(null, false); //! NO TOCAR
+        $("#matriculacionTableNew").DataTable().ajax.reload(null, false);
         estadoLlegada();
     });
-
 }
 
 

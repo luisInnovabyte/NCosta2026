@@ -210,7 +210,7 @@
             background-color: #F2F4E3; /* Amarillo pastel muy suave */
         }
         .card-body.datos-generales3 {
-            background-color: #E1F5FE; /* Azul cielo claro distintivo y profesional */
+            background-color: #EDE3FD; /* Lila clarito elegante */
         }
         .card-body.datos-generales4 {
             background-color: #FDE3F2; /* Rosa pálido delicado */
@@ -510,7 +510,7 @@
                                             <div class="col-md-3 mg-t-10-force">
                                                 <label for="idLlegada" class="form-label">Num.Llegada</label>
                                                 <input type="text" class="form-control form-control-sm" id="idLlegada" placeholder="Número secuencial" disabled>
-                                                <input type="hidden" class="form-control form-control-sm" id="idLlegadaReal" placeholder="Número secuencial" disabled>
+                                                <input type="hidden" class="form-control form-control-sm" id="idLlegadaReal" placeholder="Número secuencial">
 
                                             </div>
                                             <div class="col-md-3 mg-t-10-force">
@@ -664,7 +664,7 @@
                                                     <div class="row">
                                                       <!-- Contenedor para el mensaje, oculto por defecto -->
                                                       <div class="mensajeFacturas" style="display:none; background-color: #fdf6f0; border: 2px dashed #d4a373; padding: 20px; border-radius: 12px; font-family: Georgia, serif; color: #5a3e36; max-width: 600px; margin: 30px auto; text-align: center;"></div>
-                                                      <div class="mensajeGrupo" style="display:none; background-color: #fdf6f0; border: 2px dashed #d4a373; padding: 20px; border-radius: 12px; font-family: Georgia, serif; color: #5a3e36; max-width: 600px; margin: 30px auto; text-align: center;"></div>
+                                                      <div class="mensajeGrupo" style="display:none; background-color: #f0f8ff; border: 2px dashed #4a90e2; padding: 20px; border-radius: 12px; font-family: Georgia, serif; color: #2c5282; max-width: 600px; margin: 30px auto; text-align: center;"></div>
 
                                                       <div id="zonaFormMatricula" class="row">
 
@@ -751,7 +751,7 @@
 
                                         <div class="tab-pane fade" id="alojamiento" role="tabpanel">
                                             <div class="card mt-3 card-hover">
-                                                <div class="card-body datos-generales3">
+                                                <div class="card-body datos-generales3" style="background-color: #e3f2fd;">
                                                     <h5 class="card-title d-flex justify-content-between align-items-center">
                                                         <span>
                                                         Alojamientos <label id="textAlojamiento"></label><lable id="tiempoAloja"></lable>
@@ -763,7 +763,7 @@
                                                     <div class="row">
                                                       <!-- Contenedor para el mensaje, oculto por defecto -->
                                                       <div class="mensajeFacturas" style="display:none; background-color: #fdf6f0; border: 2px dashed #d4a373; padding: 20px; border-radius: 12px; font-family: Georgia, serif; color: #5a3e36; max-width: 600px; margin: 30px auto; text-align: center;"></div>  
-                                                    <div class="mensajeGrupo" style="display:none; background-color: #fdf6f0; border: 2px dashed #d47e73ff; padding: 20px; border-radius: 12px; font-family: Georgia, serif; color: #5a3e36; max-width: 600px; margin: 30px auto; text-align: center;"></div>
+                                                    <div class="mensajeGrupo" style="display:none; background-color: #f0f8ff; border: 2px dashed #4a90e2; padding: 20px; border-radius: 12px; font-family: Georgia, serif; color: #2c5282; max-width: 600px; margin: 30px auto; text-align: center;"></div>
 
                                                       <div id="zonaFormAlojamiento" class="row">
                                                         <input type="hidden" id="idAlojamientoEditando">
@@ -815,7 +815,7 @@
                                                         </div>
                                                         </div> <!-- cierre de zonaFormAlojamientvvv -->
 
-                                                        <div class="col-md-12 mg-t-10-force" style="margin-top: 30px;">
+                                                        <div class="col-md-12 mg-t-10-force">
 
                                                             <div class="table-responsive order-mobile-first">
                                                                 <?php

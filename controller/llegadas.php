@@ -476,8 +476,7 @@ case "recogerCertificadosPerfil":
 
         echo json_encode($results);
 
-        // Guardamos log si todo va bien
-        file_put_contents('listarMatriculaciones_OK.json', json_encode($results, JSON_PRETTY_PRINT));
+        // Debug eliminado - causaba warning de permisos
     } catch (Exception $e) {
         // Capturamos errores y los registramos
         $error = [
