@@ -21,6 +21,37 @@
             background-color: var(--bs-orange);
             color: var(--bs-black);
         }
+
+        /* Estilos profesionales para la página */
+        .page-header-custom {
+            background: linear-gradient(135deg, #1AA3E8 0%, #0d6efd 100%);
+            border-radius: 12px;
+            padding: 1.5rem 2rem;
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+        .page-header-custom h2 {
+            margin: 0;
+            font-weight: 600;
+            font-size: 1.5rem;
+        }
+        .page-header-custom p {
+            margin: 0.5rem 0 0 0;
+            opacity: 0.9;
+            font-size: 0.9rem;
+        }
+        .btn-add-record {
+            background: linear-gradient(135deg, #1AA3E8 0%, #0d6efd 100%);
+            border: none;
+            padding: 0.5rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+        .btn-add-record:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(26, 163, 232, 0.4);
+        }
     </style>
 </head>
 
@@ -77,53 +108,19 @@
                 </div>
             </div> -->
 
-            <div class="col-12 card mg-t-20-force">
+            <!-- Header profesional -->
+            <div class="page-header-custom">
+                <h2><i class='bx bx-globe me-2'></i>Gestión de Idiomas</h2>
+                <p>Administra los idiomas disponibles en el sistema</p>
+            </div>
+
+            <div class="col-12 card">
                 <div class="card-body">
-                    <h2 class="card-title">Idiomas</h2>
-                    <div class="my-3 border-top"></div>
-
                     <div class="row">
-                        <div class="col-12">
-                            <div class="card radius-10">
-                                <div class="card-body p-0">
-                                    <div class="accordion accordion-flush" id="accordionFlushExample">
-                                        <div class="accordion-item">
-                                            <h2 class="accordion-header" id="flush-headingOne">
-                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                                                    Mostrar Leyenda
-                                                </button>
-                                            </h2>
-                                            <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                                                <div class="accordion-body row d-flex align-items-center">
-                                                    <button class="btn btn-primary waves-effect tx-12-force col-12 col-lg-1">Agregar</button>
-                                                    <label class="mg-l-10 col-12 col-lg-10 mg-t-10-force mg-lg-t-0-force"> Al presionar este botón se empezará el proceso para <label class="fw-bold">agregar</label> una nueva opción a la aplicación, esto permitirá tener diferentes opciones.</label>
-                                                </div>
-
-                                                <div class="accordion-body row d-flex align-items-center">
-                                                    <button class="btn btn-info waves-effect tx-12-force col-12 col-lg-1"><i class="fa-solid fa-edit"></i></button>
-                                                    <label class="mg-l-10 col-12 col-lg-10  mg-t-10-force mg-lg-t-0-force"> Con este botón podrás <label class="fw-bold">editar</label> la información de la opción seleccionada.</label>
-                                                </div>
-
-                                                <div class="accordion-body row d-flex align-items-center">
-                                                    <button class="btn btn-success waves-effect tx-12-force col-12 col-lg-1"><i class="fa-solid fa-check"></i></button> 
-                                                    <button class="btn btn-danger waves-effect tx-12-force col-12 col-lg-1 mg-lg-l-10 mg-lg-t-0-force mg-l-0 mg-t-10-force"><i class="fa-solid fa-xmark"></i></button>
-                                                    <label class="mg-l-10 col-12 col-lg-8  mg-t-10-force mg-lg-t-0-force"> Con estos botones podrás <label class="fw-bold tx-success">activar</label> / <label class="fw-bold tx-danger">desactivar</label> las opciones, <label class="fw-bold tx-success">permitiendo</label> / <label class="fw-bold tx-danger">denegando</label> su <label class="fw-bold">uso en apartados de la aplicación</label>.</label>
-                                                </div>
-                                                <div class="accordion-body row d-flex align-items-center">
-                                                    <button class="btn btn-primary btn-icon waves-effect tx-12-force col-12 col-lg-1"><i class="fa-solid fa-eye"></i></button>
-                                                    <label class="mg-l-10 col-12 col-lg-10  mg-t-10-force mg-lg-t-0-force"> Te mostrara una ventana con <label class="fw-bold">información adicional</label> de la opción seleccionada.</label>
-                                                </div>
-
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="col-12 d-flex justify-content-end mg-b-10">
-                        <button class="btn btn-primary waves-effect col-12 col-lg-2" data-bs-toggle="modal" data-bs-target="#insertar-idioma-modal">Agregar Idioma</button>
+                        <div class="col-12 d-flex justify-content-end mb-3">
+                            <button class="btn btn-add-record waves-effect" data-bs-toggle="modal" data-bs-target="#insertar-idioma-modal">
+                                <i class="bx bx-plus me-1"></i>Agregar Idioma
+                            </button>
                         </div>
                         <div class="col-12">
                             <?php include_once '../../config/modalAyudas/filtroActivo.php' ?>

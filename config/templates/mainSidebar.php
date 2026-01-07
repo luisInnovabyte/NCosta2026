@@ -279,6 +279,7 @@ $avatarRol = $avatarUsuario[$rolUsuarioMenu] ?? ''; */
 
             <li> <a href="../../view/MntPreinscriptores_Edu/"><span class="material-symbols-outlined">arrow_right</span>Varios - Interesados </a></li>
             <li> <a href="../../view/MntTarifa_Edu/"><span class="material-symbols-outlined">arrow_right</span>Tarifas </a></li>
+            <li> <a href="../../view/MntIVA/"><span class="material-symbols-outlined">arrow_right</span>Tabla de IVA </a></li>
               <hr>
            
             <li> <a href="../../view/MntAulas/"><span class="material-symbols-outlined">arrow_right</span>Aulas </a></li>
