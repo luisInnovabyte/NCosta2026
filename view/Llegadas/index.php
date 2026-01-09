@@ -641,6 +641,10 @@
                                 
                                     <div class="tab-content cardLlegadas d-none" id="myTabContent">
 
+
+                                        <!-- =============================================== -->
+                                        <!--                   DOCENCIA                      -->
+                                        <!-- =============================================== -->
                                         <div class="tab-pane fade show active" id="docencia" role="tabpanel">
                                             <div class="card mt-3 card-hover">
                                                 <div class="card-body datos-generales2">
@@ -648,9 +652,9 @@
                                                         <span>
                                                             Docencia <label id="textEditar"></label><label id="tiempoDocencia"></label>
                                                         </span>
-                                                        <button class="btn btn-sm btn-info tx-white ms-2" title="Forzar Estados" onclick="forzarEstadosMatricula()" type="button">
+                                                        <!-- <button class="btn btn-sm btn-info tx-white ms-2" title="Forzar Estados" onclick="forzarEstadosMatricula()" type="button">
                                                             <i class="bi bi-arrow-repeat"></i> Forzar Estados
-                                                        </button>
+                                                        </button> -->
                                                     </h5>
 
                                                     <input type="hidden" id="idMatriculaEditando">
@@ -663,16 +667,7 @@
 
                                                       <div id="zonaFormMatricula" class="row">
 
-                                                        <div class="col-md-6 mg-t-10-force">
-                                                            <label for="inicioDocencia" class="form-label">Fecha de Inicio</label>
-                                                            <input type="date"   class="form-control fechaSinHoraHoypick form-control-sm" id="inicioDocencia">
-                                                            
-                                                        </div>
-                                                        <div class="col-md-6 mg-t-10-force">
-                                                            <label for="finalDocencia" class="form-label">Fecha de Finalización</label>
-                                                            <input type="date" class="form-control fechaSinHoraHoypick form-control-sm"  id="finalDocencia" >
-                                                        </div>
-                                                        <div class="col-md-3 mg-t-10-force">
+                                                        <div class="col-12 col-md-4 col-lg-2 mg-t-10-force">
                                                             <label for="codDocencia" class="form-label">Tarifa de Docencia</label>
                                                             <div class="input-group" id="groupTarifaDocenciaInputs">
 
@@ -684,17 +679,26 @@
                                                                 </div>
 
                                                         </div>
-                                                        <div class="col-md-3 mg-t-10-force">
+                                                        <div class="col-12 col-md-4 col-lg-2 mg-t-10-force">
                                                             <label for="importeDocencia" class="form-label">Importe</label>
                                                             <input type="text" class="form-control form-control-sm" id="importeDocencia" disabled>
                                                         </div>
-                                                        <div class="col-md-3 mg-t-10-force">
+                                                        <div class="col-12 col-md-4 col-lg-2 mg-t-10-force">
                                                             <label for="ivaDocencia" class="form-label">IVA</label>
                                                             <input type="text" class="form-control form-control-sm" id="ivaDocencia" disabled>
                                                         </div>
-                                                        <div class="col-md-3 mg-t-10-force">
+                                                        <div class="col-12 col-md-4 col-lg-2 mg-t-10-force">
                                                             <label for="descDocencia" class="form-label">Descuento</label>
                                                             <input type="text" class="form-control form-control-sm" id="descDocencia" disabled>
+                                                        </div>
+                                                        <div class="col-12 col-md-4 col-lg-2 mg-t-10-force">
+                                                            <label for="inicioDocencia" class="form-label">Fecha de Inicio</label>
+                                                            <input type="date"   class="form-control fechaSinHoraHoypick form-control-sm" id="inicioDocencia">
+                                                            
+                                                        </div>
+                                                        <div class="col-12 col-md-4 col-lg-2 mg-t-10-force">
+                                                            <label for="finalDocencia" class="form-label">Fecha de Finalización</label>
+                                                            <input type="date" class="form-control fechaSinHoraHoypick form-control-sm"  id="finalDocencia" >
                                                         </div>
                                                     
                                                         <div class="col-md-12 mg-t-10-force" id="obsMatricula">
@@ -743,6 +747,9 @@
                                             </div>
                                         </div>
 
+                                        <!-- =============================================== -->
+                                        <!--                   ALOJAMIENTO                   -->
+                                        <!-- =============================================== -->
                                         <div class="tab-pane fade" id="alojamiento" role="tabpanel">
                                             <div class="card mt-3 card-hover">
                                                 <div class="card-body datos-generales3">
