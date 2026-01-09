@@ -458,9 +458,7 @@ $("#otrosTable").on("click", ".eliminarOtro", function () {
 
                         $("#codDocencia").val(data[0]["cod_tarifa"]);
                         $("#importeDocencia").val(formatearEur(data[0]["precio_tarifa"]) + "€");
-                        // Usar valorIva si iva_tarifa está vacío
-                        let ivaValue = data[0]["iva_tarifa"] || data[0]["valorIva"] || "0";
-                        $("#ivaDocencia").val(ivaValue + " %");
+                        $("#ivaDocencia").val(data[0]["iva_tarifa"] + " %");
                         $("#descDocencia").val(data[0]["descuento_tarifa"] + " %");
 
                         var cantidad = data[0]["unidades_tarifa"];
