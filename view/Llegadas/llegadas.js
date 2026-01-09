@@ -1949,7 +1949,42 @@ function editarAlojamientoNew(idAlojamiento){
 
     }
 
+    // SUMAR TIEMPO A UNA FECHA - Función para agregar semanas a una fecha //
+    function sumarTiempo(fecha, cantidad, medida) {
+      // Normalizar la medida a minúsculas y quitar espacios
+      const medidaNormalizada = medida ? medida.toLowerCase().trim() : '';
+      console.log('📊 sumarTiempo - Medida normalizada:', medidaNormalizada);
+      
+      // Verificar si es semanas (tolerante a diferentes formatos)
+      if (medidaNormalizada.includes('semana') || medidaNormalizada.includes('week')) {
+        fecha.setDate(fecha.getDate() + cantidad * 7); // Sumar semanas
+        console.log('✅ Sumadas', cantidad, 'semanas');
+      } else if (medidaNormalizada.includes('dia') || medidaNormalizada.includes('day')) {
+        fecha.setDate(fecha.getDate() + cantidad); // Sumar días
+        console.log('✅ Sumados', cantidad, 'días');
+      } else if (medidaNormalizada.includes('mes') || medidaNormalizada.includes('month')) {
+        fecha.setMonth(fecha.getMonth() + cantidad); // Sumar meses
+        console.log('✅ Sumados', cantidad, 'meses');
+      } else {
+        console.error('❌ Medida no reconocida:', medida);
+        toastr.warning('Fin de fecha automático solo funciona con semanas, días o meses.');
+        return null; // Retornar null si no se reconoce la unidad
+      }
 
+      // Obtener solo el día, mes y año
+      let dia = fecha.getDate(); // Obtener el día
+      let mes = fecha.getMonth() + 1; // Obtener el mes (se suma 1 porque los meses son indexados desde 0)
+      let año = fecha.getFullYear(); // Obtener el año
+
+      // Añadir un 0 a los días y meses menores a 10 para que el formato sea DD/MM/YYYY (español)
+      let diaFormateado = dia < 10 ? `0${dia}` : dia;
+      let mesFormateado = mes < 10 ? `0${mes}` : mes;
+
+      // Devolver la fecha en formato DD/MM/YYYY (español)
+      let fechaFormateada = `${diaFormateado}/${mesFormateado}/${año}`;
+
+      return fechaFormateada; // Retornar la fecha en formato español
+    }
      
       
 
@@ -2041,11 +2076,15 @@ function editarAlojamientoNew(idAlojamiento){
                 console.log("Fecha inicio parseada:", fechaInicio);
 
                 var fechaFinal = sumarTiempo(fechaInicio, cantidad, medida);
-                console.log(fechaFinal);
-                fechaFinal = ajustarAViernesAnterior(fechaFinal);
-                console.log('Fecha anterior '+fechaFinal);
-
-                $('#finalDocencia').val(fechaFinal);
+                console.log("Fecha final calculada:", fechaFinal);
+                
+                if (fechaFinal) {
+                    fechaFinal = ajustarAViernesAnterior(fechaFinal);
+                    console.log('Fecha ajustada a viernes anterior:', fechaFinal);
+                    $('#finalDocencia').val(fechaFinal);
+                } else {
+                    console.warn('⚠️ No se pudo calcular la fecha final');
+                }
 
                 
             }else if(tipoTarifaCarga == 'Alojamiento'){
@@ -2060,14 +2099,15 @@ function editarAlojamientoNew(idAlojamiento){
                  
 
                 var fechaFinal = sumarTiempo(fechaFin, cantidad, medida);
-                console.log(fechaFinal)
-                fechaFinal = ajustarASabadoAnterior(fechaFinal);
-
+                console.log("Fecha salida calculada:", fechaFinal);
                 
-
-                console.log('Fecha anterior '+fechaFinal);
-
-                $('#salidaAlojamiento').val(fechaFinal);
+                if (fechaFinal) {
+                    fechaFinal = ajustarASabadoAnterior(fechaFinal);
+                    console.log('Fecha ajustada a sábado anterior:', fechaFinal);
+                    $('#salidaAlojamiento').val(fechaFinal);
+                } else {
+                    console.warn('⚠️ No se pudo calcular la fecha de salida');
+                }
 
 
             }

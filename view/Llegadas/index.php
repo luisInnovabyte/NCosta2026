@@ -693,12 +693,12 @@
                                                         </div>
                                                         <div class="col-12 col-md-4 col-lg-2 mg-t-10-force">
                                                             <label for="inicioDocencia" class="form-label">Fecha de Inicio</label>
-                                                            <input type="date"   class="form-control fechaSinHoraHoypick form-control-sm" id="inicioDocencia">
+                                                            <input type="text" class="form-control fechaSinHoraHoypick form-control-sm" id="inicioDocencia" placeholder="DD/MM/AAAA">
                                                             
                                                         </div>
                                                         <div class="col-12 col-md-4 col-lg-2 mg-t-10-force">
                                                             <label for="finalDocencia" class="form-label">Fecha de Finalización</label>
-                                                            <input type="date" class="form-control fechaSinHoraHoypick form-control-sm"  id="finalDocencia" >
+                                                            <input type="text" class="form-control fechaSinHoraHoypick form-control-sm"  id="finalDocencia" placeholder="DD/MM/AAAA">
                                                         </div>
                                                     
                                                         <div class="col-md-12 mg-t-10-force" id="obsMatricula">
@@ -794,11 +794,11 @@
                                                         </div>
                                                         <div class="col-12 col-md-4 col-lg-2 mg-t-10-force">
                                                             <label for="entradaAlojamiento" class="form-label">Fecha de Entrada</label>
-                                                            <input type="date"  class="form-control fechaSinHoraHoypick form-control-sm" id="entradaAlojamiento">
+                                                            <input type="text"  class="form-control fechaSinHoraHoypick form-control-sm" id="entradaAlojamiento" placeholder="DD/MM/AAAA">
                                                         </div>
                                                         <div class="col-12 col-md-4 col-lg-2 mg-t-10-force">
                                                             <label for="salidaAlojamiento" class="form-label">Fecha de Salida</label>
-                                                            <input type="date"  class="form-control fechaSinHoraHoypick form-control-sm"  id="salidaAlojamiento">
+                                                            <input type="text"  class="form-control fechaSinHoraHoypick form-control-sm"  id="salidaAlojamiento" placeholder="DD/MM/AAAA">
                                                         </div>
                                                         <div class="col-12 col-md-4 col-lg-1 mg-t-10-force">
                                                             <label for="horaAlojamiento" class="form-label">Hora</label>

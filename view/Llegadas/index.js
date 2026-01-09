@@ -186,8 +186,7 @@ $("#agregarMatricula").on("click", function () {
     }
 });
 
-  var inicioDocencia = $("#inicioDocencia").val().split("-");
-  var finalDocencia = $("#finalDocencia").val().split("-");
+  // Las fechas ya están en formato DD/MM/YYYY, no necesitan conversión
   var cantidadFilasTotales = tabla.rows().count();
   var siguienteFila = cantidadFilasTotales + 1;
   var nuevaFila = [
@@ -196,8 +195,8 @@ $("#agregarMatricula").on("click", function () {
     formatearEur(convertirEurANumero($("#importeDocencia").val())) + "€",
     $("#ivaDocencia").val(),
     $("#descDocencia").val(),
-    inicioDocencia[2] + "/" + inicioDocencia[1] + "/" + inicioDocencia[0], // Fecha Inicio
-    finalDocencia[2] + "/" + finalDocencia[1] + "/" + finalDocencia[0], // Fecha Fin
+    $("#inicioDocencia").val(), // Fecha Inicio (ya en formato DD/MM/YYYY)
+    $("#finalDocencia").val(), // Fecha Fin (ya en formato DD/MM/YYYY)
     "<button class='btn btn-info btnEditView' onClick='editarMatricula("+siguienteFila+")'><i class='fa-solid fa-edit'></i></button><button class='btn btn-danger mg-l-5 eliminarMatricula'><i class='fa-solid fa-trash' ></i></button>", // Edad
   ];
 
@@ -222,9 +221,7 @@ $("#agregarMatricula").on("click", function () {
   tabla.row.add(nuevaFila).draw();
 });
 $("#agregarAlojamiento").on("click", function () {
-  var entradaAlojamiento = $("#entradaAlojamiento").val().split("-");
-
-  var salidaAlojamiento = $("#salidaAlojamiento").val().split("-");
+  // Las fechas ya están en formato DD/MM/YYYY, no necesitan conversión
   var tabla = $("#alojamientoTable").DataTable();
   var cantidadFilasTotales = tabla.rows().count();
   var siguienteFila = cantidadFilasTotales + 1;
@@ -234,16 +231,8 @@ $("#agregarAlojamiento").on("click", function () {
     formatearEur(convertirEurANumero($("#importeAlojamiento").val())) + "€",
     $("#ivaAlojamiento").val(),
     $("#descuentoAlojamiento").val(),
-    entradaAlojamiento[2] +
-      "/" +
-      entradaAlojamiento[1] +
-      "/" +
-      entradaAlojamiento[0], // Fecha Inicio
-    salidaAlojamiento[2] +
-      "/" +
-      salidaAlojamiento[1] +
-      "/" +
-      salidaAlojamiento[0], // Fecha Fin
+    $("#entradaAlojamiento").val(), // Fecha Entrada (ya en formato DD/MM/YYYY)
+    $("#salidaAlojamiento").val(), // Fecha Salida (ya en formato DD/MM/YYYY)
     $("#horaAlojamiento").val(),
     "<button class='btn btn-info'  onClick='editarAlojamiento("+siguienteFila+")'><i class='fa-solid fa-edit'></i></button><button class='btn btn-danger mg-l-5 eliminarAlojamiento'><i class='fa-solid fa-trash' ></i></button>", // Edad
   ];
@@ -464,15 +453,28 @@ $("#otrosTable").on("click", ".eliminarOtro", function () {
                         var cantidad = data[0]["unidades_tarifa"];
                         var medida = data[0]["unidad_tarifa"];
 
+                        console.log("📅 Calculando fecha final de Docencia");
+                        console.log("Cantidad:", cantidad, "Medida:", medida);
+
                         // ---- Lógica de fechas igual al modal ----
                         let inicioStr = $("#inicioDocencia").val(); // DD/MM/YYYY
-                        const [d, m, y] = inicioStr.split("/");
-                        var fechaInicio = new Date(`${y}-${m}-${d}`);
+                        console.log("Fecha inicio (string):", inicioStr);
+                        
+                        if (inicioStr && inicioStr.includes("/")) {
+                            const [d, m, y] = inicioStr.split("/");
+                            var fechaInicio = new Date(`${y}-${m}-${d}`);
+                            console.log("Fecha inicio (Date):", fechaInicio);
 
-                        var fechaFinal = sumarTiempo(fechaInicio, cantidad, medida);
-                        fechaFinal = ajustarAViernesAnterior(fechaFinal);
+                            var fechaFinal = sumarTiempo(fechaInicio, cantidad, medida);
+                            console.log("Fecha final calculada:", fechaFinal);
+                            
+                            fechaFinal = ajustarAViernesAnterior(fechaFinal);
+                            console.log("Fecha final ajustada a viernes:", fechaFinal);
 
-                        $('#finalDocencia').val(fechaFinal);
+                            $('#finalDocencia').val(fechaFinal);
+                        } else {
+                            console.warn("⚠️ No hay fecha de inicio válida");
+                        }
                         // ----------------------------------------
 
                         $("#agregarMatricula").attr("disabled", false);
@@ -1871,33 +1873,89 @@ $("#buscar-tarifaAloja-modal").on("shown.bs.modal", function () {
                   recalcularPrecios();
               }
 
-              // Si NO viene de lastClickedButton
+              // Si NO viene de lastClickedButton (selección desde Docencia o Alojamiento)
               else {
 
                   var cantidad   = data[0]["unidades_tarifa"];
                   var medida     = data[0]["unidad_tarifa"];
-                  var fechaInicio = new Date($("#inicioDocencia").val());
-
-                  // Calcular fecha alojamiento
-                  var fechaAlojamiento = new Date(fechaInicio);
-                  fechaAlojamiento.setDate(fechaAlojamiento.getDate() + 1);
-
-                  var diaA =
-                      fechaAlojamiento.getDate() < 10
-                          ? "0" + fechaAlojamiento.getDate()
-                          : fechaAlojamiento.getDate();
-
-                  var mesA =
-                      fechaAlojamiento.getMonth() + 1 < 10
-                          ? "0" + (fechaAlojamiento.getMonth() + 1)
-                          : fechaAlojamiento.getMonth() + 1;
-
-                  var añoA = fechaAlojamiento.getFullYear();
-                  var fechaFormateadaAlojamiento = añoA + "-" + mesA + "-" + diaA;
+                  
+                  console.log("📋 Tarifa seleccionada desde modal");
+                  console.log("Cantidad:", cantidad, "Medida:", medida);
+                  
+                  // Verificar si estamos en la pestaña de Docencia
+                  if ($("#codDocencia:visible").length > 0) {
+                      console.log("✅ Estamos en pestaña Docencia");
+                      
+                      // Estamos en Docencia, calcular fecha final
+                      let inicioStr = $("#inicioDocencia").val(); // DD/MM/YYYY
+                      console.log("Fecha inicio:", inicioStr);
+                      
+                      if (inicioStr && inicioStr.includes("/")) {
+                          // Parsear fecha DD/MM/YYYY
+                          const [d, m, y] = inicioStr.split("/");
+                          var fechaInicio = new Date(`${y}-${m}-${d}`);
+                          console.log("Fecha inicio parseada:", fechaInicio);
+                          
+                          // Calcular fecha final sumando tiempo
+                          var fechaFinal = sumarTiempo(fechaInicio, cantidad, medida);
+                          console.log("Fecha final calculada:", fechaFinal);
+                          
+                          if (fechaFinal) {
+                              // Ajustar al viernes anterior
+                              fechaFinal = ajustarAViernesAnterior(fechaFinal);
+                              console.log("Fecha final ajustada:", fechaFinal);
+                              
+                              // Asignar fecha final
+                              $('#finalDocencia').val(fechaFinal);
+                              console.log("✅ Fecha final asignada al input");
+                          } else {
+                              console.warn("⚠️ No se pudo calcular la fecha final");
+                          }
+                      } else {
+                          console.warn("⚠️ No hay fecha de inicio válida");
+                      }
+                  }
+                  
+                  // Verificar si estamos en la pestaña de Alojamiento
+                  if ($("#codAlojamiento:visible").length > 0) {
+                      console.log("✅ Estamos en pestaña Alojamiento");
+                      
+                      // Estamos en Alojamiento, calcular fecha de salida
+                      let entradaStr = $("#entradaAlojamiento").val(); // DD/MM/YYYY
+                      console.log("Fecha entrada:", entradaStr);
+                      
+                      if (entradaStr && entradaStr.includes("/")) {
+                          // Parsear fecha DD/MM/YYYY
+                          const [d, m, y] = entradaStr.split("/");
+                          var fechaEntrada = new Date(`${y}-${m}-${d}`);
+                          console.log("Fecha entrada parseada:", fechaEntrada);
+                          
+                          // Calcular fecha de salida sumando tiempo
+                          var fechaSalida = sumarTiempo(fechaEntrada, cantidad, medida);
+                          console.log("Fecha salida calculada:", fechaSalida);
+                          
+                          if (fechaSalida) {
+                              // Ajustar al sábado anterior
+                              fechaSalida = ajustarASabadoAnterior(fechaSalida);
+                              console.log("Fecha salida ajustada:", fechaSalida);
+                              
+                              // Asignar fecha de salida
+                              $('#salidaAlojamiento').val(fechaSalida);
+                              console.log("✅ Fecha salida asignada al input");
+                          } else {
+                              console.warn("⚠️ No se pudo calcular la fecha de salida");
+                          }
+                      } else {
+                          console.warn("⚠️ No hay fecha de entrada válida");
+                      }
+                  }
 
                   $("#agregarMatricula").attr("disabled", false);
 
-                  recalcularPrecios();
+                  // Solo recalcular si hay importes válidos
+                  if ($("#importeDocencia").val() || $("#importeAlojamiento").val()) {
+                      recalcularPrecios();
+                  }
               }
 
           }
@@ -1908,21 +1966,24 @@ $("#buscar-tarifaAloja-modal").on("shown.bs.modal", function () {
 
 
 function sumarTiempo(fecha, cantidad, medida) {
-  switch (medida) {
-   /*  case "dias":
-      fecha.setDate(fecha.getDate() + cantidad); // Sumar días
-      break; */
-    case "semana":
-      fecha.setDate(fecha.getDate() + cantidad * 7); // Sumar semanas
-      break;
-    case "semanas":
-      fecha.setDate(fecha.getDate() + cantidad * 7); // Sumar semanas
-      break;
-    // Puedes añadir más casos si tienes más unidades como "meses", "años", etc.
-    default:
-      console.error("Medida no reconocida");
-      toastr.warning('Fin de fecha automático solo por semanas.')
-      return; // Retornar la fecha sin cambios si no se reconoce la unidad
+  // Normalizar la medida a minúsculas y quitar espacios
+  const medidaNormalizada = medida ? medida.toLowerCase().trim() : '';
+  console.log('📊 sumarTiempo - Medida normalizada:', medidaNormalizada);
+  
+  // Verificar si es semanas (tolerante a diferentes formatos)
+  if (medidaNormalizada.includes('semana') || medidaNormalizada.includes('week')) {
+    fecha.setDate(fecha.getDate() + cantidad * 7); // Sumar semanas
+    console.log('✅ Sumadas', cantidad, 'semanas');
+  } else if (medidaNormalizada.includes('dia') || medidaNormalizada.includes('day')) {
+    fecha.setDate(fecha.getDate() + cantidad); // Sumar días
+    console.log('✅ Sumados', cantidad, 'días');
+  } else if (medidaNormalizada.includes('mes') || medidaNormalizada.includes('month')) {
+    fecha.setMonth(fecha.getMonth() + cantidad); // Sumar meses
+    console.log('✅ Sumados', cantidad, 'meses');
+  } else {
+    console.error('❌ Medida no reconocida:', medida);
+    toastr.warning('Fin de fecha automático solo funciona con semanas, días o meses.');
+    return null; // Retornar null si no se reconoce la unidad
   }
 
   // Obtener solo el día, mes y año
@@ -1930,15 +1991,81 @@ function sumarTiempo(fecha, cantidad, medida) {
   let mes = fecha.getMonth() + 1; // Obtener el mes (se suma 1 porque los meses son indexados desde 0)
   let año = fecha.getFullYear(); // Obtener el año
 
-  // Añadir un 0 a los días y meses menores a 10 para que el formato sea YYYY-MM-DD
+  // Añadir un 0 a los días y meses menores a 10 para que el formato sea DD/MM/YYYY (español)
   let diaFormateado = dia < 10 ? `0${dia}` : dia;
   let mesFormateado = mes < 10 ? `0${mes}` : mes;
 
-  // Devolver la fecha en formato YYYY-MM-DD
-  let fechaFormateada = `${año}-${mesFormateado}-${diaFormateado}`;
+  // Devolver la fecha en formato DD/MM/YYYY (español)
+  let fechaFormateada = `${diaFormateado}/${mesFormateado}/${año}`;
 
 
-  return fechaFormateada; // Retornar la fecha ya en el formato correcto
+  return fechaFormateada; // Retornar la fecha en formato español
+}
+
+// AJUSTE DE FECHAS POR DOCENCIA - Ajusta a viernes anterior //
+function ajustarAViernesAnterior(fechaStr) {
+   console.log("🔧 ajustarAViernesAnterior - Input:", fechaStr);
+   
+   if (typeof fechaStr !== "string") {
+       console.error("❌ fechaStr no es string:", typeof fechaStr);
+       return null;
+   }
+
+    // Parsear DD/MM/YYYY
+    const [d, m, y] = fechaStr.split("/");
+    console.log("Parseado - Día:", d, "Mes:", m, "Año:", y);
+    
+    const fecha = new Date(`${y}-${m}-${d}`);
+    console.log("Fecha creada:", fecha);
+    
+    if (isNaN(fecha)) {
+        console.error("❌ Fecha inválida");
+        return null;
+    }
+
+    const diaSemana = fecha.getDay(); // 0=domingo ... 5=viernes
+    const nombresDias = ['domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado'];
+    console.log("Día de la semana:", nombresDias[diaSemana], `(${diaSemana})`);
+
+    // Calcular cuántos días restar para llegar al viernes anterior
+    const diasARestar = (diaSemana - 5 + 7) % 7;
+    console.log("Días a restar:", diasARestar);
+    
+    fecha.setDate(fecha.getDate() - diasARestar);
+    console.log("Fecha ajustada:", fecha);
+
+    // Formatear DD/MM/YYYY
+    const dd = String(fecha.getDate()).padStart(2, "0");
+    const mm = String(fecha.getMonth() + 1).padStart(2, "0");
+    const yyyy = fecha.getFullYear();
+    
+    const resultado = `${dd}/${mm}/${yyyy}`;
+    console.log("✅ Resultado final:", resultado);
+
+    return resultado;
+}
+
+// AJUSTE DE FECHAS POR ALOJAMIENTO - Ajusta a sábado anterior //
+function ajustarASabadoAnterior(fechaStr) {
+    if (typeof fechaStr !== "string") return null;
+
+    // Parsear DD/MM/YYYY
+    const [d, m, y] = fechaStr.split("/");
+    const fecha = new Date(`${y}-${m}-${d}`);
+    if (isNaN(fecha)) return null;
+
+    const diaSemana = fecha.getDay(); // 0=domingo ... 6=sábado
+
+    // Calcular cuántos días restar para llegar al sábado anterior
+    const diasARestar = (diaSemana - 6 + 7) % 7;
+    fecha.setDate(fecha.getDate() - diasARestar);
+
+    // Formatear DD/MM/YYYY
+    const dd = String(fecha.getDate()).padStart(2, "0");
+    const mm = String(fecha.getMonth() + 1).padStart(2, "0");
+    const yyyy = fecha.getFullYear();
+
+    return `${dd}/${mm}/${yyyy}`;
 }
 
 $("#botonContenedorVisado").click(function () {
