@@ -1,143 +1,196 @@
-<!-- Modal de Ayuda para Llegadas -->
-<div class="modal fade" id="modalAyudaLlegadas" tabindex="-1" aria-labelledby="modalAyudaLlegadasLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
-        <div class="modal-content">
-            <div class="modal-header bg-info text-white">
-                <h5 class="modal-title" id="modalAyudaLlegadasLabel">
-                    <i class="fa fa-question-circle me-2"></i>Ayuda - Sistema de Llegadas
-                </h5>
-                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                
-                <!-- Sección: Fechas de Matriculación/Docencia -->
-                <div class="card mb-3">
-                    <div class="card-header bg-primary text-white">
-                        <h6 class="mb-0"><i class="fa fa-calendar me-2"></i>Fechas de Matriculación / Docencia</h6>
-                    </div>
-                    <div class="card-body">
-                        
-                        <h6 class="text-primary"><strong>📅 Cálculo Automático de Fechas</strong></h6>
-                        <p>El sistema calcula automáticamente las fechas de inicio y finalización cuando seleccionas una tarifa de docencia.</p>
-                        
-                        <div class="alert alert-info">
-                            <strong><i class="fa fa-info-circle me-2"></i>¿Cuándo se calculan las fechas?</strong>
-                            <ul class="mb-0 mt-2">
-                                <li>Al seleccionar una tarifa desde el <strong>modal de búsqueda</strong> (icono de lupa)</li>
-                                <li>Al seleccionar una tarifa desde el <strong>autocompletado</strong> (escribiendo el código)</li>
-                            </ul>
-                        </div>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayuda - Sistema de Llegadas</title>
+</head>
+<body>
 
-                        <hr>
-
-                        <h6 class="text-success"><strong>🗓️ Fecha de Inicio</strong></h6>
-                        <div class="ps-3">
-                            <p><strong>Regla automática:</strong> El curso siempre comienza en <span class="badge bg-success">LUNES</span></p>
-                            <ul>
-                                <li>Si el campo está <strong>vacío</strong> → usa la fecha actual como base</li>
-                                <li>Si el campo tiene una <strong>fecha</strong> → usa esa fecha como base</li>
-                                <li>Luego ajusta automáticamente al <strong>lunes siguiente</strong></li>
-                                <li>Si ya es lunes, mantiene esa fecha</li>
-                            </ul>
-                            
-                            <div class="bg-light p-2 rounded mb-2">
-                                <strong>Ejemplo 1:</strong> Hoy es <em>miércoles 08/01/2026</em><br>
-                                → Inicio calculado: <span class="text-success"><strong>lunes 13/01/2026</strong></span>
-                            </div>
-                            
-                            <div class="bg-light p-2 rounded">
-                                <strong>Ejemplo 2:</strong> Campo tiene <em>viernes 10/01/2026</em><br>
-                                → Inicio recalculado: <span class="text-success"><strong>lunes 13/01/2026</strong></span>
-                            </div>
-                        </div>
-
-                        <hr>
-
-                        <h6 class="text-danger"><strong>📆 Fecha de Finalización</strong></h6>
-                        <div class="ps-3">
-                            <p><strong>Regla automática:</strong> El curso siempre finaliza en <span class="badge bg-danger">VIERNES</span></p>
-                            <ul>
-                                <li>Toma la fecha de inicio ajustada (lunes)</li>
-                                <li>Suma la duración de la tarifa (semanas o meses)</li>
-                                <li>Ajusta el resultado al <strong>viernes anterior</strong></li>
-                                <li>Si ya es viernes, mantiene esa fecha</li>
-                            </ul>
-                            
-                            <div class="bg-light p-2 rounded mb-2">
-                                <strong>Ejemplo con semanas:</strong><br>
-                                Inicio: <em>lunes 13/01/2026</em> + Tarifa: <em>2 semanas</em><br>
-                                → Suma: 13/01 + 14 días = 27/01 (lunes)<br>
-                                → Fin calculado: <span class="text-danger"><strong>viernes 24/01/2026</strong></span>
-                            </div>
-                            
-                            <div class="bg-light p-2 rounded">
-                                <strong>Ejemplo con meses:</strong><br>
-                                Inicio: <em>lunes 13/01/2026</em> + Tarifa: <em>1 mes</em><br>
-                                → Suma: 13/01 + 1 mes = 13/02 (viernes)<br>
-                                → Fin calculado: <span class="text-danger"><strong>viernes 13/02/2026</strong></span>
-                            </div>
-                        </div>
-
-                        <hr>
-
-                        <h6 class="text-warning"><strong>✏️ Edición Manual</strong></h6>
-                        <div class="alert alert-warning">
-                            <strong><i class="fa fa-edit me-2"></i>Importante:</strong>
-                            <ul class="mb-0">
-                                <li>Ambos campos (<strong>Fecha de Inicio</strong> y <strong>Fecha de Finalización</strong>) permanecen editables</li>
-                                <li>Puedes modificarlos manualmente para casos especiales</li>
-                                <li><strong>Ejemplo:</strong> Un alumno llega en martes y se incorpora ese mismo día a clase</li>
-                            </ul>
-                        </div>
-
-                        <hr>
-
-                        <h6 class="text-info"><strong>🔄 Recálculo de Fechas</strong></h6>
-                        <div class="ps-3">
-                            <p>Si modificas manualmente la fecha de inicio y quieres recalcular las fechas:</p>
-                            <ol>
-                                <li>Vuelve a seleccionar la tarifa desde el modal, <strong>O</strong></li>
-                                <li>Vuelve a escribir el código de tarifa y selecciona la sugerencia</li>
-                            </ol>
-                            <p class="text-muted mb-0"><em>Nota: No hay recálculo automático al cambiar solo la fecha de inicio sin seleccionar tarifa</em></p>
-                        </div>
-
-                        <hr>
-
-                        <h6 class="text-secondary"><strong>📋 Unidades Soportadas</strong></h6>
-                        <div class="ps-3">
-                            <p>El sistema soporta tarifas con las siguientes unidades de tiempo:</p>
-                            <ul class="mb-0">
-                                <li><span class="badge bg-secondary">semana / semanas</span> - Ejemplo: 2 semanas, 4 semanas</li>
-                                <li><span class="badge bg-secondary">mes / meses</span> - Ejemplo: 1 mes, 3 meses</li>
-                            </ul>
-                        </div>
-
-                    </div>
-                </div>
-
-                <!-- Sección adicional: Consejos -->
-                <div class="card border-success">
-                    <div class="card-header bg-success text-white">
-                        <h6 class="mb-0"><i class="fa fa-lightbulb me-2"></i>Consejos de Uso</h6>
-                    </div>
-                    <div class="card-body">
-                        <ul class="mb-0">
-                            <li>✅ <strong>Crea la llegada</strong> antes de agregar servicios</li>
-                            <li>✅ <strong>Selecciona la tarifa</strong> para que el sistema calcule automáticamente las fechas</li>
-                            <li>✅ <strong>Verifica las fechas</strong> calculadas antes de agregar la matriculación</li>
-                            <li>✅ <strong>Ajusta manualmente</strong> si el caso lo requiere (el 1% de casos especiales)</li>
-                            <li>✅ Las fechas respetan la regla: <span class="badge bg-success">Lunes a Viernes</span></li>
-                        </ul>
-                    </div>
-                </div>
-
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-                    <i class="fa fa-times me-2"></i>Cerrar
-                </button>
-            </div>
+<!-- Contenido de Ayuda para Llegadas -->
+<div class="ayuda-container">
+    
+    <!-- Sección: Cálculo Automático de Fechas en Docencia -->
+    <div class="ayuda-seccion">
+        <h3>📅 Cálculo Automático de Fechas - Matriculación (Docencia)</h3>
+        
+        <h4>¿Cómo funciona?</h4>
+        <p>El sistema calcula automáticamente las fechas de inicio y finalización del curso basándose en la fecha de llegada del alumno y la tarifa seleccionada.</p>
+        
+        <h4>Fecha de Inicio del Curso</h4>
+        <div class="ayuda-exito">
+            <strong>✓ Regla:</strong> Los cursos siempre comienzan el lunes.
+        </div>
+        <p><strong>Cuando introduces la fecha de llegada del alumno</strong>, el sistema automáticamente propone <strong>el lunes siguiente</strong> a esa fecha como inicio del curso.</p>
+        
+        <div class="ayuda-ejemplo">
+            <strong>Ejemplo:</strong><br>
+            • Fecha de llegada: <code>19/10/2026</code> (domingo)<br>
+            • Fecha inicio curso propuesta: <code>20/10/2026</code> (lunes)
+        </div>
+        
+        <div class="ayuda-ejemplo">
+            <strong>Otro ejemplo:</strong><br>
+            • Fecha de llegada: <code>15/10/2026</code> (jueves)<br>
+            • Fecha inicio curso propuesta: <code>19/10/2026</code> (lunes siguiente)
+        </div>
+        
+        <h4>Fecha de Finalización del Curso</h4>
+        <div class="ayuda-exito">
+            <strong>✓ Regla:</strong> Los cursos finalizan el viernes.
+        </div>
+        <p><strong>Cuando seleccionas una tarifa</strong> que tenga medida en "semanas" o "semana", el sistema:</p>
+        <ul class="lista-pasos">
+            <li>1. Toma la fecha de inicio del curso</li>
+            <li>2. Suma el número de semanas indicado en la tarifa</li>
+            <li>3. Ajusta la fecha resultante al <strong>viernes anterior</strong> a la fecha calculada</li>
+        </ul>
+        
+        <div class="ayuda-ejemplo">
+            <strong>Ejemplo con curso de 2 semanas:</strong><br>
+            • Fecha inicio curso: <code>20/10/2026</code> (lunes)<br>
+            • Tarifa: <code>2 semanas</code><br>
+            • Cálculo: 20/10/2026 + 14 días = 03/11/2026 (martes)<br>
+            • Fecha final propuesta: <code>30/10/2026</code> (viernes anterior)
+        </div>
+        
+        <div class="ayuda-nota">
+            <strong>📌 Nota:</strong> Las fechas propuestas son sugerencias. Puedes modificarlas manualmente según las necesidades específicas del alumno.
+        </div>
+        
+        <h4>Formato de Fechas</h4>
+        <p>Todas las fechas deben introducirse y se mostrarán en <strong>formato español</strong>:</p>
+        <div class="ayuda-ejemplo">
+            <code>DD/MM/AAAA</code><br>
+            Ejemplo: <code>20/10/2026</code>
         </div>
     </div>
+    
+    <!-- Sección: Cálculo Automático de Fechas en Alojamiento -->
+    <div class="ayuda-seccion">
+        <h3>🏠 Cálculo Automático de Fechas - Alojamiento</h3>
+        
+        <h4>¿Cómo funciona?</h4>
+        <p>Similar a la docencia, el sistema calcula automáticamente las fechas de entrada y salida del alojamiento basándose en las fechas del curso.</p>
+        
+        <h4>Fecha de Entrada al Alojamiento</h4>
+        <div class="ayuda-exito">
+            <strong>✓ Regla:</strong> La entrada al alojamiento es el <strong>día anterior al inicio del curso</strong> (normalmente un domingo).
+        </div>
+        
+        <div class="ayuda-ejemplo">
+            <strong>Ejemplo:</strong><br>
+            • Fecha inicio curso: <code>20/10/2026</code> (lunes)<br>
+            • Fecha entrada alojamiento propuesta: <code>19/10/2026</code> (domingo)
+        </div>
+        
+        <h4>Fecha de Salida del Alojamiento</h4>
+        <div class="ayuda-exito">
+            <strong>✓ Regla:</strong> La salida del alojamiento es el <strong>sábado siguiente al final del curso</strong>.
+        </div>
+        <p><strong>Cuando seleccionas una tarifa de alojamiento</strong> que tenga medida en "semanas" o "semana", el sistema:</p>
+        <ul class="lista-pasos">
+            <li>1. Toma la fecha de entrada al alojamiento</li>
+            <li>2. Suma el número de semanas indicado en la tarifa</li>
+            <li>3. Ajusta la fecha resultante al <strong>sábado anterior</strong> a la fecha calculada</li>
+        </ul>
+        
+        <div class="ayuda-ejemplo">
+            <strong>Ejemplo con alojamiento de 2 semanas:</strong><br>
+            • Fecha entrada alojamiento: <code>19/10/2026</code> (domingo)<br>
+            • Tarifa: <code>2 semanas</code><br>
+            • Cálculo: 19/10/2026 + 14 días = 02/11/2026 (lunes)<br>
+            • Fecha salida propuesta: <code>31/10/2026</code> (sábado anterior)
+        </div>
+        
+        <div class="ayuda-importante">
+            <strong>⚠️ Importante:</strong> Al guardar un registro de alojamiento, los campos se limpian automáticamente excepto la <strong>Fecha de Entrada</strong>, que se mantiene para facilitar la captura de múltiples alojamientos con la misma fecha.
+        </div>
+        
+        <h4>Hora de Salida</h4>
+        <p>Por defecto, la hora de salida del alojamiento se establece en <code>11:00</code>, pero puede modificarse según las necesidades.</p>
+    </div>
+    
+    <!-- Sección: Consejos y Mejores Prácticas -->
+    <div class="ayuda-seccion">
+        <h3>💡 Consejos y Mejores Prácticas</h3>
+        
+        <ul class="lista-pasos">
+            <li><strong>Verifica las fechas propuestas:</strong> Aunque el sistema calcula automáticamente las fechas, siempre revisa que sean correctas antes de guardar.</li>
+            <li><strong>Tarifas con semanas:</strong> El cálculo automático solo funciona cuando la tarifa tiene como medida "semana" o "semanas".</li>
+            <li><strong>Fechas personalizadas:</strong> Si necesitas fechas específicas que no sigan el patrón estándar (lunes-viernes), puedes modificarlas manualmente.</li>
+            <li><strong>Formato de fecha:</strong> Usa siempre el formato DD/MM/AAAA. El selector de fecha te ayudará a introducir las fechas correctamente.</li>
+            <li><strong>Campos deshabilitados:</strong> Los campos como Importe, IVA y Descuento se rellenan automáticamente al seleccionar una tarifa y están deshabilitados para evitar errores.</li>
+        </ul>
+    </div>
+    
 </div>
+
+<style>
+    .ayuda-container {
+        padding: 20px;
+    }
+    .ayuda-seccion {
+        margin-bottom: 30px;
+        padding: 20px;
+        border-left: 4px solid #17a2b8;
+        background-color: #f8f9fa;
+        border-radius: 5px;
+    }
+    .ayuda-seccion h3 {
+        color: #17a2b8;
+        margin-bottom: 15px;
+        font-size: 1.5rem;
+    }
+    .ayuda-seccion h4 {
+        color: #495057;
+        margin-top: 15px;
+        margin-bottom: 10px;
+        font-size: 1.2rem;
+    }
+    .ayuda-ejemplo {
+        background-color: #e9ecef;
+        padding: 10px 15px;
+        border-radius: 4px;
+        margin: 10px 0;
+        font-family: 'Courier New', monospace;
+        font-size: 0.9rem;
+    }
+    .ayuda-nota {
+        background-color: #fff3cd;
+        border-left: 4px solid #ffc107;
+        padding: 10px 15px;
+        margin: 10px 0;
+        border-radius: 4px;
+    }
+    .ayuda-importante {
+        background-color: #f8d7da;
+        border-left: 4px solid #dc3545;
+        padding: 10px 15px;
+        margin: 10px 0;
+        border-radius: 4px;
+    }
+    .ayuda-exito {
+        background-color: #d4edda;
+        border-left: 4px solid #28a745;
+        padding: 10px 15px;
+        margin: 10px 0;
+        border-radius: 4px;
+    }
+    ul.lista-pasos {
+        line-height: 1.8;
+    }
+    ul.lista-pasos li {
+        margin-bottom: 8px;
+    }
+    code {
+        background-color: #e9ecef;
+        padding: 2px 6px;
+        border-radius: 3px;
+        color: #d63384;
+        font-weight: 600;
+    }
+</style>
+
+</body>
+</html>

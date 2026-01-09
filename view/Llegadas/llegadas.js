@@ -1762,6 +1762,16 @@ $("#agregarAlojamientosNew").on("click", function () {
                 toastr.success("Alojamiento Añadido");
                 $("#alojamientoTableNew").DataTable().ajax.reload(null, false);
                 forzarEstadosAlojamiento();
+                
+                // Limpiar campos del formulario (excepto fecha de entrada)
+                $("#codAlojamiento").val('');
+                $("#importeAlojamiento").val('');
+                $("#ivaAlojamiento").val('');
+                $("#descuentoAlojamiento").val('');
+                $("#salidaAlojamiento").val('');
+                $("#horaAlojamiento").val('11:00');
+                $("#observacionesAlojamiento").val('');
+                $("#descripcionTarifaAloja").val('');
     
               },
             error: function(err) {

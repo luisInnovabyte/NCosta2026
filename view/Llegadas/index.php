@@ -210,7 +210,7 @@
             background-color: #F2F4E3; /* Amarillo pastel muy suave */
         }
         .card-body.datos-generales3 {
-            background-color: #EDE3FD; /* Lila clarito elegante */
+            background-color: #E3F2FD; /* Azul claro profesional */
         }
         .card-body.datos-generales4 {
             background-color: #FDE3F2; /* Rosa pálido delicado */
@@ -492,15 +492,16 @@
             <div class="container-fluid mg-t-20-force">
                 <div class="row">
                     <div class="col-12 card">
+                        <div class="card-header bg-white d-flex justify-content-between align-items-center py-3">
+                            <h2 class="mb-0">LLEGADAS</h2>
+                            <button type="button" class="btn btn-sm btn-outline-info" onclick="window.open('ayuda.html', 'Ayuda', 'width=1200,height=800,scrollbars=yes,resizable=yes');">
+                                <i class="fa-solid fa-circle-question"></i> Ayuda
+                            </button>
+                        </div>
                         <div class="card-body d-none cardLlegadas" id="divNuevaLlegada">
                             <div class="cardLlegadas " >
-
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <h2 class="card-title">LLEGADAS</h2>
-                                    <div  id="estadoLlegada" class=""></div>
-                           
-                                    
-                                </div>
+                                
+                                <div id="estadoLlegada" class="mb-3"></div>
 
                                 <div class="card mg-t-20 card-hover">
 
