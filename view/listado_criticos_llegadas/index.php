@@ -286,6 +286,7 @@
                                     <th>% Pagado</th>
                                     <th>Departamento</th>
                                     <th>Agente</th>
+                                    <th>Acciones</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -313,6 +314,7 @@
                                     <th><input type="text" placeholder="Buscar %" class="form-control form-control-sm" /></th>
                                     <th><input type="text" placeholder="Buscar departamento" class="form-control form-control-sm" /></th>
                                     <th><input type="text" placeholder="Buscar agente" class="form-control form-control-sm" /></th>
+                                    <th></th>
                                 </tr>
                             </tfoot>
                         </table>

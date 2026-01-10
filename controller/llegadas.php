@@ -52,6 +52,7 @@ switch ($op) {
         foreach ($datos as $row) {
             $sub_array = array();
             $sub_array[] = $row["id_llegada"];
+            $sub_array[] = $row["prescriptor_token"] ?? ''; // Token del prescriptor (columna oculta)
 
            /*  $sub_array[] = "NUM" . str_pad($row["id_llegada"], 4, "0", STR_PAD_LEFT);  */
             $sub_array[] = "<label class='badge bg-black tx-14-force'>NUM-". str_pad($row["id_llegada"], 4, "0", STR_PAD_LEFT)."</label>";

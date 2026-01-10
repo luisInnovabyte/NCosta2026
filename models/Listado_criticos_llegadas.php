@@ -41,7 +41,8 @@ class Listado_criticos_llegadas extends Conectar
                     mensaje_alerta,
                     porcentaje_pendiente,
                     clasificacion_monto,
-                    score_urgencia
+                    score_urgencia,
+                    prescriptor_token
                 FROM view_llegadas_alertas_pago
                 ORDER BY prioridad ASC, score_urgencia ASC";
         

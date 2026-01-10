@@ -64,7 +64,8 @@ class Llegadas extends Conectar
                     alertas.color_alerta,
                     alertas.mensaje_alerta,
                     alertas.prioridad,
-                    alertas.score_urgencia
+                    alertas.score_urgencia,
+                    tm_prescriptores.tokenPrescriptores AS prescriptor_token
                 FROM 
                     llegadas_departamentos
                 LEFT JOIN 
@@ -73,6 +74,9 @@ class Llegadas extends Conectar
                 LEFT JOIN
                     view_llegadas_alertas_pago AS alertas
                     ON llegadas_departamentos.id_llegada = alertas.id_llegada
+                LEFT JOIN
+                    tm_prescriptores
+                    ON llegadas_departamentos.idprescriptor_llegadas = tm_prescriptores.idPrescripcion
                 WHERE 
                     llegadas_departamentos.idprescriptor_llegadas = ?
                 ORDER BY 

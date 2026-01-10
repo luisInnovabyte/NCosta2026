@@ -93,6 +93,22 @@ $(document).ready(function () {
                 name: 'agente_nombre', 
                 data: 'agente_nombre', 
                 className: "text-center align-middle" 
+            },
+            // Columna 10: Acciones
+            { 
+                name: 'acciones', 
+                data: null,
+                className: "text-center align-middle",
+                orderable: false,
+                searchable: false,
+                render: function (data, type, row) {
+                    const token = row.prescriptor_token || '';
+                    const idLlegada = row.id_llegada || '';
+                    const url = `../Llegadas/?tokenPreinscripcion=${token}&idLlegada=${idLlegada}`;
+                    return `<a href="${url}" target="_blank" class="btn btn-sm btn-primary" title="Abrir Llegada en Nueva Pestaña">
+                                <i class="bx bx-link-external"></i>
+                            </a>`;
+                }
             }
         ],
         columnDefs: [
@@ -258,6 +274,14 @@ $(document).ready(function () {
                 width: '12%', 
                 searchable: true, 
                 orderable: true, 
+                className: "text-center" 
+            },
+            // Columna 10: Acciones
+            { 
+                targets: "acciones:name", 
+                width: '8%', 
+                searchable: false, 
+                orderable: false, 
                 className: "text-center" 
             }
         ],

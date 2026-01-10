@@ -2399,6 +2399,7 @@ var llegadasTable = $("#llegadasTable").DataTable({
 
   columns: [
     { name: "idCliente" },
+    { name: "prescriptor_token" },
     { name: "Nº Llegada", className: "text-center" },
     { name: "DiaInscripcion", className: "text-center" },
     { name: "Fecha Llegada", className: "text-center" },
@@ -2414,20 +2415,26 @@ var llegadasTable = $("#llegadasTable").DataTable({
       visible: false,
       className: "secundariaDef",
     },
-
-    { targets: [1], orderData: false, visible: true },
+    {
+      targets: [1],
+      orderData: false,
+      visible: false,
+      className: "secundariaDef",
+    },
 
     { targets: [2], orderData: false, visible: true },
+
     { targets: [3], orderData: false, visible: true },
     { targets: [4], orderData: false, visible: true },
     { targets: [5], orderData: false, visible: true },
     { targets: [6], orderData: false, visible: true },
-    { targets: [7], orderData: false, visible: true }
+    { targets: [7], orderData: false, visible: true },
+    { targets: [8], orderData: false, visible: true }
   ],
 
   searchBuilder: {
     // Las columnas que van a aparecer en el desplegable para ser buscadas
-    columns: [1, 2,3,4,5,7],
+    columns: [2, 3,4,5,6,8],
   },
   ajax: {
     // url: '../../controller/usuario.php?op=listar',
@@ -2454,43 +2461,43 @@ var llegadasTable = $("#llegadasTable").DataTable({
 }); // del DATATABLE
 $('#FootNumero').on('keyup', function () {
   llegadasTable
-      .columns(1)
+      .columns(2)
       .search(this.value)
       .draw();
 });
 $('#FootDia').on('keyup', function () {
   llegadasTable
-      .columns(2)
+      .columns(3)
       .search(this.value)
       .draw();
 });
 $('#FootFecha').on('keyup', function () {
   llegadasTable
-      .columns(3)
+      .columns(4)
       .search(this.value)
       .draw();
 });
 $('#FootDepartamento').on('keyup', function () {
   llegadasTable
-      .columns(4)
+      .columns(5)
       .search(this.value)
       .draw();
 });
 $('#FootMatriculacion').on('keyup', function () {
   llegadasTable
-      .columns(5)
+      .columns(6)
       .search(this.value)
       .draw();
 });
 $('#FootEstado').on('keyup', function () {
   llegadasTable
-      .columns(6)
+      .columns(7)
       .search(this.value)
       .draw();
 });
 $('#FootAlerta').on('keyup', function () {
   llegadasTable
-      .columns(7)
+      .columns(8)
       .search(this.value)
       .draw();
 });
@@ -2860,4 +2867,43 @@ $("#groupTarifaDocenciaInputs").on("click",function(){
 
 $("#listClient").on("click",function(){
   $("#seleccionar-cliente-modal").modal("show")
+});
+
+// ========================================================================
+// FUNCIONALIDAD PARA CARGAR AUTOMÁTICAMENTE UNA LLEGADA ESPECÍFICA
+// SI SE RECIBE EL PARÁMETRO idLlegada EN LA URL
+// ========================================================================
+$(document).ready(function () {
+  // Obtener el valor del input hidden
+  const idLlegadaDirecta = $('#idLlegadaDirecta').val();
+  
+  // Solo ejecutar si existe el parámetro idLlegada
+  if (idLlegadaDirecta && idLlegadaDirecta !== '') {
+    console.log('Cargando llegada directa con ID:', idLlegadaDirecta);
+    
+    // Esperar a que todo esté cargado
+    setTimeout(function() {
+      // Verificar que el botón de listar esté disponible
+      if (!$('#buscarLlegada').hasClass('d-none')) {
+        // Simular click en el modal de llegadas
+        $('#listarLlegadas').click();
+        
+        // Esperar a que el DataTable cargue
+        setTimeout(function() {
+          // Buscar la fila con el ID y hacer click
+          $('#llegadasTable tbody tr').each(function() {
+            var tabla = $("#llegadasTable").DataTable();
+            var data = tabla.row(this).data();
+            if (data && data[0] == idLlegadaDirecta) {
+              console.log('Llegada encontrada, abriendo...');
+              $(this).click();
+              return false; // Break del each
+            }
+          });
+        }, 1000);
+      } else {
+        console.warn('No hay llegadas disponibles para este prescriptor');
+      }
+    }, 500);
+  }
 });

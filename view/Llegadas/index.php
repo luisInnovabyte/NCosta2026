@@ -17,6 +17,9 @@
 
         $prescriptor = new Prescriptor();
         $datos = $prescriptor->mostrarElementoxToken($_GET["tokenPreinscripcion"]);
+        
+        // Capturar parámetro opcional idLlegada para enlace directo
+        $idLlegadaDirecta = isset($_GET["idLlegada"]) ? intval($_GET["idLlegada"]) : null;
 
         require_once("../../models/Rutas.php");
 
@@ -455,8 +458,9 @@
     <!-- ***************************************************** -->
     <!--start main content-->
     <main class="page-content">
-        <input type="hidden" id="idPrescriptor" value="<?php echo $_GET["idPrescriptor"] ?>">
+        <input type="hidden" id="idPrescriptor" value="<?php echo isset($_GET["idPrescriptor"]) ? $_GET["idPrescriptor"] : ''; ?>">
         <input type="hidden" id="tokkenPrescripcion" value="<?php echo $datos[0]["idPrescripcion"] ?>">
+        <input type="hidden" id="idLlegadaDirecta" value="<?php echo $idLlegadaDirecta ?? ''; ?>">
         <!-- NUEVOS INPUTS PARA SABER SI HAY FACTURA PROFORMA O REAL ACTIVA EN ESA LLEGADA -->
         <input type="hidden" id="inputFacturaProforma" name="inputFacturaProforma">
         <input type="hidden" id="inputFacturaReal" name="inputFacturaReal">
@@ -1319,9 +1323,10 @@
                                     <?php
                                     $nombreTabla = "llegadasTable";
 
-                                    $nombreCampos = ["ID","Nº Llegada", "Dia Inscripcion", "Fecha Llegada","Departamento","Matriculas - Alojamiento","Estado","Alerta Pago"];
+                                    $nombreCampos = ["ID","Token","Nº Llegada", "Dia Inscripcion", "Fecha Llegada","Departamento","Matriculas - Alojamiento","Estado","Alerta Pago"];
                                     $nombreCamposFooter = [
                                         "ID",
+                                        "Token",
                                         "<input type='text' class='form-control' id='FootNumero' name='FootNumero' placeholder='Buscar Llegada'>", 
                                         "<input type='text' class='form-control' id='FootDia' name='FootDia' placeholder='Buscar Día'>", 
                                         "<input type='text' class='form-control' id='FootFecha' name='FootFecha' placeholder='Buscar Fecha'>",
