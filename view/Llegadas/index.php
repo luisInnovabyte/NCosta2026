@@ -853,6 +853,11 @@
                                             </div>
                                         </div>
 
+
+                                        <!-- =============================================== -->
+                                        <!--                   TRANSFER                      -->
+                                        <!-- =============================================== -->
+
                                         <div class="tab-pane fade" id="transfer" role="tabpanel">
 
                                             <div class="card mt-3 card-hover">
@@ -1002,14 +1007,29 @@
                                                             </div>
                                                         </div>
 
+                                                            <!-- Banner de advertencia para cambios sin guardar -->
+                                                            <div class="row col-md-12 mg-t-10-force" id="transferWarningBanner" style="display: none;">
+                                                                <div class="col-12">
+                                                                    <div class="alert alert-warning text-center mb-2" role="alert">
+                                                                        <i class="fa-solid fa-exclamation-triangle"></i>
+                                                                        <strong>¡Atención!</strong> Hay cambios sin guardar. Presiona "Agregar Transfer" para guardarlos.
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
                                                             <div class="row col-md-12 mg-t-10-force justify-content-center">
-                                                                <button onclick="agregarTransfer()" class="col-lg-3 col-12 mg-lg-2 btn btn-primary">Agregar Transfer</button>
+                                                                <button onclick="agregarTransfer()" id="btnAgregarTransfer" class="col-lg-3 col-12 mg-lg-2 btn btn-primary">Agregar Transfer</button>
                                                             </div>
 
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
+
+
+                                        <!-- =============================================== -->
+                                        <!--                     PAGOS                       -->
+                                        <!-- =============================================== -->
 
                                         <div class="tab-pane fade" id="otros" role="tabpanel">
                                             <div class="card mt-3 card-hover">
@@ -1020,11 +1040,11 @@
                                                     <div class="row">
                                                         <div class="col-md-4 mg-t-10-force">
                                                             <label for="importeAnticipadoOtros" class="form-label">Importe</label>
-                                                            <input type="text" class="form-control form-control-sm" maxlength="100" id="importeAnticipadoOtros">
+                                                            <input type="number" class="form-control form-control-sm" step="0.01" min="0" id="importeAnticipadoOtros" onkeypress="return (event.charCode >= 48 && event.charCode <= 57) || event.charCode == 46 || event.charCode == 44">
                                                         </div>
                                                         <div class="col-md-4 mg-t-10-force">
                                                             <label for="fechaPagoOtros" class="form-label">Fecha del pago</label>
-                                                            <input type="date"  onkeydown="return false"  class="form-control form-control-sm" id="fechaPagoOtros">
+                                                            <input type="date" class="form-control form-control-sm" id="fechaPagoOtros">
                                                         </div>
                                                         <div class="col-md-4 mg-t-10-force">
                                                             <label for="medioPagoOtros" class="form-label">Medio de pago</label>
@@ -1198,25 +1218,75 @@
 
                                     <div class="card mg-t-30  card-hover">
 
-                                        <div class="card-body  datos-generales">
-                                            <div class="row cardLlegadas ">
-                                                <div class="row  col-12">
-                                                    <div class="col-md-4 mg-t-10-force">
-                                                    <label for="nivelDocencia" class="form-label tx-bold">A Facturar (Sin IVA)</label>
-                                                
-                                                        <input type="text" id="finalFacturadoNew" class="form-control form-control-sm" disabled>
-                                                    </div>
-                                                    <div class="col-md-4 mg-t-10-force">
-                                                        <label for="nivelDocencia" class="form-label tx-success  tx-bold">Pagado </label>
-                                                        <input type="text" id="finalPagado" class="form-control form-control-sm" disabled>
-                                                    </div>
-                                                    <div class="col-md-4 mg-t-10-force">
-                                                        <label for="nivelDocencia" class="form-label tx-danger  tx-bold">Pago Pendiente</label>
-                                                        <input type="text" id="finalPendiente" class="form-control form-control-sm" disabled>
-                                                    </div>
-                                                </div>
-                                                
-                                            </div>
+<div class="card-body datos-generales">
+                            <div class="row cardLlegadas">
+                                <div class="col-12">
+                                    <h6 class="mb-3 text-center text-uppercase"><i class="fa-solid fa-file-invoice"></i> Resumen de Facturación</h6>
+                                    
+                                    <table class="table table-sm table-borderless mb-0" style="font-size: 0.9rem; table-layout: fixed;">
+                                        <colgroup>
+                                            <col style="width: 35%;">
+                                            <col style="width: 15%;">
+                                            <col style="width: 35%;">
+                                            <col style="width: 15%;">
+                                        </colgroup>
+                                        <tbody>
+                                            <!-- Matrículas -->
+                                            <tr style="border-bottom: 1px solid #dee2e6;">
+                                                <td class="py-2">Matrículas (Sin IVA)</td>
+                                                <td class="py-2 text-end" id="totalMatriculacionSinIva">0,00 €</td>
+                                                <td class="py-2 ps-3" style="border-left: 2px solid #adb5bd;">Matrículas (Con IVA)</td>
+                                                <td class="py-2 text-end fw-bold" id="totalMatriculacionConIva">0,00 €</td>
+                                            </tr>
+                                            
+                                            <!-- Alojamiento -->
+                                            <tr style="border-bottom: 1px solid #dee2e6;">
+                                                <td class="py-2">Alojamiento (Sin IVA)</td>
+                                                <td class="py-2 text-end" id="totalAlojamientoSinIva">0,00 €</td>
+                                                <td class="py-2 ps-3" style="border-left: 2px solid #adb5bd;">Alojamiento (Con IVA)</td>
+                                                <td class="py-2 text-end fw-bold" id="totalAlojamientoConIva">0,00 €</td>
+                                            </tr>
+                                            
+                                            <!-- Transfer Llegada -->
+                                            <tr style="border-bottom: 1px solid #dee2e6;">
+                                                <td class="py-2">Transfer Llegada (Sin IVA)</td>
+                                                <td class="py-2 text-end" id="totalTransferLlegadaSinIva">0,00 €</td>
+                                                <td class="py-2 ps-3" style="border-left: 2px solid #adb5bd;">Transfer Llegada (Con IVA)</td>
+                                                <td class="py-2 text-end fw-bold" id="totalTransferLlegadaConIva">0,00 €</td>
+                                            </tr>
+                                            
+                                            <!-- Transfer Regreso -->
+                                            <tr style="border-bottom: 2px solid #495057;">
+                                                <td class="py-2">Transfer Regreso (Sin IVA)</td>
+                                                <td class="py-2 text-end" id="totalTransferRegresoSinIva">0,00 €</td>
+                                                <td class="py-2 ps-3" style="border-left: 2px solid #adb5bd;">Transfer Regreso (Con IVA)</td>
+                                                <td class="py-2 text-end fw-bold" id="totalTransferRegresoConIva">0,00 €</td>
+                                            </tr>
+                                            
+                                            <!-- Totales -->
+                                            <tr style="background-color: #f8f9fa; border-bottom: 2px solid #495057;">
+                                                <td class="py-2 fw-bold text-uppercase" style="font-size: 0.85rem;">Total General (Sin IVA)</td>
+                                                <td class="py-2 text-end fw-bold fs-5" id="totalGeneralSinIva">0,00 €</td>
+                                                <td class="py-2 ps-3 fw-bold text-uppercase" style="border-left: 2px solid #adb5bd; font-size: 0.85rem;">Total General (Con IVA)</td>
+                                                <td class="py-2 text-end fw-bold fs-5" id="totalGeneralConIva">0,00 €</td>
+                                            </tr>
+                                            
+                                            <!-- Pagado -->
+                                            <tr style="border-bottom: 1px solid #dee2e6;">
+                                                <td class="py-2 fw-bold text-success" colspan="3" style="border-left: 2px solid #adb5bd;"><i class="fa-solid fa-check-circle"></i> Total Pagado</td>
+                                                <td class="py-2 text-end fw-bold text-success fs-5" id="finalPagado">0,00 €</td>
+                                            </tr>
+                                            
+                                            <!-- Pendiente -->
+                                            <tr>
+                                                <td class="py-2 fw-bold text-danger" colspan="3" style="border-left: 2px solid #adb5bd;"><i class="fa-solid fa-exclamation-circle"></i> Pago Pendiente</td>
+                                                <td class="py-2 text-end fw-bold text-danger fs-5" id="finalPendiente">0,00 €</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    
+                                </div>
+                            </div>
 
 
                                         </div>
@@ -1249,7 +1319,7 @@
                                     <?php
                                     $nombreTabla = "llegadasTable";
 
-                                    $nombreCampos = ["ID","Nº Llegada", "Dia Inscripcion", "Fecha Llegada","Departamento","Matriculas - Alojamiento","Estado"];
+                                    $nombreCampos = ["ID","Nº Llegada", "Dia Inscripcion", "Fecha Llegada","Departamento","Matriculas - Alojamiento","Estado","Alerta Pago"];
                                     $nombreCamposFooter = [
                                         "ID",
                                         "<input type='text' class='form-control' id='FootNumero' name='FootNumero' placeholder='Buscar Llegada'>", 
@@ -1258,6 +1328,7 @@
                                         "<input type='text' class='form-control' id='FootDepartamento' name='FootDepartamento' placeholder='Buscar Departamento'>",
                                         "<input type='text' class='form-control' id='FootMatriculacion' name='FootMatriculacion' placeholder='Buscar Matriculas'>",
                                         "<input type='text' class='form-control' id='FootEstado' name='FootEstado' placeholder='Buscar Estado'>",
+                                        "<input type='text' class='form-control' id='FootAlerta' name='FootAlerta' placeholder='Buscar Alerta'>",
                                     ];
                                    
 

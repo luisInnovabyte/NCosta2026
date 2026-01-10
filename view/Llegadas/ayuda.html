@@ -111,6 +111,104 @@
         <p>Por defecto, la hora de salida del alojamiento se establece en <code>11:00</code>, pero puede modificarse según las necesidades.</p>
     </div>
     
+    <!-- Sección: Sistema de Alertas de Pago -->
+    <div class="ayuda-seccion">
+        <h3>🚨 Sistema de Alertas de Pago</h3>
+        
+        <h4>¿Cómo funciona?</h4>
+        <p>La tabla de llegadas incluye una columna <strong>"Alerta Pago"</strong> que muestra el estado de pago de cada alumno en función de los días que faltan para el inicio del curso y el importe pendiente de pago.</p>
+        
+        <h4>Niveles de Alerta y Colores</h4>
+        <p>El sistema clasifica las alertas en 6 niveles según la urgencia, cada uno con un color distintivo:</p>
+        
+        <div class="alerta-grid">
+            <div class="alerta-item alerta-vencido">
+                <div class="alerta-badge">VENCIDO</div>
+                <div class="alerta-descripcion">
+                    <strong>Situación:</strong> El curso ya ha comenzado y hay pago pendiente<br>
+                    <strong>Días:</strong> Curso iniciado (días negativos)<br>
+                    <strong>Acción:</strong> Contactar urgentemente al alumno
+                </div>
+            </div>
+            
+            <div class="alerta-item alerta-critico">
+                <div class="alerta-badge">CRÍTICO</div>
+                <div class="alerta-descripcion">
+                    <strong>Situación:</strong> Pago pendiente con inicio inminente<br>
+                    <strong>Días:</strong> 0 a 3 días antes del inicio<br>
+                    <strong>Acción:</strong> Prioridad máxima de cobro
+                </div>
+            </div>
+            
+            <div class="alerta-item alerta-urgente">
+                <div class="alerta-badge">URGENTE</div>
+                <div class="alerta-descripcion">
+                    <strong>Situación:</strong> Pago pendiente próximo a vencer<br>
+                    <strong>Días:</strong> 4 a 7 días antes del inicio<br>
+                    <strong>Acción:</strong> Recordatorio urgente de pago
+                </div>
+            </div>
+            
+            <div class="alerta-item alerta-importante">
+                <div class="alerta-badge">IMPORTANTE</div>
+                <div class="alerta-descripcion">
+                    <strong>Situación:</strong> Plazo moderado para gestionar el pago<br>
+                    <strong>Días:</strong> 8 a 15 días antes del inicio<br>
+                    <strong>Acción:</strong> Realizar seguimiento del pago
+                </div>
+            </div>
+            
+            <div class="alerta-item alerta-aviso">
+                <div class="alerta-badge">AVISO</div>
+                <div class="alerta-descripcion">
+                    <strong>Situación:</strong> Tiempo suficiente para gestionar<br>
+                    <strong>Días:</strong> 16 a 30 días antes del inicio<br>
+                    <strong>Acción:</strong> Enviar recordatorio preventivo
+                </div>
+            </div>
+            
+            <div class="alerta-item alerta-normal">
+                <div class="alerta-badge">NORMAL</div>
+                <div class="alerta-descripcion">
+                    <strong>Situación:</strong> Situación bajo control<br>
+                    <strong>Días:</strong> 31 a 45 días antes del inicio<br>
+                    <strong>Acción:</strong> Monitoreo rutinario
+                </div>
+            </div>
+            
+            <div class="alerta-item alerta-sin">
+                <div class="alerta-badge">Sin Alerta</div>
+                <div class="alerta-descripcion">
+                    <strong>Situación:</strong> No requiere atención inmediata<br>
+                    <strong>Casos:</strong> Pago completo o curso a más de 45 días<br>
+                    <strong>Acción:</strong> Sin acción requerida
+                </div>
+            </div>
+        </div>
+        
+        <div class="ayuda-nota">
+            <strong>📌 Nota:</strong> Al pasar el ratón sobre el badge de alerta, se muestra un mensaje descriptivo completo de la situación.
+        </div>
+        
+        <div class="ayuda-importante">
+            <strong>⚠️ Importante:</strong> Las alertas se calculan automáticamente considerando:
+            <ul style="margin-top: 8px; margin-bottom: 0;">
+                <li>Total facturado (matrículas + alojamientos + transfers)</li>
+                <li>Total pagado (pagos anticipados)</li>
+                <li>Fecha actual vs. fecha de inicio del curso</li>
+                <li>Solo se muestran alertas si hay importe pendiente mayor a 0€</li>
+            </ul>
+        </div>
+        
+        <h4>Búsqueda y Filtrado</h4>
+        <p>Puedes buscar llegadas por nivel de alerta usando el campo de búsqueda en la columna "Alerta Pago". Por ejemplo:</p>
+        <ul class="lista-pasos">
+            <li>Escribe <strong>"CRÍTICO"</strong> para ver solo las llegadas con alerta crítica</li>
+            <li>Escribe <strong>"VENCIDO"</strong> para revisar pagos atrasados</li>
+            <li>Escribe <strong>"Sin Alerta"</strong> para ver llegadas con pago completo</li>
+        </ul>
+    </div>
+    
     <!-- Sección: Consejos y Mejores Prácticas -->
     <div class="ayuda-seccion">
         <h3>💡 Consejos y Mejores Prácticas</h3>
@@ -121,6 +219,8 @@
             <li><strong>Fechas personalizadas:</strong> Si necesitas fechas específicas que no sigan el patrón estándar (lunes-viernes), puedes modificarlas manualmente.</li>
             <li><strong>Formato de fecha:</strong> Usa siempre el formato DD/MM/AAAA. El selector de fecha te ayudará a introducir las fechas correctamente.</li>
             <li><strong>Campos deshabilitados:</strong> Los campos como Importe, IVA y Descuento se rellenan automáticamente al seleccionar una tarifa y están deshabilitados para evitar errores.</li>
+            <li><strong>Prioriza alertas críticas:</strong> Revisa diariamente la columna de alertas y prioriza los niveles VENCIDO y CRÍTICO.</li>
+            <li><strong>Seguimiento proactivo:</strong> No esperes a que las alertas sean críticas, contacta a los alumnos cuando aparezcan alertas IMPORTANTES o AVISO.</li>
         </ul>
     </div>
     
@@ -189,6 +289,66 @@
         border-radius: 3px;
         color: #d63384;
         font-weight: 600;
+    }
+    
+    /* Estilos para Sistema de Alertas */
+    .alerta-grid {
+        display: grid;
+        gap: 15px;
+        margin: 20px 0;
+    }
+    .alerta-item {
+        display: flex;
+        gap: 15px;
+        padding: 15px;
+        border-radius: 8px;
+        background-color: white;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        align-items: center;
+    }
+    .alerta-badge {
+        min-width: 110px;
+        padding: 8px 12px;
+        border-radius: 6px;
+        text-align: center;
+        font-weight: bold;
+        font-size: 0.95rem;
+        color: white;
+        text-transform: uppercase;
+    }
+    .alerta-descripcion {
+        flex: 1;
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+    .alerta-descripcion strong {
+        color: #495057;
+    }
+    
+    /* Colores específicos para cada nivel */
+    .alerta-vencido .alerta-badge {
+        background-color: #8B0000;
+    }
+    .alerta-critico .alerta-badge {
+        background-color: #DC143C;
+    }
+    .alerta-urgente .alerta-badge {
+        background-color: #FF4500;
+    }
+    .alerta-importante .alerta-badge {
+        background-color: #FF8C00;
+    }
+    .alerta-aviso .alerta-badge {
+        background-color: #FFD700;
+        color: #333;
+    }
+    .alerta-normal .alerta-badge {
+        background-color: #32CD32;
+    }
+    .alerta-sin .alerta-badge {
+        background-color: #e9ecef;
+        color: #333;
+        border: 1px solid #dee2e6;
     }
 </style>
 

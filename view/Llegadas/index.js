@@ -55,8 +55,8 @@ $("#nuevaLlegada").on("click", function () {
 
   /* $("input:not(:disabled)").val(""); */
   $("#finalFacturado").val("0,00€");
-  $("#finalPagado").val("0,00€");
-  $("#finalPendiente").val("0,00€");
+  $("#finalPagado").text("0,00 €");
+  $("#finalPendiente").text("0,00 €");
   $("#divNuevaLlegada tbody tr").remove();
   $("#buscarLlegada").addClass("d-none");
   $("#nuevaLlegada").parent().addClass("d-none");
@@ -266,10 +266,10 @@ $("#agregarOtro").on("click", function () {
     "<button class='btn btn-danger mg-l-5 eliminarOtro'><i class='fa-solid fa-trash' ></i></button>", // Edad
   ];
 
-  let importeTotal = convertirEurANumero($("#finalPagado").val());
+  let importeTotal = convertirEurANumero($("#finalPagado").text());
   let importeOtro = convertirEurANumero($("#importeAnticipadoOtros").val());
   importeTotal += importeOtro;
-  $("#finalPagado").val(formatearEur(importeTotal) + "€");
+  $("#finalPagado").text(importeTotal.toLocaleString('es-ES', {minimumFractionDigits: 2, maximumFractionDigits: 2}) + ' €');
   recalcularPrecios();
 
   $("#importeAnticipadoOtros").val("");
@@ -373,11 +373,11 @@ $("#otrosTable").on("click", ".eliminarOtro", function () {
   // Accede a la segunda columna (índice 1, ya que los índices comienzan en 0)
   var valorSegundaColumna = datosFila[0];
 
-  let importeTotal = convertirEurANumero($("#finalPagado").val());
+  let importeTotal = convertirEurANumero($("#finalPagado").text());
   let importeDocencia = convertirEurANumero(valorSegundaColumna);
 
   importeTotal -= importeDocencia;
-  $("#finalPagado").val(formatearEur(importeTotal) + "€");
+  $("#finalPagado").text(importeTotal.toLocaleString('es-ES', {minimumFractionDigits: 2, maximumFractionDigits: 2}) + ' €');
   recalcularPrecios();
 
   tabla.row($(this).parents("tr")).remove().draw();
@@ -1502,6 +1502,14 @@ function formatearEur(importe) {
   return importe;
 }
 function convertirEurANumero(importe) {
+  // Validar que importe no sea undefined, null o vacío
+  if (!importe || importe === undefined || importe === null) {
+    return 0;
+  }
+  
+  // Convertir a string por si acaso
+  importe = String(importe);
+  
   // Eliminar los puntos que separan los miles
   importe = importe.replace(/\./g, "");
 
@@ -1509,13 +1517,13 @@ function convertirEurANumero(importe) {
   importe = importe.replace(",", ".");
 
   // Convertir el string a un número flotante
-  return parseFloat(importe);
+  return parseFloat(importe) || 0;
 }
 function recalcularPrecios() {
   let facturado = convertirEurANumero($("#finalFacturado").val());
-  let pagado = convertirEurANumero($("#finalPagado").val());
+  let pagado = convertirEurANumero($("#finalPagado").text());
 
-  $("#finalPendiente").val(formatearEur(facturado - pagado) + "€");
+  $("#finalPendiente").text((facturado - pagado).toLocaleString('es-ES', {minimumFractionDigits: 2, maximumFractionDigits: 2}) + ' €');
   var valor = $("#finalFacturado").val(); // Obtienes el valor del input
   var esNaN = isNaN(parseFloat(valor));  // Verificas si no es un número (convertido a float)
 
@@ -1526,8 +1534,8 @@ function recalcularPrecios() {
 }
 
 $("#finalFacturado").val(formatearEur(0) + "€");
-$("#finalPagado").val(formatearEur(0) + "€");
-$("#finalPendiente").val(formatearEur(0) + "€");
+$("#finalPagado").text("0,00 €");
+$("#finalPendiente").text("0,00 €");
 
 $("#lugarLlegada").on("input", function () {
   let lugar = $(this).val();
@@ -1871,6 +1879,11 @@ $("#buscar-tarifaAloja-modal").on("shown.bs.modal", function () {
                   );
 
                   recalcularPrecios();
+                  
+                  // Marcar cambios sin guardar en Transfer si estamos en esa pestaña
+                  if ($('#transfer').hasClass('active')) {
+                      marcarTransferCambios();
+                  }
               }
 
               // Si NO viene de lastClickedButton (selección desde Docencia o Alojamiento)
@@ -2392,7 +2405,7 @@ var llegadasTable = $("#llegadasTable").DataTable({
     { name: "Departamento", className: "text-center" },
     { name: "Matriculas", className: "text-center" },
     { name: "Estado", className: "text-center" },
-
+    { name: "Alerta Pago", className: "text-center" }
   ],
   columnDefs: [
     {
@@ -2408,13 +2421,13 @@ var llegadasTable = $("#llegadasTable").DataTable({
     { targets: [3], orderData: false, visible: true },
     { targets: [4], orderData: false, visible: true },
     { targets: [5], orderData: false, visible: true },
-    { targets: [6], orderData: false, visible: true }
-
+    { targets: [6], orderData: false, visible: true },
+    { targets: [7], orderData: false, visible: true }
   ],
 
   searchBuilder: {
     // Las columnas que van a aparecer en el desplegable para ser buscadas
-    columns: [1, 2,3,4,5],
+    columns: [1, 2,3,4,5,7],
   },
   ajax: {
     // url: '../../controller/usuario.php?op=listar',
@@ -2472,6 +2485,12 @@ $('#FootMatriculacion').on('keyup', function () {
 $('#FootEstado').on('keyup', function () {
   llegadasTable
       .columns(6)
+      .search(this.value)
+      .draw();
+});
+$('#FootAlerta').on('keyup', function () {
+  llegadasTable
+      .columns(7)
       .search(this.value)
       .draw();
 });
@@ -2723,6 +2742,11 @@ $("#llegadasTable tbody").on("click", "tr", function () {
     $("#lugarEntregaRegreso").val(data[0]["lugarentregaregresaTransfer_llegadas"]);
     $("#quienRecogeRegreso").val(data[0]["quienrecogealumnoregresaTransfer_llegadas"]);
     $("#observaciones").val(data[0]["campoobservacionesgeneralTransfer_llegadas"]);
+    
+    // Actualizar totales después de cargar los datos de transfer
+    if (typeof actualizarTotalFacturado === 'function') {
+        actualizarTotalFacturado();
+    }
     //! ↑↑↑↑↑↑ TRANFER ↑↑↑↑↑↑ !//
     //! ↓↓↓↓↓↓ VISADO ↓↓↓↓↓↓ !//
     $("#visadoCheck").prop("checked", data[0]["tieneVisado"] == 1);

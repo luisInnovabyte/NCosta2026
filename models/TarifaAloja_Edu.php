@@ -15,7 +15,12 @@ class TarifaAloja extends Conectar
     {
         $conectar = parent::conexion();
         parent::set_names();
-        $sql = "SELECT * FROM `view_tarifa_iva` WHERE `estTarifa` = 1 AND `tipo_tarifa`='$datatype' ORDER BY `idTarifa` ASC";
+        // Si el tipo es "Otro" o "Otros", buscar ambos
+        if ($datatype === 'Otro' || $datatype === 'Otros') {
+            $sql = "SELECT * FROM `view_tarifa_iva` WHERE `estTarifa` = 1 AND (`tipo_tarifa`='Otro' OR `tipo_tarifa`='Otros') ORDER BY `idTarifa` ASC";
+        } else {
+            $sql = "SELECT * FROM `view_tarifa_iva` WHERE `estTarifa` = 1 AND `tipo_tarifa`='$datatype' ORDER BY `idTarifa` ASC";
+        }
             
 
     
@@ -39,7 +44,12 @@ class TarifaAloja extends Conectar
     {
         $conectar = parent::conexion();
         parent::set_names();
-        $sql = "SELECT `cod_tarifa`, `nombre_tarifa`,`unidades_tarifa`,`unidad_tarifa` FROM `view_tarifa_iva` WHERE `estTarifa` = 1 AND `tipo_tarifa`='$datatype' AND (`cod_tarifa` LIKE '$search%' OR `nombre_tarifa` LIKE '%$search%')  ORDER BY `idTarifa` ASC";
+        // Si el tipo es "Otro" o "Otros", buscar ambos
+        if ($datatype === 'Otro' || $datatype === 'Otros') {
+            $sql = "SELECT `cod_tarifa`, `nombre_tarifa`,`unidades_tarifa`,`unidad_tarifa` FROM `view_tarifa_iva` WHERE `estTarifa` = 1 AND (`tipo_tarifa`='Otro' OR `tipo_tarifa`='Otros') AND (`cod_tarifa` LIKE '$search%' OR `nombre_tarifa` LIKE '%$search%')  ORDER BY `idTarifa` ASC";
+        } else {
+            $sql = "SELECT `cod_tarifa`, `nombre_tarifa`,`unidades_tarifa`,`unidad_tarifa` FROM `view_tarifa_iva` WHERE `estTarifa` = 1 AND `tipo_tarifa`='$datatype' AND (`cod_tarifa` LIKE '$search%' OR `nombre_tarifa` LIKE '%$search%')  ORDER BY `idTarifa` ASC";
+        }
      
         $sql = $conectar->prepare($sql);
         $sql->execute();

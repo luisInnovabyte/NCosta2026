@@ -176,8 +176,15 @@
 
             <!-- Header profesional -->
             <div class="page-header-custom">
-                <h2><i class='bx bx-purchase-tag me-2'></i>Gestión de Tarifas</h2>
-                <p>Administra las tarifas, precios y descuentos de los servicios</p>
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <h2><i class='bx bx-purchase-tag me-2'></i>Gestión de Tarifas</h2>
+                        <p>Administra las tarifas, precios y descuentos de los servicios</p>
+                    </div>
+                    <button type="button" class="btn btn-light btn-sm" onclick="window.open('ayuda.html', 'Ayuda', 'width=1200,height=800,scrollbars=yes,resizable=yes');">
+                        <i class="fa-solid fa-circle-question"></i> Ayuda
+                    </button>
+                </div>
             </div>
 
             <div class="col-12 card">

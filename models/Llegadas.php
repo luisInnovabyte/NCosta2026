@@ -59,12 +59,20 @@ class Llegadas extends Conectar
 
         $sql = "SELECT 
                     llegadas_departamentos.*,
-                    evaluacionFinal.*
+                    evaluacionFinal.*,
+                    alertas.nivel_alerta,
+                    alertas.color_alerta,
+                    alertas.mensaje_alerta,
+                    alertas.prioridad,
+                    alertas.score_urgencia
                 FROM 
                     llegadas_departamentos
                 LEFT JOIN 
                     evaluacionFinal 
                     ON llegadas_departamentos.id_llegada = evaluacionFinal.idLlegadaEvaluacionFinal
+                LEFT JOIN
+                    view_llegadas_alertas_pago AS alertas
+                    ON llegadas_departamentos.id_llegada = alertas.id_llegada
                 WHERE 
                     llegadas_departamentos.idprescriptor_llegadas = ?
                 ORDER BY 
@@ -129,7 +137,16 @@ class Llegadas extends Conectar
     {
         $conectar = parent::conexion();
         parent::set_names();
-        $sql = "SELECT le.*, ag.nombreAgente FROM tm_llegadas_edu le LEFT JOIN tm_agentes_edu ag ON le.agente_llegadas = ag.idAgente WHERE le.id_llegada = '$idLlegadas'";
+        $sql = "SELECT le.*, ag.nombreAgente, 
+                       alertas.nivel_alerta, 
+                       alertas.color_alerta, 
+                       alertas.mensaje_alerta, 
+                       alertas.prioridad, 
+                       alertas.score_urgencia 
+                FROM tm_llegadas_edu le 
+                LEFT JOIN tm_agentes_edu ag ON le.agente_llegadas = ag.idAgente 
+                LEFT JOIN view_llegadas_alertas_pago alertas ON le.id_llegada = alertas.id_llegada 
+                WHERE le.id_llegada = '$idLlegadas'";
 
         $sql = $conectar->prepare($sql);
         $sql->execute();

@@ -117,6 +117,16 @@ $avatarRol = $avatarUsuario[$rolUsuarioMenu] ?? ''; */
               <div class="menu-title">Interesados </div>
             </a>
           </li>
+
+          <li>
+            <a href="../../view/listado_criticos_llegadas/">
+              <div class="parent-icon"><span class="material-symbols-outlined">person_pin</span>
+              </div>
+              <div class="menu-title">Críticos</div>
+            </a>
+          </li>
+          
+
           <!-- <li>
             <a href="../../view/ListadoProforma/">
               <div class="parent-icon"><span class="material-symbols-outlined">list_alt</span>

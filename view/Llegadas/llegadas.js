@@ -5,12 +5,51 @@ $("#btnSearchTarifaDocencia").attr("disabled", false);
 
 // Variables globales para almacenar cada total
 var totalMatriculacion = 0;
+var totalMatriculacionIva = 0;
 var totalAlojamiento = 0;
+var totalAlojamientoIva = 0;
+var totalTransferLlegada = 0;
+var totalTransferLlegadaIva = 0;
+var totalTransferRegreso = 0;
+var totalTransferRegresoIva = 0;
+var totalGeneral = 0;
+var totalGeneralIva = 0;
 
-// Función para actualizar el campo "A Facturar" sumando ambos totales
+// Función para actualizar todos los totales
 function actualizarTotalFacturado() {
-    var totalFacturado = totalMatriculacion + totalAlojamiento;
-    $('#finalFacturadoNew').val(totalFacturado.toFixed(2));
+    // Obtener valores de transfer
+    let importeLlegada = convertirEurANumero($('#importeTarifasLlegada').val());
+    let ivaLlegada = parseFloat(String($('#ivaTarifasLlegada').val()).replace(/\s|%/g, '').replace(',', '.')) || 0;
+    let importeRegreso = convertirEurANumero($('#importeTarifasRegreso').val());
+    let ivaRegreso = parseFloat(String($('#ivaTarifasRegreso').val()).replace(/\s|%/g, '').replace(',', '.')) || 0;
+    
+    // Calcular totales de transfer
+    totalTransferLlegada = importeLlegada;
+    totalTransferLlegadaIva = importeLlegada + (importeLlegada * ivaLlegada / 100);
+    totalTransferRegreso = importeRegreso;
+    totalTransferRegresoIva = importeRegreso + (importeRegreso * ivaRegreso / 100);
+    
+    // Calcular totales generales
+    totalGeneral = totalMatriculacion + totalAlojamiento + totalTransferLlegada + totalTransferRegreso;
+    totalGeneralIva = totalMatriculacionIva + totalAlojamientoIva + totalTransferLlegadaIva + totalTransferRegresoIva;
+    
+    // Actualizar todos los campos del display
+    $('#totalMatriculacionSinIva').text(totalMatriculacion.toLocaleString('es-ES', {minimumFractionDigits: 2, maximumFractionDigits: 2}) + ' €');
+    $('#totalMatriculacionConIva').text(totalMatriculacionIva.toLocaleString('es-ES', {minimumFractionDigits: 2, maximumFractionDigits: 2}) + ' €');
+    
+    $('#totalAlojamientoSinIva').text(totalAlojamiento.toLocaleString('es-ES', {minimumFractionDigits: 2, maximumFractionDigits: 2}) + ' €');
+    $('#totalAlojamientoConIva').text(totalAlojamientoIva.toLocaleString('es-ES', {minimumFractionDigits: 2, maximumFractionDigits: 2}) + ' €');
+    
+    $('#totalTransferLlegadaSinIva').text(totalTransferLlegada.toLocaleString('es-ES', {minimumFractionDigits: 2, maximumFractionDigits: 2}) + ' €');
+    $('#totalTransferLlegadaConIva').text(totalTransferLlegadaIva.toLocaleString('es-ES', {minimumFractionDigits: 2, maximumFractionDigits: 2}) + ' €');
+    
+    $('#totalTransferRegresoSinIva').text(totalTransferRegreso.toLocaleString('es-ES', {minimumFractionDigits: 2, maximumFractionDigits: 2}) + ' €');
+    $('#totalTransferRegresoConIva').text(totalTransferRegresoIva.toLocaleString('es-ES', {minimumFractionDigits: 2, maximumFractionDigits: 2}) + ' €');
+    
+    $('#totalGeneralSinIva').text(totalGeneral.toLocaleString('es-ES', {minimumFractionDigits: 2, maximumFractionDigits: 2}) + ' €');
+    $('#totalGeneralConIva').text(totalGeneralIva.toLocaleString('es-ES', {minimumFractionDigits: 2, maximumFractionDigits: 2}) + ' €');
+    
+    // Actualizar pendiente usando total con IVA
     actualizarPendiente();
 }
 //==================================================//
@@ -79,22 +118,45 @@ var matriculacionTable = $("#matriculacionTableNew").DataTable({
     footerCallback: function (row, data, start, end, display) {
         let api = this.api();
         let total = 0;
+        let totalConIva = 0;
     
-        api.column(3, { search: 'applied' }).data().each(function (value) {
-        let numero = parseFloat(
-                    value
-                .replace(/\s|€/g, '')   // quitar espacios y símbolo €
-                .replace(/\./g, '')     // quitar separadores de miles
-                .replace(',', '.')      // cambiar coma decimal por punto
-        );           
-        if (!isNaN(numero)) {
-                total += numero;
+        // Obtener los datos completos de cada fila
+        api.rows({ search: 'applied' }).every(function () {
+            let rowData = this.data();
+            
+            // Columna 3: Importe
+            let importe = parseFloat(
+                String(rowData[3])
+                    .replace(/\s|€/g, '')   // quitar espacios y símbolo €
+                    .replace(/\./g, '')     // quitar separadores de miles
+                    .replace(',', '.')      // cambiar coma decimal por punto
+            );
+            
+            // Columna 4: IVA
+            let iva = parseFloat(
+                String(rowData[4])
+                    .replace(/\s|%/g, '')   // quitar espacios y símbolo %
+                    .replace(',', '.')      // cambiar coma decimal por punto
+            );
+            
+            if (!isNaN(importe)) {
+                total += importe;
+                
+                // Calcular importe con IVA: importe + (importe * iva / 100)
+                if (!isNaN(iva)) {
+                    totalConIva += importe + (importe * iva / 100);
+                } else {
+                    totalConIva += importe;
+                }
             }
         });
     
         $(api.column(3).footer()).html(total.toLocaleString("es-ES", { style: "currency", currency: "EUR" }));
-        // Asignar el total obtenido a la variable global correspondiente
+        
+        // Asignar los totales a las variables globales
         totalMatriculacion = total;
+        totalMatriculacionIva = totalConIva;
+        
         // Actualizar el total facturado (suma de matriculaciones + alojamientos)
         actualizarTotalFacturado();
 
@@ -775,6 +837,49 @@ $("#rutas_table tbody").on("click", "tr", function () {
 //******************************************/
 
 
+// Sistema de detección de cambios sin guardar en Transfer
+var transferHasCambios = false;
+
+// Función para marcar que hay cambios sin guardar
+function marcarTransferCambios() {
+    if (!transferHasCambios) {
+        transferHasCambios = true;
+        $('#transferWarningBanner').slideDown();
+        $('#btnAgregarTransfer').removeClass('btn-primary').addClass('btn-warning');
+        $('#btnAgregarTransfer').html('<i class="fa-solid fa-save"></i> Guardar Cambios');
+    }
+}
+
+// Función para resetear el estado de cambios
+function resetearTransferCambios() {
+    transferHasCambios = false;
+    $('#transferWarningBanner').slideUp();
+    $('#btnAgregarTransfer').removeClass('btn-warning').addClass('btn-primary');
+    $('#btnAgregarTransfer').html('Agregar Transfer');
+}
+
+// Detectar cambios en todos los campos de Transfer
+$(document).ready(function() {
+    // Campos de Transfer Llegada
+    $('#codigoTarifasLlegada, #textoTarifasLlegada, #importeTarifasLlegada, #ivaTarifasLlegada').on('input change', function() {
+        marcarTransferCambios();
+        actualizarTotalFacturado();
+    });
+    $('#diaLlegada, #horaLlegada').on('change', marcarTransferCambios);
+    $('#lugarRecogidaLlegada, #lugarEntregaLlegada, #quienRecogeLlegada').on('input change', marcarTransferCambios);
+    
+    // Campos de Transfer Regreso
+    $('#codigoTarifasRegreso, #textoTarifasRegreso, #importeTarifasRegreso, #ivaTarifasRegreso').on('input change', function() {
+        marcarTransferCambios();
+        actualizarTotalFacturado();
+    });
+    $('#diaRegreso, #horaRegreso').on('change', marcarTransferCambios);
+    $('#lugarRecogidaRegreso, #lugarEntregaRegreso, #quienRecogeRegreso').on('input change', marcarTransferCambios);
+    
+    // Observaciones
+    $('#observaciones').on('input change', marcarTransferCambios);
+});
+
 function agregarTransfer(){
     
     idLlegada = $('#idLlegadaReal').val();
@@ -830,6 +935,12 @@ function agregarTransfer(){
             
 
             toastr.success("Transfer Añadido");
+            
+            // Resetear el estado de cambios sin guardar
+            resetearTransferCambios();
+            
+            // Actualizar totales
+            actualizarTotalFacturado();
 
           },
         error: function(err) {
@@ -921,7 +1032,7 @@ var pagoAnticipadoTable = $("#pagoAnticipadoTableNew").DataTable({
         });
     
         $(api.column(0).footer()).html(totalPagoAnticipado.toLocaleString("es-ES", { style: "currency", currency: "EUR" }));
-        $('#finalPagado').val(totalPagoAnticipado.toFixed(2));
+        $('#finalPagado').text(totalPagoAnticipado.toLocaleString('es-ES', {minimumFractionDigits: 2, maximumFractionDigits: 2}) + ' €');
         actualizarPendiente();
 
 
@@ -938,10 +1049,15 @@ var pagoAnticipadoTable = $("#pagoAnticipadoTableNew").DataTable({
 }
 
 function actualizarPendiente() {
-    let facturado = parseFloat($('#finalFacturadoNew').val()) || 0;
-    let pagado = parseFloat($('#finalPagado').val()) || 0;
-    let pendiente = facturado - pagado;
-    $('#finalPendiente').val(pendiente.toFixed(2));
+    // Obtener el total pagado limpiando el formato
+    let pagadoTexto = $('#finalPagado').text().replace(/[€\s.]/g, '').replace(',', '.');
+    let pagado = parseFloat(pagadoTexto) || 0;
+    
+    // Calcular pendiente usando el total general con IVA
+    let pendiente = totalGeneralIva - pagado;
+    
+    // Actualizar el campo de pendiente
+    $('#finalPendiente').text(pendiente.toLocaleString('es-ES', {minimumFractionDigits: 2, maximumFractionDigits: 2}) + ' €');
 }
 
 // AÑADIR PAGO ANTICIPADO
@@ -980,19 +1096,19 @@ $("#agregarPagoAnticipadoNew").on("click", function () {
     } 
     comentarioPago = $("#comentarioPagoOtros").val();
 
-        //NO PERMITIMOS SUPERAR PAGO PENDIENTE
-        let finalPagado = parseFloat($('#finalPagado').val()) || 0;
-        let Afacturar = parseFloat($('#finalFacturadoNew').val()) || 0;
+    // NO PERMITIMOS SUPERAR PAGO PENDIENTE
+    let finalPagadoTexto = $('#finalPagado').text().replace(/[€\s.]/g, '').replace(',', '.');
+    let finalPagado = parseFloat(finalPagadoTexto) || 0;
     
-        let totalExtra = finalPagado + importePago;
-    console.log(importePago); //3290
-    console.log(finalPagado); // 2
-    console.log(finalPendiente); //3298
-    console.log(totalExtra); //23290
+    let totalExtra = finalPagado + importePago;
+    console.log(importePago);
+    console.log(finalPagado);
+    console.log(totalGeneralIva);
+    console.log(totalExtra);
     
-        if (totalExtra > Afacturar) {
-            toastr.warning('El importe supera el pago pendiente.');
-        }
+    if (totalExtra > totalGeneralIva) {
+        toastr.warning('El importe supera el pago pendiente.');
+    }
     
     //===================================================//
     //===================================================//
@@ -1502,24 +1618,36 @@ function estadoLlegada(){
     console.log(data);
     let estLlegadas = data[0]["estLlegada"];
     console.log(estLlegadas);
+    
+    // Badge de estado
+    let estadoBadge = '';
     if (estLlegadas == '0' ) {
-        $('#estadoLlegada').html("<label class='badge bg-danger estLlegadasLabel tx-14-force'>Cancelado</label>");
+        estadoBadge = "<label class='badge bg-danger estLlegadasLabel tx-14-force'>Cancelado</label>";
     } else if (estLlegadas == '1') {
-        $('#estadoLlegada').html("<label class='badge bg-success estLlegadasLabel tx-14-force'>En Proceso</label>");
-
+        estadoBadge = "<label class='badge bg-success estLlegadasLabel tx-14-force'>En Proceso</label>";
     } else if (estLlegadas == '2') {
-        $('#estadoLlegada').html("<label class='badge bg-warning estLlegadasLabel tx-14-force'>En Espera</label>");
-
-    }else if (estLlegadas == '3') {
-        $('#estadoLlegada').html("<label class='badge bg-info estLlegadasLabel tx-14-force'>Finalizada</label>");
-
-    }else if (estLlegadas == '4') {
-        $('#estadoLlegada').html("<label class='badge bg-secondary estLlegadasLabel tx-14-force'>Sin Matriculación</label>");
-
+        estadoBadge = "<label class='badge bg-warning estLlegadasLabel tx-14-force'>En Espera</label>";
+    } else if (estLlegadas == '3') {
+        estadoBadge = "<label class='badge bg-info estLlegadasLabel tx-14-force'>Finalizada</label>";
+    } else if (estLlegadas == '4') {
+        estadoBadge = "<label class='badge bg-secondary estLlegadasLabel tx-14-force'>Sin Matriculación</label>";
     } else {
-        $('#estadoLlegada').html("<label class='badge bg-secondary estLlegadasLabel tx-14-force'>Sin Resolver</label>");
-
+        estadoBadge = "<label class='badge bg-secondary estLlegadasLabel tx-14-force'>Sin Resolver</label>";
     }
+    
+    // Badge de alerta de pago
+    let alertaBadge = '';
+    if (data[0]["nivel_alerta"] && data[0]["color_alerta"]) {
+        let nivel = data[0]["nivel_alerta"];
+        let color = data[0]["color_alerta"];
+        let mensaje = data[0]["mensaje_alerta"] || nivel;
+        alertaBadge = " <span class='badge' style='background-color: " + color + "; color: white; font-size: 14px; padding: 6px 12px;' title='" + mensaje + "'>" + nivel + "</span>";
+    } else {
+        alertaBadge = " <span class='badge bg-light text-dark' style='font-size: 14px; padding: 6px 12px;'>Sin Alerta</span>";
+    }
+    
+    // Mostrar ambos badges
+    $('#estadoLlegada').html(estadoBadge + alertaBadge);
   })
 
 }
@@ -1666,17 +1794,44 @@ var alojamientoTable = $("#alojamientoTableNew").DataTable({
    footerCallback: function (row, data, start, end, display) {
     let api = this.api();
     let total = 0;
+    let totalConIva = 0;
 
-    api.column(2, { search: 'applied' }).data().each(function (value) {
-        let numero = parseFloat(value.replace(/[€.]/g, '').replace(',', '.'));
-        if (!isNaN(numero)) {
-            total += numero;
+    // Obtener los datos completos de cada fila
+    api.rows({ search: 'applied' }).every(function () {
+        let rowData = this.data();
+        
+        // Columna 2: Importe
+        let importe = parseFloat(
+            String(rowData[2])
+                .replace(/[€.\s]/g, '')   // quitar espacios, símbolo € y puntos de miles
+                .replace(',', '.')      // cambiar coma decimal por punto
+        );
+        
+        // Columna 3: IVA
+        let iva = parseFloat(
+            String(rowData[3])
+                .replace(/\s|%/g, '')   // quitar espacios y símbolo %
+                .replace(',', '.')      // cambiar coma decimal por punto
+        );
+        
+        if (!isNaN(importe)) {
+            total += importe;
+            
+            // Calcular importe con IVA: importe + (importe * iva / 100)
+            if (!isNaN(iva)) {
+                totalConIva += importe + (importe * iva / 100);
+            } else {
+                totalConIva += importe;
+            }
         }
     });
 
     $(api.column(2).footer()).html(total.toLocaleString("es-ES", { style: "currency", currency: "EUR" }));
-    // Asignar el total obtenido a la variable global correspondiente
+    
+    // Asignar los totales a las variables globales
     totalAlojamiento = total;
+    totalAlojamientoIva = totalConIva;
+    
     // Actualizar el total facturado (suma de matriculaciones + alojamientos)
     actualizarTotalFacturado();
 

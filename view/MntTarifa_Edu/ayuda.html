@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayuda - Importación de Tarifas</title>
+</head>
+<body>
+
+<!-- Contenido de Ayuda para Importación de Tarifas -->
+<div class="ayuda-container">
+    
+    <!-- Sección: Estructura del CSV -->
+    <div class="ayuda-seccion">
+        <h3>📋 Estructura del Archivo CSV para Importación de Tarifas</h3>
+        
+        <h4>Formato del Archivo</h4>
+        <div class="ayuda-exito">
+            <strong>✓ Delimitador:</strong> Punto y coma (<code>;</code>)
+        </div>
+        <div class="ayuda-exito">
+            <strong>✓ Codificación:</strong> UTF-8
+        </div>
+        <div class="ayuda-exito">
+            <strong>✓ Primera fila:</strong> Debe contener los encabezados (se omite automáticamente en la importación)
+        </div>
+        
+        <h4>Columnas Requeridas (en este orden)</h4>
+        <p>El archivo CSV debe contener exactamente <strong>12 columnas</strong> en el siguiente orden:</p>
+        
+        <div class="tabla-columnas">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Posición</th>
+                        <th>Nombre</th>
+                        <th>Descripción</th>
+                        <th>Ejemplo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td><strong>ID</strong></td>
+                        <td>Número entero único de la tarifa</td>
+                        <td><code>2817</code></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td><strong>Código</strong></td>
+                        <td>Código alfanumérico de la tarifa</td>
+                        <td><code>fad1</code>, <code>com</code></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td><strong>Nombre</strong></td>
+                        <td>Descripción de la tarifa</td>
+                        <td><code>Alojamiento en familia, AD</code></td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td><strong>Medida</strong></td>
+                        <td>Unidades y tipo (puede estar vacío)</td>
+                        <td><code>1 semana</code>, <code>10 semanas</code></td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td><strong>Importe</strong></td>
+                        <td>Precio con formato europeo</td>
+                        <td><code>200 €</code>, <code>1.850,00 €</code></td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td><strong>Descuento</strong></td>
+                        <td>Porcentaje con símbolo</td>
+                        <td><code>10 %</code>, <code>0 %</code></td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td><strong>Cuenta Contable 1</strong></td>
+                        <td>Número de cuenta contable</td>
+                        <td><code>705100000000</code></td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td><strong>Cuenta Contable 2</strong></td>
+                        <td>Número de cuenta contable</td>
+                        <td><code>752100000001</code></td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td><strong>Cuenta Contable 3</strong></td>
+                        <td>Número de cuenta contable</td>
+                        <td><code>752100000001</code></td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td><strong>Tipo</strong></td>
+                        <td>Tipo de tarifa</td>
+                        <td><code>Alojamiento</code>, <code>Docencia</code>, <code>Transfer</code></td>
+                    </tr>
+                    <tr>
+                        <td>11</td>
+                        <td><strong>IVA</strong></td>
+                        <td>Porcentaje de IVA</td>
+                        <td><code>16 %</code>, <code>21 %</code>, <code>%</code></td>
+                    </tr>
+                    <tr>
+                        <td>12</td>
+                        <td><strong>Estado</strong></td>
+                        <td>Estado de la tarifa</td>
+                        <td><code>Activo</code>, <code>Inactivo</code></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <!-- Sección: Ejemplo de CSV -->
+    <div class="ayuda-seccion">
+        <h3>📝 Ejemplo de Archivo CSV</h3>
+        
+        <div class="ayuda-ejemplo">
+            <strong>Primera línea (encabezados):</strong><br>
+            <code>ID;Código;Nombre;Medida;Importe;Descuento;Cuenta Contable 1;Cuenta Contable 2;Cuenta Contable 3;Tipo;IVA;Estado</code>
+        </div>
+        
+        <div class="ayuda-ejemplo">
+            <strong>Ejemplos de datos:</strong><br>
+            <code>2817;com;Agente;;0 €;10 %;705000000000;555000000000;555500000000;Alojamiento;16 %;Activo</code><br><br>
+            <code>2820;fad1;Alojamiento en familia, AD;1 semana;200 €;0 %;705100000000;752100000001;752100000001;Alojamiento;%;Activo</code><br><br>
+            <code>2821;fad10;Alojamiento en familia, AD;10 semanas;1.850,00 €;0 %;705100000000;752100000001;752100000001;Alojamiento;16 %;Activo</code>
+        </div>
+    </div>
+    
+    <!-- Sección: Procesamiento Automático -->
+    <div class="ayuda-seccion">
+        <h3>⚙️ Procesamiento Automático de Datos</h3>
+        
+        <p>El sistema realiza automáticamente las siguientes conversiones y limpiezas:</p>
+        
+        <h4>Columna Medida (4)</h4>
+        <div class="ayuda-nota">
+            Se separa automáticamente en número y texto:<br>
+            • <code>10 semanas</code> → Número: <code>10</code>, Texto: <code>semanas</code><br>
+            • <code>semana</code> → Número: <code>null</code>, Texto: <code>semana</code>
+        </div>
+        
+        <h4>Columna Importe (5)</h4>
+        <div class="ayuda-nota">
+            Se limpia y convierte a formato numérico:<br>
+            • Se eliminan: símbolo €, espacios, puntos de miles<br>
+            • La coma decimal se convierte a punto<br>
+            • <code>1.850,00 €</code> → <code>1850.00</code><br>
+            • <code>200 €</code> → <code>200.00</code>
+        </div>
+        
+        <h4>Columnas Descuento (6) e IVA (11)</h4>
+        <div class="ayuda-nota">
+            Se limpian y convierten a números:<br>
+            • Se eliminan: símbolo %, espacios<br>
+            • <code>10 %</code> → <code>10</code><br>
+            • <code>16 %</code> → <code>16</code><br>
+            • <code>%</code> → <code>0</code>
+        </div>
+    </div>
+    
+    <!-- Sección: Validaciones -->
+    <div class="ayuda-seccion">
+        <h3>✅ Validaciones del Sistema</h3>
+        
+        <ul class="lista-pasos">
+            <li><strong>Columnas mínimas:</strong> El sistema requiere al menos 12 columnas por fila</li>
+            <li><strong>ID obligatorio:</strong> La columna ID no puede estar vacía</li>
+            <li><strong>Filas incompletas:</strong> Las filas que no cumplan con estos requisitos se saltarán automáticamente</li>
+            <li><strong>Estado previo:</strong> Antes de importar, todas las tarifas anteriores se marcan como inactivas</li>
+        </ul>
+    </div>
+    
+    <!-- Sección: Proceso de Importación -->
+    <div class="ayuda-seccion">
+        <h3>📤 Proceso de Importación</h3>
+        
+        <h4>Pasos:</h4>
+        <ol class="lista-pasos">
+            <li><strong>Preparar el archivo CSV</strong> siguiendo la estructura indicada arriba</li>
+            <li><strong>Hacer clic en "Importar Tarifa"</strong> en el menú de Gestión de Tarifas</li>
+            <li><strong>Arrastrar el archivo CSV</strong> a la zona de carga o hacer clic para seleccionarlo</li>
+            <li><strong>Esperar el procesamiento:</strong> El sistema mostrará un preview y procesará el archivo</li>
+            <li><strong>Verificar los resultados:</strong> Se mostrará un resumen con tarifas insertadas y saltadas</li>
+        </ol>
+        
+        <div class="ayuda-importante">
+            <strong>⚠️ Importante:</strong> Durante la importación, todas las tarifas con fecha anterior a la importación actual se marcarán como <strong>inactivas</strong>. Las nuevas tarifas importadas tendrán estado <strong>activo</strong>.
+        </div>
+    </div>
+    
+    <!-- Sección: Consejos -->
+    <div class="ayuda-seccion">
+        <h3>💡 Consejos y Mejores Prácticas</h3>
+        
+        <ul class="lista-pasos">
+            <li><strong>Backup:</strong> Realiza siempre una copia de seguridad de las tarifas actuales antes de importar</li>
+            <li><strong>Prueba con pocas filas:</strong> Primero prueba con un archivo pequeño (5-10 tarifas) para verificar el formato</li>
+            <li><strong>Revisa el preview:</strong> El sistema muestra un preview de las primeras 5 filas antes de importar</li>
+            <li><strong>Verifica el delimitador:</strong> Asegúrate de usar punto y coma (;) como separador</li>
+            <li><strong>Formato de números:</strong> Usa el formato europeo (coma para decimales, punto para miles)</li>
+            <li><strong>Codificación UTF-8:</strong> Guarda el archivo en UTF-8 para evitar problemas con tildes y caracteres especiales</li>
+        </ul>
+    </div>
+    
+</div>
+
+<style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #f5f5f5;
+    }
+    
+    .ayuda-container {
+        padding: 20px;
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    .ayuda-seccion {
+        margin-bottom: 30px;
+        padding: 20px;
+        border-left: 4px solid #17a2b8;
+        background-color: #f8f9fa;
+        border-radius: 5px;
+    }
+    
+    .ayuda-seccion h3 {
+        color: #17a2b8;
+        margin-bottom: 15px;
+        font-size: 1.5rem;
+        margin-top: 0;
+    }
+    
+    .ayuda-seccion h4 {
+        color: #495057;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        font-size: 1.2rem;
+    }
+    
+    .ayuda-ejemplo {
+        background-color: #e9ecef;
+        padding: 15px;
+        border-radius: 4px;
+        margin: 10px 0;
+        font-family: 'Courier New', monospace;
+        font-size: 0.85rem;
+        overflow-x: auto;
+    }
+    
+    .ayuda-nota {
+        background-color: #fff3cd;
+        border-left: 4px solid #ffc107;
+        padding: 15px;
+        margin: 10px 0;
+        border-radius: 4px;
+    }
+    
+    .ayuda-importante {
+        background-color: #f8d7da;
+        border-left: 4px solid #dc3545;
+        padding: 15px;
+        margin: 10px 0;
+        border-radius: 4px;
+    }
+    
+    .ayuda-exito {
+        background-color: #d4edda;
+        border-left: 4px solid #28a745;
+        padding: 10px 15px;
+        margin: 10px 0;
+        border-radius: 4px;
+    }
+    
+    ul.lista-pasos, ol.lista-pasos {
+        line-height: 1.8;
+        padding-left: 25px;
+    }
+    
+    ul.lista-pasos li, ol.lista-pasos li {
+        margin-bottom: 8px;
+    }
+    
+    code {
+        background-color: #e9ecef;
+        padding: 2px 6px;
+        border-radius: 3px;
+        color: #d63384;
+        font-weight: 600;
+        font-size: 0.9em;
+    }
+    
+    .tabla-columnas {
+        overflow-x: auto;
+        margin: 15px 0;
+    }
+    
+    .tabla-columnas table {
+        width: 100%;
+        border-collapse: collapse;
+        background-color: white;
+    }
+    
+    .tabla-columnas th,
+    .tabla-columnas td {
+        padding: 12px;
+        text-align: left;
+        border: 1px solid #dee2e6;
+    }
+    
+    .tabla-columnas th {
+        background-color: #17a2b8;
+        color: white;
+        font-weight: 600;
+    }
+    
+    .tabla-columnas tr:nth-child(even) {
+        background-color: #f8f9fa;
+    }
+    
+    .tabla-columnas tr:hover {
+        background-color: #e9ecef;
+    }
+    
+    .tabla-columnas td:first-child {
+        text-align: center;
+        font-weight: bold;
+        color: #17a2b8;
+    }
+</style>
+
+</body>
+</html>

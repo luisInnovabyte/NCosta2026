@@ -164,7 +164,7 @@
     <?php include_once 'modalInformacion.php' ?>
 
     <?php include("../../config/templates/searchModal.php"); ?>
-<?php include("../../config/templates/mainFooter.php"); ?>
+
 
 
     <!--start theme customization-->

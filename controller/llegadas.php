@@ -106,6 +106,20 @@ switch ($op) {
             ###############################################################################
              // Evaluar estLlegada
              $sub_array[] = $estados[$row["estLlegada"]] ?? $estados['default'];
+
+            // Agregar columna de Alerta de Pago
+            if (!empty($row["nivel_alerta"]) && !empty($row["color_alerta"])) {
+                $nivel = htmlspecialchars($row["nivel_alerta"]);
+                $color = htmlspecialchars($row["color_alerta"]);
+                $mensaje = !empty($row["mensaje_alerta"]) ? htmlspecialchars($row["mensaje_alerta"]) : $nivel;
+                
+                // Crear badge con color de fondo personalizado y tooltip
+                $sub_array[] = "<span class='badge' style='background-color: {$color}; color: white; font-size: 12px; padding: 6px 10px;' 
+                                    title='{$mensaje}'>{$nivel}</span>";
+            } else {
+                // Sin alerta - pago al día o curso muy lejano
+                $sub_array[] = "<span class='badge bg-light text-dark' style='font-size: 12px; padding: 6px 10px;'>Sin Alerta</span>";
+            }
             
             $data[] = $sub_array;
         }
