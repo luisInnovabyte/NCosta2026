@@ -2,7 +2,8 @@
 -- Vista: view_llegadas_totales
 -- Propósito: Consolidar todos los datos de llegadas con información completa del prescriptor,
 --            totales calculados de matriculaciones, alojamientos, pagos y suplidos
--- Fecha: 2026-01-09
+-- Se incluye el token del prescriptor para integraciones externas
+-- Fecha: 2026-01-10
 -- =====================================================
 
 DROP VIEW IF EXISTS view_llegadas_totales;
@@ -43,6 +44,7 @@ SELECT
     p.nacionalidadPreinscriptor AS prescriptor_nacionalidad,
     p.tipoDocumento AS prescriptor_tipoDocumento,
     p.identificadorDocumento AS prescriptor_documento,
+    p.tokenPrescriptores AS prescriptor_token,
     
     -- Información del departamento
     d.nombreDepartamento AS departamento_nombre,

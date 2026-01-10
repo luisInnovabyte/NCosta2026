@@ -118,14 +118,28 @@ $avatarRol = $avatarUsuario[$rolUsuarioMenu] ?? ''; */
             </a>
           </li>
 
-          <li>
+          <!-- <li>
             <a href="../../view/listado_criticos_llegadas/">
               <div class="parent-icon"><span class="material-symbols-outlined">person_pin</span>
               </div>
               <div class="menu-title">Críticos</div>
             </a>
-          </li>
+          </li> -->
           
+
+          <li>
+            <a href="javascript:;" class="has-arrow">
+              <div class="parent-icon"><span class="material-symbols-outlined">school</span>
+              </div>
+              <div class="menu-title">Controles llegadas </div>
+            </a>
+            <ul>
+            <li> <a href="../../view/listado_criticos_llegadas/"><span class="material-symbols-outlined">menu_book</span>Criticos </a></li>
+            </ul>
+          </li> 
+
+
+
 
           <!-- <li>
             <a href="../../view/ListadoProforma/">
