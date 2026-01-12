@@ -94,7 +94,14 @@ $(document).ready(function () {
                 data: 'agente_nombre', 
                 className: "text-center align-middle" 
             },
-            // Columna 10: Acciones
+            // Columna 10: Token Alumno (oculta)
+            { 
+                name: 'alumno_token', 
+                data: 'alumno_token', 
+                visible: false,
+                searchable: false
+            },
+            // Columna 11: Acciones
             { 
                 name: 'acciones', 
                 data: null,
@@ -104,10 +111,21 @@ $(document).ready(function () {
                 render: function (data, type, row) {
                     const token = row.prescriptor_token || '';
                     const idLlegada = row.id_llegada || '';
-                    const url = `../Llegadas/?tokenPreinscripcion=${token}&idLlegada=${idLlegada}`;
-                    return `<a href="${url}" target="_blank" class="btn btn-sm btn-primary" title="Abrir Llegada en Nueva Pestaña">
+                    const alumnoToken = row.alumno_token || '';
+                    const urlLlegada = `../Llegadas/?tokenPreinscripcion=${token}&idLlegada=${idLlegada}`;
+                    const urlPerfil = `../Perfil/?tokenUsuario=${alumnoToken}`;
+                    
+                    let botones = `<a href="${urlLlegada}" target="_blank" class="btn btn-sm btn-primary" title="Abrir Llegada">
                                 <i class="bx bx-link-external"></i>
                             </a>`;
+                    
+                    if (alumnoToken) {
+                        botones += ` <a href="${urlPerfil}" target="_blank" class="btn btn-sm btn-info" title="Ver Perfil Usuario">
+                                <i class="bx bx-user"></i>
+                            </a>`;
+                    }
+                    
+                    return botones;
                 }
             }
         ],
@@ -276,7 +294,14 @@ $(document).ready(function () {
                 orderable: true, 
                 className: "text-center" 
             },
-            // Columna 10: Acciones
+            // Columna 10: Token Alumno (oculta)
+            { 
+                targets: "alumno_token:name", 
+                visible: false,
+                searchable: false, 
+                orderable: false
+            },
+            // Columna 11: Acciones
             { 
                 targets: "acciones:name", 
                 width: '8%', 

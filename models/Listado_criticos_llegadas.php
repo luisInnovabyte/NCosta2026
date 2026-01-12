@@ -42,7 +42,8 @@ class Listado_criticos_llegadas extends Conectar
                     porcentaje_pendiente,
                     clasificacion_monto,
                     score_urgencia,
-                    prescriptor_token
+                    prescriptor_token,
+                    alumno_token
                 FROM view_llegadas_alertas_pago
                 ORDER BY fecha_inicio_curso ASC, prioridad ASC";
         

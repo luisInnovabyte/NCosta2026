@@ -135,6 +135,7 @@ $avatarRol = $avatarUsuario[$rolUsuarioMenu] ?? ''; */
             </a>
             <ul>
             <li> <a href="../../view/listado_criticos_llegadas/"><span class="material-symbols-outlined">menu_book</span>Criticos </a></li>
+            <li> <a href="../../view/listado_transfer/"><span class="material-symbols-outlined">menu_book</span>Transfer </a></li>
             </ul>
           </li> 
 

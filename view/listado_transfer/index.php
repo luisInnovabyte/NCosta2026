@@ -154,7 +154,7 @@
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb mb-0 p-0">
                         <li class="breadcrumb-item" aria-current="page">Llegadas</li>
-                        <li class="breadcrumb-item active" aria-current="page">Alertas Críticas de Pago</li>
+                        <li class="breadcrumb-item active" aria-current="page">Transfers</li>
                     </ol>
                 </nav>
             </div>
@@ -164,16 +164,16 @@
         <div class="page-header-custom">
             <div class="d-flex align-items-center justify-content-between">
                 <div class="d-flex align-items-center">
-                    <h2 class="mb-0"><i class='bx bx-error-circle me-2'></i>Alertas Críticas de Pago</h2>
+                    <h2 class="mb-0"><i class='bx bx-bus me-2'></i>Listado de Transfers</h2>
                     <button type="button" class="btn btn-link p-0 ms-2 text-white" data-bs-toggle="modal" data-bs-target="#modalAyudaAlertasCriticas" title="Ayuda sobre el módulo">
                         <i class="bi bi-question-circle" style="font-size: 1.5rem;"></i>
                     </button>
                 </div>
-                <button type="button" class="btn btn-light btn-sm" onclick="window.open('../../controller/listado_criticos.php?op=listar', '_blank')" title="Generar Listado Imprimible">
+                <button type="button" class="btn btn-light btn-sm" onclick="window.open('imprimir.php', '_blank')" title="Generar Listado Imprimible">
                     <i class="bx bx-printer me-1"></i> Generar Listado
                 </button>
             </div>
-            <p class="mb-0">Listado de llegadas con pagos pendientes según nivel de urgencia</p>
+            <p class="mb-0">Gestión de transfers de llegadas de alumnos</p>
         </div>
 
         <!-- Contenedor principal -->
@@ -211,95 +211,65 @@
                             <div id="collapseOne" class="collapse" data-bs-parent="#accordion">
                                 <div class="card-body pd-20 pt-3">
                                     <div class="row g-3">
-                                        <!-- Bloque Nivel de Alerta -->
+                                        <!-- Filtro por Fecha -->
                                         <div class="col-md-12">
                                             <div class="card shadow-sm h-100">
                                                 <div class="card-header bg-white border-bottom py-2">
                                                     <h6 class="mb-0 text-primary">
-                                                        <i class="fas fa-exclamation-triangle me-2"></i>Nivel de Alerta
+                                                        <i class="fas fa-calendar-alt me-2"></i>Rango de Fechas
                                                     </h6>
                                                 </div>
-                                                <div class="card-body p-2">
-                                                    <div class="status-selector">
-                                                        <div class="status-option">
-                                                            <input type="radio" name="filterStatus" id="filterAll" value="all" class="status-radio" checked>
-                                                            <label for="filterAll" class="status-label">
-                                                                <span class="status-icon">
-                                                                    <i class="fas fa-layer-group"></i>
-                                                                </span>
-                                                                <span class="status-text">Todos</span>
+                                                <div class="card-body p-3">
+                                                    <div class="row g-3">
+                                                        <div class="col-md-6">
+                                                            <label for="fechaDesde" class="form-label">
+                                                                <i class="fas fa-calendar-day me-1"></i>Fecha Desde:
                                                             </label>
+                                                            <input type="date" class="form-control" id="fechaDesde" name="fechaDesde">
+                                                            <small class="text-muted">Fecha de inicio del rango</small>
                                                         </div>
-                                                        <div class="status-option">
-                                                            <input type="radio" name="filterStatus" id="filterVencido" value="VENCIDO" class="status-radio">
-                                                            <label for="filterVencido" class="status-label">
-                                                                <span class="status-icon">
-                                                                    <i class="fas fa-times-circle"></i>
-                                                                </span>
-                                                                <span class="status-text">Vencidos</span>
+                                                        <div class="col-md-6">
+                                                            <label for="fechaHasta" class="form-label">
+                                                                <i class="fas fa-calendar-check me-1"></i>Fecha Hasta:
                                                             </label>
+                                                            <input type="date" class="form-control" id="fechaHasta" name="fechaHasta">
+                                                            <small class="text-muted">Fecha final del rango</small>
                                                         </div>
-                                                        <div class="status-option">
-                                                            <input type="radio" name="filterStatus" id="filterCritico" value="CRÍTICO" class="status-radio">
-                                                            <label for="filterCritico" class="status-label">
-                                                                <span class="status-icon">
-                                                                    <i class="fas fa-exclamation-circle"></i>
-                                                                </span>
-                                                                <span class="status-text">Críticos</span>
-                                                            </label>
-                                                        </div>
-                                                        <div class="status-option">
-                                                            <input type="radio" name="filterStatus" id="filterUrgente" value="URGENTE" class="status-radio">
-                                                            <label for="filterUrgente" class="status-label">
-                                                                <span class="status-icon">
-                                                                    <i class="fas fa-bolt"></i>
-                                                                </span>
-                                                                <span class="status-text">Urgentes</span>
-                                                            </label>
-                                                        </div>
-                                                        <div class="status-option">
-                                                            <input type="radio" name="filterStatus" id="filterImportante" value="IMPORTANTE" class="status-radio">
-                                                            <label for="filterImportante" class="status-label">
-                                                                <span class="status-icon">
-                                                                    <i class="fas fa-bell"></i>
-                                                                </span>
-                                                                <span class="status-text">Importantes</span>
-                                                            </label>
-                                                        </div>
-                                                        <div class="status-option">
-                                                            <input type="radio" name="filterStatus" id="filterAviso" value="AVISO" class="status-radio">
-                                                            <label for="filterAviso" class="status-label">
-                                                                <span class="status-icon">
-                                                                    <i class="fas fa-info-circle"></i>
-                                                                </span>
-                                                                <span class="status-text">Avisos</span>
-                                                            </label>
+                                                        <div class="col-12">
+                                                            <div class="d-flex gap-2">
+                                                                <button type="button" class="btn btn-primary btn-sm" id="aplicarFiltroFechas">
+                                                                    <i class="fas fa-filter me-1"></i>Aplicar Filtro
+                                                                </button>
+                                                                <button type="button" class="btn btn-secondary btn-sm" id="limpiarFiltroFechas">
+                                                                    <i class="fas fa-eraser me-1"></i>Limpiar
+                                                                </button>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
+                                    <!-- Fin de filtros -->
+                                    <div class="status-option" style="display:none;">
                                 </div>
                             </div>
                         </div><!-- card -->
                     </div><!-- accordion -->
 
-                    <!-- Tabla de alertas críticas -->
+                    <!-- Tabla de transfers -->
                     <div class="table-wrapper">
                         <table id="alertas_criticas_data" class="table display responsive nowrap">
                             <thead>
                                 <tr>
                                     <th></th>
                                     <th>ID Llegada</th>
-                                    <th>Grupo</th>
-                                    <th>Prescriptor</th>
-                                    <th>Nivel Alerta</th>
-                                    <th>Días hasta inicio</th>
-                                    <th>Pago Pendiente</th>
-                                    <th>% Pagado</th>
+                                    <th>Fecha y Hora</th>
+                                    <th>Lugar</th>
+                                    <th>Quién recoge</th>
+                                    <th>Alumno</th>
+                                    <th>Clasificación</th>
                                     <th>Departamento</th>
-                                    <th>Agente</th>
                                     <th>Token</th>
                                     <th>Acciones</th>
                                 </tr>
@@ -311,24 +281,21 @@
                                 <tr>
                                     <th></th>
                                     <th><input type="text" placeholder="Buscar ID" class="form-control form-control-sm" /></th>
-                                    <th><input type="text" placeholder="Buscar grupo" class="form-control form-control-sm" /></th>
-                                    <th><input type="text" placeholder="Buscar prescriptor" class="form-control form-control-sm" /></th>
+                                    <th><input type="text" placeholder="Buscar fecha" class="form-control form-control-sm" /></th>
+                                    <th><input type="text" placeholder="Buscar lugar" class="form-control form-control-sm" /></th>
+                                    <th><input type="text" placeholder="Buscar quien recoge" class="form-control form-control-sm" /></th>
+                                    <th><input type="text" placeholder="Buscar alumno" class="form-control form-control-sm" /></th>
                                     <th>
-                                        <select class="form-control form-control-sm" title="Filtrar por nivel">
-                                            <option value="">Todos los niveles</option>
-                                            <option value="VENCIDO">Vencido</option>
-                                            <option value="CRÍTICO">Crítico</option>
-                                            <option value="URGENTE">Urgente</option>
-                                            <option value="IMPORTANTE">Importante</option>
-                                            <option value="AVISO">Aviso</option>
-                                            <option value="NORMAL">Normal</option>
+                                        <select class="form-control form-control-sm" title="Filtrar por clasificación">
+                                            <option value="">Todas</option>
+                                            <option value="HOY">Hoy</option>
+                                            <option value="MAÑANA">Mañana</option>
+                                            <option value="PRÓXIMO">Próximo</option>
+                                            <option value="ESTA SEMANA">Esta Semana</option>
+                                            <option value="FUTURO">Futuro</option>
                                         </select>
                                     </th>
-                                    <th><input type="text" placeholder="Buscar días" class="form-control form-control-sm" /></th>
-                                    <th><input type="text" placeholder="Buscar monto" class="form-control form-control-sm" /></th>
-                                    <th><input type="text" placeholder="Buscar %" class="form-control form-control-sm" /></th>
                                     <th><input type="text" placeholder="Buscar departamento" class="form-control form-control-sm" /></th>
-                                    <th><input type="text" placeholder="Buscar agente" class="form-control form-control-sm" /></th>
                                     <th></th>
                                     <th></th>
                                 </tr>
@@ -369,14 +336,19 @@
     <div class="modal fade" id="modalListado" tabindex="-1" aria-labelledby="modalListadoLabel" aria-hidden="true">
         <div class="modal-dialog modal-xl modal-dialog-scrollable">
             <div class="modal-content">
-                <div class="modal-header bg-gradient" style="background: linear-gradient(135deg, #DC143C 0%, #8B0000 100%); color: white;">
+                <div class="modal-header bg-gradient" style="background: linear-gradient(135deg, #1AA3E8 0%, #0066CC 100%); color: white;">
                     <h5 class="modal-title" id="modalListadoLabel">
-                        <i class="bx bx-printer me-2"></i>Listado de Alertas Críticas de Pago
+                        <i class="bx bx-printer me-2"></i>Listado de Transfers
                     </h5>
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body">
-                    <?php include("listado.php"); ?>
+                <div class="modal-body" id="modalListadoContent">
+                    <div class="text-center py-5">
+                        <div class="spinner-border text-primary" role="status">
+                            <span class="visually-hidden">Cargando...</span>
+                        </div>
+                        <p class="mt-3 text-muted">Cargando listado...</p>
+                    </div>
                 </div>
                 <div class="modal-footer no-print">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
@@ -398,6 +370,22 @@
         $(document).ready(function() {
             $('#modalAyudaAlertasCriticas').appendTo('body');
             $('#modalListado').appendTo('body');
+            
+            // Cargar contenido del listado al abrir el modal
+            $('#modalListado').on('show.bs.modal', function (e) {
+                $('#modalListadoContent').html('<div class="text-center py-5"><div class="spinner-border text-primary" role="status"><span class="visually-hidden">Cargando...</span></div><p class="mt-3 text-muted">Cargando listado...</p></div>');
+                
+                $.ajax({
+                    url: 'imprimir.php',
+                    type: 'GET',
+                    success: function(data) {
+                        $('#modalListadoContent').html(data);
+                    },
+                    error: function() {
+                        $('#modalListadoContent').html('<div class="alert alert-danger"><i class="bx bx-error me-2"></i>Error al cargar el listado. Por favor, intente nuevamente.</div>');
+                    }
+                });
+            });
         });
     </script>
 
