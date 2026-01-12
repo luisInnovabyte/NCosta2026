@@ -896,6 +896,11 @@ function agregarTransfer(){
     textoTarifasRegreso = $('#textoTarifasRegreso').val();
     importeTarifasRegreso = $('#importeTarifasRegreso').val();
     ivaTarifasRegreso = $('#ivaTarifasRegreso').val();
+    
+    // DEBUG: Verificar valores de IVA
+    console.log('🔍 DEBUG Transfer - IVA Llegada:', ivaTarifasLlegada);
+    console.log('🔍 DEBUG Transfer - IVA Regreso:', ivaTarifasRegreso);
+    
     diaRegreso = $('#diaRegreso').val();
     horaRegreso = $('#horaRegreso').val();
     lugarRecogidaRegreso = $('#lugarRecogidaRegreso').val();
@@ -2213,7 +2218,14 @@ function editarAlojamientoNew(idAlojamiento){
 
         console.log('Macadamia');
         var data = tarifaAloja_table.row(this).data();
-
+        
+        // Obtener el IVA directamente de la fila de la tabla (columna 5)
+        var ivaFromTable = $(data[5]).text();
+        console.log('📊 IVA obtenido de la tabla:', ivaFromTable);
+        
+        // Limpiar el valor del IVA (eliminar % y espacios) para campos type="number"
+        var ivaValue = ivaFromTable.replace(/[^0-9.,]/g, '').trim();
+        console.log('✨ IVA limpio:', ivaValue);
 
             
         $.post(
@@ -2251,6 +2263,44 @@ function editarAlojamientoNew(idAlojamiento){
                     console.warn('⚠️ No se pudo calcular la fecha final');
                 }
 
+                
+            }else if(tipoTarifaCarga == 'Otro'){
+                console.log('🚕 Transfer detectado en llegadas.js');
+                
+                // Si existe lastClickedButton (viene de index.js), usarlo para determinar el contexto
+                if (typeof lastClickedButton !== 'undefined' && lastClickedButton) {
+                    console.log('✅ Usando lastClickedButton para detectar contexto');
+                    var parent = $(lastClickedButton).parent().parent();
+                    var isTransferLlegada = parent.closest('.transfer-llegada').length > 0;
+                    var isTransferRegreso = parent.closest('.transfer-regreso').length > 0;
+                    
+                    if (isTransferLlegada) {
+                        console.log('📍 Contexto: Transfer Llegada');
+                        $('#ivaTarifasLlegada').val(ivaValue);
+                        console.log('📊 IVA Llegada asignado:', ivaValue);
+                    } else if (isTransferRegreso) {
+                        console.log('📍 Contexto: Transfer Regreso');
+                        $('#ivaTarifasRegreso').val(ivaValue);
+                        console.log('📊 IVA Regreso asignado:', ivaValue);
+                    }
+                } else {
+                    // Fallback: intentar detectar por el campo de código que coincide
+                    console.log('⚠️ lastClickedButton no disponible, usando fallback');
+                    if ($('#codigoTarifasLlegada').val() === data[1]) {
+                        console.log('📍 Detectado por código: Transfer Llegada');
+                        $('#ivaTarifasLlegada').val(ivaValue);
+                        console.log('📊 IVA Llegada asignado:', ivaValue);
+                    } else if ($('#codigoTarifasRegreso').val() === data[1]) {
+                        console.log('📍 Detectado por código: Transfer Regreso');
+                        $('#ivaTarifasRegreso').val(ivaValue);
+                        console.log('📊 IVA Regreso asignado:', ivaValue);
+                    }
+                }
+                
+                // Marcar cambios sin guardar
+                if ($('#transfer').hasClass('active')) {
+                    marcarTransferCambios();
+                }
                 
             }else if(tipoTarifaCarga == 'Alojamiento'){
                 console.log('Alojamiento TTTT');

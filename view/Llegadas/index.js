@@ -1842,47 +1842,83 @@ $("#buscar-tarifaAloja-modal").on("shown.bs.modal", function () {
 
                   var parent = $(lastClickedButton).parent().parent();
 
-                  // Nombre tarifa
-                  parent.next().find("input").val(data[0]["nombre_tarifa"]);
+                  // Determinar si estamos en Transfer Llegada o Transfer Regreso
+                  var isTransferLlegada = parent.closest('.transfer-llegada').length > 0;
+                  var isTransferRegreso = parent.closest('.transfer-regreso').length > 0;
 
-                  // Precio tarifa
-                  if (data[0]["precio_tarifa"] != "") {
-                      parent.next().next().find("input").val(
-                          formatearEur(data[0]["precio_tarifa"]) + "€"
+                  // Si estamos en Transfer Llegada
+                  if (isTransferLlegada) {
+                      $("#textoTarifasLlegada").val(data[0]["nombre_tarifa"]);
+                      
+                      if (data[0]["precio_tarifa"] != "") {
+                          $("#importeTarifasLlegada").val(formatearEur(data[0]["precio_tarifa"]) + "€");
+                      } else {
+                          $("#importeTarifasLlegada").val("0,00€");
+                      }
+                      
+                      $("#ivaTarifasLlegada").val(data[0]["iva_tarifa"]);
+                      
+                      // Marcar cambios sin guardar en Transfer
+                      if ($('#transfer').hasClass('active')) {
+                          marcarTransferCambios();
+                      }
+                  }
+                  // Si estamos en Transfer Regreso
+                  else if (isTransferRegreso) {
+                      $("#textoTarifasRegreso").val(data[0]["nombre_tarifa"]);
+                      
+                      if (data[0]["precio_tarifa"] != "") {
+                          $("#importeTarifasRegreso").val(formatearEur(data[0]["precio_tarifa"]) + "€");
+                      } else {
+                          $("#importeTarifasRegreso").val("0,00€");
+                      }
+                      
+                      $("#ivaTarifasRegreso").val(data[0]["iva_tarifa"]);
+                      
+                      // Marcar cambios sin guardar en Transfer
+                      if ($('#transfer').hasClass('active')) {
+                          marcarTransferCambios();
+                      }
+                  }
+                  // Para otros casos (no Transfer)
+                  else {
+                      // Nombre tarifa
+                      parent.next().find("input").val(data[0]["nombre_tarifa"]);
+
+                      // Precio tarifa
+                      if (data[0]["precio_tarifa"] != "") {
+                          parent.next().next().find("input").val(
+                              formatearEur(data[0]["precio_tarifa"]) + "€"
+                          );
+                      } else {
+                          parent.next().next().find("input").val("0,00€");
+                      }
+
+                      // Si no tiene data-value, asignarlo
+                      if (parent.next().next().find("input").attr("data-value") === undefined) {
+                          parent.next().next().find("input").attr("data-value", "0,00€");
+                      }
+
+                      // IVA tarifa
+                      parent.next().next().next().find("input").val(data[0]["iva_tarifa"]);
+
+                      // Recalcular importe total
+                      let importeTotal = convertirEurANumero($("#finalFacturado").val());
+                      let importeOtro = convertirEurANumero(parent.next().next().find("input").val());
+                      let importeStr = convertirEurANumero(parent.next().next().find("input").attr("data-value"));
+
+                      importeTotal -= importeStr;
+                      importeTotal += importeOtro;
+
+                      $("#importeTarifasLlegada").attr("data-value", formatearEur(importeOtro) + "€");
+                      $("#finalFacturado").val(formatearEur(importeTotal) + "€");
+
+                      parent.next().next().find("input").attr(
+                          "data-value",
+                          parent.next().next().find("input").val()
                       );
-                  } else {
-                      parent.next().next().find("input").val("0,00€");
-                  }
 
-                  // Si no tiene data-value, asignarlo
-                  if (parent.next().next().find("input").attr("data-value") === undefined) {
-                      parent.next().next().find("input").attr("data-value", "0,00€");
-                  }
-
-                  // IVA tarifa
-                  parent.next().next().next().find("input").val(data[0]["iva_tarifa"]);
-
-                  // Recalcular importe total
-                  let importeTotal = convertirEurANumero($("#finalFacturado").val());
-                  let importeOtro = convertirEurANumero(parent.next().next().find("input").val());
-                  let importeStr = convertirEurANumero(parent.next().next().find("input").attr("data-value"));
-
-                  importeTotal -= importeStr;
-                  importeTotal += importeOtro;
-
-                  $("#importeTarifasLlegada").attr("data-value", formatearEur(importeOtro) + "€");
-                  $("#finalFacturado").val(formatearEur(importeTotal) + "€");
-
-                  parent.next().next().find("input").attr(
-                      "data-value",
-                      parent.next().next().find("input").val()
-                  );
-
-                  recalcularPrecios();
-                  
-                  // Marcar cambios sin guardar en Transfer si estamos en esa pestaña
-                  if ($('#transfer').hasClass('active')) {
-                      marcarTransferCambios();
+                      recalcularPrecios();
                   }
               }
 
