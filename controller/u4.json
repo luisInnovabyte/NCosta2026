@@ -1,0 +1,1 @@
+"INSERT INTO `factura_cabecera`(`nombreCabecera`, `cifCabecera`, `correoCabecera`, `movilCabecera`, `tefCabecera`, `direcCabecera`, `cpCabecera`, `paisCabecera`, `numFactura_cabe`) \r\n                    VALUES ('Luis Carlos P\u00e9rez','21451574A','luiscarlos@innovabyte.es','+34 660 300 923','965262384','C\/Rio Amadorio, 14','46139 La pobla de Farnals','Espa\u00f1a','21')"

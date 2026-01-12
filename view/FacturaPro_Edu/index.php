@@ -423,7 +423,12 @@
 
             <div class="col-12 card mg-t-20-force">
                 <div class="card-body ">
-                    <h2 class="card-title">FACTURA PROFORMA</h2>
+                    <div class="d-flex align-items-center gap-2">
+                        <h2 class="card-title mb-0">FACTURA PROFORMA</h2>
+                        <button type="button" class="btn btn-sm btn-info" data-bs-toggle="modal" data-bs-target="#ayuda-modal" title="Ver información de ayuda">
+                            <i class="bx bx-help-circle"></i>
+                        </button>
+                    </div>
                     <div class="my-3 border-top"></div>
                     <div class="container col-12">
                         <div class="row col-12 ">
@@ -682,7 +687,7 @@
                                             <div class="row row-cols-1 row-cols-md-2 g-4">
                                                 <div class="col">
                                                     <p><strong>Total Cursos / Aloja:</strong> <span class="float-end" id="totalCursos"></span></p>
-                                                    <p><strong>Total Transfer:</strong> <span class="float-end" id="totalAloja"></span></p>
+                                                    <!-- <p><strong>Total Transfer:</strong> <span class="float-end" id="totalAloja"></span></p> -->
                                                     <p><strong>Total Suplidos:</strong> <span class="float-end" id="totalSuplidos"><?php echo  $totalSuplido;?>€</span></p>
                                                 </div>
 
@@ -842,6 +847,201 @@
     <?php include_once 'modalImprimir.php' ?>
     <?php include_once 'modalFacturas.php' ?>
     <?php include_once 'modalLlegadasGrupos.php' ?>
+
+    <!-- Modal de Ayuda -->
+    <div id="ayuda-modal" class="modal fade" tabindex="-1" data-bs-backdrop="static">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content border-0 shadow">
+                <div class="modal-header bg-info bg-gradient text-white py-3">
+                    <h5 class="modal-title d-flex align-items-center gap-2">
+                        <i class="bx bx-help-circle"></i> Información de Ayuda
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close" title="Cerrar"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <div class="alert alert-info border-0 mb-4">
+                        <i class="bx bx-info-circle me-2"></i>
+                        <strong>Guía de uso - Factura Proforma</strong>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <h6 class="fw-semibold mb-3"><i class="bx bx-file-blank text-primary me-2"></i>¿Qué es una Factura Proforma?</h6>
+                        <p class="text-muted ms-3">
+                            Una factura proforma es un documento comercial que se emite antes de la venta final.
+                            Sirve como presupuesto o cotización detallada de los servicios educativos a contratar.
+                        </p>
+                    </div>
+
+                    <div class="mb-4">
+                        <h6 class="fw-semibold mb-3"><i class="bx bx-list-ol text-success me-2"></i>Procedimiento paso a paso:</h6>
+                        <div class="ms-3">
+                            <div class="alert alert-light border mb-3">
+                                <div class="d-flex align-items-start mb-2">
+                                    <span class="badge bg-info me-2" style="min-width: 30px;">1</span>
+                                    <div>
+                                        <strong>Hacer clic en el botón azul "HACER PROFORMA"</strong>
+                                        <p class="mb-0 text-muted mt-1">Este botón abrirá un modal para iniciar el proceso.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="alert alert-light border mb-3">
+                                <div class="d-flex align-items-start mb-2">
+                                    <span class="badge bg-info me-2" style="min-width: 30px;">2</span>
+                                    <div>
+                                        <strong>Seleccionar conceptos de llegadas</strong>
+                                        <p class="mb-0 text-muted mt-1">En el modal se mostrarán todos los conceptos generados en llegadas (cursos, alojamientos, transfers, etc.). Seleccione los que desea incluir en la proforma.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="alert alert-light border mb-3">
+                                <div class="d-flex align-items-start mb-2">
+                                    <span class="badge bg-info me-2" style="min-width: 30px;">3</span>
+                                    <div>
+                                        <strong>Revisar conceptos cargados</strong>
+                                        <p class="mb-0 text-muted mt-1">Los conceptos seleccionados aparecerán en la tabla central. Desde aquí puede modificar o eliminar cualquier concepto según necesite.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="alert alert-light border mb-3">
+                                <div class="d-flex align-items-start mb-2">
+                                    <span class="badge bg-warning me-2" style="min-width: 30px;">4</span>
+                                    <div>
+                                        <strong>Añadir conceptos adicionales (opcional)</strong>
+                                        <p class="mb-0 text-muted mt-1">Use el botón amarillo "NUEVA TARIFA" para agregar conceptos extras (materiales, actividades, etc.) y luego "GUARDAR TARIFA" para añadirlos a la tabla.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="alert alert-light border mb-3">
+                                <div class="d-flex align-items-start mb-2">
+                                    <span class="badge bg-success me-2" style="min-width: 30px;">5</span>
+                                    <div>
+                                        <strong>Revisar la cabecera</strong>
+                                        <p class="mb-0 text-muted mt-1">Verifique que los datos de facturación (nombre, CIF, dirección, etc.) sean correctos antes de finalizar.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="alert alert-light border">
+                                <div class="d-flex align-items-start mb-2">
+                                    <span class="badge bg-success me-2" style="min-width: 30px;">6</span>
+                                    <div>
+                                        <strong>Guardar la proforma</strong>
+                                        <p class="mb-0 text-muted mt-1">Una vez revisado todo, haga clic en el botón verde grande "GUARDAR PROFORMA" para generar el documento final.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-4">
+                        <h6 class="fw-semibold mb-3"><i class="bx bx-mouse text-primary me-2"></i>Botones principales:</h6>
+                        <ul class="list-unstyled ms-3">
+                            <li class="mb-3">
+                                <button class="btn btn-info btn-sm" disabled><i class="bx bx-file-plus"></i> Hacer Proforma</button>
+                                <p class="text-muted ms-3 mb-0 mt-1">
+                                    <strong>Botón AZUL CLARO:</strong> Genera una nueva factura proforma seleccionando las llegadas del alumno.
+                                    Abre un modal donde podrá elegir qué llegadas incluir en la proforma.
+                                </p>
+                            </li>
+                            <li class="mb-3">
+                                <button class="btn btn-warning btn-sm" disabled><i class="bx bx-plus"></i> Nueva Tarifa</button>
+                                <p class="text-muted ms-3 mb-0 mt-1">
+                                    <strong>Botón AMARILLO/NARANJA:</strong> Añade conceptos adicionales a la proforma (materiales, actividades, extras, etc.).
+                                    Permite agregar tarifas personalizadas con código, descripción, IVA y descuentos.
+                                </p>
+                                <p class="text-muted ms-3 mb-0 mt-1">
+                                    <i class="bx bx-info-circle text-warning me-1"></i>
+                                    Al hacer clic en este botón, se desplegará un cuadro de tarifas donde podrá seleccionar la tarifa deseada del listado disponible.
+                                </p>
+                            </li>
+                            <li class="mb-3">
+                                <button class="btn btn-success btn-sm" disabled><i class="bx bx-save"></i> Guardar Tarifa</button>
+                                <p class="text-muted ms-3 mb-0 mt-1">
+                                    <strong>Botón VERDE:</strong> Guarda las tarifas añadidas sin generar la proforma definitiva.
+                                    Use este botón si desea guardar su progreso y continuar editando más tarde.
+                                </p>
+                            </li>
+                            <li class="mb-3">
+                                <button class="btn btn-success btn-sm" disabled><i class="fa-solid fa-check-double"></i> Guardar Proforma</button>
+                                <p class="text-muted ms-3 mb-0 mt-1">
+                                    <strong>Botón VERDE (grande):</strong> Finaliza y guarda la factura proforma completa.
+                                    Este botón aparece al final del formulario y genera el documento definitivo.
+                                </p>
+                            </li>
+                            <li class="mb-3">
+                                <button class="btn btn-primary btn-sm" disabled><i class="bx bx-file"></i> Gestionar Factura Pro</button>
+                                <p class="text-muted ms-3 mb-0 mt-1">
+                                    <strong>Botón AZUL OSCURO:</strong> Abre el historial de facturas proforma del alumno.
+                                    Permite consultar, imprimir y gestionar las proformas generadas.
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="mb-4">
+                        <h6 class="fw-semibold mb-3"><i class="bx bx-edit text-warning me-2"></i>Modo Edición:</h6>
+                        <div class="ms-3">
+                            <p class="text-muted mb-2">Cuando esté editando una tarifa existente, verá estos botones:</p>
+                            <ul class="list-unstyled">
+                                <li class="mb-2">
+                                    <button class="btn btn-info btn-sm" disabled>Guardar Edición</button>
+                                    <span class="text-muted ms-2"><strong>Botón AZUL CLARO:</strong> Guarda los cambios realizados en la tarifa</span>
+                                </li>
+                                <li class="mb-2">
+                                    <button class="btn btn-danger btn-sm" disabled>Cancelar</button>
+                                    <span class="text-muted ms-2"><strong>Botón ROJO:</strong> Cancela la edición y descarta los cambios</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="mb-4">
+                        <h6 class="fw-semibold mb-3"><i class="bx bx-id-card text-info me-2"></i>Datos de facturación:</h6>
+                        <p class="text-muted ms-3">
+                            Complete los datos de facturación del alumno o responsable de pago.
+                            Estos datos aparecerán en la factura proforma y son necesarios para la gestión contable.
+                        </p>
+                    </div>
+
+                    <div class="mb-4">
+                        <h6 class="fw-semibold mb-3"><i class="bx bx-note text-success me-2"></i>Concepto Extra:</h6>
+                        <div class="ms-3">
+                            <p class="text-muted mb-2">
+                                El campo <strong>"Concepto Extra"</strong> le permite añadir texto libre que aparecerá en la factura proforma impresa.
+                            </p>
+                            <div class="alert alert-success border-0 mb-2">
+                                <i class="bx bx-map-pin me-2"></i>
+                                <strong>Ubicación en la factura:</strong> Este texto se mostrará en la parte inferior del documento impreso, 
+                                justo encima de la sección "FORMA DE PAGO", precedido por un asterisco (*).
+                            </div>
+                            <p class="text-muted mb-1"><strong>Ejemplos de uso:</strong></p>
+                            <ul class="text-muted">
+                                <li>Observaciones sobre plazos de validez de la proforma</li>
+                                <li>Condiciones especiales de pago o descuentos</li>
+                                <li>Notas importantes para el cliente o alumno</li>
+                                <li>Instrucciones específicas sobre el servicio contratado</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="alert alert-warning border-0">
+                        <i class="bx bx-error me-2"></i>
+                        <strong>Importante:</strong> Una vez generada la proforma, debe ser abonada antes de poder generar una nueva factura proforma para el mismo alumno.
+                        Cuando existe una proforma pendiente de pago, los campos de edición estarán bloqueados.
+                    </div>
+                </div>
+                <div class="modal-footer bg-light">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                        <i class="bx bx-x me-1"></i>Cerrar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <?php include("../../config/templates/searchModal.php"); ?>
 

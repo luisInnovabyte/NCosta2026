@@ -1,0 +1,1 @@
+"SELECT * FROM `tm_suplidosLlegadas_edu` WHERE `idsuplido_tmLlegadas` = 48"

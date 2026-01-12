@@ -1,0 +1,1 @@
+"UPDATE `tm_departamento_edu` SET numFacturaProDepa = 21 WHERE idDepartamentoEdu = 1"
