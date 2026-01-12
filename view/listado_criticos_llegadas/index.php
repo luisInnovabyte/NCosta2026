@@ -112,14 +112,23 @@
             background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMTIgMTBMOCA2TDQgMTAiIHN0cm9rZT0iIzMzMyIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48L3N2Zz4=') no-repeat center center;
         }
         
-        /* Asegurar que el modal se muestre correctamente */
+        /* Asegurar que los modales se muestren correctamente */
         #modalAyudaAlertasCriticas {
             z-index: 9999 !important;
         }
         #modalAyudaAlertasCriticas .modal-dialog {
             z-index: 10000 !important;
         }
+        #modalListado {
+            z-index: 9999 !important;
+        }
+        #modalListado .modal-dialog {
+            z-index: 10000 !important;
+        }
         .modal-backdrop {
+            z-index: 9998 !important;
+        }
+        .modal-backdrop.show {
             z-index: 9998 !important;
         }
     </style>
@@ -153,10 +162,15 @@
 
         <!-- Header de la página -->
         <div class="page-header-custom">
-            <div class="d-flex align-items-center">
-                <h2 class="mb-0"><i class='bx bx-error-circle me-2'></i>Alertas Críticas de Pago</h2>
-                <button type="button" class="btn btn-link p-0 ms-2 text-white" data-bs-toggle="modal" data-bs-target="#modalAyudaAlertasCriticas" title="Ayuda sobre el módulo">
-                    <i class="bi bi-question-circle" style="font-size: 1.5rem;"></i>
+            <div class="d-flex align-items-center justify-content-between">
+                <div class="d-flex align-items-center">
+                    <h2 class="mb-0"><i class='bx bx-error-circle me-2'></i>Alertas Críticas de Pago</h2>
+                    <button type="button" class="btn btn-link p-0 ms-2 text-white" data-bs-toggle="modal" data-bs-target="#modalAyudaAlertasCriticas" title="Ayuda sobre el módulo">
+                        <i class="bi bi-question-circle" style="font-size: 1.5rem;"></i>
+                    </button>
+                </div>
+                <button type="button" class="btn btn-light btn-sm" onclick="window.open('../../controller/listado_criticos.php?op=listar', '_blank')" title="Generar Listado Imprimible">
+                    <i class="bx bx-printer me-1"></i> Generar Listado
                 </button>
             </div>
             <p class="mb-0">Listado de llegadas con pagos pendientes según nivel de urgencia</p>
@@ -349,13 +363,39 @@
     <script type="text/javascript" src="index.js"></script>
     <!--end plugins extra-->
 
+    <!-- Modal del Listado -->
+    <div class="modal fade" id="modalListado" tabindex="-1" aria-labelledby="modalListadoLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header bg-gradient" style="background: linear-gradient(135deg, #DC143C 0%, #8B0000 100%); color: white;">
+                    <h5 class="modal-title" id="modalListadoLabel">
+                        <i class="bx bx-printer me-2"></i>Listado de Alertas Críticas de Pago
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <?php include("listado.php"); ?>
+                </div>
+                <div class="modal-footer no-print">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                        <i class="bx bx-x me-1"></i>Cerrar
+                    </button>
+                    <button type="button" class="btn btn-primary" onclick="window.print();">
+                        <i class="bx bx-printer me-1"></i>Imprimir
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Modal de Ayuda -->
     <?php include("ayuda.php"); ?>
 
     <script>
-        // Asegurar que el modal funcione correctamente
+        // Asegurar que los modales funcionen correctamente
         $(document).ready(function() {
             $('#modalAyudaAlertasCriticas').appendTo('body');
+            $('#modalListado').appendTo('body');
         });
     </script>
 

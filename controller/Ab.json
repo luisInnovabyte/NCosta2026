@@ -1,1 +1,0 @@
-"SELECT numFacturaProNegDepa, prefijoAbonoProEdu FROM tm_departamento_edu WHERE idDepartamentoEdu = 13"

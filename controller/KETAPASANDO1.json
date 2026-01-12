@@ -1,1 +1,0 @@
-"SELECT c.idGrupo, c.codGrupo, COUNT(c.idCurso) AS total_alumnos, MAX(c.fechaCrea_cursos) AS ultima_fecha, r.* FROM cursos c LEFT JOIN ruta_completo r ON c.idRuta_cursos = r.id_ruta WHERE c.est_cursos = 1 and  codIdioma = 'AL' AND codTipo = 'IN' GROUP BY c.codGrupo, c.idGrupo, r.id_ruta;"

@@ -46,6 +46,9 @@ SELECT
     p.identificadorDocumento AS prescriptor_documento,
     p.tokenPrescriptores AS prescriptor_token,
     
+    -- Token del alumno para integraciones
+    ae.tokenUsu AS alumno_token,
+    
     -- Información del departamento
     d.nombreDepartamento AS departamento_nombre,
     
@@ -277,6 +280,7 @@ SELECT
 
 FROM tm_llegadas_edu l
 LEFT JOIN tm_prescriptores p ON l.idprescriptor_llegadas = p.idPrescripcion
+LEFT JOIN tm_alumno_edu ae ON ae.idInscripcion_tmAlumno = p.idPrescripcion
 LEFT JOIN tm_departamento_edu d ON l.iddepartamento_llegadas = d.idDepartamentoEdu
 LEFT JOIN tm_agentes_edu a ON l.agente_llegadas = a.idAgente;
 

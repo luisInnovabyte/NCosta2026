@@ -44,7 +44,7 @@ class Listado_criticos_llegadas extends Conectar
                     score_urgencia,
                     prescriptor_token
                 FROM view_llegadas_alertas_pago
-                ORDER BY prioridad ASC, score_urgencia ASC";
+                ORDER BY fecha_inicio_curso ASC, prioridad ASC";
         
         $sql = $conectar->prepare($sql);
         $sql->execute();

@@ -1,1 +1,0 @@
-"SELECT `codigotariotalregresoTransfer_llegadas`,`textotariotalregresoTransfer_llegadas`,`importetariotalregresoTransfer_llegadas`,`ivatariotalregresoTransfer_llegadas` \r\n        FROM tm_llegadas_edu WHERE grupo_llegadas = '' AND codigotariotalregresoTransfer_llegadas IS NOT NULL;"

@@ -1,1 +1,0 @@
-"SELECT * FROM `factura_contenido` WHERE `idLlegadaFactura` = 48 AND numFactura IS NULL"

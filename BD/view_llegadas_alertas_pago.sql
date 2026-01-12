@@ -24,6 +24,7 @@ SELECT
     vl.prescriptor_pais,
     vl.prescriptor_nacionalidad,
     vl.prescriptor_token,
+    vl.alumno_token,
     
     -- Información del departamento y agente
     vl.departamento_nombre,
