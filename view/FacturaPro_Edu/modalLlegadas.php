@@ -1,8 +1,188 @@
+<style>
+    /* Estilos para el modal de llegadas */
+    #buscar-Llegadas-modal .modal-content {
+        border: none;
+        border-radius: 16px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        overflow: hidden;
+    }
+
+    #buscar-Llegadas-modal .modal-header {
+        background: linear-gradient(135deg, #495057 0%, #6c757d 100%);
+        color: white;
+        padding: 24px 32px;
+        border: none;
+    }
+
+    #buscar-Llegadas-modal .modal-title {
+        font-size: 1.75rem;
+        font-weight: 600;
+        letter-spacing: -0.5px;
+        margin: 0;
+    }
+
+    #buscar-Llegadas-modal .btn-close {
+        filter: brightness(0) invert(1);
+        opacity: 0.8;
+        transition: opacity 0.2s;
+    }
+
+    #buscar-Llegadas-modal .btn-close:hover {
+        opacity: 1;
+    }
+
+    #buscar-Llegadas-modal .modal-body {
+        padding: 32px;
+        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    }
+
+    #buscar-Llegadas-modal .card {
+        border: none;
+        border-radius: 12px;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+        background: white;
+    }
+
+    #buscar-Llegadas-modal .section-title {
+        font-size: 1.35rem;
+        font-weight: 600;
+        color: #495057;
+        margin-bottom: 24px;
+        padding-bottom: 12px;
+        border-bottom: 3px solid #6c757d;
+        display: inline-block;
+    }
+
+    /* Tarjetas de Transfer mejoradas */
+    .transfer-card {
+        background: white;
+        border-radius: 12px;
+        padding: 20px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        cursor: pointer;
+        border: 2px solid transparent;
+    }
+
+    .transfer-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+        border-color: currentColor;
+    }
+
+    .transfer-card.llegada {
+        border-top: 4px solid #007BFF;
+    }
+
+    .transfer-card.regreso {
+        border-top: 4px solid #F98600;
+    }
+
+    .transfer-card-title {
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin-bottom: 16px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .transfer-card.llegada .transfer-card-title {
+        color: #007BFF;
+    }
+
+    .transfer-card.regreso .transfer-card-title {
+        color: #F98600;
+    }
+
+    .transfer-table {
+        width: 100%;
+        border-collapse: separate;
+        border-spacing: 0;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+
+    .transfer-table th {
+        padding: 12px 16px;
+        font-size: 0.85rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        color: white;
+        text-align: left;
+    }
+
+    .transfer-card.llegada .transfer-table th {
+        background: linear-gradient(135deg, #007BFF 0%, #0056b3 100%);
+    }
+
+    .transfer-card.regreso .transfer-table th {
+        background: linear-gradient(135deg, #F98600 0%, #d67400 100%);
+    }
+
+    .transfer-table td {
+        padding: 12px 16px;
+        background: #f8f9fa;
+        color: #495057;
+        font-weight: 500;
+        border-bottom: 1px solid #e9ecef;
+    }
+
+    .transfer-table tr:last-child td {
+        border-bottom: none;
+    }
+
+    /* Footer del modal */
+    #buscar-Llegadas-modal .modal-footer {
+        padding: 20px 32px;
+        background: white;
+        border-top: 1px solid #e9ecef;
+        gap: 12px;
+    }
+
+    #buscar-Llegadas-modal .modal-footer .btn {
+        padding: 12px 32px;
+        font-weight: 600;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        font-size: 0.9rem;
+    }
+
+    #buscar-Llegadas-modal .modal-footer .btn-danger {
+        background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
+        border: none;
+    }
+
+    #buscar-Llegadas-modal .modal-footer .btn-danger:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(220, 53, 69, 0.4);
+    }
+
+    #buscar-Llegadas-modal .modal-footer .btn-primary {
+        background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+        border: none;
+    }
+
+    #buscar-Llegadas-modal .modal-footer .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 123, 255, 0.4);
+    }
+
+    /* Espaciado para sección de transfers */
+    .transfers-section {
+        margin-top: 32px;
+    }
+</style>
+
 <div id="buscar-Llegadas-modal" class="modal fade">
     <div class="modal-dialog modal-xl">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Servicios de llegadas</h5>
+                <h5 class="modal-title">📋 Servicios de Llegadas</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" title="Cerrar"></button>
             </div>
             <div class="modal-body">
@@ -10,7 +190,7 @@
                 <div class="card">
                     <div class="card-body p-4">
                         <div class="row">
-                            <h5 class="mb-4 ">Servicios asignados previamente en Llegadas</h5>
+                            <h5 class="section-title">Servicios Asignados Previamente</h5>
                         </div>
                         
                         <div class="col-12">
@@ -48,77 +228,82 @@
                           
                                                     
                         </div>
-                        <br>
                         
-                            <?php if( $codigotariotallegadaTransfer_llegadas != ''){?>
-                                <div class="row col-12">
-                                <div class="col-6" >
-                                                <h5 style="margin-bottom: 8px;">Transfer Llegada</h5>
-
-                                        <table style="border-collapse: collapse; width: auto; font-family: Arial; font-size: 14px;">
-                                        <tr>
-                                            <th style="border: 2px solid black; background: #007BFF; padding: 4px;">CÓDIGO</th>
-                                            <th style="border: 2px solid black; background: #007BFF; padding: 4px;">CONCEPTO</th>
-                                            <th style="border: 2px solid black; background: #007BFF; padding: 4px;">IVA</th>
-                                            <th style="border: 2px solid black; background: #007BFF; padding: 4px;">TOTAL</th>
-                                        </tr>
-
-                                       <tr onclick="cargarTransferLlegada()">
-                                            <td id="t_codigo_llegada" style="border: 2px solid black; background: #007BFF; padding: 4px;">
-                                                <?= $datosLlegada[0]['codigotariotallegadaTransfer_llegadas'] ?>
-                                            </td>
-                                            <td id="t_texto_llegada" style="border: 2px solid black; background: #007BFF; padding: 4px;">
-                                                <?= $datosLlegada[0]['textotariotallegadaTransfer_llegadas'] ?>
-                                            </td>
-                                            <td id="t_iva_llegada" style="border: 2px solid black; background: #007BFF; padding: 4px;">
-                                                <?= $datosLlegada[0]['ivatariotallegadaTransfer_llegadas'] ?>
-                                            </td>
-                                            <td id="t_total_llegada" style="border: 2px solid black; background: #007BFF; padding: 4px;">
-                                                <?= $datosLlegada[0]['importetariotallegadaTransfer_llegadas'] ?>
-                                            </td>
-                                        </tr>
-                                    </table>
+                        <?php if($codigotariotallegadaTransfer_llegadas != '' || $textotariotalregresoTransfer_llegadas != ''): ?>
+                        <div class="transfers-section">
+                            <h5 class="section-title">🚐 Servicios de Transfer</h5>
+                            
+                            <div class="row g-4">
+                                <?php if($codigotariotallegadaTransfer_llegadas != ''): ?>
+                                <div class="col-md-6">
+                                    <div class="transfer-card llegada" onclick="cargarTransferLlegada()">
+                                        <div class="transfer-card-title">
+                                            <span>✈️</span> Transfer de Llegada
+                                        </div>
+                                        <table class="transfer-table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Código</th>
+                                                    <th>Concepto</th>
+                                                    <th>IVA</th>
+                                                    <th>Total</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td id="t_codigo_llegada"><?= $datosLlegada[0]['codigotariotallegadaTransfer_llegadas'] ?></td>
+                                                    <td id="t_texto_llegada"><?= $datosLlegada[0]['textotariotallegadaTransfer_llegadas'] ?></td>
+                                                    <td id="t_iva_llegada"><?= $datosLlegada[0]['ivatariotallegadaTransfer_llegadas'] ?>%</td>
+                                                    <td id="t_total_llegada"><strong><?= $datosLlegada[0]['importetariotallegadaTransfer_llegadas'] ?>€</strong></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
                                 </div>
-                            <?php } ?> 
-                            <?php if( $textotariotalregresoTransfer_llegadas != ''){?>
-
-                            <div class="col-6" onclick="cargarTransferRegreso()">
-                                                <h5 style="margin-bottom: 8px;">Transfer Regreso</h5>
-
-                                <table style="border-collapse: collapse; width: auto; font-family: Arial; font-size: 14px;">
-                                    <tr>
-                                        <th style="border: 2px solid black; background: #F98600; padding: 4px;">CÓDIGO</th>
-                                        <th style="border: 2px solid black; background: #F98600; padding: 4px;">CONCEPTO</th>
-                                        <th style="border: 2px solid black; background: #F98600; padding: 4px;">IVA</th>
-                                        <th style="border: 2px solid black; background: #F98600; padding: 4px;">TOTAL</th>
-                                    </tr>
-
-                                     <tr onclick="cargarTransferRegreso()">
-                                        <td id="t_codigo_regreso" style="border: 2px solid black; background: #ff8f32; padding: 4px;">
-                                            <?= $datosLlegada[0]['codigotariotalregresoTransfer_llegadas'] ?>
-                                        </td>
-                                        <td id="t_texto_regreso" style="border: 2px solid black; background: #ff8f32; padding: 4px;">
-                                            <?= $datosLlegada[0]['textotariotalregresoTransfer_llegadas'] ?>
-                                        </td>
-                                        <td id="t_iva_regreso" style="border: 2px solid black; background: #ff8f32; padding: 4px;">
-                                            <?= $datosLlegada[0]['ivatariotalregresoTransfer_llegadas'] ?>
-                                        </td>
-                                        <td id="t_total_regreso" style="border: 2px solid black; background: #ff8f32; padding: 4px;">
-                                            <?= $datosLlegada[0]['importetariotalregresoTransfer_llegadas'] ?>
-                                        </td>
-                                    </tr>
-                                </table>
+                                <?php endif; ?>
+                                
+                                <?php if($textotariotalregresoTransfer_llegadas != ''): ?>
+                                <div class="col-md-6">
+                                    <div class="transfer-card regreso" onclick="cargarTransferRegreso()">
+                                        <div class="transfer-card-title">
+                                            <span>🏠</span> Transfer de Regreso
+                                        </div>
+                                        <table class="transfer-table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Código</th>
+                                                    <th>Concepto</th>
+                                                    <th>IVA</th>
+                                                    <th>Total</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td id="t_codigo_regreso"><?= $datosLlegada[0]['codigotariotalregresoTransfer_llegadas'] ?></td>
+                                                    <td id="t_texto_regreso"><?= $datosLlegada[0]['textotariotalregresoTransfer_llegadas'] ?></td>
+                                                    <td id="t_iva_regreso"><?= $datosLlegada[0]['ivatariotalregresoTransfer_llegadas'] ?>%</td>
+                                                    <td id="t_total_regreso"><strong><?= $datosLlegada[0]['importetariotalregresoTransfer_llegadas'] ?>€</strong></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <?php endif; ?>
                             </div>
                         </div>
-                         <?php } ?> 
+                        <?php endif; ?>
 
                         
                     </div>
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-bs-dismiss="modal" title="Cerrar">Cerrar</button>
-                <button type="button" class="btn btn-primary" title="Almacena todas las tarifas" onClick="agregarTodosTarifa()">Insertar Todos</button>
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal" title="Cerrar">
+                    <i class="bx bx-x-circle"></i> Cerrar
+                </button>
+                <button type="button" class="btn btn-primary" title="Almacena todas las tarifas" onClick="agregarTodosTarifa()">
+                    <i class="bx bx-check-double"></i> Insertar Todos
+                </button>
             </div>
         </div>
     </div>

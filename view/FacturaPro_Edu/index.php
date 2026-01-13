@@ -337,6 +337,64 @@
             opacity: 0.6;         /* opcional: aspecto de deshabilitado */
         }
 
+        /* Fondo discreto para identificar pantalla de PROFORMA */
+        body {
+            background: linear-gradient(135deg, #fff8f0 0%, #fef5e7 25%, #fff8f0 50%, #fef5e7 75%, #fff8f0 100%);
+            background-attachment: fixed;
+            position: relative;
+        }
+
+        /* Marca de agua visible en varias esquinas */
+        body::before {
+            content: "FACTURA PROFORMA";
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-45deg);
+            font-size: 120px;
+            font-weight: 700;
+            color: rgba(226, 166, 93, 0.04);
+            letter-spacing: 8px;
+            z-index: 0;
+            pointer-events: none;
+            white-space: nowrap;
+        }
+
+        body::after {
+            content: "PROFORMA";
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            font-size: 18px;
+            font-weight: 700;
+            color: rgba(226, 166, 93, 0.6);
+            background: rgba(255, 255, 255, 0.9);
+            padding: 8px 16px;
+            border-radius: 8px;
+            border: 2px solid rgba(226, 166, 93, 0.3);
+            letter-spacing: 3px;
+            z-index: 1000;
+            pointer-events: none;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        /* Asegurar que el contenido esté encima */
+        .page-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Aplicar tinte suave a las tarjetas para mantener coherencia */
+        .card {
+            background: rgba(254, 245, 231, 0.5) !important;
+            backdrop-filter: blur(10px);
+        }
+
+        /* Mantener algunos cards con fondo claro pero con tinte */
+        .card.bg-light {
+            background: rgba(255, 248, 240, 0.7) !important;
+        }
+
     </style>
 </head>
 
@@ -424,7 +482,7 @@
             <div class="col-12 card mg-t-20-force">
                 <div class="card-body ">
                     <div class="d-flex align-items-center gap-2">
-                        <h2 class="card-title mb-0">FACTURA PROFORMA</h2>
+                        <h2 class="card-title mb-0">GENERACIÓN de FACTURAS PROFORMA</h2>
                         <button type="button" class="btn btn-sm btn-info" data-bs-toggle="modal" data-bs-target="#ayuda-modal" title="Ver información de ayuda">
                             <i class="bx bx-help-circle"></i>
                         </button>
@@ -535,14 +593,18 @@
                                                 <p class="mb-0 me-auto px-2 py-1 border rounded bg-light text-muted parpadeo" style="min-width: 150px;">
                                                     Editando Tarifa <b id="idEditando" class="text-dark">5</b>
                                                 </p>
-                                                <button type="button" onclick="cancelarEdicion()" id="btnCancelar" class="btn btn-danger">Cancelar</button>
-                                                <button type="button" onclick="guardarEdicion()" class="btn btn-info">Guardar Edición</button>
+                                                <button type="button" onclick="cancelarEdicion()" id="btnCancelar" class="btn btn-danger" data-bs-toggle="tooltip" data-bs-placement="top" title="Cancelar la edición actual y descartar los cambios">Cancelar</button>
+                                                <button type="button" onclick="guardarEdicion()" class="btn btn-info" data-bs-toggle="tooltip" data-bs-placement="top" title="Guardar los cambios realizados en la tarifa">Guardar Edición</button>
                                             </div>
                                             <div class="d-flex gap-2 editarOff">
-                                                <button type="button" class="btn btn-primary abrirModalGrupo d-none parpadeo">Hacer Proforma Grupo</button>
-                                                <button type="button"  class="btn btn-info abrirModalLlegadas">Hacer Proforma</button>
-                                                <button type="button" class="btn btn-warning abrirModalTarifas">Nueva Tarifa</button>
-                                                <button type="button" onclick="guardarFactura()" class="btn btn-success">Guardar Tarifa</button>
+                                                <button type="button" class="btn btn-primary abrirModalGrupo d-none parpadeo" data-bs-toggle="tooltip" data-bs-placement="top" 
+                                                title="Recoger los datos de llegada de todo un grupo" <?php echo ($existeProforma == 1) ? 'disabled' : ''; ?>>Datos llegadas Grupo</button>
+                                                <button type="button"  class="btn btn-info abrirModalLlegadas" data-bs-toggle="tooltip" data-bs-placement="top" 
+                                                title="Recoger los datos de llegada" <?php echo ($existeProforma == 1) ? 'disabled' : ''; ?>>Datos llegadas</button>
+                                                <button type="button" class="btn btn-warning abrirModalTarifas" data-bs-toggle="tooltip" data-bs-placement="top" 
+                                                title="Añadir una nueva concepto a facturar" <?php echo ($existeProforma == 1) ? 'disabled' : ''; ?>>Añadir Concepto</button>
+                                                <button type="button" onclick="guardarFactura()" class="btn btn-success" data-bs-toggle="tooltip" data-bs-placement="top" 
+                                                title="Guardar el concepto actual" <?php echo ($existeProforma == 1) ? 'disabled' : ''; ?>>Guardar Concepto</button>
 
                                             </div>
                                         </div>
@@ -703,7 +765,7 @@
                                             <div class="text-center my-3">
                                                 <?php if ($existeProforma == 0): ?>
                                                     <button id="guardarFacturaBoton" class="btn btn-success">
-                                                        <i class="fa-solid fa-check-double me-2"></i> Guardar Proforma
+                                                        <i class="fa-solid fa-check-double me-2"></i> GENERAR FACTURA PROFORMA
                                                     </button>
                                                 <?php elseif ($existeProforma == 1): ?>
                                                     <div style="background-color: #fdf6f0; border: 2px dashed #d4a373; padding: 20px; border-radius: 12px; font-family: Georgia, serif; color: #5a3e36; max-width: 600px; margin: 30px auto; text-align: center;">
@@ -1067,7 +1129,16 @@
     <script src="index.js"></script>
     <!--end plugins extra-->
 
+    <!-- Inicializar tooltips de Bootstrap -->
+    <script>
+        // Inicializar todos los tooltips
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl);
+        });
+    </script>
 
+    
 
 </body>
 

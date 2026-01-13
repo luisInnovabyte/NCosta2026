@@ -13,101 +13,75 @@
         require_once("../../config/funciones.php");
         require_once("../../models/Llegadas.php");
 
-        // Validar que se reciban los parámetros necesarios
-        if (!isset($_GET['idFactura']) || !isset($_GET['tipoFactura']) || !isset($_GET['idLlegada'])) {
-            die('<div style="padding: 20px; font-family: Arial; color: red;">
-                <h3>Error: Parámetros faltantes</h3>
-                <p>No se recibieron todos los parámetros necesarios.</p>
-                <p>idFactura: ' . (isset($_GET['idFactura']) ? $_GET['idFactura'] : 'NO RECIBIDO') . '</p>
-                <p>tipoFactura: ' . (isset($_GET['tipoFactura']) ? $_GET['tipoFactura'] : 'NO RECIBIDO') . '</p>
-                <p>idLlegada: ' . (isset($_GET['idLlegada']) ? $_GET['idLlegada'] : 'NO RECIBIDO') . '</p>
-            </div>');
-        }
-
         $idFactura = $_GET['idFactura'];
         $tipoFactura = $_GET['tipoFactura'];
         $idLlegada = $_GET['idLlegada'];
 
         require_once("../../models/Proforma.php");
 
+        $idFactura = $_GET['idFactura'];
+        $tipoFactura = $_GET['tipoFactura'];
+
         $proforma = new Proforma();
-        
-        // Debug: guardar ID recibido
-        $json_string = json_encode(['idFactura' => $idFactura, 'tipoFactura' => $tipoFactura, 'idLlegada' => $idLlegada]);
+        $json_string = json_encode($idFactura);
         $file = 'IDFACTURA.json';
         file_put_contents($file, $json_string);
-        
-        // Intentar obtener los datos de la factura real
         $datosproforma = $proforma->recogerFacturasxIdFacturaReal($idFactura);
-        
-        // Debug: guardar datos obtenidos
         $json_string = json_encode($datosproforma);
         $file = 'DTS21.json';
         file_put_contents($file, $json_string);
-        
-        // Validar que se obtuvieron datos
-        if (empty($datosproforma) || !isset($datosproforma[0])) {
-            die('<div style="padding: 20px; font-family: Arial; color: red;">
-                <h3>Error: No se encontraron datos de la factura</h3>
-                <p>No se pudieron recuperar los datos de la factura con ID: ' . htmlspecialchars($idFactura) . '</p>
-                <p>Es posible que la factura aún no se haya guardado completamente en la base de datos.</p>
-                <p><button onclick="window.location.reload()">Reintentar</button></p>
-                <p><a href="index.php?idLlegada=' . htmlspecialchars($idLlegada) . '">Volver al índice</a></p>
-            </div>');
-        }
-
-        // Asignar los datos obtenidos
-        $nombreCabecera =  $datosproforma[0]['nombreCabecera'] ?? '';
-        $cifCabecera =  $datosproforma[0]['cifCabecera'] ?? '';
-        $correoCabecera =  $datosproforma[0]['correoCabecera'] ?? '';
-        $direcCabecera =  $datosproforma[0]['direcCabecera'] ?? '';
-        $cpCabecera =  $datosproforma[0]['cpCabecera'] ?? '';
-        $movilCabecera =  $datosproforma[0]['movilCabecera'] ?? '';
-        $tefCabecera =  $datosproforma[0]['tefCabecera'] ?? '';
-        $paisCabecera =  $datosproforma[0]['paisCabecera'] ?? '';
+        $nombreCabecera =  $datosproforma[0]['nombreCabecera'];
+        $cifCabecera =  $datosproforma[0]['cifCabecera'];
+        $correoCabecera =  $datosproforma[0]['correoCabecera'];
+        $direcCabecera =  $datosproforma[0]['direcCabecera'];
+        $cpCabecera =  $datosproforma[0]['cpCabecera'];
+        $movilCabecera =  $datosproforma[0]['movilCabecera'];
+        $tefCabecera =  $datosproforma[0]['tefCabecera'];
+        $paisCabecera =  $datosproforma[0]['paisCabecera'];
     
-        $fechaFactura = isset($datosproforma[0]['fechProformaPie']) ? fechaLocal($datosproforma[0]['fechProformaPie']) : '';
-        $numeroFactura = ($datosproforma[0]['serieProformaPie'] ?? '') . ' ' . ($datosproforma[0]['numProformaPie'] ?? '');
-        $textoLibreFacturaReal = $datosproforma[0]['textoLibreFacturaReal'] ?? '';
-        $idLlegada =  $datosproforma[0]['idLlegada_Pie'] ?? $idLlegada;
-        
+        $fechaFactura = fechaLocal($datosproforma[0]['fechProformaPie']);
+        $numeroFactura = $datosproforma[0]['serieProformaPie'].' '.$datosproforma[0]['numProformaPie'];
+        $textoLibreFacturaReal = $datosproforma[0]['textoLibreFacturaReal'];
+        $idLlegada =  $datosproforma[0]['idLlegada_Pie'];
+        $textoLibreFacturaReal =  $datosproforma[0]['textoLibreFacturaReal'];
         if (!empty($textoLibreFacturaReal)) {
-            $textoLibreFacturaReal = '* ' . $textoLibreFacturaReal;
+            // Aquí va lo que quieres hacer si está vacío o null
+            $textoLibreFacturaReal = '* '.$textoLibreFacturaReal;
         }
     ?>
     <meta charset="UTF-8">
     <title>Factura Costa de Valencia</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
 
 * {
     box-sizing: border-box;
+}
+
+@media print {
+    body {
+        width: 210mm;
+        height: 297mm;
+        margin: 10mm;
+    }
 }
 
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
-    min-height: 100vh;
+    background: #f5f7fa;
 }
-@media print {
-    body {
-        /* Sugerir tamaño y márgenes */
-        width: 210mm;   /* tamaño A4 vertical */
-        height: 297mm;
-        margin: 10mm;
-        background: white;
-    }
-}
+
 .factura {
     width: 850px;
     min-height: 980px;
-    margin: 40px auto;
-    padding: 45px;
+    margin: 30px auto;
+    padding: 40px;
     background: #ffffff;
-    border-radius: 16px;
-    box-shadow: 0 20px 60px rgba(0,0,0,0.15), 0 0 0 1px rgba(0,0,0,0.05);
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
     display: flex;
     flex-direction: column;
 }
@@ -116,213 +90,91 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    margin-bottom: 40px;
     padding-bottom: 30px;
-    border-bottom: 3px solid #f0f0f0;
+    border-bottom: 3px solid #0070c0;
+    margin-bottom: 30px;
 }
 
 .logo-section {
     max-width: 50%;
     font-size: 13px;
-    color: #64748b;
-    line-height: 1.8;
+    color: #4a5568;
+    line-height: 1.6;
 }
 
 .logo-section img {
-    height: 70px;
-    margin-bottom: 15px;
-}
-
-.logo-section p {
-    margin: 0;
-    font-weight: 400;
+    height: 65px;
+    margin-bottom: 12px;
 }
 
 .factura-titulo {
-    width: 48%;
+    width: 45%;
     padding: 25px;
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    border-radius: 10px;
+    border: 2px solid #0070c0;
     position: relative;
-    background: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%);
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(59, 130, 246, 0.25);
     display: flex;
     flex-direction: column;
     min-height: 140px;
-    color: white;
 }
 
-.factura-titulo::before,
-.factura-titulo::after {
-    display: none;
-}
-
-.corner-bl,
-.corner-br {
-    display: none;
-}
-
-.factura-titulo::after {
-    top: 0;
-    left: 0;
-    border-left: 2px solid #000;
-    border-top: 2px solid #000;
-    border-right: none;
-    border-bottom: none;
-}
-
-.factura-titulo::after {
-    top: 0;
-    right: 0;
-    border-right: 2px solid #000;
-    border-top: 2px solid #000;
-    border-left: none;
-    border-bottom: none;
-}
-
-/* Esquinas inferiores (igual que las superiores) */
-.corner-bl {
-    bottom: 0;
-    left: 0;
-    border-left: 2px solid #000;
-    border-bottom: 2px solid #000;
-    border-top: none;
-    border-right: none;
-}
-
-.corner-br {
-    bottom: 0;
-    right: 0;
-    border-right: 2px solid #000;
-    border-bottom: 2px solid #000;
-    border-top: none;
-    border-left: none;
-}
-
-/* Etiquetas y texto */
 .factura-label {
     position: absolute;
-    top: -50px;
-    right: 0;
-    font-size: 28px;
+    top: -45px;
+    right: 10px;
+    font-size: 32px;
     font-weight: 700;
-    letter-spacing: 8px;
-    color: #3b82f6;
+    letter-spacing: 4px;
+    color: #0070c0;
     text-transform: uppercase;
 }
 
 .cliente-nombre {
     font-size: 15px;
     font-weight: 700;
-    text-align: left;
-    padding: 8px 0;
+    color: #1a202c;
     margin-bottom: 8px;
-    border-left: 4px solid rgba(255,255,255,0.8);
-    padding-left: 15px;
-    color: white;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #0070c0;
 }
 
 .cliente-cif {
     font-size: 13px;
-    font-weight: 400;
-    text-align: left;
-    padding: 5px 0;
-    padding-left: 15px;
-    color: rgba(255,255,255,0.95);
-    line-height: 1.6;
-}
-
-.cliente {
-    font-size: 14px;
-    text-align: left;
-    padding-left: 15px;
-    margin-top: 40px;
-    color: white;
+    color: #4a5568;
+    margin: 4px 0;
+    line-height: 1.5;
 }
 
 .info-factura {
     display: flex;
-    gap: 30px;
-    margin: 30px 0;
+    gap: 20px;
+    margin: 25px 0;
 }
 
 .info-factura table {
     font-size: 14px;
-    border-collapse: separate;
-    border-spacing: 0;
+    border-collapse: collapse;
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 .info-factura td {
-    border: none;
-    padding: 12px 20px;
-    background: #f8fafc;
-}
-
-.info-factura tr:first-child td {
-    background: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%);
-    color: white;
-    font-weight: 600;
-}
-
-.info-factura tr:last-child td {
-    background: white;
     border: 1px solid #e2e8f0;
-    color: #1e293b;
-    font-weight: 500;
+    padding: 10px 16px;
+    background: #ffffff;
 }
 
-.cliente-cif {
-    font-size: 13px;
-    font-weight: 400;
-    text-align: left;
-    padding: 5px 0;
-    padding-left: 15px;
-    color: rgba(255,255,255,0.95);
-    line-height: 1.6;
-}
-
-.cliente {
-    font-size: 14px;
-    text-align: left;
-    padding-left: 15px;
-    margin-top: 40px;
-    color: white;
-}
-
-.info-factura {
-    display: flex;
-    gap: 30px;
-    margin: 30px 0;
-}
-
-.info-factura table {
-    font-size: 14px;
-    border-collapse: separate;
-    border-spacing: 0;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-}
-
-.info-factura td {
-    border: none;
-    padding: 12px 20px;
+.info-factura td:first-child {
     background: #f8fafc;
-}
-
-.info-factura tr:first-child td {
-    background: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%);
-    color: white;
     font-weight: 600;
+    color: #2d3748;
 }
 
-.info-factura tr:last-child td {
-    background: white;
-    border: 1px solid #e2e8f0;
-    color: #1e293b;
-    font-weight: 500;
+.info-factura td:last-child {
+    font-weight: 600;
+    color: #0070c0;
 }
 
 /* Tabla principal */
@@ -330,9 +182,9 @@ body {
     border-collapse: separate;
     border-spacing: 0;
     width: 100%;
-    border-radius: 12px;
+    border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
 }
 
 #facturaTabla thead tr,
@@ -343,21 +195,18 @@ body {
 #facturaTabla th,
 #facturaTabla td {
     border: none;
-    padding: 14px 16px;
-    text-align: center;
+    padding: 12px 14px;
+    font-size: 13px;
 }
 
 #facturaTabla thead th {
-    background: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%);
+    background: linear-gradient(135deg, #0070c0 0%, #0056a3 100%);
     color: white;
     font-weight: 600;
+    text-align: center;
     text-transform: uppercase;
-    font-size: 12px;
     letter-spacing: 0.5px;
-}
-
-#facturaTabla tbody tr {
-    transition: all 0.2s ease;
+    font-size: 12px;
 }
 
 #facturaTabla tbody tr:nth-child(odd) {
@@ -365,12 +214,16 @@ body {
 }
 
 #facturaTabla tbody tr:nth-child(even) {
-    background-color: white;
+    background-color: #ffffff;
 }
 
 #facturaTabla tbody tr:hover {
-    background-color: #dbeafe !important;
-    transform: scale(1.01);
+    background-color: #e6f2ff;
+    transition: background-color 0.2s ease;
+}
+
+#facturaTabla tbody td {
+    color: #2d3748;
 }
 
 #facturaTabla tfoot {
@@ -380,57 +233,62 @@ body {
 /* Totales */
 .totales-horizontal {
     width: 100%;
-    border-collapse: separate;
-    border-spacing: 0;
-    margin-top: 30px;
-    font-size: 15px;
-    border-radius: 10px;
+    border-collapse: collapse;
+    margin-top: 25px;
+    font-size: 14px;
+    border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 .totales-horizontal td {
-    border: none;
-    padding: 16px;
+    border: 1px solid #e2e8f0;
+    padding: 12px;
     text-align: center;
-    font-weight: 500;
 }
 
 .totales-horizontal tr:first-child {
-    background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
+    background: linear-gradient(135deg, #0070c0 0%, #0056a3 100%);
     color: white;
-    font-weight: 700;
+    font-weight: 600;
     text-transform: uppercase;
-    font-size: 13px;
+    font-size: 12px;
     letter-spacing: 0.5px;
 }
 
 .totales-horizontal tr:last-child {
-    background: white;
-    border: 1px solid #e2e8f0;
-    color: #1e293b;
-    font-weight: 600;
-    font-size: 16px;
+    background-color: #f8fafc;
+    font-weight: 700;
+    color: #0070c0;
+    font-size: 15px;
 }
 
 .nota-iva {
     font-size: 12px;
-    margin-top: 8px; /* ⬅️ Antes 10px */
-    color: #333;
+    margin-top: 15px;
+    color: #718096;
+    font-style: italic;
 }
 
 .forma-pago {
     font-size: 13px;
-    margin-top: 25px; /* ⬅️ Antes 30px */
+    margin-top: 30px;
+    padding: 15px;
+    background: #f8fafc;
+    border-left: 4px solid #0070c0;
+    border-radius: 6px;
+    color: #2d3748;
+    line-height: 1.6;
 }
 
 .pie {
     font-size: 11px;
     text-align: center;
     margin-top: auto;
-    padding-top: 10px;
-    border-top: 1px solid #000;
-    color: #555;
+    padding-top: 20px;
+    border-top: 2px solid #e2e8f0;
+    color: #718096;
+    line-height: 1.6;
 }
 
 @media print {
@@ -440,7 +298,7 @@ body {
     }
 
     #facturaTabla thead th {
-        background: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%) !important;
+        background: linear-gradient(135deg, #0070c0 0%, #0056a3 100%) !important;
         color: white !important;
     }
 
@@ -448,107 +306,120 @@ body {
         background-color: #f8fafc !important;
     }
 
+    #facturaTabla tbody tr:nth-child(even) {
+        background-color: #ffffff !important;
+    }
+
     #facturaTabla tbody tr:hover {
-        background-color: #dbeafe !important;
+        background-color: #e6f2ff !important;
     }
 
     .factura {
         box-shadow: none !important;
-       border: 0px solid #fcfcfcff !important; 
+        border: none !important;
+        border-radius: 0 !important;
     }
 
-    .factura-titulo::before,
-    .factura-titulo::after,
-    .corner-bl,
-    .corner-br {
-        background: none !important;
+    .totales-horizontal tr:first-child {
+        background: linear-gradient(135deg, #0070c0 0%, #0056a3 100%) !important;
+        color: white !important;
     }
 }
 
 #suplidosTabla {
-    font-size: 0.85rem; /* Letra más pequeña */
-    border: none;       /* Sin borde general */
+    font-size: 13px;
+    border: none;
     background: transparent;
+    margin-top: 15px;
 }
 
 #suplidosTabla th,
 #suplidosTabla td {
-    padding: 4px 8px;       /* Menos espacio interior */
-    border: none;           /* Quitar líneas de celdas */
+    padding: 8px 10px;
+    border: none;
     background: transparent;
 }
 
 #suplidosTabla thead,
 #suplidosTabla tfoot {
-    display: none;          /* Ocultar cabecera y pie si no los necesitas */
+    display: none;
 }
 
 #suplidosTabla tr:hover {
-    background-color: transparent !important; /* Evita el hover llamativo */
+    background-color: transparent !important;
 }
 
+#resumenSuplidosTabla {
+    margin-top: 15px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
 
-/* APARTADO COMPRIMIR BODY */
+#resumenSuplidosTabla th {
+    background: linear-gradient(135deg, #0070c0 0%, #0056a3 100%);
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    padding: 12px;
+}
 
-/* --- Compactación general --- */
+#resumenSuplidosTabla td {
+    background: #f8fafc;
+    font-weight: 700;
+    color: #0070c0;
+    font-size: 15px;
+    padding: 12px;
+    text-align: center;
+}
 
-
-/* Evitar márgenes por defecto del navegador */
+/* --- Compactación para impresión --- */
 @page {
     margin: 5mm !important;
 }
 
-/* --- Compactar header --- */
-.header {
-    margin: 0 !important;
-    padding: 0 !important;
-}
-.header p {
-    margin: 0 !important;
-    line-height: 1.1 !important;
-}
+@media print {
+    .header {
+        margin: 0 !important;
+        padding-bottom: 15px !important;
+    }
+    
+    .header p {
+        margin: 0 !important;
+        line-height: 1.3 !important;
+    }
 
-/* --- Reducir espacio entre tablas --- */
-table {
-    margin: 0 !important;
-}
-table td, table th {
-    padding: 2px 4px !important;
-}
+    table {
+        margin: 0 !important;
+    }
+    
+    table td, table th {
+        padding: 6px 8px !important;
+    }
 
-/* --- Info factura muy compacta --- */
-.info-factura table td {
-    padding: 1px 4px !important;
-}
+    .info-factura table td {
+        padding: 8px 12px !important;
+    }
 
-/* --- Totales --- */
-.totales-horizontal td {
-    padding: 2px 3px !important;
-}
+    .totales-horizontal td {
+        padding: 8px !important;
+    }
 
-/* --- Suplidos --- */
-.suplidosContent h5 {
-    margin: 5px 0 2px 0 !important;
-}
-.suplidosContent .table-responsive {
-    margin-top: 0 !important;
-}
+    .suplidosContent h5 {
+        margin: 10px 0 5px 0 !important;
+    }
 
-/* --- Texto inferior --- */
-.forma-pago {
-    margin: 2px 0 !important;
-    line-height: 1.1 !important;
-}
+    .forma-pago {
+        margin: 15px 0 !important;
+        padding: 10px !important;
+    }
 
-.pie {
-    margin-top: 5px !important;
-    line-height: 1.1 !important;
-}
-
-/* --- Quitar espacio entre secciones --- */
-.row, .col-12, .table-responsive {
-    margin: 0 !important;
-    padding: 0 !important;
+    .pie {
+        margin-top: 15px !important;
+        padding-top: 15px !important;
+    }
 }
 
 
@@ -576,41 +447,37 @@ table td, table th {
                 </p>
             </div>
            <div class="factura-titulo">
-            <div class="factura-label">FACTURA</div>
+            <div class="factura-label"><?php echo ($tipoFactura == 1) ? 'PROFORMA' : 'FACTURA'; ?></div>
             <?php if (!empty($nombreCabecera)): ?>
                 <div class="cliente-nombre"><label id="nombreCliente"><?php echo $nombreCabecera; ?></label></div>
             <?php endif; ?>
 
             <?php if (!empty($cifCabecera)): ?>
-                <div class="cliente-cif"><label id="cifCliente">CIF/NIF: <?php echo $cifCabecera; ?></label></div>
+                <div class="cliente-cif"><label id="cifCliente"><strong>CIF/NIF:</strong> <?php echo $cifCabecera; ?></label></div>
             <?php endif; ?>
 
             <?php if (!empty($direcCabecera) || !empty($cpCabecera) || !empty($paisCabecera)): ?>
                 <div class="cliente-cif"><label id="direc">
-                    Dirección:
+                    <strong>Dirección:</strong>
                     <?php echo $direcCabecera . ' ' . $cpCabecera . ' ' . $paisCabecera; ?>
                 </label></div>
             <?php endif; ?>
 
             <?php if (!empty($correoCabecera)): ?>
-                <div class="cliente-cif"><label id="correo">Email: <?php echo $correoCabecera; ?></label></div>
+                <div class="cliente-cif"><label id="correo"><strong>Email:</strong> <?php echo $correoCabecera; ?></label></div>
             <?php endif; ?>
 
             <?php if (!empty($movilCabecera) || !empty($tefCabecera)): ?>
                 <div class="cliente-cif">
                     <label id="movil">
-                        <?php if (!empty($movilCabecera)) echo 'Móvil: ' . $movilCabecera; ?>
-                        <?php if (!empty($tefCabecera)) echo ' Tel: ' . $tefCabecera; ?>
+                        <?php if (!empty($movilCabecera)) echo '<strong>Móvil:</strong> ' . $movilCabecera; ?>
+                        <?php if (!empty($tefCabecera)) echo ' <strong>Tel:</strong> ' . $tefCabecera; ?>
                     </label>
                 </div>
             <?php endif; ?>
-
-            
-            <div class="corner-bl"></div>
-            <div class="corner-br"></div>
         </div>
 
-        </div> <!-- ✅ Cierre correcto de .header -->
+        </div>
 
         <div class="info-factura">
             <table>

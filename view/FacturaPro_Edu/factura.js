@@ -4,6 +4,9 @@ function actualizarPaginacion() {
   });
 }
 
+// Variable global para almacenar el total con IVA
+var totalConIvaNumerico = 0;
+
 $(document).ready(function() {
     // Función al cargar la página
     // ID LLEGADA QUE SE VA A USAR PARA FILTRAR EN LA FACTURA
@@ -116,6 +119,10 @@ $(document).ready(function() {
             /* $('#baseImponible').text(totalSinIva.toLocaleString("es-ES", { style: "currency", currency: "EUR" })); */
             $('#totalConIva').text(totalConIva.toLocaleString("es-ES", { style: "currency", currency: "EUR" }));
             $('#totalConIvaResumen').text(totalConIva.toLocaleString("es-ES", { style: "currency", currency: "EUR" }));
+            
+            // Guardar el valor numérico en variable global
+            totalConIvaNumerico = totalConIva;
+            
             // $('#totalDescuento').text(totalDescuento.toLocaleString("es-ES", { style: "currency", currency: "EUR" }));
 
             // Mostrar nota si algún IVA es 0
@@ -152,6 +159,10 @@ $(document).ready(function() {
 
         initComplete: function(settings, json) {
             // Esta función se ejecuta cuando la tabla ha terminado de cargar
+            console.log("Tabla de facturas completada. Total con IVA:", totalConIvaNumerico);
+            
+            // INICIALIZAR LA TABLA DE SUPLIDOS DESPUÉS DE QUE LA TABLA DE FACTURAS ESTÉ LISTA
+            inicializarTablaSuplidos();
           /*   window.print();  */
         }
     });
@@ -162,19 +173,10 @@ $(document).ready(function() {
 
     $("#facturaTabla").addClass("width-100"); // Mantener responsividad
 
-   
-    // Forzar que la tabla muestre 10 filas (igual que antes)
-    facturaTabla.page.len(10).draw();
-    facturaTabla.column(0).visible(true);
-
-    $("#facturaTabla").addClass("width-100"); // Mantener responsividad
-
-    
-
-
-
+    // FUNCIÓN PARA INICIALIZAR LA TABLA DE SUPLIDOS
+    function inicializarTablaSuplidos() {
         idLlegada = $('#idLlegada').val();
-       var suplidosTabla = $("#suplidosTabla").DataTable({
+        var suplidosTabla = $("#suplidosTabla").DataTable({
         pageLength: 7,
         paging: false,         //  OCULTA LA PAGINACIÓN
         searching: false,      //  OCULTA LA BARRA DE BÚSQUEDA
@@ -257,26 +259,22 @@ $(document).ready(function() {
                         totalSuplido += precioSuplido;
                     }
                 });
-                $('#totalSuplidosResumen').text(totalSuplido+'€');
-                //totalSinSuplidos = $('#totalFactura').text();
-                totalSinSuplidos = $('#totalConIva').text();
+                
+                // Formatear total de suplidos
+                $('#totalSuplidosResumen').text(totalSuplido.toLocaleString("es-ES", { style: "currency", currency: "EUR" }));
+                
+                // CALCULAR TOTAL GENERAL - ahora la variable global debe estar lista
+                console.log("=== CALCULANDO TOTAL GENERAL ===");
+                console.log("Total con IVA (variable global):", totalConIvaNumerico);
+                console.log("Total suplidos:", totalSuplido);
+                
+                // Calcular total general
+                let totalConSuplidos = totalConIvaNumerico + totalSuplido;
 
-                totalSinSuplidos = parseFloat(totalSinSuplidos.toString().replace(/[€\s]/g, '').replace(',', '.'));
+                console.log("Total general calculado:", totalConSuplidos);
 
-                console.log(totalSinSuplidos)
-                                
-                // Comprobar que el valor es numérico antes de usarlo
-                if (!isNaN(totalSinSuplidos)) {
-                    let totalConSuplidos = totalSinSuplidos + totalSuplido;
-
-                    console.log("Total sin suplidos:", totalSinSuplidos);
-                    console.log("Total con suplidos:", totalConSuplidos);
-
-                    // Mostrar en el HTML
-                    $('#totalConSuplidos').text(totalConSuplidos.toFixed(2) + ' €');
-                } else {
-                    console.warn("No se pudo obtener un total válido desde #totalFactura");
-                }
+                // Mostrar en el HTML con formato europeo
+                $('#totalConSuplidos').text(totalConSuplidos.toLocaleString("es-ES", { style: "currency", currency: "EUR" }));
 
         },
         initComplete: function(settings, json) {
@@ -290,8 +288,8 @@ $(document).ready(function() {
     suplidosTabla.column(0).visible(true);
 
     $("#suplidosTabla").addClass("width-50"); // Mantener responsividad
+    } // FIN DE LA FUNCIÓN inicializarTablaSuplidos
 
-
-});
+}); // FIN DE $(document).ready
 
 

@@ -369,9 +369,9 @@ $(document).ready(function() {
         { name: "codigo" },
         { name: "nombre" },
         { name: "medidaTarifasAloja" },
-        { name: "importeTarifasAloja", className: "text-center wd-30" },
-        { name: "iva", className: "text-center wd-30" },
         { name: "descuento", className: "text-center wd-30" },
+        { name: "iva", className: "text-center wd-30" },
+        { name: "importeTarifasAloja", className: "text-center wd-30" },
         { name: "tIPO", className: "text-center wd-30" },
 
     ],
@@ -393,8 +393,8 @@ $(document).ready(function() {
     },
 
     ajax: {
-        // URL inicial vacía. Se actualizará cuando el modal se abra.
-        url: "../../controller/tarifaAloja_Edu.php?op=listarTarifasAlojaFactura",
+        // URL inicial. Mostrará todas las tarifas activas.
+        url: "../../controller/tarifaAloja_Edu.php?op=listarTarifasAll",
         type: "get",
         dataType: "json",
         cache: false,
@@ -513,6 +513,10 @@ $(document).ready(function() {
         
         var data = tarifaAloja_table.row(this).data();
         console.log("data de la fila seleccionada:", data);
+        console.log("data[4] Descuento:", data[4]);
+        console.log("data[5] IVA:", data[5]);
+        console.log("data[6] Precio:", data[6]);
+        console.log("data[7] Tipo:", data[7]);
 
         // Asignación de campos normales
         $("#codigoIdFactura").val(data[0]);
@@ -524,13 +528,17 @@ $(document).ready(function() {
         var ivaNumerico = limpiarNumero($(data[5]).text());
         var totalNumerico = limpiarNumero($(data[6]).text());
 
+        console.log("descuentoNumerico:", descuentoNumerico);
+        console.log("ivaNumerico:", ivaNumerico);
+        console.log("totalNumerico:", totalNumerico);
+
         // Si totalNumerico no es un número, asignamos 0
         if (!totalNumerico || isNaN(totalNumerico)) {
             totalNumerico = 0;
         }
 
          var tipo =$(data[7]).text();
-           console.log(tipo);
+           console.log("tipo:", tipo);
         if(tipo == 'Alojamiento'){
             $('#tipoFacturaContenido').val('2');
 

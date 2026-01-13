@@ -345,7 +345,64 @@ $json_string = json_encode('as');
             color: white;
         }
 
+        /* Fondo distintivo para identificar pantalla de FACTURA REAL */
+        body {
+            background: linear-gradient(135deg, #e8f4f8 0%, #d4ebf2 25%, #e8f4f8 50%, #d4ebf2 75%, #e8f4f8 100%);
+            background-attachment: fixed;
+            position: relative;
+        }
 
+        /* Marca de agua diagonal en el centro */
+        body::before {
+            content: "FACTURA DEFINITIVA";
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-45deg);
+            font-size: 120px;
+            font-weight: 700;
+            color: rgba(84, 153, 199, 0.04);
+            letter-spacing: 8px;
+            z-index: 0;
+            pointer-events: none;
+            white-space: nowrap;
+        }
+
+        /* Etiqueta visible en esquina */
+        body::after {
+            content: "FACTURA";
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            font-size: 18px;
+            font-weight: 700;
+            color: rgba(84, 153, 199, 0.9);
+            background: rgba(255, 255, 255, 0.9);
+            padding: 8px 16px;
+            border-radius: 8px;
+            border: 2px solid rgba(84, 153, 199, 0.3);
+            letter-spacing: 3px;
+            z-index: 1000;
+            pointer-events: none;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        /* Asegurar que el contenido esté encima */
+        .page-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Aplicar tinte azul claro a las tarjetas */
+        .card {
+            background: rgba(232, 244, 248, 0.6) !important;
+            backdrop-filter: blur(10px);
+        }
+
+        /* Mantener algunos cards con fondo claro pero con tinte azul */
+        .card.bg-light {
+            background: rgba(232, 244, 248, 0.7) !important;
+        }
 
     </style>
 </head>
@@ -418,9 +475,12 @@ $json_string = json_encode('as');
 
             <div class="col-12 card mg-t-20-force">
                 <div class="card-body ">
-                    <h2 class="card-title">FACTURA PROFORMA Nº <?php echo $numeroFactura;?>  <?php
-                   
-                    ?></h2>                   
+                    <div class="d-flex align-items-center gap-2">
+                        <h2 class="card-title mb-0">FACTURA PROFORMA Nº <?php echo $numeroFactura;?></h2>
+                        <button type="button" class="btn btn-sm btn-info" data-bs-toggle="modal" data-bs-target="#ayuda-modal" title="Ver información de ayuda">
+                            <i class="bx bx-help-circle"></i>
+                        </button>
+                    </div>
 
                     
                     <div class="my-3 border-top"></div>
@@ -639,7 +699,7 @@ $json_string = json_encode('as');
                                             <div class="text-center my-3">
                                                 <?php if ($existeFacturaReal == 0): ?>
                                                     <button id="guardarFacturaBoton" class="btn btn-success">
-                                                        <i class="fa-solid fa-check-double me-2"></i> Guardar Factura Oficial
+                                                        <i class="fa-solid fa-check-double me-2"></i> Generar Factura Oficial
                                                     </button>
                                                 <?php elseif ($existeFacturaReal == 1): ?>
                                                     <div style="background-color: #fdf6f0; border: 2px dashed #d4a373; padding: 20px; border-radius: 12px; font-family: Georgia, serif; color: #5a3e36; max-width: 600px; margin: 30px auto; text-align: center;">
@@ -780,6 +840,166 @@ $json_string = json_encode('as');
     <?php include_once 'modalInformacion.php' ?>
     <?php include_once 'modalImprimir.php' ?>
     <?php include_once 'modalFacturas.php' ?>
+
+    <!-- Modal de Ayuda -->
+    <div id="ayuda-modal" class="modal fade" tabindex="-1" data-bs-backdrop="static">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content border-0 shadow">
+                <div class="modal-header bg-info bg-gradient text-white py-3">
+                    <h5 class="modal-title d-flex align-items-center gap-2">
+                        <i class="bx bx-help-circle"></i> Información de Ayuda
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close" title="Cerrar"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <div class="alert alert-info border-0 mb-4">
+                        <i class="bx bx-info-circle me-2"></i>
+                        <strong>Guía de uso - Factura Definitiva</strong>
+                    </div>
+
+                    <!-- Información destacada sobre el propósito de esta pantalla -->
+                    <div class="alert alert-primary border-0 mb-4">
+                        <div class="d-flex align-items-start">
+                            <i class="bx bx-transfer-alt bx-md me-3 mt-1"></i>
+                            <div>
+                                <h6 class="fw-bold mb-2">🔄 Conversión de Factura Pro-forma a Factura Real</h6>
+                                <p class="mb-0">
+                                    En esta pantalla se <strong>convierte la factura proforma generada anteriormente en una FACTURA REAL</strong> (definitiva).
+                                    Una vez realizada esta conversión, la factura adquiere validez fiscal y legal completa, quedando registrada
+                                    oficialmente en el sistema contable.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <h6 class="fw-semibold mb-3"><i class="bx bx-file-blank text-primary me-2"></i>¿Qué es una Factura Definitiva?</h6>
+                        <p class="text-muted ms-3">
+                            Una factura definitiva es el documento contable oficial que se emite una vez confirmados los servicios educativos.
+                            Esta factura tiene validez legal y fiscal, a diferencia de la proforma que actúa como presupuesto.
+                        </p>
+                        <div class="alert alert-warning border-0 ms-3 mt-2">
+                            <i class="bx bx-error-circle me-2"></i>
+                            <strong>Importante:</strong> Una vez generada, esta factura queda registrada en el sistema contable y no puede modificarse libremente.
+                            Para realizar cambios se debe generar una factura de abono.
+                        </div>
+                    </div>
+
+                    <div class="mb-4">
+                        <h6 class="fw-semibold mb-3"><i class="bx bx-mouse text-primary me-2"></i>Botones disponibles:</h6>
+                        <ul class="list-unstyled ms-3">
+                            <li class="mb-3">
+                                <button class="btn btn-success btn-sm" disabled><i class="fa-solid fa-check-double"></i> Generar Factura Oficial</button>
+                                <p class="text-muted ms-3 mb-0 mt-1">
+                                    <strong>Botón VERDE (principal):</strong> Este es el botón más importante de la pantalla. 
+                                    Convierte la factura pro-forma en una <strong>FACTURA REAL</strong> con validez fiscal y legal.
+                                    Una vez generada, la factura queda registrada oficialmente en el sistema contable.
+                                </p>
+                                <div class="alert alert-warning border-0 ms-3 mt-2">
+                                    <i class="bx bx-error-circle me-2"></i>
+                                    <small><strong>Importante:</strong> Solo puede generarse una factura oficial si no existe ya una factura real pendiente de abonar para este alumno.</small>
+                                </div>
+                            </li>
+                            <li class="mb-3">
+                                <button class="btn btn-primary btn-sm" disabled><i class="fa-solid fa-file"></i> Ver Proforma</button>
+                                <p class="text-muted ms-3 mb-0 mt-1">
+                                    <strong>Botón AZUL:</strong> Genera y visualiza el documento PDF de la factura pro-forma.
+                                    Útil para revisar el documento antes de convertirlo en factura oficial.
+                                </p>
+                            </li>
+                            <li class="mb-3">
+                                <button class="btn btn-danger btn-sm" disabled>Abonar Proforma</button>
+                                <p class="text-muted ms-3 mb-0 mt-1">
+                                    <strong>Botón ROJO:</strong> Permite realizar el abono de la factura pro-forma.
+                                    Utilícelo cuando necesite anular o devolver el importe de la proforma.
+                                </p>
+                            </li>
+                            <li class="mb-3">
+                                <button class="btn btn-primary btn-lg" disabled>Consultar Facturas</button>
+                                <p class="text-muted ms-3 mb-0 mt-1">
+                                    <strong>Botón AZUL (grande):</strong> Abre un modal con el historial completo de facturas del alumno.
+                                    Permite consultar todas las facturas reales generadas anteriormente, así como el enlace numérico con su proforma.
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="mb-4">
+                        <h6 class="fw-semibold mb-3"><i class="bx bx-info-square text-info me-2"></i>Información de la factura:</h6>
+                        <p class="text-muted ms-3 mb-2">
+                            La pantalla muestra los siguientes datos importantes:
+                        </p>
+                        <ul class="text-muted ms-3">
+                            <li><strong>Número de factura:</strong> Identificador único de la factura definitiva</li>
+                            <li><strong>Fecha de emisión:</strong> Fecha en la que se generó la factura</li>
+                            <li><strong>Datos del cliente:</strong> Nombre, CIF/NIF, dirección de facturación</li>
+                            <li><strong>Conceptos facturados:</strong> Detalle de servicios: cursos, alojamiento, transfers, materiales, etc.</li>
+                            <li><strong>Base imponible:</strong> Importe antes de IVA</li>
+                            <li><strong>IVA aplicado:</strong> Por cada tipo de IVA (0%, 10%, 21%, etc.)</li>
+                            <li><strong>Total factura:</strong> Importe final a pagar</li>
+                            <li><strong>Estado de pago:</strong> Pagada, pendiente o pagada parcialmente</li>
+                        </ul>
+                    </div>
+
+                    <div class="mb-4">
+                        <h6 class="fw-semibold mb-3"><i class="bx bx-error text-warning me-2"></i>Diferencias con la Factura Proforma:</h6>
+                        <div class="ms-3">
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-sm">
+                                    <thead class="table-light">
+                                        <tr>
+                                            <th>Aspecto</th>
+                                            <th>Factura Proforma</th>
+                                            <th>Factura Definitiva</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><strong>Naturaleza</strong></td>
+                                            <td>Presupuesto / Cotización</td>
+                                            <td>Documento contable oficial</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Validez legal</strong></td>
+                                            <td>Sin validez fiscal</td>
+                                            <td>Validez fiscal completa</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Modificación</strong></td>
+                                            <td>Se puede editar libremente</td>
+                                            <td>Requiere factura de abono</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Registro contable</strong></td>
+                                            <td>No se registra en contabilidad</td>
+                                            <td>Se registra obligatoriamente</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Numeración</strong></td>
+                                            <td>Serie independiente</td>
+                                            <td>Serie oficial correlativa</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="alert alert-success border-0">
+                        <i class="bx bx-check-circle me-2"></i>
+                        <strong>Consejo:</strong> Antes de generar una factura definitiva, asegúrese de que todos los datos y conceptos
+                        sean correctos en la factura proforma. Una vez emitida la factura definitiva, cualquier cambio requerirá
+                        procesos contables adicionales (factura de abono).
+                    </div>
+                </div>
+                <div class="modal-footer bg-light">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                        <i class="bx bx-x me-1"></i>Cerrar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <?php include("../../config/templates/searchModal.php"); ?>
 

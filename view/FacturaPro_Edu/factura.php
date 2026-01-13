@@ -312,6 +312,17 @@ body {
     font-weight: 600;
 }
 
+#finTotales {
+    border-top: 3px solid #495057;
+}
+
+#finTotales td:first-child {
+    font-weight: 700;
+    color: #1e293b;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
 .nota-iva {
     font-size: 12px;
     margin-top: 12px;
@@ -610,7 +621,7 @@ table td, table th {
             <!-- <td>DESCUENTO</td> -->
             <td>IVA (EUROS)</td>
             <!-- <td>TOTAL SUPLIDOS</td> -->
-            <td>TOTAL CON IVA</td>
+            <td>TOTAL(IVA Incl.)</td>
 
         </tr>
         <!--
@@ -625,7 +636,7 @@ table td, table th {
         </tr>
         -->
         <tr id="finTotales">
-            <td><label id="baseImponible"></label></td>
+            <td><strong>TOTAL</strong></td>
             <td><label></label></td>
             <!-- <td><label id="totalDescuento"></label></td> -->
             <td><label id="ivaTotal"></label></td>
@@ -665,7 +676,7 @@ table td, table th {
             <table class="table table-bordered" id="resumenSuplidosTabla">
             <thead>
                 <tr>
-                    <th>Total con IVA</th>
+                    <th>Total(IVA Incl.)</th>
                     <th  class="suplidosContent">Total Suplidos</th>
                     <th>Total General</th>
                 </tr>

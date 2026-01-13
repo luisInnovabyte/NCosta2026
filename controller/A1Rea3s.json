@@ -1,1 +1,1 @@
-"UPDATE `factura_pie` \r\n        SET `estProforma`='0',`abonadaFacturaPro`='8',`abonadaFechaFacturaPro` = '2026-01-13 10:05:40',abonadaMotivoFacturaPro ='Cambio de IVA' WHERE idPie = '139'"
+"UPDATE `factura_pie` \r\n        SET `estProforma`='0',`abonadaFacturaPro`='9',`abonadaFechaFacturaPro` = '2026-01-13 12:18:52',abonadaMotivoFacturaPro ='Por cambio de IVA' WHERE idPie = '140'"

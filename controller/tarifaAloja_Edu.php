@@ -113,7 +113,7 @@ switch ($_GET["op"]) {
                     $sub_array[] = '';
                 }
                 $sub_array[] = '<p class="text-right badge bg-orange tx-14-force">' . $row["descuento_tarifa"] .  ' %</p>';
-                $sub_array[] = '<p class="text-right badge bg-orange tx-14-force">' . $row["iva_tarifa"] .  ' %</p>';
+                $sub_array[] = '<p class="text-right badge bg-orange tx-14-force">' . $row["valorIva"] .  ' %</p>';
                 $sub_array[] = '<p class="text-right badge bg-orange tx-14-force">' . $row["precio_tarifa"] .  ' €</p>';
                 $sub_array[] = '<p class="text-right badge bg-info tx-14-force">' . $row["tipo_tarifa"] .  '</p>';
 
@@ -147,7 +147,6 @@ switch ($_GET["op"]) {
     
             $data = array();
     
-    
             foreach ($datos as $row) {
                 $sub_array = array();
     
@@ -161,14 +160,14 @@ switch ($_GET["op"]) {
                     $sub_array[] = '';
                 }
                 $sub_array[] = '<p class="text-right badge bg-orange tx-14-force">' . $row["descuento_tarifa"] .  ' %</p>';
-                // Usar valorIva si iva_tarifa está vacío
-                $ivaValue = !empty($row["iva_tarifa"]) ? $row["iva_tarifa"] : (!empty($row["valorIva"]) ? $row["valorIva"] : "0");
-                $sub_array[] = '<p class="text-right badge bg-orange tx-14-force">' . $ivaValue .  ' %</p>';
+                $sub_array[] = '<p class="text-right badge bg-orange tx-14-force">' . $row["valorIva"] .  ' %</p>';
                 $sub_array[] = '<p class="text-right badge bg-orange tx-14-force">' . $row["precio_tarifa"] .  ' €</p>';
+                $sub_array[] = '<p class="text-right badge bg-info tx-14-force">' . (!empty($row["tipo_tarifa"]) ? $row["tipo_tarifa"] : '') . '</p>';
                 
     
                 $data[] = $sub_array;
             }
+
             $results = array(
                 "sEcho" => 1,
                 "iTotalRecords" => count($data),

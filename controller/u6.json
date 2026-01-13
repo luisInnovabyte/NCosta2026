@@ -1,1 +1,1 @@
-"UPDATE `factura_contenido` SET numFactura = 22 WHERE idLlegadaFactura = 48  AND numFactura IS NULL;"
+"UPDATE `factura_contenido` SET numFactura = 23 WHERE idLlegadaFactura = 48  AND numFactura IS NULL;"

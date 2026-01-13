@@ -1,1 +1,1 @@
-"SELECT * FROM `factura_pie` LEFT JOIN factura_cabecera ON factura_pie.idCabecera_Pie = factura_cabecera.idCabecera WHERE factura_pie.numProformaPie = 22"
+"SELECT * FROM `factura_pie` LEFT JOIN factura_cabecera ON factura_pie.idCabecera_Pie = factura_cabecera.idCabecera WHERE factura_pie.numProformaPie = 23"

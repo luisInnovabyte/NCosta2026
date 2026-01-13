@@ -1,1 +1,1 @@
-"UPDATE tm_departamento_edu SET numFacturaProNegDepa = 8 WHERE idDepartamentoEdu = 1"
+"UPDATE tm_departamento_edu SET numFacturaProNegDepa = 9 WHERE idDepartamentoEdu = 1"
