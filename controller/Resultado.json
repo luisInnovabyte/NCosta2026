@@ -1,0 +1,1 @@
+"UPDATE tm_actividad_edu SET descrAct = ?, obsAct = ?, fecActDesde = ?, fecActHasta = ?, fecActFinSolicitud = ?, horaInicioAct = ?, horaFinAct = ?, horasLectivasAct = ?, \r\n            imgAct = ?, fecModiAct = NOW(),puntoEncuentroAct = ?, idPersonal_guiaAct = ?, minAlumAct = ?, maxAlumAct = ?, departamentoDisponible = ? WHERE idAct = ?"

@@ -74,6 +74,17 @@
         if (!empty($textoLibreFacturaReal)) {
             $textoLibreFacturaReal = '* ' . $textoLibreFacturaReal;
         }
+
+        $llegada = new Llegadas();
+        $fechaActualTiempo = date("d/m/Y H:i:s");
+        $datosPagoAnticipado = $llegada->totalPagado($idLlegada);
+        
+        $totalImporte = !empty($datosPagoAnticipado[0]['totalImporte']) ? $datosPagoAnticipado[0]['totalImporte'] : 0;
+        if (!empty($totalImporte) && $totalImporte > 0) {
+            $totalImporteText = 'Se ha pagado a fecha ' . $fechaActualTiempo . ' un total de ' . $totalImporte . ' €';
+        } else {
+            $totalImporteText = '';
+        }
     ?>
     <meta charset="UTF-8">
     <title>Factura Costa de Valencia</title>
@@ -654,7 +665,7 @@ table td, table th {
             <!-- <td>DESCUENTO</td> -->
             <td>IVA (EUROS)</td>
             <!-- <td>TOTAL SUPLIDOS</td> -->
-            <td>TOTAL CON IVA</td>
+            <td>TOTAL(IVA Incl.)</td>
 
         </tr>
         <!--
@@ -669,7 +680,7 @@ table td, table th {
         </tr>
         -->
         <tr id="finTotales">
-            <td><label id="baseImponible"></label></td>
+            <td><strong>TOTAL</strong></td>
             <td><label></label></td>
             <!-- <td><label id="totalDescuento"></label></td> -->
             <td><label id="ivaTotal"></label></td>
@@ -709,7 +720,7 @@ table td, table th {
             <table class="table table-bordered" id="resumenSuplidosTabla">
             <thead>
                 <tr>
-                    <th>Total con IVA</th>
+                    <th>Total(IVA Incl.)</th>
                     <th  class="suplidosContent">Total Suplidos</th>
                     <th>Total General</th>
                 </tr>
@@ -726,6 +737,10 @@ table td, table th {
         <div class="forma-pago">
             <strong><?php echo $textoLibreFacturaReal ?></strong>
         </div>
+        <div class="forma-pago">
+            <strong><?php echo $totalImporteText?></strong>
+        </div>
+        <br>
         <div class="forma-pago">
             <strong>FORMA DE PAGO:</strong> Efectivo o transferencia bancaria a la cuenta:<br>
             IBAN: ES25 0049 0780 4421 1185 6713 &nbsp;&nbsp; SWIFT: BSCH ES MM XXX

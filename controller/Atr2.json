@@ -1,0 +1,1 @@
+"UPDATE `factura_pie_real` \r\n            SET `estProforma`='0',`abonadaFactura`='10',`abonadaFechaFactura` = '2026-01-13 19:28:03',abonadaMotivoFactura ='Por prueba' WHERE idPie = '91'"

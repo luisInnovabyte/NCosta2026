@@ -631,7 +631,11 @@ $json_string = json_encode('as');
                                         <button type="button" class="btn btn-primary btn-icon" data-placement="top" title="Apartado Factura" onclick="imprimirFacturaDatatablePro('<?php echo $idFactura; ?> ', 1, ' <?php echo $idLlegada; ?> ')"><div> Ver Proforma<i class="fa-solid fa-file"></i></div></button>
                                         <br>
                                         <div id="enviarCorreoAlum"></div> <br>
-                                        <button type="button" class="btn btn-danger btn-icon" data-placement="top" title="Abonar Factura"  onclick="realizarAbonoProformaIndex('<?php echo $idPie; ?>','<?php echo $numeroFactura;?>')" ><div> Abonar Proforma</div></button>
+                                        <?php if ($existeFacturaReal == 0): ?>
+                                            <button type="button" class="btn btn-danger btn-icon" data-placement="top" title="Abonar Factura"  onclick="realizarAbonoProformaIndex('<?php echo $idPie; ?>','<?php echo $numeroFactura;?>')" ><div> Abonar Proformas</div></button>
+                                        <?php else: ?>
+                                            <button type="button" class="btn btn-secondary btn-icon" disabled><div> Abonar Proformas</div></button>
+                                        <?php endif; ?>
 
                                     </div>
 
