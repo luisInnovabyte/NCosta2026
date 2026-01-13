@@ -52,34 +52,36 @@
     <meta charset="UTF-8">
     <title>Factura Costa de Valencia</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
 
 * {
     box-sizing: border-box;
 }
+
 @media print {
     body {
-        /* Sugerir tamaño y márgenes */
-        width: 210mm;   /* tamaño A4 vertical */
+        width: 210mm;
         height: 297mm;
         margin: 10mm;
     }
 }
+
 body {
-    font-family: 'Merriweather', serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     margin: 0;
     padding: 0;
-    background: #f8f9fa;
+    background: #f5f7fa;
 }
 
 .factura {
     width: 850px;
-    min-height: 980px; /* ⬅️ Antes 1160px */
-    margin: 30px auto;  /* ⬅️ Antes 40px */
-    padding: 30px;      /* ⬅️ Antes 40px */
+    min-height: 980px;
+    margin: 30px auto;
+    padding: 40px;
     background: #ffffff;
-    border: 2px solid #0070c0;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
     display: flex;
     flex-direction: column;
 }
@@ -87,127 +89,92 @@ body {
 .header {
     display: flex;
     justify-content: space-between;
-    margin-top: 30px; /* ⬅️ Antes 40px */
+    align-items: flex-start;
+    padding-bottom: 30px;
+    border-bottom: 3px solid #0070c0;
+    margin-bottom: 30px;
 }
 
 .logo-section {
     max-width: 50%;
     font-size: 13px;
+    color: #4a5568;
+    line-height: 1.6;
 }
 
 .logo-section img {
-    height: 60px;
-    margin-bottom: 8px; /* ⬅️ Antes 10px */
+    height: 65px;
+    margin-bottom: 12px;
 }
 
 .factura-titulo {
     width: 45%;
-    padding: 18px; /* ⬅️ Antes 20px */
+    padding: 25px;
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    border-radius: 10px;
+    border: 2px solid #0070c0;
     position: relative;
-    margin-top: 20px; /* ⬅️ Antes 30px */
     display: flex;
     flex-direction: column;
-    min-height: 130px; /* ⬅️ Antes 160px */
+    min-height: 140px;
 }
 
-.factura-titulo::before,
-.factura-titulo::after,
-.corner-bl,
-.corner-br {
-    content: '';
-    position: absolute;
-    width: 20px;
-    height: 20px;
-}
-
-/* Esquinas superiores */
-.factura-titulo::before {
-    top: 0;
-    left: 0;
-    border-left: 2px solid #000;
-    border-top: 2px solid #000;
-    border-right: none;
-    border-bottom: none;
-}
-
-.factura-titulo::after {
-    top: 0;
-    right: 0;
-    border-right: 2px solid #000;
-    border-top: 2px solid #000;
-    border-left: none;
-    border-bottom: none;
-}
-
-/* Esquinas inferiores (igual que las superiores) */
-.corner-bl {
-    bottom: 0;
-    left: 0;
-    border-left: 2px solid #000;
-    border-bottom: 2px solid #000;
-    border-top: none;
-    border-right: none;
-}
-
-.corner-br {
-    bottom: 0;
-    right: 0;
-    border-right: 2px solid #000;
-    border-bottom: 2px solid #000;
-    border-top: none;
-    border-left: none;
-}
-
-/* Etiquetas y texto */
 .factura-label {
     position: absolute;
-    top: -36px; /* ⬅️ Antes -40px */
-    right: 0;
-    font-size: 24px; /* ⬅️ Antes 26px */
-    letter-spacing: 6px;
-    color: #003366;
+    top: -45px;
+    right: 10px;
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    color: #0070c0;
+    text-transform: uppercase;
 }
 
 .cliente-nombre {
-    font-size: 14px;
-    font-weight: bold;
-    text-align: left;
-    border-left: 2px solid #000;
-    padding-left: 12px;
-    margin-bottom: 4px; /* ⬅️ Antes 5px */
+    font-size: 15px;
+    font-weight: 700;
+    color: #1a202c;
+    margin-bottom: 8px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #0070c0;
 }
 
 .cliente-cif {
-    font-size: 14px;
-    text-align: left;
-    border-left: 2px solid #000;
-    padding-left: 12px;
-    margin-top: auto;
-}
-
-.cliente {
-    font-size: 14px;
-    text-align: left;
-    border-left: 2px solid #000;
-    padding-left: 12px;
-    margin-top: 40px; /* ⬅️ Antes 50px */
+    font-size: 13px;
+    color: #4a5568;
+    margin: 4px 0;
+    line-height: 1.5;
 }
 
 .info-factura {
     display: flex;
-    gap: 25px; /* ⬅️ Antes 30px */
-    margin: 25px 0 8px 0; /* ⬅️ Antes 30px 0 10px 0 */
+    gap: 20px;
+    margin: 25px 0;
 }
 
 .info-factura table {
     font-size: 14px;
     border-collapse: collapse;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 .info-factura td {
-    border: 1px solid #000;
-    padding: 6px 10px; /* ⬅️ Antes 6px 12px */
-    white-space: nowrap;
+    border: 1px solid #e2e8f0;
+    padding: 10px 16px;
+    background: #ffffff;
+}
+
+.info-factura td:first-child {
+    background: #f8fafc;
+    font-weight: 600;
+    color: #2d3748;
+}
+
+.info-factura td:last-child {
+    font-weight: 600;
+    color: #0070c0;
 }
 
 /* Tabla principal */
@@ -215,34 +182,48 @@ body {
     border-collapse: separate;
     border-spacing: 0;
     width: 100%;
-    border-radius: 12px;
+    border-radius: 10px;
     overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
 }
 
 #facturaTabla thead tr,
 #facturaTabla tbody tr {
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #e2e8f0;
 }
 
 #facturaTabla th,
 #facturaTabla td {
     border: none;
-    padding: 10px 12px;
+    padding: 12px 14px;
+    font-size: 13px;
 }
 
 #facturaTabla thead th {
-    background-color: #3AB54A;
+    background: linear-gradient(135deg, #0070c0 0%, #0056a3 100%);
     color: white;
-    font-weight: 700;
+    font-weight: 600;
     text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 12px;
 }
 
 #facturaTabla tbody tr:nth-child(odd) {
-    background-color: #f9f9f9;
+    background-color: #f8fafc;
+}
+
+#facturaTabla tbody tr:nth-child(even) {
+    background-color: #ffffff;
 }
 
 #facturaTabla tbody tr:hover {
-    background-color: #e0f0d9;
+    background-color: #e6f2ff;
+    transition: background-color 0.2s ease;
+}
+
+#facturaTabla tbody td {
+    color: #2d3748;
 }
 
 #facturaTabla tfoot {
@@ -253,39 +234,61 @@ body {
 .totales-horizontal {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 20px; /* ⬅️ Antes 25px */
+    margin-top: 25px;
     font-size: 14px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 .totales-horizontal td {
-    border: 1px solid #000;
-    padding: 9px; /* ⬅️ Antes 10px */
+    border: 1px solid #e2e8f0;
+    padding: 12px;
     text-align: center;
 }
 
 .totales-horizontal tr:first-child {
-    background-color: #f2f2f2;
-    font-weight: bold;
+    background: linear-gradient(135deg, #0070c0 0%, #0056a3 100%);
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+}
+
+.totales-horizontal tr:last-child {
+    background-color: #f8fafc;
+    font-weight: 700;
+    color: #0070c0;
+    font-size: 15px;
 }
 
 .nota-iva {
     font-size: 12px;
-    margin-top: 8px; /* ⬅️ Antes 10px */
-    color: #333;
+    margin-top: 15px;
+    color: #718096;
+    font-style: italic;
 }
 
 .forma-pago {
     font-size: 13px;
-    margin-top: 25px; /* ⬅️ Antes 30px */
+    margin-top: 30px;
+    padding: 15px;
+    background: #f8fafc;
+    border-left: 4px solid #0070c0;
+    border-radius: 6px;
+    color: #2d3748;
+    line-height: 1.6;
 }
 
 .pie {
     font-size: 11px;
     text-align: center;
     margin-top: auto;
-    padding-top: 10px;
-    border-top: 1px solid #000;
-    color: #555;
+    padding-top: 20px;
+    border-top: 2px solid #e2e8f0;
+    color: #718096;
+    line-height: 1.6;
 }
 
 @media print {
@@ -295,115 +298,128 @@ body {
     }
 
     #facturaTabla thead th {
-        background-color: #3AB54A !important;
+        background: linear-gradient(135deg, #0070c0 0%, #0056a3 100%) !important;
         color: white !important;
     }
 
     #facturaTabla tbody tr:nth-child(odd) {
-        background-color: #f9f9f9 !important;
+        background-color: #f8fafc !important;
+    }
+
+    #facturaTabla tbody tr:nth-child(even) {
+        background-color: #ffffff !important;
     }
 
     #facturaTabla tbody tr:hover {
-        background-color: #e0f0d9 !important;
+        background-color: #e6f2ff !important;
     }
 
     .factura {
         box-shadow: none !important;
-       border: 0px solid #fcfcfcff !important; 
+        border: none !important;
+        border-radius: 0 !important;
     }
 
-    .factura-titulo::before,
-    .factura-titulo::after,
-    .corner-bl,
-    .corner-br {
-        background: none !important;
+    .totales-horizontal tr:first-child {
+        background: linear-gradient(135deg, #0070c0 0%, #0056a3 100%) !important;
+        color: white !important;
     }
 }
 
 #suplidosTabla {
-    font-size: 0.85rem; /* Letra más pequeña */
-    border: none;       /* Sin borde general */
+    font-size: 13px;
+    border: none;
     background: transparent;
+    margin-top: 15px;
 }
 
 #suplidosTabla th,
 #suplidosTabla td {
-    padding: 4px 8px;       /* Menos espacio interior */
-    border: none;           /* Quitar líneas de celdas */
+    padding: 8px 10px;
+    border: none;
     background: transparent;
 }
 
 #suplidosTabla thead,
 #suplidosTabla tfoot {
-    display: none;          /* Ocultar cabecera y pie si no los necesitas */
+    display: none;
 }
 
 #suplidosTabla tr:hover {
-    background-color: transparent !important; /* Evita el hover llamativo */
+    background-color: transparent !important;
 }
 
+#resumenSuplidosTabla {
+    margin-top: 15px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
 
-/* APARTADO COMPRIMIR BODY */
+#resumenSuplidosTabla th {
+    background: linear-gradient(135deg, #0070c0 0%, #0056a3 100%);
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    padding: 12px;
+}
 
-/* --- Compactación general --- */
+#resumenSuplidosTabla td {
+    background: #f8fafc;
+    font-weight: 700;
+    color: #0070c0;
+    font-size: 15px;
+    padding: 12px;
+    text-align: center;
+}
 
-
-/* Evitar márgenes por defecto del navegador */
+/* --- Compactación para impresión --- */
 @page {
     margin: 5mm !important;
 }
 
-/* --- Compactar header --- */
-.header {
-    margin: 0 !important;
-    padding: 0 !important;
-}
-.header p {
-    margin: 0 !important;
-    line-height: 1.1 !important;
-}
+@media print {
+    .header {
+        margin: 0 !important;
+        padding-bottom: 15px !important;
+    }
+    
+    .header p {
+        margin: 0 !important;
+        line-height: 1.3 !important;
+    }
 
-/* --- Reducir espacio entre tablas --- */
-table {
-    margin: 0 !important;
-}
-table td, table th {
-    padding: 2px 4px !important;
-}
+    table {
+        margin: 0 !important;
+    }
+    
+    table td, table th {
+        padding: 6px 8px !important;
+    }
 
-/* --- Info factura muy compacta --- */
-.info-factura table td {
-    padding: 1px 4px !important;
-}
+    .info-factura table td {
+        padding: 8px 12px !important;
+    }
 
-/* --- Totales --- */
-.totales-horizontal td {
-    padding: 2px 3px !important;
-}
+    .totales-horizontal td {
+        padding: 8px !important;
+    }
 
-/* --- Suplidos --- */
-.suplidosContent h5 {
-    margin: 5px 0 2px 0 !important;
-}
-.suplidosContent .table-responsive {
-    margin-top: 0 !important;
-}
+    .suplidosContent h5 {
+        margin: 10px 0 5px 0 !important;
+    }
 
-/* --- Texto inferior --- */
-.forma-pago {
-    margin: 2px 0 !important;
-    line-height: 1.1 !important;
-}
+    .forma-pago {
+        margin: 15px 0 !important;
+        padding: 10px !important;
+    }
 
-.pie {
-    margin-top: 5px !important;
-    line-height: 1.1 !important;
-}
-
-/* --- Quitar espacio entre secciones --- */
-.row, .col-12, .table-responsive {
-    margin: 0 !important;
-    padding: 0 !important;
+    .pie {
+        margin-top: 15px !important;
+        padding-top: 15px !important;
+    }
 }
 
 
@@ -431,41 +447,37 @@ table td, table th {
                 </p>
             </div>
            <div class="factura-titulo">
-            <div class="factura-label">FACTURA</div>
+            <div class="factura-label"><?php echo ($tipoFactura == 1) ? 'PROFORMA' : 'FACTURA'; ?></div>
             <?php if (!empty($nombreCabecera)): ?>
                 <div class="cliente-nombre"><label id="nombreCliente"><?php echo $nombreCabecera; ?></label></div>
             <?php endif; ?>
 
             <?php if (!empty($cifCabecera)): ?>
-                <div class="cliente-cif"><label id="cifCliente">CIF/NIF: <?php echo $cifCabecera; ?></label></div>
+                <div class="cliente-cif"><label id="cifCliente"><strong>CIF/NIF:</strong> <?php echo $cifCabecera; ?></label></div>
             <?php endif; ?>
 
             <?php if (!empty($direcCabecera) || !empty($cpCabecera) || !empty($paisCabecera)): ?>
                 <div class="cliente-cif"><label id="direc">
-                    Dirección:
+                    <strong>Dirección:</strong>
                     <?php echo $direcCabecera . ' ' . $cpCabecera . ' ' . $paisCabecera; ?>
                 </label></div>
             <?php endif; ?>
 
             <?php if (!empty($correoCabecera)): ?>
-                <div class="cliente-cif"><label id="correo">Email: <?php echo $correoCabecera; ?></label></div>
+                <div class="cliente-cif"><label id="correo"><strong>Email:</strong> <?php echo $correoCabecera; ?></label></div>
             <?php endif; ?>
 
             <?php if (!empty($movilCabecera) || !empty($tefCabecera)): ?>
                 <div class="cliente-cif">
                     <label id="movil">
-                        <?php if (!empty($movilCabecera)) echo 'Móvil: ' . $movilCabecera; ?>
-                        <?php if (!empty($tefCabecera)) echo ' Tel: ' . $tefCabecera; ?>
+                        <?php if (!empty($movilCabecera)) echo '<strong>Móvil:</strong> ' . $movilCabecera; ?>
+                        <?php if (!empty($tefCabecera)) echo ' <strong>Tel:</strong> ' . $tefCabecera; ?>
                     </label>
                 </div>
             <?php endif; ?>
-
-            
-            <div class="corner-bl"></div>
-            <div class="corner-br"></div>
         </div>
 
-        </div> <!-- ✅ Cierre correcto de .header -->
+        </div>
 
         <div class="info-factura">
             <table>

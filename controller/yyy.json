@@ -1,1 +1,1 @@
-"SELECT * FROM `factura_contenido` WHERE `numFactura` = 21"
+"SELECT * FROM `factura_contenido` WHERE `numFactura` = 22"
