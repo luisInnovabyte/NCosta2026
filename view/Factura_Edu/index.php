@@ -42,7 +42,7 @@ $json_string = json_encode('as');
     $file = 'DTSFactura.json';
     file_put_contents($file, $json_string);
 
-    $idPie =  $datosproforma[0]['nombreCabecera'];
+    $idPie =  $datosproforma[0]['idPie'];
 
     $nombreCabecera =  $datosproforma[0]['nombreCabecera'];
     $cifCabecera =  $datosproforma[0]['cifCabecera'];

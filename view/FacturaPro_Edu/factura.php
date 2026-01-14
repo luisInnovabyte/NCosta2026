@@ -73,7 +73,7 @@ body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
     min-height: 100vh;
 }
 @media print {
@@ -127,9 +127,9 @@ body {
     width: 48%;
     padding: 25px;
     position: relative;
-    background: linear-gradient(135deg, #495057 0%, #6c757d 100%);
+    background: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%);
     border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(73, 80, 87, 0.25);
+    box-shadow: 0 8px 20px rgba(59, 130, 246, 0.25);
     display: flex;
     flex-direction: column;
     min-height: 140px;
@@ -158,7 +158,7 @@ body {
     font-size: 28px;
     font-weight: 700;
     letter-spacing: 8px;
-    color: #495057;
+    color: #3b82f6;
     text-transform: uppercase;
 }
 
@@ -213,7 +213,7 @@ body {
 }
 
 .info-factura tr:first-child td {
-    background: linear-gradient(135deg, #6c757d 0%, #868e96 100%);
+    background: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%);
     color: white;
     font-weight: 600;
 }
@@ -248,7 +248,7 @@ body {
 }
 
 #facturaTabla thead th {
-    background: linear-gradient(135deg, #6c757d 0%, #868e96 100%);
+    background: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%);
     color: white;
     font-weight: 600;
     text-transform: uppercase;
@@ -269,7 +269,7 @@ body {
 }
 
 #facturaTabla tbody tr:hover {
-    background-color: #ede9fe !important;
+    background-color: #dbeafe !important;
     transform: scale(1.01);
 }
 
@@ -297,7 +297,7 @@ body {
 }
 
 .totales-horizontal tr:first-child {
-    background: linear-gradient(135deg, #495057 0%, #6c757d 100%);
+    background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
     color: white;
     font-weight: 700;
     text-transform: uppercase;
@@ -359,7 +359,7 @@ body {
     }
 
     #facturaTabla thead th {
-        background: linear-gradient(135deg, #6c757d 0%, #868e96 100%) !important;
+        background: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%) !important;
         color: white !important;
     }
 
@@ -368,7 +368,7 @@ body {
     }
 
     #facturaTabla tbody tr:hover {
-        background-color: #e9ecef !important;
+        background-color: #dbeafe !important;
     }
 
     .factura {
@@ -377,17 +377,17 @@ body {
     }
 
     .factura-titulo {
-        background: linear-gradient(135deg, #495057 0%, #6c757d 100%) !important;
+        background: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%) !important;
         box-shadow: none !important;
     }
 
     .totales-horizontal tr:first-child {
-        background: linear-gradient(135deg, #495057 0%, #6c757d 100%) !important;
+        background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%) !important;
         color: white !important;
     }
 
     .info-factura tr:first-child td {
-        background: linear-gradient(135deg, #6c757d 0%, #868e96 100%) !important;
+        background: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%) !important;
         color: white !important;
     }
 }
@@ -424,7 +424,7 @@ body {
 }
 
 #resumenSuplidosTabla thead tr {
-    background: linear-gradient(135deg, #6c757d 0%, #868e96 100%);
+    background: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%);
     color: white;
 }
 

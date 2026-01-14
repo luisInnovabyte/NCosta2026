@@ -49,6 +49,35 @@ $(document).ready(function() {
 
     comprobarProformaExistente();
 
+    // Función para validar campos requeridos y habilitar/deshabilitar botón de generar proforma
+    function validarCamposFacturacion() {
+        var direccion = $("#direcFact").val().trim();
+        var cpPoblacion = $("#cpFact").val().trim();
+        var boton = $("#guardarFacturaBoton");
+        var mensaje = $("#mensajeValidacionFactura");
+
+        // Solo validar si no existe proforma (existeProforma == "0")
+        if (existeProforma === "0") {
+            if (direccion !== "" && cpPoblacion !== "") {
+                boton.prop("disabled", false);
+                boton.removeClass("btn-secondary").addClass("btn-success");
+                mensaje.hide(); // Ocultar mensaje cuando los campos están completos
+            } else {
+                boton.prop("disabled", true);
+                boton.removeClass("btn-success").addClass("btn-secondary");
+                mensaje.show(); // Mostrar mensaje cuando faltan campos
+            }
+        }
+    }
+
+    // Event listeners para validar en tiempo real
+    $("#direcFact, #cpFact").on("input", function() {
+        validarCamposFacturacion();
+    });
+
+    // Validación inicial al cargar la página
+    validarCamposFacturacion();
+
 
     let idLlegada = $('#idLlegada').val();
 
@@ -141,6 +170,8 @@ $(document).ready(function() {
                 $('#cpFact').val(alumnos[0].cpCasaPrescripcion);
                 $('#paisFact').val(alumnos[0].paisCasaPrescripcion);
                 $('#nombreAlumno').html("<a href='../../view/Perfil/?tokenUsuario=" + alumnos[0].tokenPrescriptores + "'  target='_blank'>" + alumnos[0].nomPrescripcion + " " + alumnos[0].apePrescripcion + "</a>");
+                // Validar campos después de cargar
+                validarCamposFacturacion();
             });
 
         } else if (valorSeleccionado === '2') {
@@ -156,6 +187,8 @@ $(document).ready(function() {
                 $('#correoFact').val(agente[0].correoAgente);
                 $('#cpFact').val('');
                 $('#paisFact').val('');
+                // Validar campos después de cargar
+                validarCamposFacturacion();
             });
         } else if (valorSeleccionado === '3') {
             console.log('Se ha seleccionado Grupo');
@@ -167,6 +200,8 @@ $(document).ready(function() {
                 $('#correoFact').val('');
                 $('#cpFact').val('');
                 $('#paisFact').val('');
+                // Validar campos después de cargar
+                validarCamposFacturacion();
         }
     }
     idDepartamento = $('#idDepartamento').val();

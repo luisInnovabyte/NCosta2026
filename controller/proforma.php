@@ -93,17 +93,17 @@ switch ($_GET["op"]) {
             $descuento = floatval(($row["descuentoFacturaContenido"] === '' || $row["descuentoFacturaContenido"] === null) ? 0 : $row["descuentoFacturaContenido"]);
 
                 
-            // Paso 1: sumar el IVA
-            $importe_con_iva = $importe + ($importe * $iva / 100);
+            // Paso 1: aplicar el descuento primero para obtener la base imponible
+            $base_imponible = $importe - ($importe * $descuento / 100);
 
-            // Paso 2: aplicar el descuento
-            $total = $importe_con_iva - ($importe_con_iva * $descuento / 100);
+            // Paso 2: sumar el IVA sobre la base imponible
+            $total = $base_imponible + ($base_imponible * $iva / 100);
 
             // Mostrar los valores
             $sub_array[] = $descuento;
-            $sub_array[] = number_format($importe, 2, ',', '.'); // 2.930,50
-            $sub_array[] = $iva; // si quieres, también puedes formatearlo
-            $sub_array[] = number_format($total, 2, ',', '.');   // 3.410,00
+            $sub_array[] = number_format($base_imponible, 2, ',', '.'); // Base imponible con descuento aplicado
+            $sub_array[] = $iva;
+            $sub_array[] = number_format($total, 2, ',', '.');   // Total con IVA sobre base imponible
             if ($existeProforma == 1) {
                 $sub_array[] = '<button type="button" onClick="cargarElementoTarifa(' .  $row['idContenidoFactura']. ')" id="' . $row["idContenidoFactura"] . '" class="btn btn-primary btn-icon" data-placement="top" title="Editar Tarifa" disabled><div><i class="fa fa-edit"></i></div></button> 
                 <button type="button" onClick="eliminarTarifa(' . $row["idContenidoFactura"] . ');"  id="' . $row["idContenidoFactura"] . '" class="btn btn-danger btn-icon mt-1 mt-sm-0" data-toggle="tooltip-primary" data-placement="top" title="Eliminar Tarifa" disabled><div><i class="fa-solid fa-xmark"></i></div></button>';

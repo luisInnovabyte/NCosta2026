@@ -529,7 +529,7 @@
                                                 <input type="text" id="direcFact" class="form-control" style="">
                                             </div>
                                             <div class="mb-2">
-                                                <label class="fw-bold">CP:</label>
+                                                <label class="fw-bold">CP-Población:</label>
                                                 <input type="text" id="cpFact" class="form-control" style="">
                                             </div>
                                             <div class="mb-2">
@@ -764,9 +764,15 @@
 
                                             <div class="text-center my-3">
                                                 <?php if ($existeProforma == 0): ?>
-                                                    <button id="guardarFacturaBoton" class="btn btn-success">
-                                                        <i class="fa-solid fa-check-double me-2"></i> GENERAR FACTURA PROFORMA
-                                                    </button>
+                                                    <div>
+                                                        <button id="guardarFacturaBoton" class="btn btn-secondary" disabled>
+                                                            <i class="fa-solid fa-check-double me-2"></i> GENERAR FACTURA PROFORMA
+                                                        </button>
+                                                    </div>
+                                                    <div id="mensajeValidacionFactura" class="alert alert-warning border-0 mt-3 mx-auto" style="max-width: 500px;">
+                                                        <i class="bx bx-info-circle me-2"></i>
+                                                        <small><strong>Campos obligatorios:</strong> Debe completar la <strong>Dirección</strong> y <strong>CP-Población</strong> para generar la factura proforma.</small>
+                                                    </div>
                                                 <?php elseif ($existeProforma == 1): ?>
                                                     <div style="background-color: #fdf6f0; border: 2px dashed #d4a373; padding: 20px; border-radius: 12px; font-family: Georgia, serif; color: #5a3e36; max-width: 600px; margin: 30px auto; text-align: center;">
                                                         <h4 style="color: #b08968;">Debe abonar la factura Proforma actual para generar nueva factura Proforma</h4>
@@ -1019,6 +1025,12 @@
                                     <i class="bx bx-info-circle text-warning me-1"></i>
                                     Al hacer clic en este botón, se desplegará un cuadro de tarifas donde podrá seleccionar la tarifa deseada del listado disponible.
                                 </p>
+                                <div class="alert alert-info border-0 ms-3 mt-2">
+                                    <i class="bx bx-info-circle me-2"></i>
+                                    <strong>Nota sobre descuentos:</strong> Al añadir un descuento en la zona de "Añadir Concepto", 
+                                    el campo <strong>"Total (€)"</strong> mostrará el importe de la tarifa <strong>sin aplicar el descuento</strong>. 
+                                    El importe final con el descuento aplicado se reflejará automáticamente en la tabla anexa cuando se incorpore el concepto a ella.
+                                </div>
                             </li>
                             <li class="mb-3">
                                 <button class="btn btn-success btn-sm" disabled><i class="bx bx-save"></i> Guardar Tarifa</button>

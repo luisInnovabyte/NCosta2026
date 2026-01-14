@@ -1138,7 +1138,6 @@ $(document).ready(function() {
         }
    
         function realizarAbonoProformaIndex(idPie, numFactura) {
-            alert(idPie)
             // Cerrar el modal de Bootstrap si está abierto
             $('#buscar-facturas-modal').modal('hide'); // 👈 Asegúrate de que el ID es correcto
             idDepartamento = $('#idDepartamento').val();
