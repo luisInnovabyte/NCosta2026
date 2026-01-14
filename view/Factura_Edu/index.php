@@ -632,9 +632,10 @@ $json_string = json_encode('as');
                                         <br>
                                         <div id="enviarCorreoAlum"></div> <br>
                                         <?php if ($existeFacturaReal == 0): ?>
-                                            <button type="button" class="btn btn-danger btn-icon" data-placement="top" title="Abonar Factura"  onclick="realizarAbonoProformaIndex('<?php echo $idPie; ?>','<?php echo $numeroFactura;?>')" ><div> Abonar Proformas</div></button>
+                                            <button type="button" class="btn btn-danger btn-icon" data-placement="top" title="Abonar Factura"  
+                                            onclick="realizarAbonoProformaIndex('<?php echo $idPie; ?>','<?php echo $numeroFactura;?>')" ><div> Abonar Proforma</div></button>
                                         <?php else: ?>
-                                            <button type="button" class="btn btn-secondary btn-icon" disabled><div> Abonar Proformas</div></button>
+                                            <button type="button" class="btn btn-secondary btn-icon" disabled><div> Abonar Proforma</div></button>
                                         <?php endif; ?>
 
                                     </div>
