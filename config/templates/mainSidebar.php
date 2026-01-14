@@ -109,7 +109,19 @@ $avatarRol = $avatarUsuario[$rolUsuarioMenu] ?? ''; */
 
         <?php if ($_SESSION['usu_rol'] == 1) { ?>
 
-          <li class="menu-label">Escuela de Idiomas</li>
+
+
+
+
+
+        <li class="menu-label">Escuela de Idiomas</li>
+
+
+
+
+          <!-- ========================================================= -->
+          <!--                      INTERESADOS                          -->
+          <!-- ========================================================= -->
           <li>
             <a href="../../view/Interesados_Edu/">
               <div class="parent-icon"><span class="material-symbols-outlined">person_pin</span>
@@ -118,15 +130,10 @@ $avatarRol = $avatarUsuario[$rolUsuarioMenu] ?? ''; */
             </a>
           </li>
 
-          <!-- <li>
-            <a href="../../view/listado_criticos_llegadas/">
-              <div class="parent-icon"><span class="material-symbols-outlined">person_pin</span>
-              </div>
-              <div class="menu-title">Críticos</div>
-            </a>
-          </li> -->
           
-
+          <!-- ========================================================= -->
+          <!--                   CONTROL LLEGADAS                        -->
+          <!-- ========================================================= -->
           <li>
             <a href="javascript:;" class="has-arrow">
               <div class="parent-icon"><span class="material-symbols-outlined">school</span>
@@ -138,26 +145,34 @@ $avatarRol = $avatarUsuario[$rolUsuarioMenu] ?? ''; */
             <li> <a href="../../view/listado_transfer/"><span class="material-symbols-outlined">menu_book</span>Transfer </a></li>
             </ul>
           </li> 
-
-
-
-
-          <!-- <li>
-            <a href="../../view/ListadoProforma/">
-              <div class="parent-icon"><span class="material-symbols-outlined">list_alt</span>
+          
+          
+          <!-- ========================================================= -->
+          <!--                        FACTURACION                        -->
+          <!-- ========================================================= -->
+          
+          <li>
+            <a href="javascript:;" class="has-arrow">
+              <div class="parent-icon">
+                <span class="material-symbols-outlined">list_alt</span>
               </div>
-              <div class="menu-title">Facturación </div>
+              <div class="menu-title">Facturación</div>
             </a>
-          </li> -->
-          <!-- <li>
-            <a href="../../view/TestDeNivel_Edu/">
-              <div class="parent-icon"><span class="material-symbols-outlined">quiz</span>
-              </div>
-              <div class="menu-title">Test de Nivel  </div>
-            </a>
-          </li> -->
-
-
+            <ul>
+              <li>
+                <a href="../../view/MntFacturacion/">
+                  <span class="material-symbols-outlined">receipt_long</span>
+                  Información Facturación
+                </a>
+              </li>
+              <li>
+                <a href="../../view/MntFacturacion/sinFactura.php">
+                  <span class="material-symbols-outlined">request_quote</span>
+                  Proformas sin Factura definitiva
+                </a>
+              </li>
+            </ul>
+          </li>
 
           <li>
 
@@ -257,7 +272,7 @@ $avatarRol = $avatarUsuario[$rolUsuarioMenu] ?? ''; */
             </a>
           </li>
           -->
-          <li>
+          <!-- <li>
             <a href="javascript:;" class="has-arrow">
               <div class="parent-icon">
                 <span class="material-symbols-outlined">list_alt</span>
@@ -277,9 +292,8 @@ $avatarRol = $avatarUsuario[$rolUsuarioMenu] ?? ''; */
                   Gestión Proforma sin Factura
                 </a>
               </li>
-              <!-- Agrega más ítems aquí según necesites -->
             </ul>
-          </li>
+          </li> -->
 
 
           <li>

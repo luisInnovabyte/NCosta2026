@@ -70,14 +70,14 @@
     <meta charset="UTF-8">
     <title>Factura Costa de Valencia</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 * {
     box-sizing: border-box;
 }
 
 body {
-    font-family: 'Merriweather', serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     margin: 0;
     padding: 0;
     background: #f8f9fa;
@@ -85,12 +85,12 @@ body {
 
 .factura {
     width: 850px;
-    min-height: 980px; /* ⬅️ Antes 1160px */
-    margin: 30px auto;  /* ⬅️ Antes 40px */
-    padding: 30px;      /* ⬅️ Antes 40px */
+    min-height: 980px;
+    margin: 40px auto;
+    padding: 45px;
     background: #ffffff;
-    border: 2px solid #0070c0;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.15), 0 0 0 1px rgba(0,0,0,0.05);
     display: flex;
     flex-direction: column;
 }
@@ -98,127 +98,98 @@ body {
 .header {
     display: flex;
     justify-content: space-between;
-    margin-top: 30px; /* ⬅️ Antes 40px */
+    align-items: flex-start;
+    margin-bottom: 40px;
 }
 
 .logo-section {
     max-width: 50%;
     font-size: 13px;
+    color: #64748b;
+    line-height: 1.8;
 }
 
 .logo-section img {
-    height: 60px;
-    margin-bottom: 8px; /* ⬅️ Antes 10px */
+    height: 70px;
+    margin-bottom: 15px;
 }
 
 .factura-titulo {
-    width: 45%;
-    padding: 18px; /* ⬅️ Antes 20px */
+    width: 48%;
+    padding: 25px;
     position: relative;
-    margin-top: 20px; /* ⬅️ Antes 30px */
+    background: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%);
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(59, 130, 246, 0.25);
+    color: white;
     display: flex;
     flex-direction: column;
-    min-height: 130px; /* ⬅️ Antes 160px */
-}
-
-.factura-titulo::before,
-.factura-titulo::after,
-.corner-bl,
-.corner-br {
-    content: '';
-    position: absolute;
-    width: 20px;
-    height: 20px;
-}
-
-/* Esquinas superiores */
-.factura-titulo::before {
-    top: 0;
-    left: 0;
-    border-left: 2px solid #000;
-    border-top: 2px solid #000;
-    border-right: none;
-    border-bottom: none;
-}
-
-.factura-titulo::after {
-    top: 0;
-    right: 0;
-    border-right: 2px solid #000;
-    border-top: 2px solid #000;
-    border-left: none;
-    border-bottom: none;
-}
-
-/* Esquinas inferiores (igual que las superiores) */
-.corner-bl {
-    bottom: 0;
-    left: 0;
-    border-left: 2px solid #000;
-    border-bottom: 2px solid #000;
-    border-top: none;
-    border-right: none;
-}
-
-.corner-br {
-    bottom: 0;
-    right: 0;
-    border-right: 2px solid #000;
-    border-bottom: 2px solid #000;
-    border-top: none;
-    border-left: none;
+    min-height: 180px;
 }
 
 /* Etiquetas y texto */
 .factura-label {
     position: absolute;
-    top: -36px; /* ⬅️ Antes -40px */
+    top: -45px;
     right: 0;
-    font-size: 24px; /* ⬅️ Antes 26px */
-    letter-spacing: 6px;
-    color: #003366;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: #1e293b;
 }
 
 .cliente-nombre {
-    font-size: 14px;
-    font-weight: bold;
+    font-size: 16px;
+    font-weight: 700;
     text-align: left;
-    border-left: 2px solid #000;
-    padding-left: 12px;
-    margin-bottom: 4px; /* ⬅️ Antes 5px */
+    margin-bottom: 12px;
+    line-height: 1.4;
 }
 
 .cliente-cif {
-    font-size: 14px;
+    font-size: 13px;
     text-align: left;
-    border-left: 2px solid #000;
-    padding-left: 12px;
-    margin-top: auto;
+    line-height: 1.6;
+    opacity: 0.95;
+    margin-bottom: 6px;
 }
 
 .cliente {
-    font-size: 14px;
+    font-size: 13px;
     text-align: left;
-    border-left: 2px solid #000;
-    padding-left: 12px;
-    margin-top: 40px; /* ⬅️ Antes 50px */
+    line-height: 1.6;
+    opacity: 0.95;
 }
 
 .info-factura {
     display: flex;
-    gap: 25px; /* ⬅️ Antes 30px */
-    margin: 25px 0 8px 0; /* ⬅️ Antes 30px 0 10px 0 */
+    gap: 30px;
+    margin: 30px 0;
 }
 
 .info-factura table {
-    font-size: 14px;
-    border-collapse: collapse;
+    font-size: 13px;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.info-factura th {
+    background: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%);
+    color: white;
+    font-weight: 600;
+    padding: 10px 16px;
+    text-align: center;
 }
 
 .info-factura td {
-    border: 1px solid #000;
-    padding: 6px 10px; /* ⬅️ Antes 6px 12px */
+    background: white;
+    border: 1px solid #e2e8f0;
+    padding: 10px 16px;
     white-space: nowrap;
+    text-align: center;
 }
 
 /* Tabla principal */
@@ -228,32 +199,38 @@ body {
     width: 100%;
     border-radius: 12px;
     overflow: hidden;
-}
-
-#facturaTabla thead tr,
-#facturaTabla tbody tr {
-    border-bottom: 1px solid #ddd;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    margin-top: 20px;
 }
 
 #facturaTabla th,
 #facturaTabla td {
     border: none;
-    padding: 10px 12px;
-}
-
-#facturaTabla thead th {
-    background-color: #3AB54A;
-    color: white;
-    font-weight: 700;
+    padding: 14px 16px;
     text-align: center;
 }
 
+#facturaTabla thead th {
+    background: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%);
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+}
+
 #facturaTabla tbody tr:nth-child(odd) {
-    background-color: #f9f9f9;
+    background-color: #f8fafc;
+}
+
+#facturaTabla tbody tr:nth-child(even) {
+    background-color: white;
 }
 
 #facturaTabla tbody tr:hover {
-    background-color: #e0f0d9;
+    background-color: #dbeafe !important;
+    transform: scale(1.01);
+    transition: all 0.2s ease;
 }
 
 #facturaTabla tfoot {
@@ -263,71 +240,94 @@ body {
 /* Totales */
 .totales-horizontal {
     width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px; /* ⬅️ Antes 25px */
-    font-size: 14px;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-top: 30px;
+    font-size: 15px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
 
 .totales-horizontal td {
-    border: 1px solid #000;
-    padding: 9px; /* ⬅️ Antes 10px */
+    border: 1px solid #e2e8f0;
+    padding: 14px 16px;
     text-align: center;
 }
 
 .totales-horizontal tr:first-child {
-    background-color: #f2f2f2;
-    font-weight: bold;
+    background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+}
+
+.totales-horizontal tr:first-child td {
+    border: none;
 }
 
 .nota-iva {
     font-size: 12px;
-    margin-top: 8px; /* ⬅️ Antes 10px */
-    color: #333;
+    margin-top: 15px;
+    color: #64748b;
+    font-style: italic;
 }
 
 .forma-pago {
     font-size: 13px;
-    margin-top: 25px; /* ⬅️ Antes 30px */
+    margin-top: 30px;
+    line-height: 1.8;
+    color: #1e293b;
 }
 
 .pie {
     font-size: 11px;
     text-align: center;
     margin-top: auto;
-    padding-top: 10px;
-    border-top: 1px solid #000;
-    color: #555;
+    padding-top: 20px;
+    border-top: 2px solid #e2e8f0;
+    color: #64748b;
+    line-height: 1.6;
 }
 
 @media print {
     body {
         -webkit-print-color-adjust: exact !important;
         print-color-adjust: exact !important;
-    }
-
-    #facturaTabla thead th {
-        background-color: #3AB54A !important;
-        color: white !important;
-    }
-
-    #facturaTabla tbody tr:nth-child(odd) {
-        background-color: #f9f9f9 !important;
-    }
-
-    #facturaTabla tbody tr:hover {
-        background-color: #e0f0d9 !important;
+        width: 210mm;
+        height: 297mm;
+        margin: 10mm;
     }
 
     .factura {
         box-shadow: none !important;
-        border: 2px solid #0070c0 !important;
+        margin: 0;
+        padding: 30px;
     }
 
-    .factura-titulo::before,
-    .factura-titulo::after,
-    .corner-bl,
-    .corner-br {
-        background: none !important;
+    #facturaTabla thead th {
+        background: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%) !important;
+        color: white !important;
+    }
+
+    #facturaTabla tbody tr:nth-child(odd) {
+        background-color: #f8fafc !important;
+    }
+
+    #facturaTabla tbody tr:nth-child(even) {
+        background-color: white !important;
+    }
+
+    .factura-titulo {
+        background: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%) !important;
+        color: white !important;
+    }
+
+    .totales-horizontal tr:first-child {
+        background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%) !important;
+        color: white !important;
     }
 }
 
@@ -351,6 +351,23 @@ body {
 
 #suplidosTabla tr:hover {
     background-color: transparent !important; /* Evita el hover llamativo */
+}
+
+#resumenSuplidosTabla thead th {
+    background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    padding: 14px 16px;
+    border: none;
+}
+
+#resumenSuplidosTabla tbody td {
+    padding: 14px 16px;
+    background: white;
+    border: 1px solid #e2e8f0;
 }
 
 </style>
@@ -415,32 +432,43 @@ body {
                     </label>
                 </div>
             <?php endif; ?>
-
-            
-            <div class="corner-bl"></div>
-            <div class="corner-br"></div>
         </div>
 
         </div> <!-- ✅ Cierre correcto de .header -->
 
         <div class="info-factura">
-            <table style="width: 100%; text-align: center; border-collapse: collapse;">
-                <tr>
-                    <td><strong>Fecha:</strong></td>
-                    <td><strong>Número:</strong></td>
-                    <td><strong>Abono:</strong></td>
-                    <td><strong>
-                        <?php 
-                            echo ($realOProforma == 1) ? 'Factura Referenciada:' : 'Proforma Referenciada:'; 
-                        ?>
-                    </strong></td>
-                </tr>
-                <tr>
-                    <td><label id="fechaFactura"><?php echo $fechaFactura; ?></label></td>
-                    <td><label id="numeroFactura"><?php echo $numeroFactura; ?></label></td>
-                    <td><label id="numeroAbono"><?php echo $numeroAbono; ?></label></td>
-                    <td><label id="facturaReferenciada"><?php echo $facturaReferenciada; ?></label></td>
-                </tr>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Fecha</th>
+                        <th>Número</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><label id="fechaFactura"><?php echo $fechaFactura; ?></label></td>
+                        <td><label id="numeroFactura"><?php echo $numeroFactura; ?></label></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Abono</th>
+                        <th>
+                            <?php 
+                                echo ($realOProforma == 1) ? 'Factura Referenciada' : 'Proforma Referenciada'; 
+                            ?>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><label id="numeroAbono"><?php echo $numeroAbono; ?></label></td>
+                        <td><label id="facturaReferenciada"><?php echo $facturaReferenciada; ?></label></td>
+                    </tr>
+                </tbody>
             </table>
         </div>
 
@@ -527,7 +555,7 @@ body {
                     ?>
                 </div>
             </div>
-              <table class="table table-bordered" id="resumenSuplidosTabla">
+              <table class="totales-horizontal" id="resumenSuplidosTabla" style="margin-top: 20px;">
             <thead>
                 <tr>
                     <th>Total con IVA</th>
