@@ -849,7 +849,7 @@
 
                                         <div class="d-flex justify-content-center">
                                             <button id="abrirModalFacturas" onclick="abrirModalFacturas()" class="btn  btn-primary btn-lg px-5 shadow-sm m-1">
-                                                Gestionar Factura Pro
+                                                Gestionar Factura Proforma
                                             </button>
 
                                         </div>

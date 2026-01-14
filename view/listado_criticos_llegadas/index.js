@@ -412,6 +412,8 @@ $(document).ready(function () {
                                     <strong>Total General:</strong> ${parseFloat(d.total_general || 0).toFixed(2)} €<br>
                                     <strong>Matriculaciones:</strong> ${parseFloat(d.total_matriculaciones || 0).toFixed(2)} €<br>
                                     <strong>Alojamientos:</strong> ${parseFloat(d.total_alojamientos || 0).toFixed(2)} €<br>
+                                    <strong>Transfer Llegada:</strong> ${parseFloat(d.total_transfer_llegada || 0).toFixed(2)} €<br>
+                                    <strong>Transfer Regreso:</strong> ${parseFloat(d.total_transfer_regreso || 0).toFixed(2)} €<br>
                                     <strong>Suplidos:</strong> ${parseFloat(d.total_suplidos || 0).toFixed(2)} €
                                 </td>
                             </tr>

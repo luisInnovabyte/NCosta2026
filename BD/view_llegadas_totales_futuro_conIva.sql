@@ -97,38 +97,6 @@ SELECT
         AND COALESCE(al.estAlojamientos_llegadas, 1) != 0
     ), 0) AS total_alojamientos,
     
-    -- Total de Transfer Llegada (con IVA, sin descuento)
-    -- Fórmula: Total = Precio + (Precio * IVA/100)
-    COALESCE((
-        CASE 
-            WHEN l.importetariotallegadaTransfer_llegadas IS NOT NULL 
-                 AND l.importetariotallegadaTransfer_llegadas != '' 
-                 AND l.importetariotallegadaTransfer_llegadas != '0' 
-            THEN 
-                CAST(REPLACE(REPLACE(REPLACE(l.importetariotallegadaTransfer_llegadas, '€', ''), '.', ''), ',', '.') AS DECIMAL(10,2))
-                +
-                (CAST(REPLACE(REPLACE(REPLACE(l.importetariotallegadaTransfer_llegadas, '€', ''), '.', ''), ',', '.') AS DECIMAL(10,2))
-                 * COALESCE(l.ivatariotallegadaTransfer_llegadas, 0) / 100)
-            ELSE 0
-        END
-    ), 0) AS total_transfer_llegada,
-    
-    -- Total de Transfer Regreso (con IVA, sin descuento)
-    -- Fórmula: Total = Precio + (Precio * IVA/100)
-    COALESCE((
-        CASE 
-            WHEN l.importetariotalregresoTransfer_llegadas IS NOT NULL 
-                 AND l.importetariotalregresoTransfer_llegadas != '' 
-                 AND l.importetariotalregresoTransfer_llegadas != '0' 
-            THEN 
-                CAST(REPLACE(REPLACE(REPLACE(l.importetariotalregresoTransfer_llegadas, '€', ''), '.', ''), ',', '.') AS DECIMAL(10,2))
-                +
-                (CAST(REPLACE(REPLACE(REPLACE(l.importetariotalregresoTransfer_llegadas, '€', ''), '.', ''), ',', '.') AS DECIMAL(10,2))
-                 * COALESCE(l.ivatariotalregresoTransfer_llegadas, 0) / 100)
-            ELSE 0
-        END
-    ), 0) AS total_transfer_regreso,
-    
     -- Total de suplidos
     COALESCE((
         SELECT SUM(
@@ -153,7 +121,7 @@ SELECT
         WHERE pa.idLlegada_pagoAnticipado = l.id_llegada
     ), 0) AS total_pagos_realizados,
     
-    -- TOTAL GENERAL (con IVA y descuentos) = Matriculaciones + Alojamientos + Transfer Llegada + Transfer Regreso + Suplidos
+    -- TOTAL GENERAL (con IVA y descuentos) = Matriculaciones + Alojamientos + Suplidos
     (
         -- Total matriculaciones con descuento e IVA
         COALESCE((
@@ -186,34 +154,6 @@ SELECT
             FROM tm_alojamientosllegadas_edu al
             WHERE al.idLlegada_alojamientos = l.id_llegada
             AND COALESCE(al.estAlojamientos_llegadas, 1) != 0
-        ), 0) +
-        -- Total transfer llegada (con IVA, sin descuento)
-        COALESCE((
-            CASE 
-                WHEN l.importetariotallegadaTransfer_llegadas IS NOT NULL 
-                     AND l.importetariotallegadaTransfer_llegadas != '' 
-                     AND l.importetariotallegadaTransfer_llegadas != '0' 
-                THEN 
-                    CAST(REPLACE(REPLACE(REPLACE(l.importetariotallegadaTransfer_llegadas, '€', ''), '.', ''), ',', '.') AS DECIMAL(10,2))
-                    +
-                    (CAST(REPLACE(REPLACE(REPLACE(l.importetariotallegadaTransfer_llegadas, '€', ''), '.', ''), ',', '.') AS DECIMAL(10,2))
-                     * COALESCE(l.ivatariotallegadaTransfer_llegadas, 0) / 100)
-                ELSE 0
-            END
-        ), 0) +
-        -- Total transfer regreso (con IVA, sin descuento)
-        COALESCE((
-            CASE 
-                WHEN l.importetariotalregresoTransfer_llegadas IS NOT NULL 
-                     AND l.importetariotalregresoTransfer_llegadas != '' 
-                     AND l.importetariotalregresoTransfer_llegadas != '0' 
-                THEN 
-                    CAST(REPLACE(REPLACE(REPLACE(l.importetariotalregresoTransfer_llegadas, '€', ''), '.', ''), ',', '.') AS DECIMAL(10,2))
-                    +
-                    (CAST(REPLACE(REPLACE(REPLACE(l.importetariotalregresoTransfer_llegadas, '€', ''), '.', ''), ',', '.') AS DECIMAL(10,2))
-                     * COALESCE(l.ivatariotalregresoTransfer_llegadas, 0) / 100)
-                ELSE 0
-            END
         ), 0) +
         -- Total suplidos (sin descuento ni IVA)
         COALESCE((
@@ -262,34 +202,6 @@ SELECT
                 FROM tm_alojamientosllegadas_edu al
                 WHERE al.idLlegada_alojamientos = l.id_llegada
                 AND COALESCE(al.estAlojamientos_llegadas, 1) != 0
-            ), 0) +
-            -- Total transfer llegada (con IVA, sin descuento)
-            COALESCE((
-                CASE 
-                    WHEN l.importetariotallegadaTransfer_llegadas IS NOT NULL 
-                         AND l.importetariotallegadaTransfer_llegadas != '' 
-                         AND l.importetariotallegadaTransfer_llegadas != '0' 
-                    THEN 
-                        CAST(REPLACE(REPLACE(REPLACE(l.importetariotallegadaTransfer_llegadas, '€', ''), '.', ''), ',', '.') AS DECIMAL(10,2))
-                        +
-                        (CAST(REPLACE(REPLACE(REPLACE(l.importetariotallegadaTransfer_llegadas, '€', ''), '.', ''), ',', '.') AS DECIMAL(10,2))
-                         * COALESCE(l.ivatariotallegadaTransfer_llegadas, 0) / 100)
-                    ELSE 0
-                END
-            ), 0) +
-            -- Total transfer regreso (con IVA, sin descuento)
-            COALESCE((
-                CASE 
-                    WHEN l.importetariotalregresoTransfer_llegadas IS NOT NULL 
-                         AND l.importetariotalregresoTransfer_llegadas != '' 
-                         AND l.importetariotalregresoTransfer_llegadas != '0' 
-                    THEN 
-                        CAST(REPLACE(REPLACE(REPLACE(l.importetariotalregresoTransfer_llegadas, '€', ''), '.', ''), ',', '.') AS DECIMAL(10,2))
-                        +
-                        (CAST(REPLACE(REPLACE(REPLACE(l.importetariotalregresoTransfer_llegadas, '€', ''), '.', ''), ',', '.') AS DECIMAL(10,2))
-                         * COALESCE(l.ivatariotalregresoTransfer_llegadas, 0) / 100)
-                    ELSE 0
-                END
             ), 0) +
             -- Total suplidos (sin descuento ni IVA)
             COALESCE((
@@ -351,32 +263,6 @@ SELECT
                 AND COALESCE(al.estAlojamientos_llegadas, 1) != 0
             ), 0) +
             COALESCE((
-                CASE 
-                    WHEN l.importetariotallegadaTransfer_llegadas IS NOT NULL 
-                         AND l.importetariotallegadaTransfer_llegadas != '' 
-                         AND l.importetariotallegadaTransfer_llegadas != '0' 
-                    THEN 
-                        CAST(REPLACE(REPLACE(REPLACE(l.importetariotallegadaTransfer_llegadas, '€', ''), '.', ''), ',', '.') AS DECIMAL(10,2))
-                        +
-                        (CAST(REPLACE(REPLACE(REPLACE(l.importetariotallegadaTransfer_llegadas, '€', ''), '.', ''), ',', '.') AS DECIMAL(10,2))
-                         * COALESCE(l.ivatariotallegadaTransfer_llegadas, 0) / 100)
-                    ELSE 0
-                END
-            ), 0) +
-            COALESCE((
-                CASE 
-                    WHEN l.importetariotalregresoTransfer_llegadas IS NOT NULL 
-                         AND l.importetariotalregresoTransfer_llegadas != '' 
-                         AND l.importetariotalregresoTransfer_llegadas != '0' 
-                    THEN 
-                        CAST(REPLACE(REPLACE(REPLACE(l.importetariotalregresoTransfer_llegadas, '€', ''), '.', ''), ',', '.') AS DECIMAL(10,2))
-                        +
-                        (CAST(REPLACE(REPLACE(REPLACE(l.importetariotalregresoTransfer_llegadas, '€', ''), '.', ''), ',', '.') AS DECIMAL(10,2))
-                         * COALESCE(l.ivatariotalregresoTransfer_llegadas, 0) / 100)
-                    ELSE 0
-                END
-            ), 0) +
-            COALESCE((
                 SELECT SUM(
                     CAST(
                         REPLACE(REPLACE(REPLACE(s.importeSuplido, '€', ''), '.', ''), ',', '.') 
@@ -401,7 +287,7 @@ SELECT
                 ), 0) * 100.0
             ) / 
             (
-                -- Total con descuentos e IVA (incluye transfers)
+                -- Total con descuentos e IVA
                 COALESCE((
                     SELECT SUM(
                         (CAST(REPLACE(REPLACE(REPLACE(m.precioTarifa_matriculacion, '€', ''), '.', ''), ',', '.') AS DECIMAL(10,2)) 
@@ -431,32 +317,6 @@ SELECT
                     FROM tm_alojamientosllegadas_edu al
                     WHERE al.idLlegada_alojamientos = l.id_llegada
                     AND COALESCE(al.estAlojamientos_llegadas, 1) != 0
-                ), 0) +
-                COALESCE((
-                    CASE 
-                        WHEN l.importetariotallegadaTransfer_llegadas IS NOT NULL 
-                             AND l.importetariotallegadaTransfer_llegadas != '' 
-                             AND l.importetariotallegadaTransfer_llegadas != '0' 
-                        THEN 
-                            CAST(REPLACE(REPLACE(REPLACE(l.importetariotallegadaTransfer_llegadas, '€', ''), '.', ''), ',', '.') AS DECIMAL(10,2))
-                            +
-                            (CAST(REPLACE(REPLACE(REPLACE(l.importetariotallegadaTransfer_llegadas, '€', ''), '.', ''), ',', '.') AS DECIMAL(10,2))
-                             * COALESCE(l.ivatariotallegadaTransfer_llegadas, 0) / 100)
-                        ELSE 0
-                    END
-                ), 0) +
-                COALESCE((
-                    CASE 
-                        WHEN l.importetariotalregresoTransfer_llegadas IS NOT NULL 
-                             AND l.importetariotalregresoTransfer_llegadas != '' 
-                             AND l.importetariotalregresoTransfer_llegadas != '0' 
-                        THEN 
-                            CAST(REPLACE(REPLACE(REPLACE(l.importetariotalregresoTransfer_llegadas, '€', ''), '.', ''), ',', '.') AS DECIMAL(10,2))
-                            +
-                            (CAST(REPLACE(REPLACE(REPLACE(l.importetariotalregresoTransfer_llegadas, '€', ''), '.', ''), ',', '.') AS DECIMAL(10,2))
-                             * COALESCE(l.ivatariotalregresoTransfer_llegadas, 0) / 100)
-                        ELSE 0
-                    END
                 ), 0) +
                 COALESCE((
                     SELECT SUM(

@@ -57,7 +57,6 @@ $(document).ready(function() {
 
     function cargarInformacionFactura() {
         var valorSeleccionado = $('.radioQuienFactura:checked').val();
-        console.log('Valor seleccionado:', valorSeleccionado);
 
         idPrescriptor = $('#idPrescriptor').val();
         idAgente = $('#idAgente').val();
@@ -65,10 +64,8 @@ $(document).ready(function() {
         // Ejemplo de lógica según el valor
         if (valorSeleccionado === '1') {
 
-            console.log('Se ha seleccionado Alumno');
             $.post('../../controller/prescriptor.php?op=recogerInfo', { idPrescriptor: idPrescriptor}, function(response) {
                 let alumnos = JSON.parse(response);
-                console.log(alumnos)
                 $('#nombreFacturacion').val(alumnos[0].nomPrescripcion+' '+alumnos[0].apePrescripcion);
                 $('#cifFact').val(alumnos[0].identificadorDocumento);
                 $('#direcFact').val(alumnos[0].ciudadCasaPrescripcion);
@@ -81,10 +78,8 @@ $(document).ready(function() {
             });
 
         } else if (valorSeleccionado === '2') {
-            console.log('Se ha seleccionado Agente');
               $.post('../../controller/prescriptor.php?op=recogerInfoAgente', { idAgente: idAgente}, function(response) {
                 let agente = JSON.parse(response);
-                console.log(agente)
                 $('#nombreFacturacion').val(agente[0].nombreAgente);
                 $('#cifFact').val(agente[0].identificacionFiscal);
                 $('#direcFact').val(agente[0].domicilioFiscal);
@@ -95,7 +90,6 @@ $(document).ready(function() {
                 $('#paisFact').val('');
             });
         } else if (valorSeleccionado === '3') {
-            console.log('Se ha seleccionado Grupo');
                 $('#nombreFacturacion').val($('#nombreGrupoFacturacion').val());
                 $('#cifFact').val('');
                 $('#direcFact').val('');
@@ -109,7 +103,6 @@ $(document).ready(function() {
     idDepartamento = $('#idDepartamento').val();
     $.post('../../controller/prescriptor.php?op=recogerUltimaFactura', { idDepartamento: idDepartamento}, function(response) {
         let datoDepartamento = JSON.parse(response);
-        console.log(datoDepartamento)
         prefijoDepa = datoDepartamento[0].prefijoFactDepa;
         numeroFactura = datoDepartamento[0].numFacturaDepa;
         numeroFacturaActual = Number(datoDepartamento[0].numFacturaDepa) + 1;
@@ -119,7 +112,6 @@ $(document).ready(function() {
     idPrescriptor = $('#idPrescriptor').val();
     $.post('../../controller/prescriptor.php?op=recogerInfo', { idPrescriptor: idPrescriptor}, function(response) {
                 let alumnos = JSON.parse(response);
-                console.log(alumnos)
                 let email = alumnos[0].emailCasaPrescripcion.trim();
                                 
                 if (email) {
@@ -192,7 +184,8 @@ $(document).ready(function() {
             error: function (e) {
                 console.error("Error en la carga de la tabla:", e);
             }
-        }, footerCallback: function (row, data, start, end, display) {
+        }, 
+        footerCallback: function (row, data, start, end, display) {
             let api = this.api();
 
             let total = 0;
@@ -260,20 +253,26 @@ $(document).ready(function() {
                     })
             );
 
-            // === CATEGORÍAS: Cursos, Alojamiento, Otros ===
+            // === CATEGORÍAS: Clasificar por código/nombre del concepto ===
             let totalMatriculacion = 0;
             let totalAlojamiento = 0;
             let totalOtros = 0;
 
             api.rows({ search: 'applied' }).every(function () {
                 let data = this.data();
-                let tipo = $('<div>').html(data[3]).text().trim(); // columna tipo
+                let codigo = data[1].toString().toUpperCase(); // columna código
+                let concepto = data[2].toString().toUpperCase(); // columna concepto
                 let valor = parseFloat(data[7].replace(/[^\d,.-]/g, '').replace(/\./g, '').replace(',', '.')); // columna total €
 
                 if (!isNaN(valor)) {
-                    if (tipo === "Matriculación") totalMatriculacion += valor;
-                    else if (tipo === "Alojamiento") totalAlojamiento += valor;
-                    else totalOtros += valor;
+                    // Clasificar por código o concepto
+                    if (concepto.includes('MATRICULA') || concepto.includes('CURSO') || codigo.includes('MAT') || codigo.includes('CUR')) {
+                        totalMatriculacion += valor;
+                    } else if (concepto.includes('ALOJA') || concepto.includes('RESIDENCIA') || codigo.includes('ALO') || codigo.includes('RES')) {
+                        totalAlojamiento += valor;
+                    } else {
+                        totalOtros += valor;
+                    }
                 }
             });
 
@@ -287,6 +286,47 @@ $(document).ready(function() {
             $('#totalAloja').text(
                 totalOtros.toLocaleString("es-ES", { style: "currency", currency: "EUR" })
             );
+
+            // === NUEVA SECCIÓN: Actualizar desglose en segunda columna ===
+            $('#totalMatriculaciones').text(
+                totalMatriculacion.toLocaleString("es-ES", { style: "currency", currency: "EUR" })
+            );
+            $('#totalAlojamientos').text(
+                totalAlojamiento.toLocaleString("es-ES", { style: "currency", currency: "EUR" })
+            );
+            // Transfers se agrupan en "Otros" junto con otros conceptos
+            $('#totalTransferLlegada').text('0,00 €');
+            $('#totalTransferRegreso').text('0,00 €');
+            $('#totalOtrosConceptos').text(
+                totalOtros.toLocaleString("es-ES", { style: "currency", currency: "EUR" })
+            );
+
+            // === NUEVA SECCIÓN: Indicador de pago ===
+            let porcentajePago = 0;
+            if (total > 0 && !isNaN(yaPagado)) {
+                porcentajePago = (yaPagado / total) * 100;
+            }
+            
+            // Actualizar barra de progreso
+            $('#progressBarPago').css('width', porcentajePago + '%');
+            $('#progressBarPago').attr('aria-valuenow', porcentajePago);
+            $('#porcentajePagado').text(porcentajePago.toFixed(1) + '%');
+            
+            // Cambiar color según porcentaje
+            $('#progressBarPago').removeClass('bg-danger bg-warning bg-info bg-success');
+            if (porcentajePago === 0) {
+                $('#progressBarPago').addClass('bg-danger');
+                $('#estadoPagoTexto').text('Sin pagos registrados');
+            } else if (porcentajePago < 50) {
+                $('#progressBarPago').addClass('bg-danger');
+                $('#estadoPagoTexto').text('Pago inicial realizado');
+            } else if (porcentajePago < 100) {
+                $('#progressBarPago').addClass('bg-warning');
+                $('#estadoPagoTexto').text('Pago parcial realizado');
+            } else {
+                $('#progressBarPago').addClass('bg-success');
+                $('#estadoPagoTexto').text('¡Factura totalmente pagada!');
+            }
         }
     });
     
@@ -460,7 +500,6 @@ $(document).ready(function() {
         $("#tarifas_table tbody").on("click", "tr", function () {
         
         var data = tarifaAloja_table.row(this).data();
-        console.log("data de la fila seleccionada:", data);
 
         // Asignación de campos normales
         $("#codigoIdFactura").val(data[0]);
@@ -478,7 +517,6 @@ $(document).ready(function() {
         }
 
          var tipo =$(data[7]).text();
-           console.log(tipo);
         if(tipo == 'Alojamiento'){
             $('#tipoFacturaContenido').val('2');
 
@@ -600,7 +638,6 @@ $(document).ready(function() {
 
          $.post('../../controller/proforma.php?op=recogerDatosEditar', { idElemento:idElemento}, function(response) {
             let datosTarifa = JSON.parse(response);
-            console.log(datosTarifa)
             codigoFacturaContenido = datosTarifa[0].codigoFacturaContenido;
             conceptoFacturaContenido = datosTarifa[0].conceptoFacturaContenido;
             descuentoFacturaContenido = datosTarifa[0].descuentoFacturaContenido;
@@ -760,9 +797,6 @@ $(document).ready(function() {
                 // Código opcional antes de enviar
             },
             complete: function (data) {
-                
-                        console.log("Datos recibidos:", data);
-
                 // Código opcional al completar
             },
             error: function (e) {
@@ -952,8 +986,6 @@ $(document).ready(function() {
         }
         function imprimirFacturaDatatablePro(idFactura, tipoFactura, idLlegada) {
                         
-                        console.log("Función llamada con:", idFactura, tipoFactura, idLlegada);
-
                         if (!idFactura) {
                             console.warn("idFactura no encontrado en la URL");
                             return;
@@ -977,7 +1009,6 @@ $(document).ready(function() {
 
         }
         function imprimirFacturaDatatableMismaPagina(idFactura, tipoFactura, idLlegada) {
-            console.log("Función llamada con:", idFactura, tipoFactura, idLlegada);
 
             if (!idFactura) {
                 console.warn("idFactura no encontrado en la URL");
@@ -994,7 +1025,6 @@ $(document).ready(function() {
     
     $.post('../../controller/prescriptor.php?op=recogerUltimaFacturaPro', { idDepartamento: idDepartamento}, function(response) {
         let datoDepartamento = JSON.parse(response);
-        console.log(datoDepartamento)
         prefijoDepa = datoDepartamento[0].prefijoFactDepa;
         numeroFactura = datoDepartamento[0].numFacturaDepa;
         numeroFacturaActual = Number(datoDepartamento[0].numFacturaDepa) + 1;
@@ -1068,8 +1098,6 @@ $(document).ready(function() {
 
      function imprimirFacturaDatatable(idFactura, tipoFactura, idLlegada) {
             
-        console.log("Función llamada con:", idFactura, tipoFactura, idLlegada);
-
         if (!idFactura) {
             console.warn("idFactura no encontrado en la URL");
             return;

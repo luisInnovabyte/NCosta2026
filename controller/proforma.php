@@ -195,20 +195,20 @@ switch ($_GET["op"]) {
 
 
                 
-            // Paso 1: sumar el IVA
-            $importe_con_iva = $importe + ($importe * $iva / 100);
+            // Paso 1: Calcular subtotal aplicando el descuento (Base Imponible)
+            $subtotal = $importe - ($importe * $descuento / 100);
 
-            // Paso 2: aplicar el descuento
-            $total = $importe_con_iva - ($importe_con_iva * $descuento / 100);
+            // Paso 2: Calcular el total sumando el IVA al subtotal
+            $total = $subtotal + ($subtotal * $iva / 100);
 
             // Mostrar los valores
             $sub_array[] = $descuento;
             
-            $sub_array[] = number_format($importe, 2, ',', '.'); // 2.930,50
+            $sub_array[] = number_format($subtotal, 2, ',', '.'); // Base Imponible con descuento aplicado
 
             $sub_array[] = $iva;
 
-            $sub_array[] = number_format($total, 2, ',', '.');   // 3.410,00
+            $sub_array[] = number_format($total, 2, ',', '.');   // Total con IVA
      
             $data[] = $sub_array;
         }
@@ -249,14 +249,14 @@ switch ($_GET["op"]) {
             $iva = floatval(($row["ivaFacturaContenido"] === '' || $row["ivaFacturaContenido"] === null) ? 0 : $row["ivaFacturaContenido"]);
             $descuento = floatval(($row["descuentoFacturaContenido"] === '' || $row["descuentoFacturaContenido"] === null) ? 0 : $row["descuentoFacturaContenido"]);
 
-            // Paso 1: sumar el IVA
-            $importe_con_iva = $importe + ($importe * $iva / 100);
+            // Paso 1: Calcular subtotal aplicando el descuento (Base Imponible)
+            $subtotal = $importe - ($importe * $descuento / 100);
 
-            // Paso 2: aplicar el descuento
-            $total = $importe_con_iva - ($importe_con_iva * $descuento / 100);
+            // Paso 2: Calcular el total sumando el IVA al subtotal
+            $total = $subtotal + ($subtotal * $iva / 100);
 
             $sub_array[] = $descuento;
-            $sub_array[] = '- ' . number_format($importe, 2, ',', '.');
+            $sub_array[] = '- ' . number_format($subtotal, 2, ',', '.');
 
             // Mostrar los valores
             $sub_array[] = $iva;
@@ -328,20 +328,20 @@ break;
 
 
                 
-            // Paso 1: sumar el IVA
-            $importe_con_iva = $importe + ($importe * $iva / 100);
+            // Paso 1: Calcular subtotal aplicando el descuento (Base Imponible)
+            $subtotal = $importe - ($importe * $descuento / 100);
 
-            // Paso 2: aplicar el descuento
-            $total = $importe_con_iva - ($importe_con_iva * $descuento / 100);
+            // Paso 2: Calcular el total sumando el IVA al subtotal
+            $total = $subtotal + ($subtotal * $iva / 100);
 
             // Mostrar los valores
             $sub_array[] = $descuento;
             
-            $sub_array[] = number_format($importe, 2, ',', '.'); // 2.930,50
+            $sub_array[] = number_format($subtotal, 2, ',', '.'); // Base Imponible con descuento aplicado
 
             $sub_array[] = $iva;
 
-            $sub_array[] = number_format($total, 2, ',', '.');   // 3.410,00
+            $sub_array[] = number_format($total, 2, ',', '.');   // Total con IVA
      
 
         
@@ -386,20 +386,20 @@ break;
                 $iva = floatval(($row["ivaFacturaContenido"] === '' || $row["ivaFacturaContenido"] === null) ? 0 : $row["ivaFacturaContenido"]);
                 $descuento = floatval(($row["descuentoFacturaContenido"] === '' || $row["descuentoFacturaContenido"] === null) ? 0 : $row["descuentoFacturaContenido"]);
 
-                // Paso 1: sumar el IVA
-                $importe_con_iva = $importe + ($importe * $iva / 100);
+                // Paso 1: Calcular subtotal aplicando el descuento (Base Imponible)
+                $subtotal = $importe - ($importe * $descuento / 100);
 
-                // Paso 2: aplicar el descuento
-                $total = $importe_con_iva - ($importe_con_iva * $descuento / 100);
+                // Paso 2: Calcular el total sumando el IVA al subtotal
+                $total = $subtotal + ($subtotal * $iva / 100);
 
                 // Mostrar los valores
                 $sub_array[] = $descuento;
                 
-                $sub_array[] = number_format($importe, 2, ',', '.'); // 2.930,50
+                $sub_array[] = number_format($subtotal, 2, ',', '.'); // Base Imponible con descuento aplicado
 
                 $sub_array[] = $iva;
 
-                $sub_array[] = number_format($total, 2, ',', '.');   // 3.410,00
+                $sub_array[] = number_format($total, 2, ',', '.');   // Total con IVA
         
                 $data[] = $sub_array;
             }

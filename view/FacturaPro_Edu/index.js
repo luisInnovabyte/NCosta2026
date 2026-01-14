@@ -1415,7 +1415,6 @@ function soloNumerosYComa(selector) {
                     type: 'POST',
                     data: datos,
                     success: function(response) {
-                        console.log('Insertado correctamente:', response);
                         $("#buscar-Llegadas-modal").modal("hide");
 
                     },
@@ -1504,16 +1503,19 @@ function soloNumerosYComa(selector) {
             // ===============================
             // 2. INSERTAR TRANSFER DE LLEGADA
             // ===============================
-            if ($("#t_codigo_llegada").length) {
+            const codigoLlegada = $("#codigotariotallegadaTransfer_llegadas").val().trim();
+            const importeLlegada = $("#importetariotallegadaTransfer_llegadas").val().trim();
+            
+            if (codigoLlegada && importeLlegada && importeLlegada !== '0') {
 
                 const datosTransferLlegada = {
                     idLlegada: idLlegada,
-                    codigoFactura: $("#t_codigo_llegada").text().trim(),
-                    conceptoFactura: $("#t_texto_llegada").text().trim(),
+                    codigoFactura: codigoLlegada,
+                    conceptoFactura: $("#textotariotallegadaTransfer_llegadas").val().trim(),
                     tipoFactura: "TRANSFER_LLEGADA",
-                    ivaFactura: $("#t_iva_llegada").text().trim().replace('%', '').replace(',', '.'),
+                    ivaFactura: $("#ivatariotallegadaTransfer_llegadas").val().trim().replace('%', '').replace(',', '.'),
                     descuentoFactura: 0,
-                    importeFactura: $("#t_total_llegada").text().trim().replace('€', '').replace(/\./g, '').replace(',', '.'),
+                    importeFactura: importeLlegada.replace('€', '').replace(/\./g, '').replace(',', '.'),
                     fecha_inicio: '',
                     fecha_fin: ''
                 };
@@ -1535,16 +1537,19 @@ function soloNumerosYComa(selector) {
             // ===============================
             // 3. INSERTAR TRANSFER DE REGRESO
             // ===============================
-            if ($("#t_codigo_regreso").length) {
+            const codigoRegreso = $("#codigotariotalregresoTransfer_llegadas").val().trim();
+            const importeRegreso = $("#importetariotalregresoTransfer_llegadas").val().trim();
+            
+            if (codigoRegreso && importeRegreso && importeRegreso !== '0') {
 
                 const datosTransferRegreso = {
                     idLlegada: idLlegada,
-                    codigoFactura: $("#t_codigo_regreso").text().trim(),
-                    conceptoFactura: $("#t_texto_regreso").text().trim(),
+                    codigoFactura: codigoRegreso,
+                    conceptoFactura: $("#textotariotalregresoTransfer_llegadas").val().trim(),
                     tipoFactura: "TRANSFER_REGRESO",
-                    ivaFactura: $("#t_iva_regreso").text().trim().replace('%', '').replace(',', '.'),
+                    ivaFactura: $("#ivatariotalregresoTransfer_llegadas").val().trim().replace('%', '').replace(',', '.'),
                     descuentoFactura: 0,
-                    importeFactura: $("#t_total_regreso").text().trim().replace('€', '').replace(/\./g, '').replace(',', '.'),
+                    importeFactura: importeRegreso.replace('€', '').replace(/\./g, '').replace(',', '.'),
                     fecha_inicio: '',
                     fecha_fin: ''
                 };

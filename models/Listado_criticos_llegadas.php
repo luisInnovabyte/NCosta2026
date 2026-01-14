@@ -29,6 +29,8 @@ class Listado_criticos_llegadas extends Conectar
                     agente_nombre,
                     total_matriculaciones,
                     total_alojamientos,
+                    total_transfer_llegada,
+                    total_transfer_regreso,
                     total_suplidos,
                     total_general,
                     total_pagos_realizados,

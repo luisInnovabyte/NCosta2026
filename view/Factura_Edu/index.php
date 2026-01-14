@@ -685,18 +685,28 @@ $json_string = json_encode('as');
                                             <h4 class="card-title text-primary mb-4">💼 Resumen de Factura</h4>
 
                                             <div class="row row-cols-1 row-cols-md-2 g-4">
-                                                 <div class="col">
-                                                    <p><strong>Total Cursos / Aloja:</strong> <span class="float-end" id="totalCursos"></span></p>
-                                                    <p><strong>Total Transfer:</strong> <span class="float-end" id="totalAloja"></span></p>
+                                                 <div class="col" style="border-right: 2px solid #4e4d4d;">
+                                                  <p><strong>Total(IVA Incl.):</strong> <span class="float-end" id="totalCompletoConIva"></span></p>
+                                                    <!-- <p><strong>Total sin IVA:</strong> <span class="float-end" id="totalSinIva"></span></p> -->
                                                     <p><strong>Total Suplidos:</strong> <span class="float-end" id="totalSuplidos"><?php echo  $totalSuplido;?>€</span></p>
-                                                </div>
-
-                                                <div class="col">
-                                                    <p><strong>Total sin IVA:</strong> <span class="float-end" id="totalSinIva"></span></p>
                                                     <p><strong>Ya Pagado:</strong> <span class="float-end" id="YaPagado"><?php echo !empty($totalImporte) ? $totalImporte : '0'; ?> €</span></p>
                                                     <div id="groupIVA" class="mb-2"></div>
-                                                    <p><strong>Total con IVA:</strong> <span class="float-end" id="totalCompletoConIva"></span></p>
-                                                    <p class="fs-5 fw-bold text-success">Total Pendiente: <span class="float-end" id="totalConIva"></span></p>
+                                                    <p class="fs-5 fw-bold text-success">Total Pendiente: <span class="float-end" id="totalConIva"></span></p>  
+                                                </div>
+                                                
+                                                <div class="col ps-4">
+                                                    <!-- Indicador de Pago -->
+                                                    <div class="mt-3">
+                                                        <p class="fw-bold mb-2">💰 Estado de Pago</p>
+                                                        <div class="progress" style="height: 25px;">
+                                                            <div id="progressBarPago" class="progress-bar progress-bar-striped progress-bar-animated" 
+                                                                 role="progressbar" style="width: 0%;" 
+                                                                 aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                                                                <span id="porcentajePagado" class="fw-bold">0%</span>
+                                                            </div>
+                                                        </div>
+                                                        <small id="estadoPagoTexto" class="text-muted d-block mt-1 text-center">Sin pagos registrados</small>
+                                                    </div>
                                                 </div>
                                             </div>
 
