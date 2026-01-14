@@ -77,11 +77,13 @@ $(document).ready(function() {
 
             // Función para normalizar números con formato europeo
             let normalize = (valor) => {
-                return parseFloat(
-                    String(valor || "")
-                        .replace(/\./g, '')   // quita puntos de miles
-                        .replace(',', '.')    // convierte coma decimal en punto
-                ) || 0;
+                // Convertir a string y limpiar
+                let str = String(valor || "")
+                    .replace(/\s+/g, '')      // eliminar todos los espacios
+                    .replace(/\./g, '')       // quitar puntos de miles
+                    .replace(',', '.');       // convertir coma decimal en punto
+                
+                return parseFloat(str) || 0;
             };
 
             let totalSinIva = 0;
@@ -95,7 +97,7 @@ $(document).ready(function() {
             api.rows({ search: 'applied' }).every(function () {
                 let data = this.data();
 
-                let base = normalize(data[5]);          // Base imponible
+                let base = normalize(data[5]);          // Base imponible (puede venir como "- 100,50")
                 let porcentajeIva = normalize(data[6]); // % IVA
                 let descuento = normalize(data[4]);     // % Descuento
 
@@ -103,10 +105,10 @@ $(document).ready(function() {
                 let ivaFila = base * (porcentajeIva / 100);
                 let totalFila = base + ivaFila;
 
-                // 🔴 Para negativas, acumulo usando valor absoluto
-                totalSinIva += Math.abs(base);
-                totalIva += Math.abs(ivaFila);
-                totalConIva += totalFila; // aquí sí respeto el signo (para que total salga negativo)
+                // Acumular totales (respetando signos negativos)
+                totalSinIva += base;
+                totalIva += ivaFila;
+                totalConIva += totalFila;
 
                 totalDescuento += Math.abs(base) * (descuento / 100);
 
@@ -116,14 +118,14 @@ $(document).ready(function() {
                 if (!ivaMap[porcentajeIva]) {
                     ivaMap[porcentajeIva] = { base: 0, iva: 0, total: 0 };
                 }
-                ivaMap[porcentajeIva].base += Math.abs(base);
-                ivaMap[porcentajeIva].iva += Math.abs(ivaFila);
+                ivaMap[porcentajeIva].base += base;
+                ivaMap[porcentajeIva].iva += ivaFila;
                 ivaMap[porcentajeIva].total += totalFila;
             });
 
-            // Mostrar resultados en HTML con signo negativo
-            $('#ivaTotal').text("-" + totalIva.toLocaleString("es-ES", { style: "currency", currency: "EUR" }));
-            $('#baseImponible').text("-" + totalSinIva.toLocaleString("es-ES", { style: "currency", currency: "EUR" }));
+            // Mostrar resultados en HTML
+            $('#ivaTotal').text(totalIva.toLocaleString("es-ES", { style: "currency", currency: "EUR" }));
+            $('#baseImponible').text(totalSinIva.toLocaleString("es-ES", { style: "currency", currency: "EUR" }));
             $('#totalConIva').text(totalConIva.toLocaleString("es-ES", { style: "currency", currency: "EUR" }));
             $('#totalConIvaResumen').text(totalConIva.toLocaleString("es-ES", { style: "currency", currency: "EUR" }));
 
@@ -137,11 +139,13 @@ $(document).ready(function() {
 
             // Insertar filas por tipo de IVA
             for (let iva in ivaMap) {
+                if (!ivaMap.hasOwnProperty(iva)) continue;
+                
                 let fila = `
                     <tr class="fila-intermedia fila-iva">
-                        <td></td>
+                        <td>${ivaMap[iva].base.toLocaleString("es-ES", { style: "currency", currency: "EUR" })}</td>
                         <td>${iva}%</td>
-                        <td>-${ivaMap[iva].iva.toLocaleString("es-ES", { style: "currency", currency: "EUR" })}</td>
+                        <td>${ivaMap[iva].iva.toLocaleString("es-ES", { style: "currency", currency: "EUR" })}</td>
                         <td>${ivaMap[iva].total.toLocaleString("es-ES", { style: "currency", currency: "EUR" })}</td>
                     </tr>
                 `;
@@ -150,7 +154,29 @@ $(document).ready(function() {
         },
         initComplete: function(settings, json) {
             // Esta función se ejecuta cuando la tabla ha terminado de cargar
-          /*   window.print();  */
+            
+            // Agregar listener antes de imprimir
+            if (window.matchMedia) {
+                var mediaQueryList = window.matchMedia('print');
+                mediaQueryList.addListener(function(mql) {
+                    if (!mql.matches) {
+                        // Se cerró el diálogo de impresión
+                        setTimeout(function() {
+                            window.close();
+                        }, 500);
+                    }
+                });
+            }
+            
+            // Fallback con onafterprint
+            window.onafterprint = function() {
+                setTimeout(function() {
+                    window.close();
+                }, 500);
+            };
+            
+            // Iniciar impresión
+            window.print();
         }
     });
 
@@ -252,24 +278,36 @@ $(document).ready(function() {
                         totalSuplido += precioSuplido;
                     }
                 });
-                $('#totalSuplidosResumen').text("-" + totalSuplido+'€');
+                
+                // Convertir a negativo para el abono
+                totalSuplido = -Math.abs(totalSuplido);
+                
+                $('#totalSuplidosResumen').text(totalSuplido.toLocaleString("es-ES", { style: "currency", currency: "EUR" }));
                 //totalSinSuplidos = $('#totalFactura').text();
                 totalSinSuplidos = $('#totalConIva').text();
 
-                totalSinSuplidos = parseFloat(totalSinSuplidos.toString().replace(/[€\s]/g, '').replace(',', '.'));
+                // Normalizar el valor (eliminar espacios, puntos de miles, convertir coma a punto)
+                totalSinSuplidos = parseFloat(
+                    totalSinSuplidos.toString()
+                        .replace(/\s+/g, '')      // eliminar espacios
+                        .replace(/[€]/g, '')      // eliminar símbolo €
+                        .replace(/\./g, '')       // eliminar puntos de miles
+                        .replace(',', '.')        // convertir coma decimal a punto
+                ) || 0;
 
                 console.log(totalSinSuplidos)
                                 
                 // Comprobar que el valor es numérico antes de usarlo
                 if (!isNaN(totalSinSuplidos)) {
-                // 👇 Sumar ignorando signos: sumamos valores absolutos para evitar negativos
-                let totalConSuplidos = Math.abs(totalSinSuplidos) + Math.abs(totalSuplido);
+                // Sumar los valores respetando los signos negativos
+                let totalConSuplidos = totalSinSuplidos + totalSuplido;
 
                 console.log("Total sin suplidos:", totalSinSuplidos);
+                console.log("Total suplido:", totalSuplido);
                 console.log("Total con suplidos:", totalConSuplidos);
 
-                // Mostrar en el HTML
-                $('#totalConSuplidos').text("-"+ totalConSuplidos.toFixed(2) + ' €');
+                // Mostrar en el HTML con formato
+                $('#totalConSuplidos').text(totalConSuplidos.toLocaleString("es-ES", { style: "currency", currency: "EUR" }));
             } else {
                 console.warn("No se pudo obtener un total válido desde #totalFactura");
             }
@@ -277,7 +315,7 @@ $(document).ready(function() {
         },
         initComplete: function(settings, json) {
             // Esta función se ejecuta cuando la tabla ha terminado de cargar
-          /*   window.print();  */
+            // window.print(); // No imprimir dos veces
         }
     });
 

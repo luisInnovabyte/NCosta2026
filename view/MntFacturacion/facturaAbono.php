@@ -180,14 +180,14 @@ body {
     background: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%);
     color: white;
     font-weight: 600;
-    padding: 10px 16px;
+    padding: 6px 12px;
     text-align: center;
 }
 
 .info-factura td {
     background: white;
     border: 1px solid #e2e8f0;
-    padding: 10px 16px;
+    padding: 6px 12px;
     white-space: nowrap;
     text-align: center;
 }
@@ -206,7 +206,7 @@ body {
 #facturaTabla th,
 #facturaTabla td {
     border: none;
-    padding: 14px 16px;
+    padding: 8px 10px;
     text-align: center;
 }
 
@@ -251,7 +251,7 @@ body {
 
 .totales-horizontal td {
     border: 1px solid #e2e8f0;
-    padding: 14px 16px;
+    padding: 8px 12px;
     text-align: center;
 }
 
@@ -266,6 +266,27 @@ body {
 
 .totales-horizontal tr:first-child td {
     border: none;
+}
+
+.totales-horizontal .fila-intermedia {
+    background-color: white;
+    font-weight: 500;
+}
+
+.totales-horizontal .fila-intermedia td {
+    border: 1px solid #e2e8f0;
+    padding: 8px 12px;
+}
+
+.totales-horizontal tr:last-child {
+    background: #f8fafc;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.totales-horizontal tr:last-child td {
+    border: 1px solid #e2e8f0;
+    color: #1e293b;
 }
 
 .nota-iva {
