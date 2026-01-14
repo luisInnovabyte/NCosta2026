@@ -12,6 +12,59 @@
     ?>
     <!--end head-->
     <style>
+/* ========================================== */
+/*     FORMATO MAESTRO COSTA DE VALENCIA     */
+/* ========================================== */
+
+.page-header-custom {
+    background: linear-gradient(135deg, #1AA3E8 0%, #0d6efd 100%);
+    border-radius: 12px;
+    padding: 1.5rem 2rem;
+    margin-bottom: 1.5rem;
+    color: white;
+}
+.page-header-custom h2 {
+    margin: 0;
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+.page-header-custom p {
+    margin: 0.5rem 0 0 0;
+    opacity: 0.9;
+    font-size: 0.9rem;
+}
+.nav-tabs-custom .nav-link {
+    border: none;
+    color: #6c757d;
+    padding: 0.75rem 1.25rem;
+    font-weight: 500;
+    border-radius: 8px 8px 0 0;
+    transition: all 0.2s ease;
+}
+.nav-tabs-custom .nav-link:hover {
+    color: #1AA3E8;
+    background-color: rgba(26, 163, 232, 0.1);
+}
+.nav-tabs-custom .nav-link.active {
+    color: #fff;
+    background: linear-gradient(135deg, #1AA3E8 0%, #0d6efd 100%);
+}
+.btn-add-record {
+    background: linear-gradient(135deg, #1AA3E8 0%, #0d6efd 100%);
+    border: none;
+    padding: 0.5rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+.btn-add-record:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(26, 163, 232, 0.4);
+}
+
+/* ========================================== */
+/*     ESTILOS PERSONALIZADOS                */
+/* ========================================== */
         #accordionButton1.accordion-button:not(.collapsed) {
             background-color: var(--bs-cyan);
             color: var(--bs-black);
@@ -171,56 +224,15 @@
                 </div>
             </div> -->
 
-            <div class="col-12 card mg-t-20-force">
+            <div class="col-12 card mt-3">
                 <div class="card-body">
-                    <h2 class="card-title">Rutas de Cursos</h2>
-                    <div class="my-3 border-top"></div>
+                    <!-- Header profesional -->
+                    <div class="page-header-custom">
+                        <h2><i class='bx bx-map me-2'></i>Rutas de Cursos</h2>
+                        <p>Configuración de rutas de aprendizaje y secuencias de cursos</p>
+                    </div>
 
                     <div class="row">
-                        <div class="col-12">
-                            <div class="card radius-10">
-                                <div class="card-body p-0">
-                                    <div class="accordion accordion-flush" id="accordionFlushExample">
-                                        <div class="accordion-item">
-                                            <h2 class="accordion-header" id="flush-headingOne">
-                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                                                    Mostrar Guía
-                                                </button>
-                                            </h2>
-                                            <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                                                <div class="accordion-body row d-flex align-items-center">
-                                                    <button class="btn btn-secondary waves-effect tx-12-force col-12 col-lg-1">Posición</button>
-
-                                                    <label class="mg-l-10 col-12 col-lg-10 mg-t-10-force mg-lg-t-0-force"> El campo <b>Peso</b> debe asignarse con números múltiplos de 5 (5, 10, 15…) o con el número 1. Este valor indica el peso de los cursos en la ruta de aprendizaje. Si el primer curso tiene el orden 10, el siguiente deberá ser un número mayor, también múltiplo de 5, como 15 o 20. </label>
-                                                </div>
-                                                <div class="accordion-body row d-flex align-items-center">
-                                                    <button class="btn btn-primary btn-icon waves-effect tx-12-force col-12 col-lg-1">Periodicidad</button>
-                                                    <label class="mg-l-10 col-12 col-lg-10  mg-t-10-force mg-lg-t-0-force">La periodicidad se define con dos campos: uno para la cantidad numérica y otro para la unidad de tiempo (días, semanas o meses). Al combinarlos, se establece el intervalo de tiempo entre cursos. Por ejemplo, si se asigna una cantidad de 5 y la unidad 'meses', el resultado será '5 meses'.</label>
-                                                </div>
-                                                <div class="accordion-body row d-flex align-items-center">
-                                                    <button class="btn btn-info waves-effect tx-12-force col-12 col-lg-1"><i class="fa-solid fa-edit"></i></button>
-                                                    <label class="mg-l-10 col-12 col-lg-10  mg-t-10-force mg-lg-t-0-force"> Con este botón podrás <label class="fw-bold">editar</label> la información de la opción seleccionada.</label>
-                                                </div>
-
-                                                <div class="accordion-body row d-flex align-items-center">
-                                                    <button class="btn btn-success waves-effect tx-12-force col-12 col-lg-1"><i class="fa-solid fa-check"></i></button>
-                                                    <button class="btn btn-danger waves-effect tx-12-force col-12 col-lg-1 mg-lg-l-10 mg-lg-t-0-force mg-l-0 mg-t-10-force"><i class="fa-solid fa-xmark"></i></button>
-                                                    <label class="mg-l-10 col-12 col-lg-8  mg-t-10-force mg-lg-t-0-force"> Con estos botones podrás <label class="fw-bold tx-success">activar</label> / <label class="fw-bold tx-danger">desactivar</label> las opciones, <label class="fw-bold tx-success">permitiendo</label> / <label class="fw-bold tx-danger">denegando</label> su <label class="fw-bold">uso en apartados de la aplicación</label>.</label>
-                                                </div>
-
-
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- <div class="col-12 d-flex justify-content-end mg-b-10">
-                            <button class="btn btn-primary waves-effect col-12 col-lg-1" data-bs-toggle="modal" data-bs-target="#insertar-contenido-modal">Agregar Nivel</button>
-                        </div> -->
-                        <div class="row">
 
                             <div class="row" id="">
                                 <div class="col-12">

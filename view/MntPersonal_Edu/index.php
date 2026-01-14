@@ -24,6 +24,59 @@
     ?>
     <!--end head-->
     <style>
+/* ========================================== */
+/*     FORMATO MAESTRO COSTA DE VALENCIA     */
+/* ========================================== */
+
+.page-header-custom {
+    background: linear-gradient(135deg, #1AA3E8 0%, #0d6efd 100%);
+    border-radius: 12px;
+    padding: 1.5rem 2rem;
+    margin-bottom: 1.5rem;
+    color: white;
+}
+.page-header-custom h2 {
+    margin: 0;
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+.page-header-custom p {
+    margin: 0.5rem 0 0 0;
+    opacity: 0.9;
+    font-size: 0.9rem;
+}
+.nav-tabs-custom .nav-link {
+    border: none;
+    color: #6c757d;
+    padding: 0.75rem 1.25rem;
+    font-weight: 500;
+    border-radius: 8px 8px 0 0;
+    transition: all 0.2s ease;
+}
+.nav-tabs-custom .nav-link:hover {
+    color: #1AA3E8;
+    background-color: rgba(26, 163, 232, 0.1);
+}
+.nav-tabs-custom .nav-link.active {
+    color: #fff;
+    background: linear-gradient(135deg, #1AA3E8 0%, #0d6efd 100%);
+}
+.btn-add-record {
+    background: linear-gradient(135deg, #1AA3E8 0%, #0d6efd 100%);
+    border: none;
+    padding: 0.5rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+.btn-add-record:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(26, 163, 232, 0.4);
+}
+
+/* ========================================== */
+/*     ESTILOS PERSONALIZADOS                */
+/* ========================================== */
         #accordionButton1.accordion-button:not(.collapsed) {
             background-color: var(--bs-cyan);
             color: var(--bs-black);
@@ -181,20 +234,15 @@
                 </div>
             </div> -->
 
-            <div class="col-12 card mg-t-20-force">
+            <div class="col-12 card mt-3">
                 <div class="card-body">
-                    <h2 class="card-title">Personal</h2>
-                    <div class="my-3 border-top"></div>
+                    <!-- Header profesional -->
+                    <div class="page-header-custom">
+                        <h2><i class='bx bx-group me-2'></i>Personal</h2>
+                        <p>Gestión de personal docente y administrativo</p>
+                    </div>
 
                     <div class="row">
-                        <div class="col-12">
-                            <div class="card radius-10">
-                                <div class="card-body p-0">
-                                    <div class="accordion accordion-flush" id="accordionFlushExample">
-                                        <div class="accordion-item">
-                                            <h2 class="accordion-header" id="flush-headingOne">
-                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                                                    Mostrar Leyenda
                                                 </button>
                                             </h2>
                                             <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">

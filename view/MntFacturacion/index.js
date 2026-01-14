@@ -701,8 +701,8 @@
   // FUNCIONES DE VISIBILIDAD //
   //////////////////////////////
 
-  // Mostrar Proforma por defecto al cargar
-  mostrarProforma();
+  // Mostrar Facturas por defecto al cargar (cambio: antes era mostrarProforma)
+  mostrarFacturas();
 
   // Botón para volver a mostrar proformas
   $('#botonMostrarProforma').on('click', function () {
@@ -715,21 +715,24 @@
   });
 
   function mostrarFacturas() {
-    $('#botonMostrarFacturas').addClass('d-none');
+    // Actualizar estados de tabs
+    $('#botonMostrarFacturas').addClass('active');
+    $('#botonMostrarProforma').removeClass('active');
+    
+    // Mostrar/ocultar contenedores
     $('#contenedorProforma').addClass('d-none');
-
     $('#contenedorFacturas').removeClass('d-none');
-    $('#botonMostrarProforma').removeClass('d-none');
   }
 
   function mostrarProforma() {
-    $('#botonMostrarProforma').addClass('d-none');
+    // Actualizar estados de tabs
+    $('#botonMostrarProforma').addClass('active');
+    $('#botonMostrarFacturas').removeClass('active');
+    
+    // Mostrar/ocultar contenedores
     $('#contenedorProforma').removeClass('d-none');
-
     $('#contenedorFacturas').addClass('d-none');
-    $('#botonMostrarFacturas').removeClass('d-none');
-
-    }
+  }
 
 });
 

@@ -11,7 +11,59 @@
 
     ?>
   <style>
-    
+/* ========================================== */
+/*     FORMATO MAESTRO COSTA DE VALENCIA     */
+/* ========================================== */
+
+.page-header-custom {
+    background: linear-gradient(135deg, #1AA3E8 0%, #0d6efd 100%);
+    border-radius: 12px;
+    padding: 1.5rem 2rem;
+    margin-bottom: 1.5rem;
+    color: white;
+}
+.page-header-custom h2 {
+    margin: 0;
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+.page-header-custom p {
+    margin: 0.5rem 0 0 0;
+    opacity: 0.9;
+    font-size: 0.9rem;
+}
+.nav-tabs-custom .nav-link {
+    border: none;
+    color: #6c757d;
+    padding: 0.75rem 1.25rem;
+    font-weight: 500;
+    border-radius: 8px 8px 0 0;
+    transition: all 0.2s ease;
+}
+.nav-tabs-custom .nav-link:hover {
+    color: #1AA3E8;
+    background-color: rgba(26, 163, 232, 0.1);
+}
+.nav-tabs-custom .nav-link.active {
+    color: #fff;
+    background: linear-gradient(135deg, #1AA3E8 0%, #0d6efd 100%);
+}
+.btn-add-record {
+    background: linear-gradient(135deg, #1AA3E8 0%, #0d6efd 100%);
+    border: none;
+    padding: 0.5rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+.btn-add-record:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(26, 163, 232, 0.4);
+}
+
+/* ========================================== */
+/*     ESTILOS DE TABLAS                     */
+/* ========================================== */
 
 .table-responsive {
     background: #fff;
@@ -104,14 +156,16 @@
     </div>
 
     <div class="row">
-        <div class="col-12 card mg-t-20-force">
+        <div class="col-12 card mt-3">
         <div class="card-body">
-            <h2 class="card-title">Proformas sin Factura</h2>
-            <div class="my-3 border-top"></div>
+            <!-- Header profesional -->
+            <div class="page-header-custom">
+                <h2><i class='bx bx-file-blank me-2'></i>Proformas sin Factura</h2>
+                <p>Gestión de proformas pendientes de facturar</p>
+            </div>
 
             <!-- Contenedor de la tabla de Proformas -->
             <div class="col-12 mb-5" id="contenedorProforma">
-            <h4 class="mb-3 titulo-tabla">Proformas</h4>
             <div class="table-responsive mb-4">
         <?php
           // Configuración tabla Proformas

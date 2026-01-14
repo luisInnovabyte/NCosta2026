@@ -136,6 +136,32 @@ $(document).ready(function() {
         }
     });
 
+    // Impresión automática y cierre de ventana
+    setTimeout(function() {
+        // Agregar listener antes de imprimir
+        if (window.matchMedia) {
+            var mediaQueryList = window.matchMedia('print');
+            mediaQueryList.addListener(function(mql) {
+                if (!mql.matches) {
+                    // Se cerró el diálogo de impresión
+                    setTimeout(function() {
+                        window.close();
+                    }, 500);
+                }
+            });
+        }
+        
+        // Fallback con onafterprint
+        window.onafterprint = function() {
+            setTimeout(function() {
+                window.close();
+            }, 500);
+        };
+        
+        // Iniciar impresión
+        window.print();
+    }, 1000);
+
     // Inicializar DataTable de suplidosTabla usando la misma lógica que en FacturaPro_Edu
     var suplidosTabla = $("#suplidosTabla").DataTable({
         pageLength: 7,

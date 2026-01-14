@@ -19,6 +19,59 @@ session_start();
     <link href="../../public/js/libs/raty-js/lib/jquery.raty.css" rel="stylesheet">
 
     <style>
+/* ========================================== */
+/*     FORMATO MAESTRO COSTA DE VALENCIA     */
+/* ========================================== */
+
+.page-header-custom {
+    background: linear-gradient(135deg, #1AA3E8 0%, #0d6efd 100%);
+    border-radius: 12px;
+    padding: 1.5rem 2rem;
+    margin-bottom: 1.5rem;
+    color: white;
+}
+.page-header-custom h2 {
+    margin: 0;
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+.page-header-custom p {
+    margin: 0.5rem 0 0 0;
+    opacity: 0.9;
+    font-size: 0.9rem;
+}
+.nav-tabs-custom .nav-link {
+    border: none;
+    color: #6c757d;
+    padding: 0.75rem 1.25rem;
+    font-weight: 500;
+    border-radius: 8px 8px 0 0;
+    transition: all 0.2s ease;
+}
+.nav-tabs-custom .nav-link:hover {
+    color: #1AA3E8;
+    background-color: rgba(26, 163, 232, 0.1);
+}
+.nav-tabs-custom .nav-link.active {
+    color: #fff;
+    background: linear-gradient(135deg, #1AA3E8 0%, #0d6efd 100%);
+}
+.btn-add-record {
+    background: linear-gradient(135deg, #1AA3E8 0%, #0d6efd 100%);
+    border: none;
+    padding: 0.5rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+.btn-add-record:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(26, 163, 232, 0.4);
+}
+
+/* ========================================== */
+/*     ESTILOS PERSONALIZADOS                */
+/* ========================================== */
         #accordionButton1.accordion-button:not(.collapsed) {
             background-color: var(--bs-cyan);
             color: var(--bs-black);
@@ -91,14 +144,13 @@ session_start();
                 </div>
             </div> -->
 
-            <div class="col-12 card mg-t-20-force">
+            <div class="col-12 card mt-3">
                 <div class="card-body">
-                    <h2 class="card-title">Alojamientos</h2>
-
-
-
-                    
-                    <div class="my-3 border-top"></div>
+                    <!-- Header profesional -->
+                    <div class="page-header-custom">
+                        <h2><i class='bx bx-home me-2'></i>Alojamientos</h2>
+                        <p>Gestión y administración de alojamientos para estudiantes</p>
+                    </div>
 
                     <div class="row">
                        
@@ -108,20 +160,12 @@ session_start();
                             <?php include_once '../../config/modalAyudas/filtroActivo.php' ?>
 
                             <div class="row">
-                                <div class="col-sm-2 col-md-2 col-lg-2 align-items-center d-lg-flex justify-content-lg-end">
-                                    <div class="text-center">
-
-                                        <!-- Button trigger -->
-                                        <!-- <a id="vinPequeno" href="./newproducto.php"> -->
-
+                                <div class="col-12 d-flex justify-content-end mb-3">
                                         <a href="datosAlojamiento.php">
-                                            <button type="button" class="btn btn-outline-primary mb-lg-0 mb-2 mt-sm-1">
-                                                Añadir Alojamiento
+                                            <button type="button" class="btn btn-add-record waves-effect">
+                                                <i class="bx bx-plus me-1"></i>Añadir Alojamiento
                                             </button>
                                         </a>
-                                        <!-- <br>
-                                        <a href="../../view/MntTipoAloja/" class="btn btn-outline-primary mt-1 mb-lg-0 mb-3">Gestionar Tipo Alojamiento</a> -->
-                                    </div>
                                     </div>
                                 </div>
                                 <div class="table-responsive order-mobile-first">

@@ -29,6 +29,59 @@
         ?>
     <!--end head-->
     <style>
+/* ========================================== */
+/*     FORMATO MAESTRO COSTA DE VALENCIA     */
+/* ========================================== */
+
+.page-header-custom {
+    background: linear-gradient(135deg, #1AA3E8 0%, #0d6efd 100%);
+    border-radius: 12px;
+    padding: 1.5rem 2rem;
+    margin-bottom: 1.5rem;
+    color: white;
+}
+.page-header-custom h2 {
+    margin: 0;
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+.page-header-custom p {
+    margin: 0.5rem 0 0 0;
+    opacity: 0.9;
+    font-size: 0.9rem;
+}
+.nav-tabs-custom .nav-link {
+    border: none;
+    color: #6c757d;
+    padding: 0.75rem 1.25rem;
+    font-weight: 500;
+    border-radius: 8px 8px 0 0;
+    transition: all 0.2s ease;
+}
+.nav-tabs-custom .nav-link:hover {
+    color: #1AA3E8;
+    background-color: rgba(26, 163, 232, 0.1);
+}
+.nav-tabs-custom .nav-link.active {
+    color: #fff;
+    background: linear-gradient(135deg, #1AA3E8 0%, #0d6efd 100%);
+}
+.btn-add-record {
+    background: linear-gradient(135deg, #1AA3E8 0%, #0d6efd 100%);
+    border: none;
+    padding: 0.5rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+.btn-add-record:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(26, 163, 232, 0.4);
+}
+
+/* ========================================== */
+/*     ESTILOS PERSONALIZADOS LLEGADAS       */
+/* ========================================== */
         
         .botonFlotante1 {}
 
@@ -493,12 +546,16 @@
                 </div>
             </div> -->
 
-            <div class="container-fluid mg-t-20-force">
+            <div class="container-fluid mt-3">
                 <div class="row">
                     <div class="col-12 card">
-                        <div class="card-header bg-white d-flex justify-content-between align-items-center py-3">
-                            <h2 class="mb-0">LLEGADAS</h2>
-                            <button type="button" class="btn btn-sm btn-outline-info" onclick="window.open('ayuda.html', 'Ayuda', 'width=1200,height=800,scrollbars=yes,resizable=yes');">
+                        <!-- Header profesional -->
+                        <div class="page-header-custom d-flex justify-content-between align-items-center">
+                            <div>
+                                <h2><i class='bx bx-calendar-check me-2'></i>Gestión de Llegadas</h2>
+                                <p>Control y registro de llegadas de estudiantes</p>
+                            </div>
+                            <button type="button" class="btn btn-light" onclick="window.open('ayuda.html', 'Ayuda', 'width=1200,height=800,scrollbars=yes,resizable=yes');">
                                 <i class="fa-solid fa-circle-question"></i> Ayuda
                             </button>
                         </div>

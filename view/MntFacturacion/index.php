@@ -12,449 +12,235 @@
     $file = 'wrt.json';
     file_put_contents($file, $json_string);
     ?>
-  <style>
-    
- /* CSS BONITO PARA DATATABLES, ESTA AQUI POR SI SE QUISIERA UTILIZAR PARA OTRAS VECES 
- CONTENEDOR PRINCIPAL 
-#contenedorProforma {
+<style>
+/* ========================================== */
+/*     FORMATO MAESTRO COSTA DE VALENCIA     */
+/* ========================================== */
+
+.page-header-custom {
+    background: linear-gradient(135deg, #1AA3E8 0%, #0d6efd 100%);
+    border-radius: 12px;
+    padding: 1.5rem 2rem;
+    margin-bottom: 1.5rem;
+    color: white;
+}
+.page-header-custom h2 {
+    margin: 0;
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+.page-header-custom p {
+    margin: 0.5rem 0 0 0;
+    opacity: 0.9;
+    font-size: 0.9rem;
+}
+.nav-tabs-custom .nav-link {
+    border: none;
+    color: #6c757d;
+    padding: 0.75rem 1.25rem;
+    font-weight: 500;
+    border-radius: 8px 8px 0 0;
+    transition: all 0.2s ease;
+}
+.nav-tabs-custom .nav-link:hover {
+    color: #1AA3E8;
+    background-color: rgba(26, 163, 232, 0.1);
+}
+.nav-tabs-custom .nav-link.active {
+    color: #fff;
+    background: linear-gradient(135deg, #1AA3E8 0%, #0d6efd 100%);
+}
+.btn-add-record {
+    background: linear-gradient(135deg, #1AA3E8 0%, #0d6efd 100%);
+    border: none;
+    padding: 0.5rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+.btn-add-record:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(26, 163, 232, 0.4);
+}
+
+/* ========================================== */
+
+.facturacion-tabs {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  padding: 0;
+  margin-bottom: 30px;
+}
+
+.facturacion-tab {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 24px 30px;
   background: #ffffff;
+  border: 2px solid #e2e8f0;
   border-radius: 16px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
-  padding: 2rem;
-  margin-bottom: 3rem;
-}
-
-#contenedorProforma h4.titulo-tabla {
-  font-weight: 700;
-  font-size: 1.4rem;
-  margin-bottom: 1.5rem;
-  color: #2c3e50;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
-  padding-bottom: 12px;
-  display: inline-block;
-  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
-  letter-spacing: 0.02em;
-}
-
-#contenedorProforma h4.titulo-tabla:after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 50px;
-  height: 4px;
-  border-radius: 2px;
-}
-
-#contenedorProforma h4.titulo-tabla:nth-of-type(1):after {
-  background: linear-gradient(90deg, #28a745, #5cb85c);
-  box-shadow: 0 2px 8px rgba(40, 167, 69, 0.3);
-}
-
-#contenedorProforma h4.titulo-tabla:nth-of-type(2):after {
-  background: linear-gradient(90deg, #dc3545, #e83e8c);
-  box-shadow: 0 2px 8px rgba(220, 53, 69, 0.3);
-}
-
-#tableProformas,
-#tableAbonoProforma {
-  width: 100%;
-  border-collapse: separate;
-  border-spacing: 0;
-  border-radius: 12px;
   overflow: hidden;
-  background: white;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
-  margin-bottom: 2.5rem;
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 }
 
-#tableProformas thead th {
-  background: linear-gradient(135deg, #28a745 0%, #5cb85c 100%);
-  color: white;
-  font-weight: 600;
-  padding: 16px;
-  text-align: center;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  font-size: 0.85rem;
-  position: relative;
-  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
-  -webkit-font-smoothing: antialiased;
-}
-
-#tableAbonoProforma thead th {
-  background: linear-gradient(135deg, #dc3545 0%, #e83e8c 100%);
-  color: white;
-  font-weight: 600;
-  padding: 16px;
-  text-align: center;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  font-size: 0.85rem;
-  position: relative;
-  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
-  -webkit-font-smoothing: antialiased;
-}
-
-#tableProformas thead th:after,
-#tableAbonoProforma thead th:after {
+.facturacion-tab::before {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
-  right: 0;
-  height: 2px;
-  background: rgba(255, 255, 255, 0.3);
+  width: 4px;
+  height: 100%;
+  background: transparent;
+  transition: all 0.3s ease;
 }
 
-#tableProformas td,
-#tableAbonoProforma td {
-  padding: 14px 16px;
-  text-align: center;
-  vertical-align: middle;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.03);
-  color: #4a5568;
-  font-size: 0.95rem;
-  transition: all 0.2s ease;
-  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
-  font-weight: 450;
-  letter-spacing: 0.02em;
-  line-height: 1.5;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-}
-
-#tableProformas td:nth-child(1),
-#tableAbonoProforma td:nth-child(1) {
-  font-family: 'SF Mono', 'Roboto Mono', monospace;
-  font-weight: 500;
-  color: #2c3e50;
-}
-
-#tableProformas td:nth-child(2),
-#tableAbonoProforma td:nth-child(3) {
-  font-weight: 500;
-  color: #1a365d;
-}
-
-#tableProformas td:nth-child(3),
-#tableAbonoProforma td:nth-child(4) {
-  font-weight: 500;
-  color: #2d3748;
-}
-
-#tableProformas td:nth-child(4),
-#tableAbonoProforma td:nth-child(5) {
-  font-family: 'SF Mono', 'Roboto Mono', monospace;
-  font-weight: 500;
-  letter-spacing: 0.05em;
-}
-
-#tableProformas td:nth-child(5),
-#tableAbonoProforma td:nth-child(6),
-#tableAbonoProforma td:nth-child(7) {
-  font-family: 'SF Mono', 'Roboto Mono', monospace;
-  font-size: 0.9rem;
-  color: #4a5568;
-}
-
-#tableProformas tbody tr:nth-child(even),
-#tableAbonoProforma tbody tr:nth-child(even) {
-  background-color: rgba(241, 245, 249, 0.5);
-}
-
-#tableProformas tbody tr,
-#tableAbonoProforma tbody tr {
-  transition: all 0.35s cubic-bezier(0.215, 0.61, 0.355, 1);
-  position: relative;
-}
-
-#tableProformas tbody tr:hover {
-  background-color: rgba(40, 167, 69, 0.08) !important;
+.facturacion-tab:hover {
+  border-color: #cbd5e1;
   transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(40, 167, 69, 0.1);
-  z-index: 2;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
 }
 
-#tableAbonoProforma tbody tr:hover {
-  background-color: rgba(220, 53, 69, 0.08) !important;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(220, 53, 69, 0.1);
-  z-index: 2;
+.facturacion-tab.active {
+  background: linear-gradient(135deg, #1AA3E8 0%, #0d6efd 100%);
+  border-color: #1AA3E8;
+  box-shadow: 0 8px 24px rgba(26, 163, 232, 0.25);
 }
 
-#tableProformas tbody tr:hover td,
-#tableAbonoProforma tbody tr:hover td {
-  border-bottom-color: transparent;
+.facturacion-tab.active::before {
+  background: #60a5fa;
 }
 
-#tableProformas tbody tr:hover td:first-child {
-  border-left: 3px solid #28a745;
-  padding-left: 13px;
-}
-
-#tableAbonoProforma tbody tr:hover td:first-child {
-  border-left: 3px solid #dc3545;
-  padding-left: 13px;
-}
-
-#tableProformas tfoot th,
-#tableAbonoProforma tfoot th {
-  background: linear-gradient(to right, #f8f9fa, #e9ecef);
-  padding: 14px;
-  text-align: center;
-  font-weight: 600;
-  color: #495057;
-  font-size: 0.9rem;
-  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
-}
-
-#tableProformas {
-  border: 1px solid rgba(40, 167, 69, 0.15);
-}
-
-#tableAbonoProforma {
-  border: 1px solid rgba(220, 53, 69, 0.15);
-}
-
-#tableProformas,
-#tableAbonoProforma {
-  animation: fadeIn 0.5s ease-out forwards;
-}
-
-#tableAbonoProforma {
-  animation-delay: 0.1s;
-}
-
-
-
-
-
-
-#contenedorFacturas {
-  background: #ffffff;
-  border-radius: 16px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
-  padding: 2rem;
-  margin-bottom: 3rem;
-}
-
-#contenedorFacturas h4.titulo-tabla {
-  font-weight: 700;
-  font-size: 1.4rem;
-  margin-bottom: 1.5rem;
-  color: #2c3e50;
-  position: relative;
-  padding-bottom: 12px;
-  display: inline-block;
-  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
-  letter-spacing: 0.02em;
-}
-
-#contenedorFacturas h4.titulo-tabla:after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 50px;
-  height: 4px;
-  border-radius: 2px;
-}
-
-#contenedorFacturas h4.titulo-tabla:nth-of-type(1):after {
-  background: linear-gradient(90deg, #28a745, #5cb85c);
-  box-shadow: 0 2px 8px rgba(40, 167, 69, 0.3);
-}
-
-#contenedorFacturas h4.titulo-tabla:nth-of-type(2):after {
-  background: linear-gradient(90deg, #dc3545, #e83e8c);
-  box-shadow: 0 2px 8px rgba(220, 53, 69, 0.3);
-}
-
-#tableFacturas,
-#tableAbonoFactura {
-  width: 100%;
-  border-collapse: separate;
-  border-spacing: 0;
+.facturacion-tab .tab-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  background: #f1f5f9;
   border-radius: 12px;
-  overflow: hidden;
-  background: white;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
-  margin-bottom: 2.5rem;
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  font-size: 24px;
+  color: #1AA3E8;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
 }
 
-#tableFacturas thead th {
-  background: linear-gradient(135deg, #28a745 0%, #5cb85c 100%);
-  color: white;
+.facturacion-tab.active .tab-icon {
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  transform: scale(1.1);
+}
+
+.facturacion-tab .tab-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  text-align: left;
+}
+
+.facturacion-tab .tab-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1e293b;
+  letter-spacing: -0.02em;
+  transition: color 0.3s ease;
+}
+
+.facturacion-tab.active .tab-title {
+  color: #ffffff;
+}
+
+.facturacion-tab .tab-subtitle {
+  font-size: 13px;
+  font-weight: 400;
+  color: #64748b;
+  transition: color 0.3s ease;
+}
+
+.facturacion-tab.active .tab-subtitle {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+@media (max-width: 768px) {
+  .facturacion-tabs {
+    grid-template-columns: 1fr;
+  }
+  
+  .facturacion-tab {
+    padding: 20px 24px;
+  }
+  
+  .facturacion-tab .tab-icon {
+    width: 48px;
+    height: 48px;
+    font-size: 20px;
+  }
+  
+  .facturacion-tab .tab-title {
+    font-size: 16px;
+  }
+  
+  .facturacion-tab .tab-subtitle {
+    font-size: 12px;
+  }
+}
+
+/* ========================================== */
+/*     TÍTULOS DE TABLAS DESTACADOS          */
+/* ========================================== */
+
+.titulo-tabla {
+  font-size: 20px;
   font-weight: 600;
-  padding: 16px;
-  text-align: center;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  font-size: 0.85rem;
+  letter-spacing: -0.01em;
+  padding: 14px 20px;
+  margin-bottom: 20px !important;
+  border-radius: 8px;
   position: relative;
-  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
-  -webkit-font-smoothing: antialiased;
-}
-
-#tableAbonoFactura thead th {
-  background: linear-gradient(135deg, #dc3545 0%, #e83e8c 100%);
-  color: white;
-  font-weight: 600;
-  padding: 16px;
-  text-align: center;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  font-size: 0.85rem;
-  position: relative;
-  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
-  -webkit-font-smoothing: antialiased;
-}
-
-#tableFacturas thead th:after,
-#tableAbonoFactura thead th:after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: rgba(255, 255, 255, 0.3);
-}
-
-#tableFacturas td,
-#tableAbonoFactura td {
-  padding: 14px 16px;
-  text-align: center;
-  vertical-align: middle;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.03);
-  color: #4a5568;
-  font-size: 0.95rem;
+  background: #f8fafc;
+  border-left: 4px solid #64748b;
+  color: #1e293b;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
   transition: all 0.2s ease;
-  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
-  font-weight: 450;
-  letter-spacing: 0.02em;
-  line-height: 1.5;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
 }
 
-#tableFacturas td:nth-child(1),
-#tableAbonoFactura td:nth-child(1) {
-  font-family: 'SF Mono', 'Roboto Mono', monospace;
-  font-weight: 500;
-  color: #2c3e50;
+/* Estilos específicos para cada tipo de tabla */
+#contenedorProforma .titulo-tabla:first-of-type {
+  background: #f0fdf4;
+  border-left-color: #10b981;
+  color: #065f46;
 }
 
-#tableFacturas td:nth-child(2),
-#tableAbonoFactura td:nth-child(3) {
-  font-weight: 500;
-  color: #1a365d;
+#contenedorProforma .titulo-tabla:nth-of-type(2) {
+  background: #fef2f2;
+  border-left-color: #ef4444;
+  color: #991b1b;
 }
 
-#tableFacturas td:nth-child(3),
-#tableAbonoFactura td:nth-child(4) {
-  font-weight: 500;
-  color: #2d3748;
+#contenedorFacturas .titulo-tabla:first-of-type {
+  background: #f0fdf4;
+  border-left-color: #10b981;
+  color: #065f46;
 }
 
-#tableFacturas td:nth-child(4),
-#tableAbonoFactura td:nth-child(5) {
-  font-family: 'SF Mono', 'Roboto Mono', monospace;
-  font-weight: 500;
-  letter-spacing: 0.05em;
+#contenedorFacturas .titulo-tabla:nth-of-type(2) {
+  background: #fef2f2;
+  border-left-color: #ef4444;
+  color: #991b1b;
 }
 
-#tableFacturas td:nth-child(5),
-#tableFacturas td:nth-child(6),
-#tableFacturas td:nth-child(7),
-#tableAbonoFactura td:nth-child(6),
-#tableAbonoFactura td:nth-child(7),
-#tableAbonoFactura td:nth-child(8) {
-  font-family: 'SF Mono', 'Roboto Mono', monospace;
-  font-size: 0.9rem;
-  color: #4a5568;
+.titulo-tabla:hover {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
 }
 
-#tableFacturas tbody tr:nth-child(even),
-#tableAbonoFactura tbody tr:nth-child(even) {
-  background-color: rgba(241, 245, 249, 0.5);
-}
-
-#tableFacturas tbody tr,
-#tableAbonoFactura tbody tr {
-  transition: all 0.35s cubic-bezier(0.215, 0.61, 0.355, 1);
-  position: relative;
-}
-
-#tableFacturas tbody tr:hover {
-  background-color: rgba(40, 167, 69, 0.08) !important;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(40, 167, 69, 0.1);
-  z-index: 2;
-}
-
-#tableAbonoFactura tbody tr:hover {
-  background-color: rgba(220, 53, 69, 0.08) !important;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(220, 53, 69, 0.1);
-  z-index: 2;
-}
-
-#tableFacturas tbody tr:hover td,
-#tableAbonoFactura tbody tr:hover td {
-  border-bottom-color: transparent;
-}
-
-#tableFacturas tbody tr:hover td:first-child {
-  border-left: 3px solid #28a745;
-  padding-left: 13px;
-}
-
-#tableAbonoFactura tbody tr:hover td:first-child {
-  border-left: 3px solid #dc3545;
-  padding-left: 13px;
-}
-
-#tableFacturas tfoot th,
-#tableAbonoFactura tfoot th {
-  background: linear-gradient(to right, #f8f9fa, #e9ecef);
-  padding: 14px;
-  text-align: center;
-  font-weight: 600;
-  color: #495057;
-  font-size: 0.9rem;
-  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
-}
-
-#tableFacturas {
-  border: 1px solid rgba(40, 167, 69, 0.15);
-}
-
-#tableAbonoFactura {
-  border: 1px solid rgba(220, 53, 69, 0.15);
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-#tableFacturas,
-#tableAbonoFactura {
-  animation: fadeIn 0.5s ease-out forwards;
-}
-
-#tableAbonoFactura {
-  animation-delay: 0.1s;
-}
-*/
+/* ========================================== */
+/*     ESTILOS BÁSICOS DE TABLAS             */
+/* ========================================== */
 
 .table-responsive {
     background: #fff;
@@ -489,18 +275,21 @@
     font-weight: 600;
     text-align: center;
 }
+
 #tableAbonoProforma thead th {
     background-color: #b53a3aff;
     color: white;
     font-weight: 600;
     text-align: center;
 }
+
 #tableAbonoFactura thead th {
     background-color: #b53a3aff;
     color: white;
     font-weight: 600;
     text-align: center;
 }
+
 .table-responsive table tbody tr:nth-child(odd) {
     background-color: #f9f9f9;
 }
@@ -508,8 +297,6 @@
 .table-responsive table tbody tr:hover {
     background-color: #e0f0d9;
 }
-
-
 </style>
 
     <!--end head-->
@@ -558,22 +345,37 @@
   </div>
 
   <div class="row">
-  <div class="col-12 card mg-t-20-force">
+  <div class="col-12 card mt-3">
     <div class="card-body">
-      <h2 class="card-title">Facturación General</h2>
-      <div class="my-3 border-top"></div>
+      <!-- Header profesional -->
+      <div class="page-header-custom">
+        <h2><i class='bx bx-receipt me-2'></i>Informe de Facturación</h2>
+        <p>Gestión completa de facturas proforma, facturas reales y abonos</p>
+      </div>
 
-      <!-- Botones para alternar entre proforma y facturas -->
-      <div class="col-12 mb-4 d-flex gap-3">
-        <!-- Botón para volver a mostrar las proformas (oculto inicialmente) -->
-        <button id="botonMostrarProforma" class="btn btn-primary btn-lg flex-fill d-none">
-          <i class="fa-solid fa-file-invoice-dollar me-2"></i> Mostrar Factura Proforma
-        </button>
+      <!-- Botones modernos tipo tab para alternar entre proforma y facturas -->
+      <div class="col-12 mb-4">
+        <div class="facturacion-tabs">
+          <button id="botonMostrarProforma" class="facturacion-tab">
+            <div class="tab-icon">
+              <i class="fa-solid fa-file-invoice-dollar"></i>
+            </div>
+            <div class="tab-content">
+              <span class="tab-title">Factura Proforma</span>
+              <span class="tab-subtitle">Gestión de proformas y abonos</span>
+            </div>
+          </button>
 
-        <!-- Botón para mostrar las facturas (visible inicialmente) -->
-        <button id="botonMostrarFacturas" class="btn btn-success btn-lg flex-fill">
-          <i class="fa-solid fa-file-invoice me-2"></i> Mostrar Facturas
-        </button>
+          <button id="botonMostrarFacturas" class="facturacion-tab active">
+            <div class="tab-icon">
+              <i class="fa-solid fa-file-invoice"></i>
+            </div>
+            <div class="tab-content">
+              <span class="tab-title">Facturas Reales</span>
+              <span class="tab-subtitle">Gestión de facturas y abonos</span>
+            </div>
+          </button>
+        </div>
       </div>
 
     <!-- Contenedor de la tabla de Facturas y Abono Proforma -->
