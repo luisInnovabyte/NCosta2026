@@ -84,11 +84,6 @@ switch ($_GET["op"]) {
          case "listarTarifasAll":
             $datos = $tarifasAloja->listarTarifaFactAll();
     
-            $json_string = json_encode($datos);
-            $file = 'JAGGER.json';
-            file_put_contents($file, $json_string);
-  
-    
             // Archivo LOG
             $nombreLog =  $_SESSION['usu_id'] . " - " . $_SESSION['usu_nom'];
             $logI = new Log($nombreLog, "tarifaAloja.php", "Lista las tarifas de alojamiento");

@@ -363,17 +363,20 @@ $(document).ready(function() {
     // (MÁS ADELANTE SE LE PONDRÁ SU INFORMACIÓN)
     var tarifaAloja_table = $("#tarifas_table").DataTable({
     select: false, // Nos permite seleccionar filas para exportar
-
+    processing: true,
+    language: {
+        processing: "Cargando tarifas...",
+        emptyTable: "No hay tarifas disponibles"
+    },
     columns: [
-        { name: "idTarifasAloja" },
-        { name: "codigo" },
-        { name: "nombre" },
-        { name: "medidaTarifasAloja" },
-        { name: "descuento", className: "text-center wd-30" },
-        { name: "iva", className: "text-center wd-30" },
-        { name: "importeTarifasAloja", className: "text-center wd-30" },
-        { name: "tIPO", className: "text-center wd-30" },
-
+        { name: "idTarifasAloja", data: 0 },
+        { name: "codigo", data: 1 },
+        { name: "nombre", data: 2 },
+        { name: "medidaTarifasAloja", data: 3 },
+        { name: "descuento", data: 4, className: "text-center wd-30" },
+        { name: "iva", data: 5, className: "text-center wd-30" },
+        { name: "importeTarifasAloja", data: 6, className: "text-center wd-30" },
+        { name: "tipo", data: 7, className: "text-center wd-30" }
     ],
     columnDefs: [
         { targets: [0], orderData: [0], visible: false }, // ID oculto
@@ -381,37 +384,34 @@ $(document).ready(function() {
         { targets: [2], orderData: [2], visible: true },
         { targets: [3], orderData: [3], visible: true },
         { targets: [4], orderData: [4], visible: true },
-
         { targets: [5], orderData: [5], visible: true },
         { targets: [6], orderData: false, visible: true },
         { targets: [7], orderData: [7], visible: true }
-
     ],
-
+    order: [[1, "asc"]],
     searchBuilder: {
-        columns: [1, 3],
+        columns: [1, 2, 3, 4, 5, 6],
     },
-
     ajax: {
-        // URL inicial. Mostrará todas las tarifas activas.
         url: "../../controller/tarifaAloja_Edu.php?op=listarTarifasAll",
-        type: "get",
+        type: "GET",
         dataType: "json",
+        dataSrc: "aaData",
         cache: false,
-        serverSide: true,
-        processData: true,
         beforeSend: function () {
-        // Cualquier acción antes de enviar la solicitud
+            console.log("Cargando tarifas...");
         },
-        complete: function (data) {},
-
-        error: function (e) {},
-
-        orderFixed: [[1, "asc"]],
-        searchBuilder: {
-        columns: [1, 2, 3, 4, 5,6],
+        complete: function (data) {
+            console.log("Respuesta recibida:", data);
         },
-    },
+        error: function (xhr, error, thrown) {
+            console.error("Error al cargar tarifas:");
+            console.error("XHR:", xhr);
+            console.error("Error:", error);
+            console.error("Thrown:", thrown);
+            console.error("Response Text:", xhr.responseText);
+        }
+    }
     });
     $('#FootIDTarifas').on('keyup', function () {
     tarifaAloja_table
@@ -495,19 +495,17 @@ $(document).ready(function() {
         }
 
         $("#buscar-tarifaAloja-modal").on("shown.bs.modal", function () {
+            console.log("Modal abierto - Recargando tarifas...");
+            
+            // SE CAMBIA LA URL DEL DATATABLE CARGADO ANTERIORMENTE, Y SE OBTIENEN LOS DATOS NECESARIOS
+            tarifaAloja_table.ajax.reload(function (json) {
+                console.log("Datos recargados:", json);
+                // AQUÍ SE QUITAN LOS FILTROS Y SE CARGA EL PODER CONTROLAR LOS FILTROS DE NUEVO
+                $("#tarifas_table_wrapper").find(".quitarFiltros").parent().parent().trigger("click");
+                controlarFiltros("tarifas_table");
+            }, false);
+        });
         
-
-        // SE CAMBIA LA URL DEL DATATABLE CARGADO ANTERIORMENTE, Y SE OBTIENEN LOS DATOS NECESARIOS
-
-        tarifaAloja_table.ajax.url(
-            "../../controller/tarifaAloja_Edu.php?op=listarTarifasAll"
-        ).load(function (json) {
-            // AQUÍ SE QUITAN LOS FILTROS Y SE CARGA EL PODER CONTROLAR LOS FILTROS DE NUEVO
-            $("#tarifas_table_wrapper").find(".quitarFiltros").parent().parent().trigger("click");
-        }).on("draw.dt", function () {
-            controlarFiltros("tarifas_table"); // Llamas a la función para controlar filtros
-        });
-        });
         // EVENTO PARA CAPTURAR EL CLICK EN UNA FILA (TR) DEL DATATABLE
         $("#tarifas_table tbody").on("click", "tr", function () {
         

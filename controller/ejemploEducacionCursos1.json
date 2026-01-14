@@ -1,0 +1,1 @@
+"SELECT * FROM cursos c LEFT JOIN ruta_completo r ON c.idRuta_cursos = r.id_ruta WHERE c.idLlegada_cursos = 50 ORDER BY c.fechaCrea_cursos DESC"
