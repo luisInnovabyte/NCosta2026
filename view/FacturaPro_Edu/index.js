@@ -1203,23 +1203,48 @@ function soloNumerosYComa(selector) {
         } else {
             // EN CASO DE QUE SI HAYAN REGISTROS, SE PREGUNTA SI QUIERE PONER A TODOS COMO PRESENTES
             Swal.fire({
-                title: '<strong style="color:#2e7d32;">¿Quieres generar una factura Proforma?</strong>',
-                html: '<p style="font-size:1.1rem; color:#555;">Esta acción generará una factura Pro. <b>Se utilizarán los datos de facturación</b> y solo podrá anularse abonando dicha factura Proforma.</p>',
-                iconHtml: '<i class="fa-solid fa-check-circle" style="color:#2e7d32; font-size:4rem;"></i>',
+                title: '<div style="color:#0066cc; font-size:1.9rem; font-weight:700; text-shadow:0 2px 4px rgba(0,0,0,0.05);">📋 Generar Factura Proforma</div>',
+                html: `
+                    <div style="background:#ffffff; border:2px solid #0066cc; padding:1.5rem; margin:1.5rem 0; border-radius:8px; box-shadow:0 2px 8px rgba(0,102,204,0.1);">
+                        <div style="background:#e3f2fd; padding:1rem; border-radius:6px; margin-bottom:1rem; border-left:5px solid #0066cc;">
+                            <p style="font-size:1.05rem; color:#1565c0; margin:0; font-weight:600; line-height:1.6;">
+                                <i class="fa-solid fa-file-invoice" style="margin-right:8px; font-size:1.2rem;"></i>
+                                Esta acción generará una <strong>Factura Proforma Oficial</strong>
+                            </p>
+                        </div>
+                        <div style="padding:0.75rem 0;">
+                            <p style="font-size:0.95rem; color:#424242; margin:0 0 0.5rem 0; line-height:1.6;">
+                                ✓ Se utilizarán los datos de facturación actuales
+                            </p>
+                            <p style="font-size:0.95rem; color:#424242; margin:0; line-height:1.6;">
+                                ⚠️ Solo podrá anularse mediante proceso de abono
+                            </p>
+                        </div>
+                    </div>
+                `,
+                icon: 'warning',
+                iconColor: '#ff9800',
                 showCancelButton: true,
-                confirmButtonText: '<i class="fa-solid fa-check" style="margin-right:8px;"></i> Sí, generar factura Pro',
-                cancelButtonText: '<i class="fa-solid fa-times" style="margin-right:8px;"></i> Cancelar',
-                confirmButtonColor: '#2e7d32',
-                cancelButtonColor: '#c62828',
-                background: 'linear-gradient(135deg, #e8f5e9 0%, #a5d6a7 100%)',
+                confirmButtonText: '<i class="fa-solid fa-check-circle" style="margin-right:10px;"></i>Sí, Generar Factura',
+                cancelButtonText: '<i class="fa-solid fa-times-circle" style="margin-right:8px;"></i>Cancelar',
+                confirmButtonColor: '#0066cc',
+                cancelButtonColor: '#757575',
+                background: 'linear-gradient(to bottom, #0066cc 60px, #ffffff 60px)',
+                width: '650px',
+                padding: '0 0 2rem 0',
                 customClass: {
-                    popup: 'shadow-lg rounded-3',
-                    title: 'mb-3',
-                    htmlContainer: 'mb-4',
-                    confirmButton: 'btn btn-success px-4 py-2',
-                    cancelButton: 'btn btn-danger px-4 py-2 ms-3'
+                    popup: 'shadow-lg',
+                    title: 'pt-3 pb-2',
+                    htmlContainer: 'px-4 pb-4',
+                    confirmButton: 'btn btn-primary px-5 py-2 fw-bold',
+                    cancelButton: 'btn btn-secondary px-4 py-2 ms-3',
+                    actions: 'pb-3'
                 },
-                buttonsStyling: false
+                buttonsStyling: false,
+                showClass: {
+                    popup: 'animate__animated animate__zoomIn animate__faster'
+                },
+                backdrop: 'rgba(0,0,0,0.4)'
             }).then((result) => {
                 if (result.isConfirmed) {
                 let today = new Date();
@@ -1275,14 +1300,47 @@ function soloNumerosYComa(selector) {
                                     let idLlegada = data.idLlegada;
 
                                     Swal.fire({
+                                        title: '<div style="color:#28a745; font-size:1.9rem; font-weight:700; text-shadow:0 2px 4px rgba(0,0,0,0.05);">✅ ¡Factura Generada!</div>',
+                                        html: `
+                                            <div style="background:#ffffff; border:2px solid #28a745; padding:1.5rem; margin:1.5rem 0; border-radius:8px; box-shadow:0 2px 8px rgba(40,167,69,0.1);">
+                                                <div style="background:#d4edda; padding:1rem; border-radius:6px; margin-bottom:1rem; border-left:5px solid #28a745;">
+                                                    <p style="font-size:1.05rem; color:#155724; margin:0; font-weight:600; line-height:1.6;">
+                                                        <i class="fa-solid fa-check-circle" style="margin-right:8px; font-size:1.2rem;"></i>
+                                                        La <strong>Factura Proforma</strong> ha sido generada correctamente
+                                                    </p>
+                                                </div>
+                                                <div style="padding:0.75rem 0;">
+                                                    <p style="font-size:0.95rem; color:#424242; margin:0 0 0.5rem 0; line-height:1.6;">
+                                                        📄 Número: <strong>${numProforma}</strong>
+                                                    </p>
+                                                    <p style="font-size:0.95rem; color:#424242; margin:0; line-height:1.6;">
+                                                        🔄 Redirigiendo a la vista de factura...
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        `,
                                         icon: 'success',
-                                        title: '¡Listo!',
-                                        text: 'Factura Proforma Generada',
-                                        timer: 2500,
+                                        iconColor: '#28a745',
                                         showConfirmButton: true,
-                                        confirmButtonText: 'Cerrar',
-                                        background: 'linear-gradient(135deg, #e8f5e9 0%, #a5d6a7 100%)',
-                                        customClass: { popup: 'shadow-lg rounded-3' }
+                                        confirmButtonText: '<i class="fa-solid fa-arrow-right" style="margin-right:8px;"></i>Continuar',
+                                        confirmButtonColor: '#28a745',
+                                        background: 'linear-gradient(to bottom, #28a745 60px, #ffffff 60px)',
+                                        width: '650px',
+                                        padding: '0 0 2rem 0',
+                                        timer: 3000,
+                                        timerProgressBar: true,
+                                        customClass: {
+                                            popup: 'shadow-lg',
+                                            title: 'pt-3 pb-2',
+                                            htmlContainer: 'px-4 pb-4',
+                                            confirmButton: 'btn btn-success px-5 py-2 fw-bold',
+                                            actions: 'pb-3'
+                                        },
+                                        buttonsStyling: false,
+                                        showClass: {
+                                            popup: 'animate__animated animate__zoomIn animate__faster'
+                                        },
+                                        backdrop: 'rgba(0,0,0,0.4)'
                                 }).then(() => {
                                         //imprimirFacturaDatatableMismaPagina(numProforma, 1, idLlegada);
                                         /* imprimirFacturaDatatable(numProforma, 1, idLlegada); */
