@@ -242,40 +242,10 @@
                         <p>Gestión de personal docente y administrativo</p>
                     </div>
 
-                    <div class="row">
-                                                </button>
-                                            </h2>
-                                            <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                                                <div class="accordion-body row d-flex align-items-center">
-                                                    <button class="btn btn-primary waves-effect tx-12-force col-12 col-lg-1">Agregar</button>
-                                                    <label class="mg-l-10 col-12 col-lg-10 mg-t-10-force mg-lg-t-0-force"> Al presionar este botón se empezará el proceso para <label class="fw-bold">agregar</label> una nueva opción a la aplicación, esto permitirá tener diferentes opciones.</label>
-                                                </div>
-
-                                                <div class="accordion-body row d-flex align-items-center">
-                                                    <button class="btn btn-info waves-effect tx-12-force col-12 col-lg-1"><i class="fa-solid fa-edit"></i></button>
-                                                    <label class="mg-l-10 col-12 col-lg-10  mg-t-10-force mg-lg-t-0-force"> Con este botón podrás <label class="fw-bold">editar</label> la información de la opción seleccionada.</label>
-                                                </div>
-
-                                                <div class="accordion-body row d-flex align-items-center">
-                                                    <button class="btn btn-success waves-effect tx-12-force col-12 col-lg-1"><i class="fa-solid fa-check"></i></button>
-                                                    <button class="btn btn-danger waves-effect tx-12-force col-12 col-lg-1 mg-lg-l-10 mg-lg-t-0-force mg-l-0 mg-t-10-force"><i class="fa-solid fa-xmark"></i></button>
-                                                    <label class="mg-l-10 col-12 col-lg-8  mg-t-10-force mg-lg-t-0-force"> Con estos botones podrás <label class="fw-bold tx-success">activar</label> / <label class="fw-bold tx-danger">desactivar</label> las opciones, <label class="fw-bold tx-success">permitiendo</label> / <label class="fw-bold tx-danger">denegando</label> su <label class="fw-bold">uso en apartados de la aplicación</label>.</label>
-                                                </div>
-                                                <div class="accordion-body row d-flex align-items-center">
-                                                    <button class="btn btn-primary btn-icon waves-effect tx-12-force col-12 col-lg-1"><i class="fa-solid fa-eye"></i></button>
-                                                    <label class="mg-l-10 col-12 col-lg-10  mg-t-10-force mg-lg-t-0-force"> Te mostrara una ventana con <label class="fw-bold">información adicional</label> de la opción seleccionada.</label>
-                                                </div>
-
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-12 d-flex justify-content-end mg-b-10">
-                            <button class="btn btn-primary waves-effect col-12 col-lg-2" data-bs-toggle="modal" data-bs-target="#insertar-personal-modal">Agregar Personal</button>
+                        <div class="col-12 d-flex justify-content-end mb-3">
+                            <button class="btn btn-add-record" data-bs-toggle="modal" data-bs-target="#insertar-personal-modal">
+                                <i class='bx bx-plus me-2'></i>Agregar Personal
+                            </button>
                         </div>
                         <div class="col-12">
                             <?php include_once '../../config/modalAyudas/filtroActivo.php' ?>
