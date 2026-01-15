@@ -1,0 +1,1 @@
+"SELECT * FROM tm_llegadas_edu LEFT JOIN tm_departamento_edu ON tm_llegadas_edu.iddepartamento_llegadas = tm_departamento_edu.idDepartamentoEdu LEFT JOIN tm_agentes_edu  ON tm_llegadas_edu.agente_llegadas = tm_agentes_edu.idAgente  WHERE `id_llegada` = 51 "
