@@ -1231,7 +1231,7 @@ break;
             $sub_array = array();
 
             $sub_array[] = $row["idPie"];
-            $sub_array[] = $row["abonadaFacturaPro"];
+            $sub_array[] = $row["prefijoAbonoProEdu"] . "" . $row["abonadaFacturaPro"];
             $sub_array[] = $row["serieProformaPie"] . "" . $row["numProformaPie"];
             $sub_array[] = $row["nombreCabecera"];
             $sub_array[] = $row["cifCabecera"];
@@ -1417,7 +1417,7 @@ break;
             $sub_array = array();
 
             $sub_array[] = $row["idPie"];
-            $sub_array[] = $row["abonadaFactura"];
+            $sub_array[] = $row["prefijoAbonoEdu"] . "" . $row["abonadaFactura"];
             $sub_array[] = $row["serieProformaPie"] . "" . $row["numProformaPie"];
             $sub_array[] = $row["nombreCabecera"];
             $sub_array[] = $row["cifCabecera"];

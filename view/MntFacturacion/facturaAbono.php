@@ -47,18 +47,22 @@
 
         $fechaFactura = fechaLocal($datosproforma[0]['fechProformaPie']); //NO ENTIENDO PORQUE LO DE FECHA LOCAL HACE QUE DEJE DE IR DIRECTAMENTE TODO
         //$fechaFactura = $datosproforma[0]['fechProformaPie'];
-        $numeroFactura = $datosproforma[0]['serieProformaPie'].' '.$datosproforma[0]['numProformaPie'];
+        
+        // Número de abono
+        $numeroAbono = ($realOProforma == 1) 
+            ? (!empty($datosproforma[0]['abonadaFactura']) ? $datosproforma[0]['abonadaFactura'] : '-') 
+            : (!empty($datosproforma[0]['abonadaFacturaPro']) ? $datosproforma[0]['abonadaFacturaPro'] : '-');
+        
+        // El número de factura NO se muestra en facturas de abono, solo en facturas normales
+        // Como este archivo es facturaAbono.php, siempre será un abono, por lo tanto el número debe estar vacío
+        $numeroFactura = '-';
+        
         $idLlegada = $datosproforma[0]['idLlegada_Pie'];
 
         // Añadir asterisco si existe texto libre
         if (!empty($textoLibre)) {
             $textoLibre = '* '.$textoLibre;
         }
-
-        // Número de abono
-        $numeroAbono = ($realOProforma == 1) 
-            ? (!empty($datosproforma[0]['abonadaFactura']) ? $datosproforma[0]['abonadaFactura'] : '-') 
-            : (!empty($datosproforma[0]['abonadaFacturaPro']) ? $datosproforma[0]['abonadaFacturaPro'] : '-');
 
         // Número de factura referenciada
         $facturaReferenciada = ($realOProforma == 1) 
