@@ -625,7 +625,13 @@ class Proforma extends Conectar
     public function listarProformaAbonoFacturacion(){
         $conectar = parent::conexion();
         parent::set_names();
-        $sql = "SELECT * FROM factura_pie LEFT JOIN factura_cabecera ON factura_pie.idCabecera_Pie = factura_cabecera.idCabecera WHERE abonadaFacturaPro IS NOT NULL ORDER BY `factura_pie`.`idPie` DESC";
+        $sql = "SELECT factura_pie.*, factura_cabecera.*, tm_departamento_edu.prefijoAbonoProEdu 
+                FROM factura_pie 
+                LEFT JOIN factura_cabecera ON factura_pie.idCabecera_Pie = factura_cabecera.idCabecera 
+                LEFT JOIN tm_llegadas_edu ON factura_pie.idLlegada_Pie = tm_llegadas_edu.id_llegada
+                LEFT JOIN tm_departamento_edu ON tm_llegadas_edu.iddepartamento_llegadas = tm_departamento_edu.idDepartamentoEdu
+                WHERE abonadaFacturaPro IS NOT NULL 
+                ORDER BY `factura_pie`.`idPie` DESC";
     
         $sql = $conectar->prepare($sql);
         $sql->execute();
@@ -669,7 +675,13 @@ class Proforma extends Conectar
     public function listarFacturaAbonoFacturacion(){
         $conectar = parent::conexion();
         parent::set_names();
-        $sql = "SELECT * FROM factura_pie_real LEFT JOIN factura_cabecera_real ON factura_pie_real.idCabecera_Pie = factura_cabecera_real.idCabecera WHERE abonadaFactura IS NOT NULL ORDER BY `factura_pie_real`.`idPie` DESC";
+        $sql = "SELECT factura_pie_real.*, factura_cabecera_real.*, tm_departamento_edu.prefijoAbonoEdu 
+                FROM factura_pie_real 
+                LEFT JOIN factura_cabecera_real ON factura_pie_real.idCabecera_Pie = factura_cabecera_real.idCabecera 
+                LEFT JOIN tm_llegadas_edu ON factura_pie_real.idLlegada_Pie = tm_llegadas_edu.id_llegada
+                LEFT JOIN tm_departamento_edu ON tm_llegadas_edu.iddepartamento_llegadas = tm_departamento_edu.idDepartamentoEdu
+                WHERE abonadaFactura IS NOT NULL 
+                ORDER BY `factura_pie_real`.`idPie` DESC";
     
         $sql = $conectar->prepare($sql);
         $sql->execute();

@@ -386,7 +386,7 @@
         <?php
           // Configuración tabla Proformas
           $nombreTabla = "tableProformas";
-          $nombreCampos = ["ID Proforma", "Número Proforma", "Nombre", "CIF","A Quien Factura", "Fecha", "Abonar", "Pago Pendiente","Ver Factura"];
+          $nombreCampos = ["ID Proforma", "Fac.Proforma", "Nombre", "CIF","Quien Factura", "Fecha Pro.", "Abonar", "Pago Pendiente","Proforma"];
 
           // Inputs en el footer con IDs para filtros
           $nombreCamposFooter = [
@@ -410,7 +410,7 @@
         <?php
           // Configuración tabla Abono Proforma
           $nombreTabla = "tableAbonoProforma";
-          $nombreCampos = ["ID Proforma", "Abonado", "Número Proforma", "Nombre", "CIF","A Quien Factura", "Fecha", "Abonado Fecha", "Abonado Motivo", "Mostrar Abono"];
+          $nombreCampos = ["ID Proforma", "Fac.Abono", "Fac.Proforma", "Nombre", "CIF","Quien Factura", "Fecha Pro.", "Fecha Abono", "Motivo Abono", "Abono"];
 
           // Inputs en el footer con IDs para filtros
           $nombreCamposFooter = [
