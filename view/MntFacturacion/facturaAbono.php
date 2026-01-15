@@ -48,16 +48,33 @@
         $fechaFactura = fechaLocal($datosproforma[0]['fechProformaPie']); //NO ENTIENDO PORQUE LO DE FECHA LOCAL HACE QUE DEJE DE IR DIRECTAMENTE TODO
         //$fechaFactura = $datosproforma[0]['fechProformaPie'];
         
-        // Número de abono
-        $numeroAbono = ($realOProforma == 1) 
-            ? (!empty($datosproforma[0]['abonadaFactura']) ? $datosproforma[0]['abonadaFactura'] : '-') 
-            : (!empty($datosproforma[0]['abonadaFacturaPro']) ? $datosproforma[0]['abonadaFacturaPro'] : '-');
+        $idLlegada = $datosproforma[0]['idLlegada_Pie'];
+        
+        // Obtener el prefijo del departamento según el tipo de abono
+        $llegadas = new Llegadas();
+        $datosLlegada = $llegadas->recogerLlegadasHomexId($idLlegada);
+        
+        $prefijoAbono = '';
+        if (!empty($datosLlegada)) {
+            if ($realOProforma === 0) {
+                // Abono de proforma: usar prefijoAbonoProEdu
+                $prefijoAbono = $datosLlegada[0]['prefijoAbonoProEdu'];
+            } else if ($realOProforma === 1) {
+                // Abono de factura real: usar prefijoAbonoEdu
+                $prefijoAbono = $datosLlegada[0]['prefijoAbonoEdu'];
+            }
+        }
+        
+        // Número de abono con prefijo del departamento
+        if ($realOProforma == 1) {
+            $numeroAbono = (!empty($datosproforma[0]['abonadaFactura']) ? $prefijoAbono . $datosproforma[0]['abonadaFactura'] : '-');
+        } else {
+            $numeroAbono = (!empty($datosproforma[0]['abonadaFacturaPro']) ? $prefijoAbono . $datosproforma[0]['abonadaFacturaPro'] : '-');
+        }
         
         // El número de factura NO se muestra en facturas de abono, solo en facturas normales
         // Como este archivo es facturaAbono.php, siempre será un abono, por lo tanto el número debe estar vacío
         $numeroFactura = '-';
-        
-        $idLlegada = $datosproforma[0]['idLlegada_Pie'];
 
         // Añadir asterisco si existe texto libre
         if (!empty($textoLibre)) {
