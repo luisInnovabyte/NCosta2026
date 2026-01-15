@@ -395,11 +395,11 @@ break;
                 // Mostrar los valores
                 $sub_array[] = $descuento;
                 
-                $sub_array[] = number_format($subtotal, 2, ',', '.'); // Base Imponible con descuento aplicado
+                $sub_array[] = '- ' . number_format($subtotal, 2, ',', '.'); // Base Imponible con descuento aplicado (negativo)
 
                 $sub_array[] = $iva;
 
-                $sub_array[] = number_format($total, 2, ',', '.');   // Total con IVA
+                $sub_array[] = '- ' . number_format($total, 2, ',', '.');   // Total con IVA (negativo)
         
                 $data[] = $sub_array;
             }

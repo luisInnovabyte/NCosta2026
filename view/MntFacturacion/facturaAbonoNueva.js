@@ -73,6 +73,7 @@ $(document).ready(function() {
             }
         },
         footerCallback: function (row, data, start, end, display) {
+            console.log("=== Footer Callback Factura ===");
             let api = this.api();
 
             // Función para normalizar números con formato europeo
@@ -93,13 +94,19 @@ $(document).ready(function() {
             let hayIvaCero = false;
 
             let ivaMap = {};
+            
+            console.log("Número de filas:", api.rows({ search: 'applied' }).count());
 
             api.rows({ search: 'applied' }).every(function () {
                 let data = this.data();
+                
+                console.log("Datos de fila:", data);
 
                 let base = normalize(data[5]);          // Base imponible (puede venir como "- 100,50")
                 let porcentajeIva = normalize(data[6]); // % IVA
                 let descuento = normalize(data[4]);     // % Descuento
+                
+                console.log("Base normalizada:", base, "IVA%:", porcentajeIva);
 
                 // Calcular IVA y total de la fila
                 let ivaFila = base * (porcentajeIva / 100);
@@ -122,12 +129,19 @@ $(document).ready(function() {
                 ivaMap[porcentajeIva].iva += ivaFila;
                 ivaMap[porcentajeIva].total += totalFila;
             });
+            
+            console.log("Total con IVA calculado:", totalConIva);
 
             // Mostrar resultados en HTML
             $('#ivaTotal').text(totalIva.toLocaleString("es-ES", { style: "currency", currency: "EUR" }));
             $('#baseImponible').text(totalSinIva.toLocaleString("es-ES", { style: "currency", currency: "EUR" }));
             $('#totalConIva').text(totalConIva.toLocaleString("es-ES", { style: "currency", currency: "EUR" }));
             $('#totalConIvaResumen').text(totalConIva.toLocaleString("es-ES", { style: "currency", currency: "EUR" }));
+
+            // Guardar en variable global para usar en suplidos
+            window.totalConIvaNumerico = totalConIva;
+            
+            console.log("Guardado en window.totalConIvaNumerico:", window.totalConIvaNumerico);
 
             // $('#totalDescuento').text("-" + totalDescuento.toLocaleString("es-ES", { style: "currency", currency: "EUR" }));
 
@@ -154,6 +168,32 @@ $(document).ready(function() {
         },
         initComplete: function(settings, json) {
             // Esta función se ejecuta cuando la tabla ha terminado de cargar
+            console.log("=== Init Complete Tabla Factura ===");
+            console.log("window.totalConIvaNumerico:", window.totalConIvaNumerico);
+            
+            // CALCULAR TOTAL GENERAL AQUÍ, antes de imprimir
+            setTimeout(function() {
+                let totalConIva = window.totalConIvaNumerico || 0;
+                let totalSuplidosTexto = $('#totalSuplidosResumen').text() || '0 €';
+                
+                console.log("Calculando en initComplete...");
+                console.log("Total con IVA:", totalConIva);
+                console.log("Total suplidos texto:", totalSuplidosTexto);
+                
+                let esNegativo = totalSuplidosTexto.includes('-');
+                let totalSuplidos = parseFloat(
+                    totalSuplidosTexto.replace(/-/g, '').replace(/\s+/g, '').replace('€', '').replace(/\./g, '').replace(',', '.')
+                ) || 0;
+                
+                if (esNegativo) totalSuplidos = -totalSuplidos;
+                
+                let totalGeneral = totalConIva + totalSuplidos;
+                
+                console.log("Total suplidos:", totalSuplidos);
+                console.log("TOTAL GENERAL CALCULADO:", totalGeneral);
+                
+                $('#totalConSuplidos').text(totalGeneral.toLocaleString("es-ES", { style: "currency", currency: "EUR" }));
+            }, 200);
             
             // Agregar listener antes de imprimir
             if (window.matchMedia) {
@@ -175,8 +215,10 @@ $(document).ready(function() {
                 }, 500);
             };
             
-            // Iniciar impresión
-            window.print();
+            // Iniciar impresión DESPUÉS del cálculo
+            setTimeout(function() {
+                window.print();
+            }, 300);
         }
     });
 
@@ -261,61 +303,66 @@ $(document).ready(function() {
             }
         },
         footerCallback: function (row, data, start, end, display) {
-            console.log('asd')
-                let api = this.api();
-                    // Inicializa el total
-                 let totalSuplido = 0;
+            console.log('=== Footer Callback Suplidos ===')
+            let api = this.api();
+            let totalSuplido = 0;
 
-                api.column(2, { search: 'applied' }).data().each(function (value) {
-                    let precioSuplido = parseFloat(value.toString().replace('€', ''));
-                    console.log(precioSuplido);
-                });
            // Recorre la columna de precios (columna 2) y suma
-                api.column(2, { search: 'applied' }).data().each(function (value) {
-                    // Limpia y convierte a número
-                    let precioSuplido = parseFloat(value.toString().replace(/[€\s]/g, '').replace(',', '.'));
-                    if (!isNaN(precioSuplido)) {
-                        totalSuplido += precioSuplido;
-                    }
-                });
-                
-                // Convertir a negativo para el abono
-                totalSuplido = -Math.abs(totalSuplido);
-                
-                $('#totalSuplidosResumen').text(totalSuplido.toLocaleString("es-ES", { style: "currency", currency: "EUR" }));
-                //totalSinSuplidos = $('#totalFactura').text();
-                totalSinSuplidos = $('#totalConIva').text();
-
-                // Normalizar el valor (eliminar espacios, puntos de miles, convertir coma a punto)
-                totalSinSuplidos = parseFloat(
-                    totalSinSuplidos.toString()
-                        .replace(/\s+/g, '')      // eliminar espacios
-                        .replace(/[€]/g, '')      // eliminar símbolo €
-                        .replace(/\./g, '')       // eliminar puntos de miles
-                        .replace(',', '.')        // convertir coma decimal a punto
-                ) || 0;
-
-                console.log(totalSinSuplidos)
-                                
-                // Comprobar que el valor es numérico antes de usarlo
-                if (!isNaN(totalSinSuplidos)) {
-                // Sumar los valores respetando los signos negativos
-                let totalConSuplidos = totalSinSuplidos + totalSuplido;
-
-                console.log("Total sin suplidos:", totalSinSuplidos);
-                console.log("Total suplido:", totalSuplido);
-                console.log("Total con suplidos:", totalConSuplidos);
-
-                // Mostrar en el HTML con formato
-                $('#totalConSuplidos').text(totalConSuplidos.toLocaleString("es-ES", { style: "currency", currency: "EUR" }));
-            } else {
-                console.warn("No se pudo obtener un total válido desde #totalFactura");
-            }
-
+            api.column(2, { search: 'applied' }).data().each(function (value) {
+                let precioSuplido = parseFloat(value.toString().replace(/[€\s]/g, '').replace(',', '.'));
+                if (!isNaN(precioSuplido)) {
+                    totalSuplido += precioSuplido;
+                }
+            });
+            
+            // Convertir a negativo para el abono
+            totalSuplido = -Math.abs(totalSuplido);
+            
+            console.log("Total suplidos calculado:", totalSuplido);
+            
+            $('#totalSuplidosResumen').text(totalSuplido.toLocaleString("es-ES", { style: "currency", currency: "EUR" }));
+            
+            // CALCULAR TOTAL GENERAL AQUÍ MISMO
+            let totalConIva = window.totalConIvaNumerico || 0;
+            let totalGeneral = totalConIva + totalSuplido;
+            
+            console.log("Total con IVA:", totalConIva);
+            console.log("Total suplidos:", totalSuplido);
+            console.log("TOTAL GENERAL:", totalGeneral);
+            
+            $('#totalConSuplidos').text(totalGeneral.toLocaleString("es-ES", { style: "currency", currency: "EUR" }));
         },
         initComplete: function(settings, json) {
             // Esta función se ejecuta cuando la tabla ha terminado de cargar
-            // window.print(); // No imprimir dos veces
+            console.log("=== Tabla de suplidos completada ===");
+            
+            // Calcular el total general - Esta es la ÚLTIMA tabla en cargar
+            let totalConIva = window.totalConIvaNumerico || 0;
+            let totalSuplidosTexto = $('#totalSuplidosResumen').text() || '0 €';
+            
+            console.log("Total con IVA (numérico):", totalConIva);
+            console.log("Total suplidos (texto):", totalSuplidosTexto);
+            
+            // Parsear suplidos
+            let esNegativo = totalSuplidosTexto.includes('-');
+            let totalSuplidos = parseFloat(
+                totalSuplidosTexto.toString()
+                    .replace(/-/g, '')
+                    .replace(/\s+/g, '')
+                    .replace('€', '')
+                    .replace(/\./g, '')
+                    .replace(',', '.')
+            ) || 0;
+            
+            if (esNegativo) {
+                totalSuplidos = -totalSuplidos;
+            }
+            
+            let totalGeneral = totalConIva + totalSuplidos;
+            console.log("Total suplidos (parseado):", totalSuplidos);
+            console.log("TOTAL GENERAL FINAL:", totalGeneral);
+            
+            $('#totalConSuplidos').text(totalGeneral.toLocaleString("es-ES", { style: "currency", currency: "EUR" }));
         }
     });
 
@@ -325,6 +372,45 @@ $(document).ready(function() {
 
     $("#suplidosTabla").addClass("width-50"); // Mantener responsividad
 
-   
-
+    // Función para calcular el total general
+    function actualizarTotalGeneral() {
+        console.log("=== CALCULANDO TOTAL GENERAL ===");
+        
+        let totalConIva = window.totalConIvaNumerico || 0;
+        let totalSuplidosTexto = $('#totalSuplidosResumen').text() || '0 €';
+        
+        console.log("Total con IVA:", totalConIva);
+        console.log("Total suplidos texto:", totalSuplidosTexto);
+        
+        let esNegativo = totalSuplidosTexto.includes('-');
+        let totalSuplidos = parseFloat(
+            totalSuplidosTexto.replace(/-/g, '').replace(/\s+/g, '').replace('€', '').replace(/\./g, '').replace(',', '.')
+        ) || 0;
+        
+        if (esNegativo) totalSuplidos = -totalSuplidos;
+        
+        let totalGeneral = totalConIva + totalSuplidos;
+        
+        console.log("Total suplidos:", totalSuplidos);
+        console.log("TOTAL GENERAL:", totalGeneral);
+        
+        $('#totalConSuplidos').text(totalGeneral.toLocaleString("es-ES", { style: "currency", currency: "EUR" }));
+    }
+    
+    // Ejecutar con intervalos hasta que ambos valores estén disponibles
+    let intentos = 0;
+    let intervalo = setInterval(function() {
+        intentos++;
+        console.log("Intento", intentos, "- Valor:", window.totalConIvaNumerico);
+        
+        // Verificar que el valor existe y no es cero
+        if (window.totalConIvaNumerico && Math.abs(window.totalConIvaNumerico) > 0) {
+            clearInterval(intervalo);
+            console.log("¡Valor detectado! Calculando...");
+            actualizarTotalGeneral();
+        } else if (intentos > 20) {
+            clearInterval(intervalo);
+            console.warn("No se pudo calcular el total después de 20 intentos");
+        }
+    }, 100);
 });

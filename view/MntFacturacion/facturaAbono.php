@@ -328,6 +328,18 @@ body {
         padding: 30px;
     }
 
+    /* Ocultar elementos de carga/progreso */
+    .dataTables_processing,
+    .dataTables_wrapper .dataTables_processing,
+    div.dataTables_processing,
+    .dt-processing,
+    .pace,
+    .pace-progress,
+    .pace-activity {
+        display: none !important;
+        visibility: hidden !important;
+    }
+
     #facturaTabla thead th {
         background: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%) !important;
         color: white !important;
